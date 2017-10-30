@@ -1,0 +1,5 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {section}{\numberline {2}Bayesian additive models for location, scale and shape}{1}{section.2}
+\contentsline {section}{\numberline {3}bamlss.vis}{1}{section.3}
+\contentsline {section}{\numberline {4}Conclusion}{1}{section.4}
+\contentsline {section}{Bibliography}{3}{section*.5}
