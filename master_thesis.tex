@@ -120,11 +120,11 @@
 
 \HRule \\[0.4cm]
 \begin{spacing}{1.5}
-{ \LARGE \bfseries Determining the origin location of antique ceramics via geochemical components}\\% Title of your document
+{ \LARGE \bfseries bamlss.vis: An R Package to Interactively Analyze and Visualize Bayesian Additive Models for Location, Scale and Shape (bamlss) Using the Shiny Framework}\\% Title of your document
 \end{spacing}
 \HRule \\[1.5cm]
 
-\large{20 week Master thesis as part of the\\ Master of Science (M.Sc.) course "Applied Statistics" \\ at the University of Göttingen \\[2cm]} % Major heading such as course name
+\large{20 week Master thesis as part of the\\ Master of Science (M.Sc.) course ``Applied Statistics" \\ at the University of Göttingen \\[2cm]} % Major heading such as course name
 
 %----------------------------------------------------------------------------------------
 %	AUTHOR SECTION
@@ -181,8 +181,20 @@ Dr. Nadja \textsc{Klein} \\
 
 \section{Introduction}
 \label{introduction}
+Since the commercialization of the personal computer and the smartphone about two decades later the overwhelming majority of modern life in developing nations has greatly been revolutionized. To name a few advancements, the period stretching from the late 20th century until today has seen changes in the way modern human beings communicate, listen to music, work and are entertained. The common denominator of these changes is the switch from analogue to digital processes, which saw the creation of entire industries, such as Digital Image Processing. The digital revolution also started a significant growth in the number of data collection possibilities and -techniques, with the newest breakthrough, the Internet of Things (IoT), being right around the corner~\citep{iotblog}. \par
+The exponential increase in available datapoints, paired with dramatic improvements in computing power, gave rise to numerous advancements in statistical sciences. Many computation-heavy models were able to be applied on a broader basis and new methods, such as Neural Nets or Generalized Additive Models could finally be realistically used~\citep{econblog}. With the increase in number of new methods and improvements in data availability, the recent past also saw a significant rise in employed statisticians. In the United States alone, the number of jobs classified as statisticians has increased by more than 120\% in the years from 1997 to 2016~\citep{depstat}. \par
+One of the new fields that has emerged is distributional regression, where not only the mean, but each parameter of a response distribution can be modeled using a set of predictors~\citep{klein2015}. Notable frameworks called Generalized Additive Models for Location, Scale and Shape (GAMLSS) and Bayesian Additive Models for Location, Scale and Shape (BAMLSS) were invented by~\citet{rigby2001gamlss} in the form of a frequentist perspective and~\citet{umlauf2017bamlss} with a Bayesian approach, respectively. \par
+Because methods have become increasingly more complex and capable over the years, it is important to make them accessible and understandable to the growing number of statistical users. In the case of distributional regression models, the interpretation of covariate effects on response moments and the expected conditional response distribution is harder than with traditional methods such as Ordinary Least Squares or Generalized Linear Models, since the moments of a distribution do not directly equate the modeled parameters, but are rather a combination of them with a varying degree of complexity. \par
+This thesis will introduce a framework for the visualisation of distributional regression models fitted using the \textbf{bamlss} R package~\citep{umlauf2017bamlss} as well as display an implementation as an R extension titled \textbf{bamlss.vis}. The goal of this framework is the ability to:
+\begin{itemize}
+  \item See and compare the expected distribution for chosen sets of covariates and
+  \item View the direct relationship between moments of the response distribution and a chosen explanatory variable, given a set of covariates.
+\end{itemize}
+Additionally, the user can obtain the code which created the graphs to potentially reproduce them later. The implementation will be done using the statistical software R~\citep{rsoftware} in the form of a Shiny application~\citep{shiny}.
 
-\section{Bayesian additive models for location, scale and shape}
+\section{Bayesian Additive Models for Location, Scale and Shape}
+\label{bamlss}
+Bayesian Additive Models for Location, Scale and Shape are a form of Bayesian regression models in which every parameter of a parametric distribution with $K$ parameters is related to a set of additive predictors 
 
 \section{bamlss.vis}
 
