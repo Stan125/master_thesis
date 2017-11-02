@@ -1,5 +1,7 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Bayesian Additive Models for Location, Scale and Shape}{}% 2
-\BOOKMARK [1][-]{section.3}{bamlss.vis}{}% 3
-\BOOKMARK [1][-]{section.4}{Conclusion}{}% 4
-\BOOKMARK [1][-]{section*.5}{Bibliography}{}% 5
+\BOOKMARK [2][-]{subsection.2.1}{Model Specification}{section.2}% 3
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Additive Models}{subsection.2.1}% 4
+\BOOKMARK [1][-]{section.3}{bamlss.vis}{}% 5
+\BOOKMARK [1][-]{section.4}{Conclusion}{}% 6
+\BOOKMARK [1][-]{section*.5}{Bibliography}{}% 7

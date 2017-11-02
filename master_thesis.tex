@@ -144,7 +144,7 @@ Student ID: 21144637
 Prof. Dr. Thomas \textsc{Kneib}\\
 Dr. Nadja \textsc{Klein} \\
 \end{flushright}
-\end{minipage}\\[4cm]
+\end{minipage}\\[3cm]
 
 %----------------------------------------------------------------------------------------
 %	DATE SECTION
@@ -157,7 +157,7 @@ Dr. Nadja \textsc{Klein} \\
 %	LOGO SECTION
 %----------------------------------------------------------------------------------------
 
-\includegraphics[scale = 0.8]{images/09_logo.jpg}\\[1cm]
+\includegraphics[scale = 0.7]{images/09_logo.jpg}\\[1cm]
 
 %----------------------------------------------------------------------------------------
 
@@ -183,7 +183,7 @@ Dr. Nadja \textsc{Klein} \\
 \label{introduction}
 Since the commercialization of the personal computer and the smartphone about two decades later the overwhelming majority of modern life in developing nations has greatly been revolutionized. To name a few advancements, the period stretching from the late 20th century until today has seen changes in the way modern human beings communicate, listen to music, work and are entertained. The common denominator of these changes is the switch from analogue to digital processes, which saw the creation of entire industries, such as Digital Image Processing. The digital revolution also started a significant growth in the number of data collection possibilities and -techniques, with the newest breakthrough, the Internet of Things (IoT), being right around the corner~\citep{iotblog}. \par
 The exponential increase in available datapoints, paired with dramatic improvements in computing power, gave rise to numerous advancements in statistical sciences. Many computation-heavy models were able to be applied on a broader basis and new methods, such as Neural Nets or Generalized Additive Models could finally be realistically used~\citep{econblog}. With the increase in number of new methods and improvements in data availability, the recent past also saw a significant rise in employed statisticians. In the United States alone, the number of jobs classified as statisticians has increased by more than 120\% in the years from 1997 to 2016~\citep{depstat}. \par
-One of the new fields that has emerged is distributional regression, where not only the mean, but each parameter of a response distribution can be modeled using a set of predictors~\citep{klein2015}. Notable frameworks called Generalized Additive Models for Location, Scale and Shape (GAMLSS) and Bayesian Additive Models for Location, Scale and Shape (BAMLSS) were invented by~\citet{rigby2001gamlss} in the form of a frequentist perspective and~\citet{umlauf2017bamlss} with a Bayesian approach, respectively. \par
+One of the new fields that has emerged is distributional regression, where not only the mean, but each parameter of a response distribution can be modeled using a set of predictors~\citep{klein2015}. Notable frameworks called Generalized Additive Models for Location, Scale and Shape (gamlss) and Bayesian Additive Models for Location, Scale and Shape (bamlss) were invented by~\citet{rigby2001gamlss} in the form of a frequentist perspective and~\citet{umlauf2017bamlss} with a Bayesian approach, respectively. \par
 Because methods have become increasingly more complex and capable over the years, it is important to make them accessible and understandable to the growing number of statistical users. In the case of distributional regression models, the interpretation of covariate effects on response moments and the expected conditional response distribution is harder than with traditional methods such as Ordinary Least Squares or Generalized Linear Models, since the moments of a distribution do not directly equate the modeled parameters, but are rather a combination of them with a varying degree of complexity. \par
 This thesis will introduce a framework for the visualisation of distributional regression models fitted using the \textbf{bamlss} R package~\citep{umlauf2017bamlss} as well as display an implementation as an R extension titled \textbf{bamlss.vis}. The goal of this framework is the ability to:
 \begin{itemize}
@@ -191,11 +191,24 @@ This thesis will introduce a framework for the visualisation of distributional r
   \item View the direct relationship between moments of the response distribution and a chosen explanatory variable, given a set of covariates.
 \end{itemize}
 Additionally, the user can obtain the code which created the graphs to potentially reproduce them later. The implementation will be done using the statistical software R~\citep{rsoftware} in the form of a Shiny application~\citep{shiny}.
+This thesis will be structured as follows...
 
 \section{Bayesian Additive Models for Location, Scale and Shape}
 \label{bamlss}
-Bayesian Additive Models for Location, Scale and Shape are a form of Bayesian regression models in which every parameter of a parametric distribution with $K$ parameters is related to a set of additive predictors 
+Bayesian Additive Models for Location, Scale and Shape (bamlss) are a form of Bayesian regression models in which every parameter of a parametric distribution with $K$ parameters is related to a set of additive predictors. The distribution does not have to follow the exponential family, which extends the distributions available for modeling beyond the ones used in Generalized Linear Models (GLM). In similar fashion to Generalized Additive Models~\citep[GAM,][]{hastie1990generalized}, the additive predictors can assume different shapes, including non-linear, fixed, random and spatial effects~\citep{umlauf2017bamlss}. \par
+In the ability to additively model multiple parameters of one distribution, bamlss bear many similarities with Generalized Additive Models for location, scale and shape~\citep[GAMLSS,][]{rigby2001gamlss}. Disparities lie in the estimation of model parameters, where bamlss utilize Markov Chain Monte Carlo (MCMC) simulations which provide credible intervals in situations where asymptotic maximum likelihood confidence intervals often fail, as well as bamlss' ability to model multivariate parametric distributions~\citep{umlauf2017bamlss}.
 
+\subsection{Model Specification}
+\subsubsection{Additive Models}
+Bamlss can be viewed as a further generalization of Additive Models. Additive Models, first proposed by ~\citet{friedman1981projection} represent a model type in which a dependent variable $y$ is related to a set of non-parametric predictors in an additive fashion. Assuming conditional independence of $y_i$ given the explanatory variables $z_1, \ldots, z_k$, we obtain the following model equation:
+\begin{equation}
+  y_i = f_1(z_{i1}) + f_2(z_{i2}) + \ldots + f_k(z_{ik}) + \epsilon_i
+\end{equation}
+where $f_j(\cdot)$ depict unspecified non-parametric functions of covariate $z_j$, which can include smoothing splines or local regression approaches. This makes additive models more flexible compared to standard linear regression, while still being more interpretable than non-additive models~\citep{buja1989linear}.
+
+klein et al suggest that additive models can also have parametric components and therefore can be semiparametric as well
+
+note that while the components are nonparametric, the dependent variable is modeled directly, i.e. without transformation. if you have binary variable you need a transformation that includes the support of dependent variable. this is solved by GAM, which combines GLM models and additive models to obtain the folowing model specification
 \section{bamlss.vis}
 
 \section{Conclusion}
