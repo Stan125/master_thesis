@@ -2,6 +2,7 @@
 \contentsline {section}{\numberline {2}Bayesian Additive Models for Location, Scale and Shape}{2}{section.2}
 \contentsline {subsection}{\numberline {2.1}Model Specification}{3}{subsection.2.1}
 \contentsline {subsubsection}{\numberline {2.1.1}Additive Models}{3}{subsubsection.2.1.1}
-\contentsline {section}{\numberline {3}bamlss.vis}{3}{section.3}
-\contentsline {section}{\numberline {4}Conclusion}{3}{section.4}
-\contentsline {section}{Bibliography}{5}{section*.5}
+\contentsline {subsubsection}{\numberline {2.1.2}Structured Additive Regression}{4}{subsubsection.2.1.2}
+\contentsline {section}{\numberline {3}bamlss.vis}{4}{section.3}
+\contentsline {section}{\numberline {4}Conclusion}{4}{section.4}
+\contentsline {section}{Bibliography}{6}{section*.5}

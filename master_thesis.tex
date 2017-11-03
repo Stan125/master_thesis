@@ -200,15 +200,31 @@ In the ability to additively model multiple parameters of one distribution, baml
 
 \subsection{Model Specification}
 \subsubsection{Additive Models}
-Bamlss can be viewed as a further generalization of Additive Models. Additive Models, first proposed by ~\citet{friedman1981projection} represent a model type in which a dependent variable $y$ is related to a set of non-parametric predictors in an additive fashion. Assuming conditional independence of $y_i$ given the explanatory variables $z_1, \ldots, z_k$, we obtain the following model equation:
+Bamlss can be seen as a generalization of Structured Additive Regression, which are in turn a generalization of Additive Models. Additive Models, first proposed by~\citet{friedman1981projection} represent a model type in which a dependent variable $y$ is related to a set of non-parametric predictors in an additive way. Assuming conditional independence of $y_1, \ldots, y_n$ given the explanatory variables $z_1, \ldots, z_K$, we obtain the following model equation:
 \begin{equation}
+  \label{addmodel1}
   y_i = f_1(z_{i1}) + f_2(z_{i2}) + \ldots + f_k(z_{ik}) + \epsilon_i
 \end{equation}
-where $f_j(\cdot)$ depict unspecified non-parametric functions of covariate $z_j$, which can include smoothing splines or local regression approaches. This makes additive models more flexible compared to standard linear regression, while still being more interpretable than non-additive models~\citep{buja1989linear}.
+where $f_j(\cdot)$ depict unspecified non-parametric functions of covariate $z_j$, which can include smoothing splines or local regression approaches. This makes additive models more flexible compared to standard linear regression, while still being more interpretable than non-additive models~\citep{buja1989linear}. \par
+\citet{fahrmeir2013regression} suggest that an Additive Model can also include parametric components. Given covariates $x_1, \ldots, x_Q$, we can extend \eqref{addmodel1} to a semiparametric regression model with the following specification:
+\begin{equation}
+  \label{addmodel2}
+  y_i = \sum\limits_{j = 1}^K f(z_{ij}) + \underbrace{\sum\limits_{l = 1}^Q \beta_l x_{il}}_{\beta_0 + \beta_1 x_{i1} + \ldots + \beta_Q x_{iQ}} + \epsilon_i
+\end{equation}
+Eq. \eqref{addmodel2} combines non-parametric and parametric components. Because the model would otherwise not be identified, functions $f_j(\cdot)$ now have to be centered around zero, such that
+\begin{equation*}
+  \sum\limits_{i = 1}^n f_1(x_{i1}) = \ldots = \sum\limits_{i = 1}^n f_K(x_{iK}) = 0
+\end{equation*}
+holds. Furthermore, a semiparametric Additive Model utilizes the same assumption about the error term as the classic linear model, where $\epsilon_i$ are identically and independently (i.i.d) normally distributed with $E(\epsilon_i) = 0$ and $Var(\epsilon_i) = \sigma^2$\citep{fahrmeir2013regression}.
 
-klein et al suggest that additive models can also have parametric components and therefore can be semiparametric as well
+\subsubsection{Structured Additive Regression}
+Enhancing standard linear regression methods with nonparametric components open the doors for more flexible relationships of the dependent variable and explanatory variables, which would otherwise not be captured correctly. However
+
+interactions important and random and fixed effects and geological components
 
 note that while the components are nonparametric, the dependent variable is modeled directly, i.e. without transformation. if you have binary variable you need a transformation that includes the support of dependent variable. this is solved by GAM, which combines GLM models and additive models to obtain the folowing model specification
+
+star models can have multiple different
 \section{bamlss.vis}
 
 \section{Conclusion}

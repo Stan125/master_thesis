@@ -1,4 +1,4 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{12}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -20,6 +20,14 @@ Winston Chang, Joe Cheng, JJ~Allaire, Yihui Xie, and Jonathan McPherson.
 \newblock \emph{shiny: Web Application Framework for R}, 2017.
 \newblock URL \url{https://CRAN.R-project.org/package=shiny}.
 \newblock R package version 1.0.5.
+
+\bibitem[Fahrmeir et~al.(2013)Fahrmeir, Kneib, Lang, and
+  Marx]{fahrmeir2013regression}
+L.~Fahrmeir, T.~Kneib, S.~Lang, and B.~Marx.
+\newblock \emph{Regression: Models, Methods and Applications}.
+\newblock Springer Berlin Heidelberg, 2013.
+\newblock ISBN 9783642343339.
+\newblock URL \url{https://books.google.de/books?id=EQxU9iJtipAC}.
 
 \bibitem[Friedman and Stuetzle(1981)]{friedman1981projection}
 Jerome~H Friedman and Werner Stuetzle.
