@@ -1,8 +1,9 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [1][-]{section.2}{Bayesian Additive Models for Location, Scale and Shape}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Model Specification}{section.2}% 3
-\BOOKMARK [3][-]{subsubsection.2.1.1}{Additive Models}{subsection.2.1}% 4
-\BOOKMARK [3][-]{subsubsection.2.1.2}{Structured Additive Regression}{subsection.2.1}% 5
-\BOOKMARK [1][-]{section.3}{bamlss.vis}{}% 6
-\BOOKMARK [1][-]{section.4}{Conclusion}{}% 7
-\BOOKMARK [1][-]{section*.5}{Bibliography}{}% 8
+\BOOKMARK [1][-]{section.2}{Motivating Bayesian Additive Models for Location, Scale and Shape}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Additive Models}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Structured Additive Regression Models}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Spatial Effects}{subsection.2.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Interaction Terms}{subsection.2.2}% 6
+\BOOKMARK [1][-]{section.3}{bamlss.vis}{}% 7
+\BOOKMARK [1][-]{section.4}{Conclusion}{}% 8
+\BOOKMARK [1][-]{section*.5}{Bibliography}{}% 9

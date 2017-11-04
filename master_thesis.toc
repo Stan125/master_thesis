@@ -1,8 +1,9 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}
-\contentsline {section}{\numberline {2}Bayesian Additive Models for Location, Scale and Shape}{2}{section.2}
-\contentsline {subsection}{\numberline {2.1}Model Specification}{3}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Additive Models}{3}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}Structured Additive Regression}{4}{subsubsection.2.1.2}
-\contentsline {section}{\numberline {3}bamlss.vis}{4}{section.3}
-\contentsline {section}{\numberline {4}Conclusion}{4}{section.4}
-\contentsline {section}{Bibliography}{6}{section*.5}
+\contentsline {section}{\numberline {2}Motivating Bayesian Additive Models for Location, Scale and Shape}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Additive Models}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Structured Additive Regression Models}{4}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Spatial Effects}{4}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Interaction Terms}{5}{subsubsection.2.2.2}
+\contentsline {section}{\numberline {3}bamlss.vis}{6}{section.3}
+\contentsline {section}{\numberline {4}Conclusion}{6}{section.4}
+\contentsline {section}{Bibliography}{8}{section*.5}
