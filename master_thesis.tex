@@ -197,17 +197,18 @@ Additionally, the user can obtain the code which created the graphs to potential
 \section{Motivating Bayesian Additive Models for Location, Scale and Shape}
 \label{bamlss}
 Bayesian Additive Models for Location, Scale and Shape (bamlss) are a form of Bayesian regression models in which every parameter of a parametric distribution with $K$ parameters is related to a set of additive predictors. The distribution does not have to follow the exponential family, which extends the distributions available for modeling beyond the ones used in Generalized Linear Models (GLM). In similar fashion to Generalized Additive Models~\citep[GAM,][]{hastie1990generalized}, the additive predictors can assume different shapes, including non-linear, fixed, random and spatial effects~\citep{umlauf2017bamlss}. \par
-In the ability to additively model multiple parameters of one distribution, bamlss bear many similarities with Generalized Additive Models for location, scale and shape~\citep[GAMLSS,][]{rigby2001gamlss}. Disparities lie in the estimation of model parameters, where bamlss utilize Markov Chain Monte Carlo (MCMC) simulations which provide credible intervals in situations where asymptotic maximum likelihood confidence intervals often fail, as well as bamlss' ability to model multivariate parametric distributions~\citep{umlauf2017bamlss}.
+In the ability to additively model multiple parameters of one distribution, bamlss bear many similarities with Generalized Additive Models for location, scale and shape~\citep[GAMLSS,][]{rigby2001gamlss}. Disparities lie in the estimation of model parameters, where bamlss utilize Markov Chain Monte Carlo (MCMC) simulations which provide credible intervals in situations where asymptotic maximum likelihood confidence intervals often fail, as well as bamlss' ability to model multivariate parametric distributions~\citep{umlauf2017bamlss}. \par
+This chapter will describe the gradual expansion from Additive Models to bamlss. \par
 
 \subsection{Additive Models}
 \label{AM}
-Bamlss can be seen as a generalization of Structured Additive Regression, which are in turn a generalization of Additive Models. Additive Models, first proposed by~\citet{friedman1981projection} represent a model type in which a dependent variable $y$ is related to a set of non-parametric predictors in an additive way. Assuming conditional independence of $y_1, \ldots, y_n$ given the explanatory variables $z_1, \ldots, z_K$, we obtain the following model equation:
+Bamlss can be seen as a generalization of Structured Additive Regression, which are in turn a generalization of Additive Models. Additive Models, first proposed by~\citet{friedman1981projection} represent a model type in which a dependent variable $y$ is related to a set of non-parametric predictors in an additive way. Assuming conditional independence of $y_1, \ldots, y_n$ given the explanatory variables $\textbf{z}_1, \ldots, \textbf{z}_K$, we obtain the following model equation:
 \begin{equation}
   \label{addmodel1}
   y_i = f_1(z_{i1}) + f_2(z_{i2}) + \ldots + f_k(z_{ik}) + \epsilon_i
 \end{equation}
 where $f_j(\cdot)$ depict unspecified non-parametric functions of covariate $z_j$, which can include smoothing splines or local regression approaches. This makes additive models more flexible compared to standard linear regression, while still being more interpretable than non-additive models~\citep{buja1989linear}. \par
-\citet{fahrmeir2013regression} suggest that an Additive Model can also include parametric components. Given covariates $x_1, \ldots, x_Q$, we can extend \eqref{addmodel1} to a semiparametric regression model with the following specification:
+\citet{fahrmeir2013regression} suggest that an Additive Model can also include parametric components. Given covariates $\textbf{x}_1, \ldots, \textbf{x}_Q$, we can extend \eqref{addmodel1} to a semiparametric regression model with the following specification:
 \begin{equation}
   \label{addmodel2}
   y_i = \sum\limits_{j = 1}^K f_j(z_{ij}) + \underbrace{\sum\limits_{l = 1}^Q \beta_l x_{il}}_{\beta_0 + \beta_1 x_{i1} + \ldots + \beta_Q x_{iQ}} + \epsilon_i
@@ -239,9 +240,9 @@ Similarly to Section \ref{AM}, observations $(y_i, \mathbf{z}_i, \mathbf{x}_i)$ 
     & = \kappa^{add} + f_{geo}(s_i) +\epsilon_i
   \end{split}
 \end{equation}
-$\kappa^{add}$ includes the non-spatial effects from \eqref{addmodel2}. The spatial effect, $f_{geo}(\cdot)$, is often viewed as a proxy for unknown covariates, such as altitude or climate data. If the geographic location index $s$ is tracked using discrete values, $f_{geo}(\cdot)$ could represent a Markov random field. For continuous values, smoothing techniques such as Kriging \citep{matheron1963principles} or a multivariate tensor product spline are available. In both the discrete and the continuous case, the vector of geoadditive components $\mathbf{f}_{geo}$ can be written as
+$\kappa^{add}$ includes the non-spatial effects from \eqref{addmodel2}. The spatial effect, $f_{geo}(\cdot)$, is often viewed as a proxy for unknown covariates, such as altitude or climate data. If the geographic location index $s$ is tracked using discrete values, $f_{geo}(\cdot)$ could represent a Markov random field. For continuous values, smoothing techniques such as Kriging \citep{matheron1963principles} or a multivariate tensor product spline are available. In both the discrete and the continuous case, the vector of geoadditive components $\boldsymbol{f}_{geo}$ can be written as
 \begin{equation*}
-  \mathbf{f}_{geo} = \mathbf{Z}_{geo} \boldsymbol{\gamma}_{geo}
+  \boldsymbol{f}_{geo} = \mathbf{Z}_{geo} \boldsymbol{\gamma}_{geo}
 \end{equation*}
 so that it can be incorporated into the geoadditive model in matrix notation in the following way
 \begin{equation}
@@ -265,9 +266,48 @@ If $x_1 = 0$, the non-linear effects of $z_1$ are now
   \end{split}
 \end{equation*}
 This framework can also incorporate spatially covarying terms, where the interaction term $f_{geo|x_1}(s)$ represents an interaction between the location variable $s$ and a categorical variable $x_1$ \citep{fahrmeir2013regression}. \par
-% Samstag: Using a basis function approach, the interaction effect can also be described in matrix notation form
+Using a Basis function approach, the vector of interaction effects
+\begin{equation*}
+  \boldsymbol{f}_{int} = (f_{z_1|x_1}(z_{11}) x_{11}, \ldots, f_{z_1|x_1}(z_{n1}) x_{n1})
+\end{equation*}
+ can also be described in matrix notation to extend \eqref{addmatform} in the following way:
+\begin{equation*}
+  \textbf{y} = \sum\limits_{j = 1}^K \mathbf{Z}_j \boldsymbol{\gamma}_j + \mathbf{X} \boldsymbol{\beta} + \mathbf{Z}_{int} \boldsymbol{\gamma}_{int} + \boldsymbol{\epsilon}
+\end{equation*}
+Here, the design matrix $\boldsymbol{Z}_{int}$ represents the Basis function values multiplied with $x_1$ observations \citep[chap. 9.3]{fahrmeir2013regression}. \par
+The possibility of interactions between two continuous covariates is also given. In this case, the interaction between $z_1$ and $z_2$ is modeled using a two-dimensional nonparametric function $f_{z_1|z_2}(z_1, z_2)$. Common two-dimensional functions include bi-variate smooth splines and Krigin techniques. When only the two-dimensional functions without main effects ($f_1(z_1)$, $f_2(z_2)$) should be included, the model equation assumes the following form:
+\begin{equation}
+  y_i =  f_{z_1|z_2}(z_{i1}, z_{i2}) + f_3(z_{i3}) + \ldots + f_K(z_{iK}) + \sum\limits_{l = 1}^Q \beta_l x_{il} + \epsilon_i
+\end{equation}
+For reasons of identifiability, $f_{z_1|z_2}(z_1, z_2)$ also needs to be centered around zero. \citet[chap. 9.3.2]{fahrmeir2013regression} warn that for estimation of models with two-dimensional surfaces a high sample size with combinations of $z_1$ and $z_2$ is required. In cases where this requirement is not fulfilled, a simple main effects model as in \eqref{addmodel2} is preferred. \par
+It is also possible to model the interaction effect of $z_1$ and $z_2$ using the two-dimensional surface $f_{z_1|z_2}(z_1, z_2)$ while still including the main effects. In this scenario, the model is specified as follows:
+\begin{equation}
+y_i =  f_{z_1|z_2}(z_{i1}, z_{i2}) + f_1(z_{i1}) + f_2(z_{i2}) + \sum\limits_{j = 3}^K f_j(z_{ij}) + \sum\limits_{l = 1}^Q \beta_l x_{il} + \epsilon_i
+\end{equation}
+The identifiability problem in this model is more complex than before. To solve it, \citet[chap. 9.3]{fahrmeir2013regression} state that not only all included functions have to be centered around zero, but also \enquote{all slices of the interaction $f_{z_1|z_2}(z_1, z_2)$, i.e. all one-dimensional smooths with fixed value of $z_1$ or $z_2$}.
+Using the basis function approach, the matrix representation of the model can be obtained:
+\begin{equation}
+  \textbf{y} = \sum\limits_{j = 1}^K \mathbf{Z}_j \boldsymbol{\gamma}_j + \mathbf{X} \boldsymbol{\beta} + \mathbf{Z}_{z_1|z_2} \boldsymbol{\gamma}_{z_1|z_2} + \boldsymbol{\epsilon}
+\end{equation}
+with interaction term design matrix $\mathbf{Z}_{z_1|z_2}$ \citep[chap. 9.3]{fahrmeir2013regression}. \par
+
+\subsubsection{Random Effects}
+When dealing with repeated measures or other longitudinal datasets it is often necessary to model cluster-specific similarities using Random Effects \citep{laird1982random}. Additive Models can also be extended with Random Effects to arrive at so called Additive Mixed Models. Assuming a longitudinal data structure with subjects $j = 1, ..., n_i$ in clusters $i = 1, ..., m$ and covariates $\textbf{x}_k$, a parametric random coefficient model possesses the following structure:
+\begin{equation*}
+  y_{ij} = (\beta_0 + \gamma_{0i}) + (\beta_1 + \gamma_{1i}) x_{ij1} + \ldots + (\beta_Q + \gamma_{Qi}) x_{ijQ} + \epsilon_i
+\end{equation*}
+The \enquote{random} coefficients $\gamma_{0i}$ (intercept) and $\gamma_{1i}, \ldots, \gamma_{Qi}$ (slopes) represent the cluster-specific deviations from the main effects. To obtain Additive Mixed Models, the main effects are then replaced with nonparametric functions:
+\begin{equation}
+  y_{ij} = f_1(x_{ij1}) + \ldots + f_Q(x_{ijQ}) + \gamma_{0i} + \gamma_{1i} x_{ij1} + \ldots + \gamma_{Qi} x_{ijQ} + \epsilon_i
+\end{equation}
+
+% Sunday: Of course this can also be written in the following matrix notation blabla
+
+\subsubsection{Estimation}
 
 % basis function approach important so we can show later that bamlss can model more than just Basis functions with Gompertz growth curve
+
+% sunday: replace the parametric effects everywhere such that it includes an intercept man!
 
 % note that while the components are nonparametric, the dependent variable is modeled directly, i.e. without transformation. if you have binary variable you need a transformation that includes the support of dependent variable. this is solved by GAM, which combines GLM models and additive models to obtain the folowing model specification
 

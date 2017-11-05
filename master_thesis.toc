@@ -4,6 +4,8 @@
 \contentsline {subsection}{\numberline {2.2}Structured Additive Regression Models}{4}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Spatial Effects}{4}{subsubsection.2.2.1}
 \contentsline {subsubsection}{\numberline {2.2.2}Interaction Terms}{5}{subsubsection.2.2.2}
-\contentsline {section}{\numberline {3}bamlss.vis}{6}{section.3}
-\contentsline {section}{\numberline {4}Conclusion}{6}{section.4}
-\contentsline {section}{Bibliography}{8}{section*.5}
+\contentsline {subsubsection}{\numberline {2.2.3}Random Effects}{7}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Estimation}{7}{subsubsection.2.2.4}
+\contentsline {section}{\numberline {3}bamlss.vis}{7}{section.3}
+\contentsline {section}{\numberline {4}Conclusion}{7}{section.4}
+\contentsline {section}{Bibliography}{9}{section*.5}

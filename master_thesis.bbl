@@ -1,4 +1,4 @@
-\begin{thebibliography}{13}
+\begin{thebibliography}{14}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -51,6 +51,11 @@ Nadja Klein, Thomas Kneib, Stefan Lang, and Alexander Sohn.
   2015.
 \newblock \doi{10.1214/15-AOAS823}.
 \newblock URL \url{https://doi.org/10.1214/15-AOAS823}.
+
+\bibitem[Laird and Ware(1982)]{laird1982random}
+Nan~M Laird and James~H Ware.
+\newblock Random-effects models for longitudinal data.
+\newblock \emph{Biometrics}, pages 963--974, 1982.
 
 \bibitem[Matheron(1963)]{matheron1963principles}
 Georges Matheron.
