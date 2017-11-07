@@ -184,7 +184,7 @@ Dr. Nadja \textsc{Klein} \\
 \label{introduction}
 Since the commercialization of the personal computer and the smartphone about two decades later the overwhelming majority of modern life in developing nations has greatly been revolutionized. To name a few advancements, the period stretching from the late 20th century until today has seen changes in the way modern human beings communicate, listen to music, work and are entertained. The common denominator of these changes is the switch from analogue to digital processes, which saw the creation of entire industries, such as Digital Image Processing. The digital revolution also started a significant growth in the number of data collection possibilities and -techniques, with the newest breakthrough, the Internet of Things (IoT), being right around the corner~\citep{iotblog}. \par
 The exponential increase in available datapoints, paired with dramatic improvements in computing power, gave rise to numerous advancements in statistical sciences. Many computation-heavy models were able to be applied on a broader basis and new methods, such as Neural Nets or Generalized Additive Models could finally be realistically used~\citep{econblog}. With the increase in number of new methods and improvements in data availability, the recent past also saw a significant rise in employed statisticians. In the United States alone, the number of jobs classified as statisticians has increased by more than 120\% in the years from 1997 to 2016~\citep{depstat}. \par
-One of the new fields that has emerged is distributional regression, where not only the mean, but each parameter of a response distribution can be modeled using a set of predictors~\citep{klein2015}. Notable frameworks called Generalized Additive Models for Location, Scale and Shape (gamlss) and Bayesian Additive Models for Location, Scale and Shape (bamlss) were invented by~\citet{rigby2001gamlss} in the form of a frequentist perspective and~\citet{umlauf2017bamlss} with a Bayesian approach, respectively. \par
+One of the new fields that has emerged is distributional regression, where not only the mean, but each parameter of a response distribution can be modeled using a set of predictors~\citep{klein2015}. Notable frameworks called Generalized Additive Models for Location, Scale and Shape (gamlss) and Bayesian Additive Models for Location, Scale and Shape (bamlss) were invented by~\citet{gamlss2001} in the form of a frequentist perspective and~\citet{umlauf2017bamlss} with a Bayesian approach, respectively. \par
 Because methods have become increasingly more complex and capable over the years, it is important to make them accessible and understandable to the growing number of statistical users. In the case of distributional regression models, the interpretation of covariate effects on response moments and the expected conditional response distribution is harder than with traditional methods such as Ordinary Least Squares or Generalized Linear Models, since the moments of a distribution do not directly equate the modeled parameters, but are rather a combination of them with a varying degree of complexity. \par
 This thesis will introduce a framework for the visualisation of distributional regression models fitted using the \textbf{bamlss} R package~\citep{umlauf2017bamlss} as well as display an implementation as an R extension titled \textbf{bamlss.vis}. The goal of this framework is the ability to:
 \begin{itemize}
@@ -197,7 +197,7 @@ Additionally, the user can obtain the code which created the graphs to potential
 \section{Motivating Bayesian Additive Models for Location, Scale and Shape}
 \label{bamlss}
 Bayesian Additive Models for Location, Scale and Shape (bamlss) are a form of Bayesian regression models in which every parameter of a parametric distribution with $K$ parameters is related to a set of additive predictors. The distribution does not have to follow the exponential family, which extends the distributions available for modeling beyond the ones used in Generalized Linear Models (GLM). In similar fashion to Generalized Additive Models~\citep[GAM,][]{hastie1990generalized}, the additive predictors can assume different shapes, including non-linear, fixed, random and spatial effects~\citep{umlauf2017bamlss}. \par
-In the ability to additively model multiple parameters of one distribution, bamlss bear many similarities with Generalized Additive Models for location, scale and shape~\citep[GAMLSS,][]{rigby2001gamlss}. Disparities lie in the estimation of model parameters, where bamlss utilize Markov Chain Monte Carlo (MCMC) simulations which provide credible intervals in situations where asymptotic maximum likelihood confidence intervals often fail, as well as bamlss' ability to model multivariate parametric distributions~\citep{umlauf2017bamlss}. \par
+In the ability to additively model multiple parameters of one distribution, bamlss bear many similarities with Generalized Additive Models for location, scale and shape~\citep[GAMLSS,][]{gamlss2001}. Disparities lie in the estimation of model parameters, where bamlss utilize Markov Chain Monte Carlo (MCMC) simulations which provide credible intervals in situations where asymptotic maximum likelihood confidence intervals often fail, as well as bamlss' ability to model multivariate parametric distributions~\citep{umlauf2017bamlss}. \par
 This chapter will describe the gradual expansion from Additive Models to bamlss. \par
 
 \subsection{Additive Models}
@@ -229,6 +229,7 @@ This allows to write the Additive Model in a matrix form, indifferent of the cho
 Here, the design matrices $\mathbf{Z}_1, \ldots, \mathbf{Z}_K$ represent the basis functions assessed at different covariates. $\mathbf{X}$ is constructed in equivalence to the standard linear regression model. Assumptions about the error term of a semiparametric Additive Model are also similar to the classic linear model, where $\epsilon_i$ are identically and independently (i.i.d) normally distributed with $E(\epsilon_i) = 0$ and $Var(\epsilon_i) = \sigma^2$. These properties are then also valid for the response variable, so that $y_i \overset{i.i.d.}{\sim} N(\hat{y}, \sigma^2_y)$ \citep[chap. 9.1]{fahrmeir2013regression}.
 
 \subsection{Structured Additive Regression Models}
+\label{STAR}
 The nonparametric components in additive models open the possibility for more flexible relationships between the dependent variable and single explanatory variables, which standard linear regression methods might not capture correctly. However, sometimes the area of model application requires even more flexibility, e.g. by including spatial covariates, fixed/random effects or interaction terms. These specific types of effects extend the Additive Model to a Structured Additive Regression Model (STAR) \citep{fahrmeir2013regression}. This chapter will briefly describe its different components. \par
 
 \subsubsection{Spatial Effects}
@@ -306,7 +307,7 @@ Like non-parametric main effects, Random Effects also have a matrix notation. In
 \end{equation*}
 Here, $\boldsymbol{\nu}_0 = (\nu_{01}, \ldots, \nu_{0m})'$ and $\boldsymbol{\nu}_j = (\nu_{j1}, \ldots, \nu_{jm})'$ represent the Random Effects coefficients. A more in-depth look at the structure of the design matrices is given by \citet[chap. 9.4, p. 550]{fahrmeir2013regression} \par
 
-\subsection{Generalized Structured Additive Regression}
+\subsection{Generalized Structured Additive Regression Models}
 Structured Additive Regression (STAR) models extend simple Additive Models with special model terms briefly introduced in the previous sections. These effects include:
 \begin{itemize}
   \item Nonlinear effects of $z_1$
@@ -317,17 +318,45 @@ Structured Additive Regression (STAR) models extend simple Additive Models with 
 \end{itemize}
 All of the aforementioned model terms can be included in a STAR interchangeably, including simple linear predictors $\mathbf{x}' \boldsymbol{\beta}$ \citep[chap 9.5]{fahrmeir2013regression}. \par
 STAR models provide very flexible ways of modeling the influence of explanatory variables on a given response variable $y_i$. Note that while the components can be nonparametric, the direct modeling of $y_i$ assumes that the response variable follows a Gaussian distribution. However, when dealing with e.g. binary or categorical responses, this assumption is violated. Then, a type of model specification is needed that directly upholds the dependent variables' support \citep[chap. 2]{olsson2002}. To solve this challenge, STAR models are merged with Generalized Linear Models to Generalized STAR models.\par
-Generalized Linear Models (GLM), first coined by \citet{nelder1972}, introduce a framework where the response $y$ is related to a linear predictor $\textbf{x}'\boldsymbol{\beta}$ via a link function $\eta = g(E(y))$ to arrive at the following model specification:
-% y = ...
-% eta = xB
- % The main advantage is that now multiple different responses are supported
-% weiter GLM explainen, dann sagen wie : link function extends STAR models zu generalized Star models
+Generalized Linear Models (GLM), first coined by \citet{nelder1972}, introduce a framework where the expectation of response $y$ is related to a linear predictor $\eta = \textbf{x}'\boldsymbol{\beta}$ via a link function $\eta = g(E(y)) = g(\mu)$ or a response function $h = g^{-1}$ to arrive at the following model specification:
+\begin{equation}
+  \label{GLM}
+  \begin{split}
+    \mu_i & = h(\mathbf{x}_i' \boldsymbol{\beta}) \quad \text{or} \\
+    g(\mu_i) &  = \mathbf{x}_i' \boldsymbol{\beta}
+  \end{split}
+\end{equation}
+When modeling a binomially distributed response the probability parameter $\pi$, which has a support of $\pi \in [0, 1]$, is related to predictors $\textbf{x}' \boldsymbol{\beta}$. Using a logit link function, we obtain a Logistic Regression Model:
+\begin{equation*}
+  \begin{split}
+    \eta_i & = \mathbf{x}'_i \boldsymbol{\beta} \\
+    E(y_i) & = \pi_i = \frac{exp(\eta_i)}{1 + exp(\eta_i)}
+  \end{split}
+\end{equation*}
+Here, the response function ensures the correct support of $\pi$ \citep[chap. 5]{fahrmeir2013regression}. Using a link function, the expectation of $y$ can be the first moment of many different continuous or discrete distributions, which includes the Poisson, Binomial and Gamma distribution. However, all possible distributions need to be part of the exponential family \citep{gamlss2005}. \par
+Note in \eqref{GLM} that the effects of covariates $\textbf{x}_1, \ldots, \textbf{x}_K$ are modeled parametrically. Generalized Additive Models (GAM), as suggested by \citet{hastie1990generalized}, extend the class of Generalized Linear Models to allow for non-parametric effects. In particular, the linear predictor $\eta = \textbf{x}' \boldsymbol{\beta}$ is interchanged by smooth non-parametric functions $f_j(x_j)$. Given response variable $y$ and covariates $\mathbf{z}_1, \ldots, \mathbf{z}_K$, the following model specification is obtained:
+\begin{equation}
+  \label{GAM}
+  \begin{split}
+    \eta_i & = \sum\limits_{j = 1}^K f_j(x_{ij}) \\
+    \mu_i & = E(y_i) = h(\eta_i)
+  \end{split}
+\end{equation}
+Now, many different response distributions as well as flexible effects for explanatory variables are supported to create a highly flexible model framework. In \eqref{GAM}, only non-parametric effects are linked to $\eta_i$. However, given response $y$ and covariates $(\mathbf{x}_i, \mathbf{z}_i$), all specific effects of STAR models (spatial effects $f_{geo}(\cdot)$, interactions $f_{int}(\cdot)$, etc.) as well as parametric coefficients can be combined to form a Generalized Structured Additive Regression Model (Generalized STAR):
+\begin{equation}
+  \begin{split}
+    \eta_i & = f_1(z_{i1}) + \ldots + f_K(z_{iK}) + \beta_0 + \beta_1 x_{i1} + \ldots + \beta_Q x_{iQ} \\
+    \mu_i & = h(\eta_i)
+  \end{split}
+\end{equation}
+In semiparametric Generalized STAR models, $f_j(\cdot)$ can have any of the structural forms described in Chapter \ref{STAR}. Modeled response variables also have to follow an exponential family distribution \citep[chap. 9.5]{fahrmeir2013regression}.
 
 \subsection{Bayesian Additive Models for Location, Scale and Shape}
+Generalized STAR models provide a framework to flexibly estimate the expected value of a previously specified distributional parameter. However, in many cases not only the first moment, but also higher-order moments are of special interest. In modeling income, for example, not only the expected income but also the shape of the overall distribution is important. A common measure for income inequality is the Gini coefficient, which is calculated using all parameters of a distribution.
+% citations needed und vllt umschreiben dass es schöner klingt
+% One approach has been coined by gamlss2007. but does not have all effects of a STAR model. Then Umlauf came and made a STARLSS, called bamlss because of it's estimation with MCMC.
 
-% howevery only possible for exponential families
 
-\subsection{Estimation}
 % In this section we will discuss different estimation techniques for the models introduced in this chapter
 % AM: backfitting
 % STAR: pen least squares, mixed model rep, fully bayesian inference, boosting as suggested in fahrmeir2013regression, page 561
@@ -336,14 +365,12 @@ Generalized Linear Models (GLM), first coined by \citet{nelder1972}, introduce a
 % basis function approach important so we can show later that bamlss can model more than just Basis functions with Gompertz growth curve
 % sunday: replace the parametric effects everywhere such that it includes an intercept man!
 
-% note that while the components are nonparametric, the dependent variable is modeled directly, i.e. without transformation. if you have binary variable you need a transformation that includes the support of dependent variable. this is solved by GAM, which combines GLM models and additive models to obtain the folowing model specification
-
-% star models can have multiple different
-
 \section{bamlss.vis}
+% Hier muss auf jeden Fall ein Beispiel rein wo die parameter nicht gleich die momente sind um das zu zeigen
 
 \section{Conclusion}
-
+% Outlook: More distributions with gamlss.dist package?
+% User-specific parameter combinations?
 \clearpage
 
 \section*{Appendix}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{16}
+\begin{thebibliography}{17}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -53,7 +53,7 @@ Nadja Klein, Thomas Kneib, Stefan Lang, and Alexander Sohn.
 \newblock URL \url{https://doi.org/10.1214/15-AOAS823}.
 
 \bibitem[Laird and Ware(1982)]{laird1982random}
-Nan~M Laird and James~H Ware.
+Nan~M. Laird and James~H. Ware.
 \newblock Random-effects models for longitudinal data.
 \newblock \emph{Biometrics}, pages 963--974, 1982.
 
@@ -62,10 +62,11 @@ Georges Matheron.
 \newblock Principles of geostatistics.
 \newblock \emph{Economic geology}, 58\penalty0 (8):\penalty0 1246--1266, 1963.
 
-\bibitem[Nelder and Baker()]{nelder1972}
-John~Ashworth Nelder and R~Jacob Baker.
-\newblock \emph{Generalized linear models}.
-\newblock Wiley Online Library.
+\bibitem[Nelder and Wedderburn(1972)]{nelder1972}
+J.~A. Nelder and R.~W.~M. Wedderburn.
+\newblock Generalized linear models.
+\newblock \emph{Journal of the Royal Statistical Society. Series A (General)},
+  135\penalty0 (3):\penalty0 370--384, 1972.
 
 \bibitem[O'Connor(2016)]{iotblog}
 Chris O'Connor.
@@ -86,7 +87,13 @@ U.~Olsson.
 \newblock R Foundation for Statistical Computing, Vienna, Austria, 2017.
 \newblock URL \url{https://www.R-project.org/}.
 
-\bibitem[Rigby and Stasinopoulos(2001)]{rigby2001gamlss}
+\bibitem[Rigby and Stasinopoulos(2005)]{gamlss2005}
+R.~A. Rigby and D.~M. Stasinopoulos.
+\newblock Generalized additive models for location, scale and shape.
+\newblock \emph{Journal of the Royal Statistical Society: Series C (Applied
+  Statistics)}, 54\penalty0 (3):\penalty0 507--554, 2005.
+
+\bibitem[Rigby and Stasinopoulos(2001)]{gamlss2001}
 R.A. Rigby and D.M. Stasinopoulos.
 \newblock The gamlss project: a flexible approach to statistical modelling.
 \newblock In \emph{New trends in statistical modelling: Proceedings of the 16th
