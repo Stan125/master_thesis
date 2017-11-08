@@ -5,45 +5,45 @@ The style file: plainnat.bst
 Database file #1: bibliography.bib
 Warning--entry type for "depstat" isn't style-file defined
 --line 29 of file bibliography.bib
-You've used 17 entries,
+You've used 19 entries,
             2773 wiz_defined-function locations,
-            715 strings with 7989 characters,
-and the built_in function-call counts, 7348 in all, are:
-= -- 684
-> -- 372
-< -- 16
-+ -- 128
-- -- 111
-* -- 548
-:= -- 1135
-add.period$ -- 64
-call.type$ -- 17
-change.case$ -- 84
-chr.to.int$ -- 17
-cite$ -- 34
-duplicate$ -- 347
-empty$ -- 609
-format.name$ -- 140
-if$ -- 1553
+            732 strings with 8272 characters,
+and the built_in function-call counts, 8260 in all, are:
+= -- 772
+> -- 414
+< -- 18
++ -- 142
+- -- 123
+* -- 622
+:= -- 1271
+add.period$ -- 70
+call.type$ -- 19
+change.case$ -- 94
+chr.to.int$ -- 19
+cite$ -- 38
+duplicate$ -- 387
+empty$ -- 689
+format.name$ -- 158
+if$ -- 1745
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 14
-newline$ -- 104
-num.names$ -- 68
-pop$ -- 172
+missing$ -- 16
+newline$ -- 114
+num.names$ -- 76
+pop$ -- 188
 preamble$ -- 1
-purify$ -- 71
+purify$ -- 79
 quote$ -- 0
-skip$ -- 279
+skip$ -- 311
 stack$ -- 0
-substring$ -- 241
-swap$ -- 47
+substring$ -- 295
+swap$ -- 49
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 172
+type$ -- 194
 warning$ -- 0
-while$ -- 68
+while$ -- 78
 width$ -- 0
-write$ -- 246
+write$ -- 272
 (There was 1 warning)
