@@ -1,9 +1,15 @@
-\begin{thebibliography}{19}
+\begin{thebibliography}{23}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Brezger and Lang(2006)]{brezger2006}
+Andreas Brezger and Stefan Lang.
+\newblock Generalized structured additive regression based on bayesian
+  p-splines.
+\newblock 50:\penalty0 967--991, 02 2006.
 
 \bibitem[Buja et~al.(1989)Buja, Hastie, and Tibshirani]{buja1989linear}
 Andreas Buja, Trevor Hastie, and Robert Tibshirani.
@@ -29,6 +35,13 @@ L.~Fahrmeir, T.~Kneib, S.~Lang, and B.~Marx.
 \newblock ISBN 9783642343339.
 \newblock URL \url{https://books.google.de/books?id=EQxU9iJtipAC}.
 
+\bibitem[Fahrmeir et~al.(2003)Fahrmeir, Kneib, and Lang]{fahrmeir2003}
+Ludwig Fahrmeir, Thomas Kneib, and S.~Lang.
+\newblock Penalized additive regression for space-time data: a bayesian
+  perspective, 2003.
+\newblock URL
+  \url{http://nbn-resolving.de/urn/resolver.pl?urn=nbn:de:bvb:19-epub-1687-9}.
+
 \bibitem[Friedman and Stuetzle(1981)]{friedman1981projection}
 Jerome~H Friedman and Werner Stuetzle.
 \newblock Projection pursuit regression.
@@ -42,6 +55,12 @@ T.J. Hastie and R.J. Tibshirani.
   Taylor \& Francis, 1990.
 \newblock ISBN 9780412343902.
 \newblock URL \url{https://books.google.de/books?id=qa29r1Ze1coC}.
+
+\bibitem[Klein et~al.(2013)Klein, Kneib, and Lang]{klein2013}
+Nadja Klein, Thomas Kneib, and Stefan Lang.
+\newblock Bayesian structured additive distributional regression.
+\newblock Working Papers in Economics and Statistics 2013-23, Innsbruck, 2013.
+\newblock URL \url{http://hdl.handle.net/10419/101101}.
 
 \bibitem[Klein et~al.(2015)Klein, Kneib, Lang, and Sohn]{klein2015}
 Nadja Klein, Thomas Kneib, Stefan Lang, and Alexander Sohn.
@@ -109,6 +128,13 @@ R.A. Rigby and D.M. Stasinopoulos.
 \newblock In \emph{New trends in statistical modelling: Proceedings of the 16th
   international workshop on statistical modelling}, volume 337, page 345.
   University of Southern Denmark, June 2001.
+
+\bibitem[Stasinopoulos et~al.(2007)Stasinopoulos, Rigby, et~al.]{gamlss2007}
+D~Mikis Stasinopoulos, Robert~A Rigby, et~al.
+\newblock {Generalized additive models for location scale and shape (GAMLSS) in
+  R}.
+\newblock \emph{Journal of Statistical Software}, 23\penalty0 (7):\penalty0
+  1--46, 2007.
 
 \bibitem[{The Economist}(2015)]{econblog}
 {The Economist}.

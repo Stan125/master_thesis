@@ -7,6 +7,6 @@
 \contentsline {subsubsection}{\numberline {2.2.3}Random Effects}{7}{subsubsection.2.2.3}
 \contentsline {subsection}{\numberline {2.3}Generalized Structured Additive Regression Models}{8}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Bayesian Additive Models for Location, Scale and Shape}{10}{subsection.2.4}
-\contentsline {section}{\numberline {3}bamlss.vis}{10}{section.3}
-\contentsline {section}{\numberline {4}Conclusion}{10}{section.4}
-\contentsline {section}{Bibliography}{12}{section*.5}
+\contentsline {section}{\numberline {3}bamlss.vis}{11}{section.3}
+\contentsline {section}{\numberline {4}Conclusion}{11}{section.4}
+\contentsline {section}{Bibliography}{13}{section*.5}
