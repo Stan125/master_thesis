@@ -113,7 +113,7 @@
 %	HEADING SECTIONS
 %----------------------------------------------------------------------------------------
 
-\textsc{Georg-August Universität G\"ottingen}\\[1.5cm] % Name of your university/college
+\textsc{Georg-August Universität Göttingen}\\[1.5cm] % Name of your university/college
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
@@ -371,8 +371,25 @@ In \citeyear{klein2013}, \citeauthor{klein2013} introduced Bayesian Additive Dis
 An implementation of Bayesian Additive Distributional Regression, called Bayesian Additive Models for Location, Scale and Shape (bamlss) was since created by \citet{bamlss2017}. As the authors point out, the name bears resemblance to gamlss, because of many similarities in its modeling approach. However, extensions of bamlss over gamlss are manifold. First, parallel to the proposed framework of \citet{klein2013}, MCMC simulations are utilized for estimation of coefficients. This is done in contrast to gamlss, where predictor coefficient estimates are retrieved via penalised likelihood maximisation techniques. Advantages of using MCMC simulations over likelihood-based approaches include the sample-based inference, which yields more reliable confidence intervals than the intervals of gamlss estimates based on asymptotic properties. Second, bamlss offer more flexibility of specifying covariate effects with the support of structured additive predictors, like spatial effects or two-dimensional splines. Third, bamlss also support multivariate response distributions, which enhances gamlss' univariate response framework. Furthermore, the implementation of bamlss is designed in a way that allows for the usage of external estimation algorithms and software packages like JAGS or BayesX. \par
 The model specification of bamlss is similar to the gamlss class. The parameters $\theta_1, \ldots, \theta_L$ of a parametric distribution $\mathbf{y}$ with observations $y_1, \ldots, y_n$ are linked to structured additive predictors using monotonic and twice-differentiable link functions $g_l(\theta_l)$ (note that the paper uses $h_l(\theta_l)$). Based on covariates $\mathbf{x}_1, \ldots, \mathbf{x}_Q$, the following model equation can be obtained:
 \begin{equation}
-g_l(\theta_l) = f_{1l}(\mathbf{x}_{1l} ; \beta_{1l}) + \ldots + f_{Q_{l}l}(\mathbf{x}_{Q_{l}l} ; \beta_{Q_{l}l})
+g_l(\theta_l) = f_{1l}(\mathbf{x}_{1l} ; \boldsymbol{\beta}_{1l}) + \ldots + f_{Q_{l}l}(\mathbf{x}_{Q_{l}l} ; \boldsymbol{\beta}_{Q_{l}l})
 \end{equation}
+Here, $f_{j_{l}l}(\cdot)$ represent unspecified functions that can attain any structured additive predictor forms, including nonparametric effects. It is also possible to describe the effects in vector form:
+\begin{equation*}
+  \boldsymbol{f}_{jl} =
+  \begin{bmatrix}
+    f_{jl}(\mathbf{x}_1 ; \boldsymbol{\beta}_{jl}) & \\
+    \vdots & \\
+    f_{jl}(\mathbf{x}_n ; \boldsymbol{\beta}_{jl}) &
+  \end{bmatrix} =
+  f_{jl}(\mathbf{X}_{jl} ; \boldsymbol{\beta}_{jl})
+\end{equation*}
+with $\mathbf{X}_{jl}$ ($n \times m_{jl}$) specifying the design matrix for effect $f_{jl}(\cdot)$ so that they integrate themselves into the following model equation:
+\begin{equation}
+  blabla
+\end{equation}
+% Saturday: In Basis Function form an effect looks like this:
+% Saturday: But as already said bamlss has more effects. z.b. without basis structure
+
 
 % the visualisation framework introduced in this thesis will be based on bamlss
 
