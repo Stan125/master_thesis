@@ -197,8 +197,8 @@ Additionally, the user can obtain the code which created the graphs to potential
 \section{Motivating Bayesian Additive Models for Location, Scale and Shape}
 \label{bamlss}
 Bayesian Additive Models for Location, Scale and Shape (bamlss) are a form of Bayesian regression models in which every parameter of a parametric distribution with $K$ parameters is related to a set of additive predictors. The distribution does not have to follow the exponential family, which extends the distributions available for modeling beyond the ones used in Generalized Linear Models (GLM). In similar fashion to Generalized Additive Models~\citep[GAM,][]{hastie1990generalized}, the additive predictors can assume different shapes, including non-linear, fixed, random and spatial effects~\citep{bamlss2017}. \par
-In the ability to additively model multiple parameters of one distribution, bamlss bear many similarities with Generalized Additive Models for location, scale and shape~\citep[GAMLSS,][]{gamlss2001}. Disparities lie in the estimation of model parameters, where bamlss utilize Markov Chain Monte Carlo (MCMC) simulations which provide credible intervals in situations where asymptotic maximum likelihood confidence intervals often fail, as well as bamlss' ability to model multivariate parametric distributions~\citep{bamlss2017}. \par
-This chapter will describe the gradual expansion from Additive Models to bamlss. \par
+%In the ability to additively model multiple parameters of one distribution, bamlss bear many similarities with Generalized Additive Models for location, scale and shape~\citep[GAMLSS,][]{gamlss2001}. Disparities lie in the estimation of model parameters, where bamlss utilize Markov Chain Monte Carlo (MCMC) simulations which provide credible intervals in situations where asymptotic maximum likelihood confidence intervals often fail, as well as bamlss' ability to model multivariate parametric distributions~\citep{bamlss2017}. \par
+To give a sufficient depiction of this model class, this section will start with explaining Additive Models and then gradually generalize the broader frameworks to finally arrive at bamlss. Furthermore, a brief overview of the different estimation techniques for the covered model frameworks will be given.\par
 
 \subsection{Additive Models}
 \label{AM}
@@ -354,7 +354,7 @@ In semiparametric Generalized STAR models, $f_j(\cdot)$ can have any of the stru
 \subsection{Structured Additive Distributional Regression}
 Generalized STAR models provide a framework to flexibly estimate the expected value of a previously specified distributional parameter. However, in many cases not only the first moment, but also higher-order moments are of special interest. In modeling income, for example, not only the expected income but also the shape of the overall distribution is important. A common measure for income inequality is the Gini coefficient, which can be calculated using the cumulative distribution function \citep{lerman1984note}. \par
 
-\subsection{GAMLSS}
+\subsubsection{GAMLSS}
 First modeling approaches which go beyond the mean of a distribution were suggested by \citet{nelder1987} using parametric functions of explanatory covariates related to the dispersion parameter $\phi$ of en exponential family distribution. Building upon this approach, Generalized Additive Models for Location, Scale and Shape (gamlss) were introduced by \citet{gamlss2001}. Gamlss combine the flexibility of being able to model multiple distributions with parametric or nonparametric explanatory effects and extend them for multiple response distribution parameters such that not only the location, but also the scale and shape of a distribution can be modeled simultaneously. Furthermore, gamlss relax the assumption of $y$ following an exponential family distribution, which significantly increases the number of response modeling possibilities. \par
 Assuming a dependent variable from a distribution with parameters $\theta_1, \ldots, \theta_{L}$ and observations $y_1, \ldots, y_n$, given covariates $\mathbf{z}_1, \ldots, \mathbf{z}_K$ and $\mathbf{x}_1, \ldots, \mathbf{x}_Q$, a gamlss can be described with the following model specification:
 \begin{equation}
@@ -383,26 +383,49 @@ Here, $f_{j_{l}l}(\cdot)$ represent unspecified functions that can attain any st
   \end{bmatrix} =
   f_{jl}(\mathbf{X}_{jl} ; \boldsymbol{\beta}_{jl})
 \end{equation*}
-with $\mathbf{X}_{jl}$ ($n \times m_{jl}$) specifying the design matrix for effect $f_{jl}(\cdot)$ so that they integrate themselves into the following model equation:
+with $\mathbf{X}_{jl}$ ($n \times m_{jl}$) specifying the design matrix for effect $f_{jl}(\cdot)$ so that they integrate themselves into the following model equation
 \begin{equation}
-  blabla
+  g_{l}(\boldsymbol{\theta}_{l}) = \boldsymbol{\eta}_l = \boldsymbol{f}_{1k} + \ldots + \boldsymbol{f}_{J_{l}l}
 \end{equation}
-% Saturday: In Basis Function form an effect looks like this:
-% Saturday: But as already said bamlss has more effects. z.b. without basis structure
-
-
-% the visualisation framework introduced in this thesis will be based on bamlss
-
+where $\boldsymbol{f}_{jl}$ represents the $j$th effect of $\mathbf{x}_{jl}$ (subvector of $\mathbf{x}$) on parameter $\theta_l$. Similar to Chapters \ref{AM} and \ref{STAR}, effects in bamlss can also be derived through a basis function approach, such that it can be written as $\boldsymbol{f}_{jl} = \mathbf{X}_{jl} \boldsymbol{\beta}_{jl}$. The structure of the design matrix depends on the types of covariates and prior assumptions about $f_{jl}(\cdot)$ \citep{bamlss2017}.
+As mentioned earlier in this chapter, bamlss offer very flexible ways of specifying covariate effects. Breaking through the framework of basis function approaches, bamlss also allow covariate functions $f_{jl}(\cdot)$ which are nonlinear in its parameters $\boldsymbol{\beta}_{jl}$. An example of this is the Gompertz growth curve
+\begin{equation*}
+  \boldsymbol{f}_{jl} = \beta_1 \cdot \text{exp}(-\text{exp}(\beta_2 + \mathbf{X}_{jl} \beta_3))
+\end{equation*}
+with nonlinear parameters $\boldsymbol{\beta}_{jl}$\citep{bamlss2017}.
+% Sunday5Nov: replace the parametric effects everywhere such that it includes an intercept man!
+\subsection{Estimation}
+\label{estimation}
 % In this section we will discuss different estimation techniques for the models introduced in this chapter
 % AM: backfitting
 % STAR: pen least squares, mixed model rep, fully bayesian inference, boosting as suggested in fahrmeir2013regression, page 561
 
-% Other stuff
-% basis function approach important so we can show later that bamlss can model more than just Basis functions with Gompertz growth curve
-% sunday: replace the parametric effects everywhere such that it includes an intercept man!
-
 \section{bamlss.vis}
 \label{bamlss.vis}
+The previous Sections \ref{AM} to \ref{estimation} gave a description of Bayesian Additive Models for Location, Scale and Shape (bamlss) and the underlying sub-models on which they are based. This section will introduce a framework to interactively visualize covariate effects and distributional predictions of fitted bamlss models and feature its implementation as an R package. Because of the visual component, the tool will be called \textbf{bamlss.vis}. A small case-study based on wages of male workers in the Mid-Atlantic region will be presented to feature most of bamlss.vis' abilities. \par
+
+\subsection{Motivation}
+As discussed in previous sections, distributional regression is concerned with modeling the parameters of a known parametric distribution. After estimation of the model, the user obtains coefficients which measure the influence of an explanatory variable on $\eta_l$, which represents the transformed parameter $\theta_l$. However, in most cases the user is not interested in specific distributional parameters but more in the moments, which often do not directly equate the parameters but are rather a combination of them. \par
+This problem can be well illustrated using the censored normal distribution. Assume a normally distributed variable, $y \sim N(\mu, \sigma^2)$. Then, the probability density function of a left-censored normal distribution $y^*$ with cut-off point $a = 0$ can be obtained by
+\begin{equation*}
+  f(y^* = x) =
+  \begin{cases}
+    f(y = x) & x > 0 \\
+    F(y = \frac{-\mu}{\sigma}) & x \leq 0
+  \end{cases}
+\end{equation*}
+where $f(y)$ and $F(y)$ are the probability density functions and the cumulative distribution function of normally distributed variable $y$, respectively. It is visible in the above equation that the censored normal distribution is both discrete and continuous. While $y^*$ shares the density with $y$ above the cut-off point, the full remaining density in the censored normal distribution $y^*$ created from $y \sim N(0, 1)$ with cut-off point $a = 0$ is assigned to the cut-off point. Figure \ref{cnorm} shows a sample left-censored normal distribution.  \citep{greene2012}.
+
+\begin{figure}
+  \begin{centering}
+    \includegraphics[scale = 0.5]{images/06_cnorm_plot.pdf}
+  \caption{Probability Density Function of a left-censored normal distribution.}
+  \label{cnorm}
+  \end{centering}
+\end{figure}
+\subsection{Case-Study}
+\subsection{Structure of App}
+% because so many different model flexibilities we will base the add-in on bamlss
 % Hier muss auf jeden Fall ein Beispiel rein wo die parameter nicht gleich die momente sind um das zu zeigen
 
 \section{Conclusion}

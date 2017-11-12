@@ -1,14 +1,18 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}
 \contentsline {section}{\numberline {2}Motivating Bayesian Additive Models for Location, Scale and Shape}{2}{section.2}
-\contentsline {subsection}{\numberline {2.1}Additive Models}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.1}Additive Models}{2}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Structured Additive Regression Models}{4}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Spatial Effects}{4}{subsubsection.2.2.1}
 \contentsline {subsubsection}{\numberline {2.2.2}Interaction Terms}{5}{subsubsection.2.2.2}
 \contentsline {subsubsection}{\numberline {2.2.3}Random Effects}{7}{subsubsection.2.2.3}
-\contentsline {subsection}{\numberline {2.3}Generalized Structured Additive Regression Models}{8}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Structured Additive Distributional Regression}{10}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}GAMLSS}{10}{subsection.2.5}
-\contentsline {subsubsection}{\numberline {2.5.1}BAMLSS}{11}{subsubsection.2.5.1}
-\contentsline {section}{\numberline {3}bamlss.vis}{12}{section.3}
-\contentsline {section}{\numberline {4}Conclusion}{12}{section.4}
-\contentsline {section}{Bibliography}{14}{section*.5}
+\contentsline {subsection}{\numberline {2.3}Generalized Structured Additive Regression Models}{7}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Structured Additive Distributional Regression}{9}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}GAMLSS}{10}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}BAMLSS}{11}{subsubsection.2.4.2}
+\contentsline {subsection}{\numberline {2.5}Estimation}{13}{subsection.2.5}
+\contentsline {section}{\numberline {3}bamlss.vis}{13}{section.3}
+\contentsline {subsection}{\numberline {3.1}Motivation}{13}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Case-Study}{14}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Structure of App}{14}{subsection.3.3}
+\contentsline {section}{\numberline {4}Conclusion}{14}{section.4}
+\contentsline {section}{Bibliography}{16}{section*.6}

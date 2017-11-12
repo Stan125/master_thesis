@@ -1,4 +1,4 @@
-\begin{thebibliography}{23}
+\begin{thebibliography}{24}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -47,6 +47,13 @@ Jerome~H Friedman and Werner Stuetzle.
 \newblock Projection pursuit regression.
 \newblock \emph{Journal of the American statistical Association}, 76\penalty0
   (376):\penalty0 817--823, 1981.
+
+\bibitem[Greene(2012)]{greene2012}
+W.H. Greene.
+\newblock \emph{Econometric Analysis}.
+\newblock Pearson International Edition. Pearson Education, Limited, 2012.
+\newblock ISBN 9780273753568.
+\newblock URL \url{https://books.google.de/books?id=-WFPYgEACAAJ}.
 
 \bibitem[Hastie and Tibshirani(1990)]{hastie1990generalized}
 T.J. Hastie and R.J. Tibshirani.
