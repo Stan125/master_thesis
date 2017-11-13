@@ -1,5 +1,6 @@
 % !TEX TS-program = pdflatex
 % !TEX encoding = UTF-8 Unicode
+%!TeX spellcheck = en-US,en-DE
 
 \documentclass[12pt, usenames]{article} % use larger type; default would be 10pt
 
@@ -26,7 +27,7 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{color}
 \usepackage{float}
-\usepackage{caption}
+\usepackage[justification=centering]{caption}
 \usepackage{subcaption}
 \usepackage{booktabs}
 \usepackage{setspace}
@@ -70,6 +71,8 @@
 %%% BibTex Style
 \setcitestyle{authoryear, open = { ( }, close = { ) }}
 
+% Equation numbering
+\numberwithin{equation}{section}
 
 \renewcommand{\lstlistingname}{Code-Chunk}
 
@@ -352,7 +355,7 @@ Now, many different response distributions as well as flexible effects for expla
 In semiparametric Generalized STAR models, $f_j(\cdot)$ can have any of the structural forms described in Chapter \ref{STAR}. Modeled response variables also have to follow an exponential family distribution \citep[chap. 9.5]{fahrmeir2013regression}.
 
 \subsection{Structured Additive Distributional Regression}
-Generalized STAR models provide a framework to flexibly estimate the expected value of a previously specified distributional parameter. However, in many cases not only the first moment, but also higher-order moments are of special interest. In modeling income, for example, not only the expected income but also the shape of the overall distribution is important. A common measure for income inequality is the Gini coefficient, which can be calculated using the cumulative distribution function \citep{lerman1984note}. \par
+Generalized STAR models provide a framework to flexibly estimate the expected value of a previously specified distributional parameter. However, in many cases not only the first moment, but also higher-order moments are of special interest. In modeling income, for example, not only the expected income but also the shape of the overall distribution is important. A common measure for income inequality is the Gini coefficient, which can be calculated using the cumulative distribution function (cdf) \citep{lerman1984note}. \par
 
 \subsubsection{GAMLSS}
 First modeling approaches which go beyond the mean of a distribution were suggested by \citet{nelder1987} using parametric functions of explanatory covariates related to the dispersion parameter $\phi$ of en exponential family distribution. Building upon this approach, Generalized Additive Models for Location, Scale and Shape (gamlss) were introduced by \citet{gamlss2001}. Gamlss combine the flexibility of being able to model multiple distributions with parametric or nonparametric explanatory effects and extend them for multiple response distribution parameters such that not only the location, but also the scale and shape of a distribution can be modeled simultaneously. Furthermore, gamlss relax the assumption of $y$ following an exponential family distribution, which significantly increases the number of response modeling possibilities. \par
@@ -406,7 +409,7 @@ The previous Sections \ref{AM} to \ref{estimation} gave a description of Bayesia
 
 \subsection{Motivation}
 As discussed in previous sections, distributional regression is concerned with modeling the parameters of a known parametric distribution. After estimation of the model, the user obtains coefficients which measure the influence of an explanatory variable on $\eta_l$, which represents the transformed parameter $\theta_l$. However, in most cases the user is not interested in specific distributional parameters but more in the moments, which often do not directly equate the parameters but are rather a combination of them. \par
-This problem can be well illustrated using the censored normal distribution. Assume a normally distributed variable, $y \sim N(\mu, \sigma^2)$. Then, the probability density function of a left-censored normal distribution $y^*$ with cut-off point $a = 0$ can be obtained by
+This problem can be well illustrated using the censored normal distribution. Assume a normally distributed variable, $y \sim N(\mu, \sigma^2)$. Then, the probability density function (pdf) of a left-censored normal distribution $y^*$ with cut-off point $a = 0$ can be obtained by
 \begin{equation*}
   f(y^* = x) =
   \begin{cases}
@@ -414,23 +417,46 @@ This problem can be well illustrated using the censored normal distribution. Ass
     F(y = \frac{-\mu}{\sigma}) & x \leq 0
   \end{cases}
 \end{equation*}
-where $f(y)$ and $F(y)$ are the probability density functions and the cumulative distribution function of normally distributed variable $y$, respectively. It is visible in the above equation that the censored normal distribution is both discrete and continuous. While $y^*$ shares the density with $y$ above the cut-off point, the full remaining density in the censored normal distribution $y^*$ created from $y \sim N(0, 1)$ with cut-off point $a = 0$ is assigned to the cut-off point. Figure \ref{cnorm} shows a sample left-censored normal distribution.  \citep{greene2012}.
-
+where $f(y)$ and $F(y)$ are the probability density functions (pdf) and the cumulative distribution function cdf() of normally distributed variable $y$, respectively. It is visible in the above equation that the censored normal distribution is both discrete and continuous. While $y^*$ shares the density with $y$ above the cut-off point, the full remaining density in the censored normal distribution is assigned to the cut-off point $a$. Figure \ref{cnorm_plot} shows a sample left-censored normal distribution $y^*$ created from $y \sim N(0, 1)$ with $a = 0$ \citep{greene2012}. \par
 \begin{figure}
   \begin{centering}
-    \includegraphics[scale = 0.5]{images/06_cnorm_plot.pdf}
-  \caption{Probability Density Function of a left-censored normal distribution.}
-  \label{cnorm}
+    \includegraphics{images/06_cnorm_plot.pdf}
+  \caption{Probability Density Function of a left-censored normal distribution with the expected value drawn as a blue line.}
+  \label{cnorm_plot}
   \end{centering}
 \end{figure}
+As visible in Figure \ref{cnorm_plot}, the moments of the standard normal distribution do not carry over to the censored normal distribution. In fact, while $E(y) = 0$, the expected value of $y^*$ is $E(y^*) \approx 0.399$. To be exact, the censored normal distributions first two moments with cut-off $a = 0$ can be calculated as follows:
+\begin{equation}
+  \label{cnorm_moments}
+  \begin{split}
+    E(y^*) & =  (1 - \alpha) \cdot (\mu + \sigma\beta) \quad \text{and}\\
+    Var(y^*) & = \sigma^2 (1 - \alpha) \cdot [(1 - \gamma) + (\frac{-\mu}{\sigma} - \beta)^2 \cdot \alpha] \quad \\[0.5cm]
+    \text{while:} \quad \alpha & = \Phi(\frac{-\mu}{\sigma}) \\
+    \beta & = \frac{\phi(\frac{\mu}{\sigma})}{1 - \alpha} \\
+    \gamma &= \beta^2 - \beta \cdot (\frac{-\mu}{\sigma})
+  \end{split}
+\end{equation}
+where $\phi(\cdot)$ and $\Phi(\cdot)$ are the probability density function (pdf) and cumulative distribution function (cdf) of the standard normal distribution and $\mu$ and $\sigma^2$ are the parameters of $y$, respectively \citep{greene2012}. Equation \eqref{cnorm_moments} shows that both the expected value and the variance of $y^*$ are computed by a combination of the parameters of the original variable $y$, $\mu$ and $\sigma^2$, and are not equal. Thus, an explanatory variable that has a positive effect on $\mu$ has both an impact on $E(y^*)$ and $Var(y^*)$. Therefore, coefficients for measuring covariate influences on those parameters are not directly translateable to the moments of the modeled distribution and might even have critically different estimates. \par
+Furthermore, even in cases where the desired moments directly equate the modeled parameters (e.g. in gaussian or poisson-distributed responses), different link functions for their transformation $g_l(\theta_l)$ and possibly highly complex nonparametric effects of explanatory variables can lead to coefficient estimates that are hard to interpret. In this case, a visual comparison of predicted distributions would be helpful. \par
+To tackle both of the aforementioned interpreting problems with fitted bamlss models, this thesis will introduce a framework with two main objectives:
+\begin{itemize}
+  \item Visually compare the predicted distributions (pdf or cdf) based on interactively selected covariates
+  \item View the changes of distribution moments over the whole range of a selected variable, based on chosen explanatory covariates.
+\end{itemize}
+Using \textbf{bamlss.vis}, one can then observe the influence of a covariate on the distribution by 1. its cdf or pdf and 2. its moments. \par
+
 \subsection{Case-Study}
+While testing of \textbf{bamlss.vis}' main functions relies on artifical data for each supported distribution in order to prove correct behaviour, presenting the apps' abilities is best done with a dataset of real observations. The objective for a suitable dataset was that its response variable and explanatory variables are easy to understand for people without a specific scientific background. The chosen dataset, \enquote{Wage} from the ISLR R package \citep{ISLR} perfectly encompasses these requirements. %blabla it is from blabla and has following variables
+
 \subsection{Structure of App}
+
 % because so many different model flexibilities we will base the add-in on bamlss
 % Hier muss auf jeden Fall ein Beispiel rein wo die parameter nicht gleich die momente sind um das zu zeigen
 
 \section{Conclusion}
 % Outlook: More distributions with gamlss.dist package?
 % User-specific parameter combinations?
+
 \clearpage
 
 \section*{Appendix}
