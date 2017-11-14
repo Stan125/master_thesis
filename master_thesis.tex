@@ -16,6 +16,7 @@
 \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
 
 %%% PACKAGES
+\usepackage[dvipsnames]{xcolor}
 \usepackage{graphicx} % support the \includegraphics command and options
 \usepackage{booktabs} % for much better looking tables
 \usepackage{array} % for better arrays (eg matrices) in maths
@@ -42,7 +43,7 @@
 \lstdefinelanguage{Renhanced}[]{R}{
   otherkeywords={!,!=,~,\$,*,\&,\%/\%,\%*\%,\%\%,<-,<<-, ::},
   morekeywords={},
-  deletekeywords={hist, runif, plot, read.table, read, check, text, file, attributes, quote, missing, c, list, any, which, na, deparse, structure, install},
+  deletekeywords={hist, runif, plot, read.table, read, check, text, file, attributes, quote, missing, c, list, any, which, na, deparse, structure, install, model, data, sub, family},
   alsoletter={.\%},%
   alsoother={:_\$}}
 
@@ -73,6 +74,9 @@
 
 % Equation numbering
 \numberwithin{equation}{section}
+
+% French spacing
+\frenchspacing
 
 \renewcommand{\lstlistingname}{Code-Chunk}
 
@@ -446,9 +450,43 @@ To tackle both of the aforementioned interpreting problems with fitted bamlss mo
 Using \textbf{bamlss.vis}, one can then observe the influence of a covariate on the distribution by 1. its cdf or pdf and 2. its moments. \par
 
 \subsection{Case-Study}
-While testing of \textbf{bamlss.vis}' main functions relies on artifical data for each supported distribution in order to prove correct behaviour, presenting the apps' abilities is best done with a dataset of real observations. The objective for a suitable dataset was that its response variable and explanatory variables are easy to understand for people without a specific scientific background. The chosen dataset, \enquote{Wage} from the ISLR R package \citep{ISLR} perfectly encompasses these requirements. %blabla it is from blabla and has following variables
-
-\subsection{Structure of App}
+While automatic testing of \textbf{bamlss.vis}' main functions relies on artifical data for each supported distribution in order to prove correct behaviour, presenting the apps' abilities is best done with a dataset of real observations. This chapter will focus on fitting a bamlss based on \enquote{real} data for further use in \textbf{bamlss.vis}. The objective for a suitable dataset was that its response variable and explanatory variables are easy to understand for people without a specific scientific background. The chosen dataset, \enquote{Wage} from the ISLR R package \citep{ISLR}, perfectly encompasses these requirements. \enquote{Wage}, collected by the \citet{uscensus}, includes 3000 male individuals with records of the following variables:
+\begin{itemize}
+  \item \textbf{wage}: Workers raw wage (in 1000 \$)
+  \item \textbf{age}: Age of worker
+  \item \textbf{year}: Year that wage information was recorded
+  \item \textbf{race}: A factor with levels \texttt{1. White, 2. Black, 3. Asian} and \texttt{4. Other}
+  \item \textbf{education}: A factor with levels \texttt{1. < HS Grad, 2. HS Grad, 3. Some College, 4. College Grad} and \texttt{5. Advanced Degree}
+  \item \textbf{health}: A factor with levels \texttt{1. <= Good} and \texttt{2. >= Very Good} indicating health level of worker
+\end{itemize}
+Naturally, the variable of interest and response variable will be the male workers wage. While doing first analyses, it is clear that the wage is highly dependent on the given variables. Figure \ref{wage_density} shows kernel density estimates (Gaussian) for the wage distribution depending on education level. \par
+\begin{figure}
+  \begin{centering}
+    \includegraphics[scale = 0.8]{images/10_wage_plot.pdf}
+  \caption{Gaussian kernel density estimates for wages split up by education level}
+  \label{wage_density}
+\end{centering}
+\end{figure}
+As visible in Figure \ref{wage_density}, the kernel density estimates are critically different for each education level. In general, we can observe the trend that a higher education level leads to a higher expected income, but also to an increased variance. Therefore, both location and shape will be modeled when fitting the bamlss. Because income cannot be smaller than zero but does otherwise not have upper limits, the censored normal distribution with cut-off $a = 0$ will be chosen as the response family. After some data preparation, model estimation can then be achieved with the bamlss R package \citep{bamlss2017}:
+\begin{lstlisting}[caption = R code for fitting the bamlss based on Wage dataset, label = bamlss_fitting]
+model <- bamlss(
+  list(wage ~ s(age) + race + year + education + health,
+       sigma ~ s(age) + race + year + education + health),
+  data = wage_sub,
+  family = cnorm_bamlss()
+)
+\end{lstlisting}
+As visible in Code-Chunk \ref{bamlss_fitting}, both $\mu$ and $\sigma$ are modeled such that they relate to explanatory variables additively. Both parameters are connected to parametric effects \texttt{race}, \texttt{year}, \texttt{education} and \texttt{health}. The influence of \texttt{age} is specified with a thin-plate smooth spline.
+% THis chapter does not guarantee that the chosen model is the best one for the data, but is just for visualisation purposes
+\subsection{Application Structure \& Guide}
+As previously mentioned, \textbf{bamlss.vis} is implemented in the form of an R extension. For building and maintaining the package, GitHub is used. This allows users to easily install the package with the following R commands:
+\begin{lstlisting}
+if (!require(devtools))
+  install.packages("devtools")
+devtools::install_github("Stan125/bamlss.vis")
+\end{lstlisting}
+Furthermore, \textbf{bamlss.vis} is strongly based on the Shiny framework \citep{shiny}, which is an R package designed to create interactive visualisations with HTML code and R functions. In the words of the author, Shiny combines \enquote{the computational power of R with the interactivity of the modern web} CITATION HERE. \par
+In its core, a Shiny application is built using R functions and can therefore be called similarly. In the case of \textbf{bamlss.vis}, one can start the application with \li{bamlss.vis::vis()}. % Then the following window opens: the current working environment is searched for bamlss models and then displayed.
 
 % because so many different model flexibilities we will base the add-in on bamlss
 % Hier muss auf jeden Fall ein Beispiel rein wo die parameter nicht gleich die momente sind um das zu zeigen

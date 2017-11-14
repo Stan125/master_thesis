@@ -7,45 +7,45 @@ Warning--entry type for "depstat" isn't style-file defined
 --line 29 of file bibliography.bib
 Warning--empty journal in brezger2006
 Warning--empty institution in klein2013
-You've used 25 entries,
+You've used 26 entries,
             2773 wiz_defined-function locations,
-            776 strings with 9415 characters,
-and the built_in function-call counts, 10785 in all, are:
-= -- 997
-> -- 573
-< -- 21
-+ -- 196
-- -- 171
-* -- 835
-:= -- 1677
-add.period$ -- 93
-call.type$ -- 25
-change.case$ -- 125
-chr.to.int$ -- 25
-cite$ -- 52
-duplicate$ -- 499
-empty$ -- 881
-format.name$ -- 214
-if$ -- 2262
+            781 strings with 9537 characters,
+and the built_in function-call counts, 11081 in all, are:
+= -- 1023
+> -- 583
+< -- 22
++ -- 200
+- -- 174
+* -- 850
+:= -- 1722
+add.period$ -- 96
+call.type$ -- 26
+change.case$ -- 129
+chr.to.int$ -- 26
+cite$ -- 54
+duplicate$ -- 514
+empty$ -- 913
+format.name$ -- 218
+if$ -- 2326
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 20
-newline$ -- 148
-num.names$ -- 100
-pop$ -- 248
+newline$ -- 153
+num.names$ -- 104
+pop$ -- 260
 preamble$ -- 1
-purify$ -- 106
+purify$ -- 109
 quote$ -- 0
-skip$ -- 398
+skip$ -- 410
 stack$ -- 0
-substring$ -- 344
-swap$ -- 56
+substring$ -- 346
+swap$ -- 58
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 255
+type$ -- 266
 warning$ -- 2
-while$ -- 99
+while$ -- 102
 width$ -- 0
-write$ -- 355
+write$ -- 367
 (There were 3 warnings)
