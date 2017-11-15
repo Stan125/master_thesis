@@ -5,47 +5,49 @@ The style file: plainnat.bst
 Database file #1: bibliography.bib
 Warning--entry type for "depstat" isn't style-file defined
 --line 29 of file bibliography.bib
+Warning--entry type for "shiny_online" isn't style-file defined
+--line 260 of file bibliography.bib
 Warning--empty journal in brezger2006
 Warning--empty institution in klein2013
-You've used 26 entries,
+You've used 27 entries,
             2773 wiz_defined-function locations,
-            781 strings with 9537 characters,
-and the built_in function-call counts, 11081 in all, are:
-= -- 1023
-> -- 583
-< -- 22
-+ -- 200
-- -- 174
-* -- 850
-:= -- 1722
-add.period$ -- 96
-call.type$ -- 26
-change.case$ -- 129
-chr.to.int$ -- 26
-cite$ -- 54
-duplicate$ -- 514
-empty$ -- 913
-format.name$ -- 218
-if$ -- 2326
+            785 strings with 9594 characters,
+and the built_in function-call counts, 11378 in all, are:
+= -- 1049
+> -- 593
+< -- 23
++ -- 204
+- -- 177
+* -- 865
+:= -- 1767
+add.period$ -- 99
+call.type$ -- 27
+change.case$ -- 133
+chr.to.int$ -- 27
+cite$ -- 56
+duplicate$ -- 529
+empty$ -- 945
+format.name$ -- 222
+if$ -- 2390
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 20
-newline$ -- 153
-num.names$ -- 104
-pop$ -- 260
+newline$ -- 158
+num.names$ -- 108
+pop$ -- 272
 preamble$ -- 1
-purify$ -- 109
+purify$ -- 112
 quote$ -- 0
-skip$ -- 410
+skip$ -- 424
 stack$ -- 0
-substring$ -- 346
-swap$ -- 58
+substring$ -- 348
+swap$ -- 59
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 266
+type$ -- 277
 warning$ -- 2
-while$ -- 102
+while$ -- 105
 width$ -- 0
-write$ -- 367
-(There were 3 warnings)
+write$ -- 379
+(There were 4 warnings)

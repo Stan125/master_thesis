@@ -357,6 +357,15 @@ INPUT ./images/10_wage_plot.pdf
 INPUT ./images/10_wage_plot.pdf
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT images/030_addinpic.png
+INPUT ./images/030_addinpic.png
+INPUT ./images/030_addinpic.png
+INPUT images/031_app_start.png
+INPUT ./images/031_app_start.png
+INPUT ./images/031_app_start.png
+INPUT images/032_overview_tab.png
+INPUT ./images/032_overview_tab.png
+INPUT ./images/032_overview_tab.png
 INPUT master_thesis.bbl
 INPUT master_thesis.bbl
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmti12.tfm

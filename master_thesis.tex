@@ -193,7 +193,7 @@ Since the commercialization of the personal computer and the smartphone about tw
 The exponential increase in available datapoints, paired with dramatic improvements in computing power, gave rise to numerous advancements in statistical sciences. Many computation-heavy models were able to be applied on a broader basis and new methods, such as Neural Nets or Generalized Additive Models could finally be realistically used~\citep{econblog}. With the increase in number of new methods and improvements in data availability, the recent past also saw a significant rise in employed statisticians. In the United States alone, the number of jobs classified as statisticians has increased by more than 120\% in the years from 1997 to 2016~\citep{depstat}. \par
 One of the new fields that has emerged is distributional regression, where not only the mean, but each parameter of a response distribution can be modeled using a set of predictors~\citep{klein2015}. Notable frameworks called Generalized Additive Models for Location, Scale and Shape (gamlss) and Bayesian Additive Models for Location, Scale and Shape (bamlss) were invented by~\citet{gamlss2001} in the form of a frequentist perspective and~\citet{bamlss2017} with a Bayesian approach, respectively. \par
 Because methods have become increasingly more complex and capable over the years, it is important to make them accessible and understandable to the growing number of statistical users. In the case of distributional regression models, the interpretation of covariate effects on response moments and the expected conditional response distribution is harder than with traditional methods such as Ordinary Least Squares or Generalized Linear Models, since the moments of a distribution do not directly equate the modeled parameters, but are rather a combination of them with a varying degree of complexity. \par
-This thesis will introduce a framework for the visualisation of distributional regression models fitted using the \textbf{bamlss} R package~\citep{bamlss2017} as well as display an implementation as an R extension titled \textbf{bamlss.vis}. The goal of this framework is the ability to:
+This thesis will introduce a framework for the visualisation of distributional regression models fitted using the \textbf{bamlss} R package~\citep{bamlss2017} as well as display an implementation as an R extension titled bamlss.vis. The goal of this framework is the ability to:
 \begin{itemize}
   \item See and compare the expected distribution for chosen sets of covariates and
   \item View the direct relationship between moments of the response distribution and a chosen explanatory variable, given a set of covariates.
@@ -409,7 +409,7 @@ with nonlinear parameters $\boldsymbol{\beta}_{jl}$\citep{bamlss2017}.
 
 \section{bamlss.vis}
 \label{bamlss.vis}
-The previous Sections \ref{AM} to \ref{estimation} gave a description of Bayesian Additive Models for Location, Scale and Shape (bamlss) and the underlying sub-models on which they are based. This section will introduce a framework to interactively visualize covariate effects and distributional predictions of fitted bamlss models and feature its implementation as an R package. Because of the visual component, the tool will be called \textbf{bamlss.vis}. A small case-study based on wages of male workers in the Mid-Atlantic region will be presented to feature most of bamlss.vis' abilities. \par
+The previous Sections \ref{AM} to \ref{estimation} gave a description of Bayesian Additive Models for Location, Scale and Shape (bamlss) and the underlying sub-models on which they are based. This section will introduce a framework to interactively visualize covariate effects and distributional predictions of fitted bamlss models and feature its implementation as an R package. Because of the visual component, the tool will be called bamlss.vis. A small case-study based on wages of male workers in the Mid-Atlantic region will be presented to feature most of bamlss.vis' abilities. \par
 
 \subsection{Motivation}
 As discussed in previous sections, distributional regression is concerned with modeling the parameters of a known parametric distribution. After estimation of the model, the user obtains coefficients which measure the influence of an explanatory variable on $\eta_l$, which represents the transformed parameter $\theta_l$. However, in most cases the user is not interested in specific distributional parameters but more in the moments, which often do not directly equate the parameters but are rather a combination of them. \par
@@ -447,10 +447,11 @@ To tackle both of the aforementioned interpreting problems with fitted bamlss mo
   \item Visually compare the predicted distributions (pdf or cdf) based on interactively selected covariates
   \item View the changes of distribution moments over the whole range of a selected variable, based on chosen explanatory covariates.
 \end{itemize}
-Using \textbf{bamlss.vis}, one can then observe the influence of a covariate on the distribution by 1. its cdf or pdf and 2. its moments. \par
+Using bamlss.vis, one can then observe the influence of a covariate on the distribution by 1. its cdf or pdf and 2. its moments. \par
 
 \subsection{Case-Study}
-While automatic testing of \textbf{bamlss.vis}' main functions relies on artifical data for each supported distribution in order to prove correct behaviour, presenting the apps' abilities is best done with a dataset of real observations. This chapter will focus on fitting a bamlss based on \enquote{real} data for further use in \textbf{bamlss.vis}. The objective for a suitable dataset was that its response variable and explanatory variables are easy to understand for people without a specific scientific background. The chosen dataset, \enquote{Wage} from the ISLR R package \citep{ISLR}, perfectly encompasses these requirements. \enquote{Wage}, collected by the \citet{uscensus}, includes 3000 male individuals with records of the following variables:
+\label{case_study}
+While automatic testing of bamlss.vis' main functions relies on artifical data for each supported distribution in order to prove correct behaviour, presenting the apps' abilities is best done with a dataset of real observations. This chapter will focus on fitting a bamlss based on \enquote{real} data for further use in bamlss.vis. The objective for a suitable dataset was that its response variable and explanatory variables are easy to understand for people without a specific scientific background. The chosen dataset, \enquote{Wage} from the ISLR R package \citep{ISLR}, perfectly encompasses these requirements. \enquote{Wage}, collected by the \citet{uscensus}, includes 3000 male individuals with records of the following variables:
 \begin{itemize}
   \item \textbf{wage}: Workers raw wage (in 1000 \$)
   \item \textbf{age}: Age of worker
@@ -463,7 +464,7 @@ Naturally, the variable of interest and response variable will be the male worke
 \begin{figure}
   \begin{centering}
     \includegraphics[scale = 0.8]{images/10_wage_plot.pdf}
-  \caption{Gaussian kernel density estimates for wages split up by education level}
+  \caption{Gaussian kernel density estimates for wages split up by education level.}
   \label{wage_density}
 \end{centering}
 \end{figure}
@@ -478,15 +479,46 @@ model <- bamlss(
 \end{lstlisting}
 As visible in Code-Chunk \ref{bamlss_fitting}, both $\mu$ and $\sigma$ are modeled such that they relate to explanatory variables additively. Both parameters are connected to parametric effects \texttt{race}, \texttt{year}, \texttt{education} and \texttt{health}. The influence of \texttt{age} is specified with a thin-plate smooth spline.
 % THis chapter does not guarantee that the chosen model is the best one for the data, but is just for visualisation purposes
+
 \subsection{Application Structure \& Guide}
-As previously mentioned, \textbf{bamlss.vis} is implemented in the form of an R extension. For building and maintaining the package, GitHub is used. This allows users to easily install the package with the following R commands:
+As previously mentioned, bamlss.vis is implemented in the form of an R extension. For building and maintaining the package, GitHub is used. This allows users to easily install the package with the following R commands:
 \begin{lstlisting}
 if (!require(devtools))
   install.packages("devtools")
 devtools::install_github("Stan125/bamlss.vis")
 \end{lstlisting}
-Furthermore, \textbf{bamlss.vis} is strongly based on the Shiny framework \citep{shiny}, which is an R package designed to create interactive visualisations with HTML code and R functions. In the words of the author, Shiny combines \enquote{the computational power of R with the interactivity of the modern web} CITATION HERE. \par
-In its core, a Shiny application is built using R functions and can therefore be called similarly. In the case of \textbf{bamlss.vis}, one can start the application with \li{bamlss.vis::vis()}. % Then the following window opens: the current working environment is searched for bamlss models and then displayed.
+Furthermore, bamlss.vis is strongly based on the Shiny framework \citep{shiny}, which is an R package designed to create interactive visualisations with HTML code and R functions. In the words of the author, Shiny combines \enquote{the computational power of R with the interactivity of the modern web} \citep{shiny_online}. \par
+In its core, a Shiny application is built using R functions and can therefore be called similarly. In the case of bamlss.vis, there are two ways one can start the application. First, the user can run the code \li{bamlss.vis::vis()}. Second, bamlss.vis can also be called using the open source General User Interface RStudio. As displayed in Figure \ref{addinpic}, one can click on the \enquote{Add-Ins} button and then select \enquote{BAMLSS Model Visualizer} if bamlss.vis is installed. This will also trigger the command \li{bamlss.vis::vis()}. \par
+\begin{figure}
+  \begin{centering}
+    \includegraphics[scale = 0.4, trim = {1cm 0cm 1cm 3cm}]{images/030_addinpic.png}
+  \caption{Button to start the main application of bamlss.vis in RStudio.}
+  \label{addinpic}
+  \end{centering}
+\end{figure}
+After executing the R code, a new browser window with the started application will be opened up. Figure \ref{app_start} shows the layout of the application, which is then displayed in the users browser.
+\begin{figure}
+  \begin{centering}
+    \includegraphics[scale = 0.2, trim = {7.5cm 5cm 5cm 5cm}]{images/031_app_start.png}
+  \caption{Layout of bamlss.vis after starting the application.}
+  \label{app_start}
+ \end{centering}
+\end{figure}
+As visible in Figure \ref{app_start}, the layout of bamlss.vis is divided into two segments, which have their own tabs the user can click on. In each segment, one of those tabs is always displayed. The left segment, with tabs \enquote{Overview}, \enquote{Scenarios} and \enquote{Scenario Data}, is concerned with model-related settings. The right segment, with tabs \enquote{Plot} and \enquote{Properties} is used to display graphs and properties in reaction to user inputs on the left segment. \par
+
+\subsubsection{Overview tab}
+The overview tab is meant for displaying descriptive details about fitted bamlss. After bamlss.vis is started up, it only consists of a select list, where the user can select the model on which the further analysis is to be based. Entries in this list are created by an R function which searches the working directory of the current user for any object of the class \li{bamlss}. Figure \ref{app_start} shows only one entry, which represents the model fitted with the code provided in Section \ref{case_study}. \par
+After a model was selected, the overview tab expands to show an outline of the fitted bamlss. Specifically, as shown in Figure \ref{overview_tab}
+
+\begin{figure}
+  \begin{centering}
+    \includegraphics[scale = 0.6, trim = {1cm 0cm 1cm 3cm}]{images/032_overview_tab.png}
+  \caption{Expanded overview tab after model selection.}
+  \label{overview_tab}
+  \end{centering}
+\end{figure}
+
+
 
 % because so many different model flexibilities we will base the add-in on bamlss
 % Hier muss auf jeden Fall ein Beispiel rein wo die parameter nicht gleich die momente sind um das zu zeigen
