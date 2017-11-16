@@ -499,7 +499,7 @@ In its core, a Shiny application is built using R functions and can therefore be
 After executing the R code, a new browser window with the started application will be opened up. Figure \ref{app_start} shows the layout of the application, which is then displayed in the users browser.
 \begin{figure}
   \begin{centering}
-    \includegraphics[scale = 0.2, trim = {7.5cm 5cm 5cm 5cm}]{images/031_app_start.png}
+    \includegraphics[scale = 0.2, trim = {7.5cm 2cm 5cm 5cm}]{images/031_app_start.png}
   \caption{Layout of bamlss.vis after starting the application.}
   \label{app_start}
  \end{centering}
@@ -507,18 +507,28 @@ After executing the R code, a new browser window with the started application wi
 As visible in Figure \ref{app_start}, the layout of bamlss.vis is divided into two segments, which have their own tabs the user can click on. In each segment, one of those tabs is always displayed. The left segment, with tabs \enquote{Overview}, \enquote{Scenarios} and \enquote{Scenario Data}, is concerned with model-related settings. The right segment, with tabs \enquote{Plot} and \enquote{Properties} is used to display graphs and properties in reaction to user inputs on the left segment. \par
 
 \subsubsection{Overview tab}
-The overview tab is meant for displaying descriptive details about fitted bamlss. After bamlss.vis is started up, it only consists of a select list, where the user can select the model on which the further analysis is to be based. Entries in this list are created by an R function which searches the working directory of the current user for any object of the class \li{bamlss}. Figure \ref{app_start} shows only one entry, which represents the model fitted with the code provided in Section \ref{case_study}. \par
-After a model was selected, the overview tab expands to show an outline of the fitted bamlss. Specifically, as shown in Figure \ref{overview_tab}
-
+The overview tab is meant for displaying descriptive details about fitted bamlss. After bamlss.vis is started up, it only consists of a select list, where the user can select the model on which the further analysis is to be based. Entries in this list are created by an R function which searches the working directory of the current user for any object of the class \li{bamlss}. Figure \ref{app_start} shows only one entry, \li{cnorm_model}, which represents the model fitted with the code provided in Section \ref{case_study}. \par
+After a model was selected, the overview tab expands to show an outline of the fitted bamlss. Specifically, as shown in Figure \ref{overview_tab}, the tab displays two parts, called \enquote{Model Family} and \enquote{Model Equations}. \enquote{Model Family} shows the distributional family of the model, as well as the parameters which can be modeled including their link functions. In the case of \li{cnorm_model}, the family \enquote{cnorm} (for censored normal distribution) with parameters $\mu$ and $\sigma$ and link functions \enquote{identity} and \enquote{log} can be obtained. \enquote{Model Equations} displays the way covariate effects were specified. We can confirm that for \li{cnorm_model}, the effect of age on both $\mu$ and $\sigma$ is specified with a smooth spline. Furthermore, all other effects are included parametrically. \par
 \begin{figure}
   \begin{centering}
-    \includegraphics[scale = 0.6, trim = {1cm 0cm 1cm 3cm}]{images/032_overview_tab.png}
+    \includegraphics[scale = 0.45, trim = {1cm 0cm 1cm 3cm}]{images/032_overview_tab.png}
   \caption{Expanded overview tab after model selection.}
   \label{overview_tab}
   \end{centering}
 \end{figure}
 
-
+\subsubsection{Scenarios tab}
+After a bamlss was successfully selected in the first tab, one can then click on the \enquote{Scenarios} tab. In this tab, the user can specify covariate values for each explanatory variable and create one or more \enquote{Scenarios}, for which the predicted distribution is then plotted. \par
+As displayed in Figure \ref{scenarios_tab}, the top of the tab consists of two buttons, \enquote{Create Scenario} and \enquote{Clear Scenario}. Right below these buttons a box for including the intercept in predictions is portrayed. Further below, web widgets for each explanatory variable are visible. Bamlss.vis executes a check for the type of each explanatory variable and then constructs different web application elements depending on that information. Categorical covariates receive selector boxes (R function \li{shiny::selectInput()}) with the variables possible categories, while for numeric variables slider modules are created (\li{shiny::numericInput()}), ranging from the variables minimum to maximum value. \par
+\begin{figure}
+  \begin{centering}
+    \includegraphics[scale = 0.2, trim = {7.5cm 2cm 5cm 5cm}]{images/033_scenarios_tab.png}
+  \caption{Scenarios tab of bamlss.vis.}
+  \label{scenarios_tab}
+  \end{centering}
+\end{figure}
+To add a new scenario, one can select a value for each variable and then click on \enquote{Create Scenario}. When more than one scenario was created, predictions will be computed for each scenario, such that comparisons between scenarios are easily obtained. \par
+Because critical differences in wage distributions depending on education were already observed in Figure \ref{wage_density}, it will now be interesting to recreate this plot by visually comparing the modeled distributions depending on \li{education}, while still controlling for other variables. To achieve this, the following covariate values will be specified: \li{race: 1. White}, \li{year: 2006}, \li{education: 1. < HS grad}, \li{health: 2. >= Very Good} and \li{age: 42}. Then, the \enquote{Create Scenario} Button is pressed. This is done four more times, with each time seeing a rise in education level by one category. Thus, we arrive at different wage distributions for a 42-year-old white male with very good health depending on his level of education. \par
 
 % because so many different model flexibilities we will base the add-in on bamlss
 % Hier muss auf jeden Fall ein Beispiel rein wo die parameter nicht gleich die momente sind um das zu zeigen

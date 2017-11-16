@@ -15,5 +15,6 @@
 \contentsline {subsection}{\numberline {3.2}Case-Study}{15}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Application Structure \& Guide}{17}{subsection.3.3}
 \contentsline {subsubsection}{\numberline {3.3.1}Overview tab}{19}{subsubsection.3.3.1}
-\contentsline {section}{\numberline {4}Conclusion}{19}{section.4}
-\contentsline {section}{Bibliography}{21}{section*.10}
+\contentsline {subsubsection}{\numberline {3.3.2}Scenarios tab}{20}{subsubsection.3.3.2}
+\contentsline {section}{\numberline {4}Conclusion}{21}{section.4}
+\contentsline {section}{Bibliography}{23}{section*.11}
