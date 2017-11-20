@@ -1,4 +1,4 @@
-\begin{thebibliography}{27}
+\begin{thebibliography}{29}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -47,6 +47,12 @@ Jerome~H Friedman and Werner Stuetzle.
 \newblock Projection pursuit regression.
 \newblock \emph{Journal of the American statistical Association}, 76\penalty0
   (376):\penalty0 817--823, 1981.
+
+\bibitem[Garnier(2017)]{viridis}
+Simon Garnier.
+\newblock \emph{viridis: Default Color Maps from 'matplotlib'}, 2017.
+\newblock URL \url{https://CRAN.R-project.org/package=viridis}.
+\newblock R package version 0.4.0.
 
 \bibitem[Greene(2012)]{greene2012}
 W.H. Greene.
@@ -173,5 +179,12 @@ Nikolaus Umlauf, Nadja Klein, and Achim Zeileis.
 {United States Census Bureau}.
 \newblock Supplement to current population survey.
 \newblock \url{http://www.nber.org/cps/cpsmar11.pdf}, March 2011.
+
+\bibitem[Wickham(2009)]{ggplot2}
+Hadley Wickham.
+\newblock \emph{ggplot2: Elegant Graphics for Data Analysis}.
+\newblock Springer-Verlag New York, 2009.
+\newblock ISBN 978-0-387-98140-6.
+\newblock URL \url{http://ggplot2.org}.
 
 \end{thebibliography}

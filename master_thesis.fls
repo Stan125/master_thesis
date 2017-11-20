@@ -329,6 +329,8 @@ INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 OUTPUT master_thesis.toc
 INPUT master_thesis.lof
 INPUT master_thesis.lof
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 OUTPUT master_thesis.lof
 INPUT master_thesis.lot
 INPUT master_thesis.lot
@@ -355,8 +357,6 @@ INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT images/10_wage_plot.pdf
 INPUT ./images/10_wage_plot.pdf
 INPUT ./images/10_wage_plot.pdf
-INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
-INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT images/030_addinpic.png
 INPUT ./images/030_addinpic.png
 INPUT ./images/030_addinpic.png
@@ -369,6 +369,12 @@ INPUT ./images/032_overview_tab.png
 INPUT images/033_scenarios_tab.png
 INPUT ./images/033_scenarios_tab.png
 INPUT ./images/033_scenarios_tab.png
+INPUT images/034_educ_app.png
+INPUT ./images/034_educ_app.png
+INPUT ./images/034_educ_app.png
+INPUT images/035_educ_app_cdf.png
+INPUT ./images/035_educ_app_cdf.png
+INPUT ./images/035_educ_app_cdf.png
 INPUT master_thesis.bbl
 INPUT master_thesis.bbl
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
