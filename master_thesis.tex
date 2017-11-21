@@ -542,8 +542,33 @@ Figure \ref{educ_app} shows the plot output for five different scenarios based o
   \end{centering}
 \end{figure}
 As visible in the aforementioned figure, the predicted distributions have both a higher expected value and a higher variance as the education level rises, similar to the kernel density estimates in Figure \ref{wage_density}. \par
-Also noticeable in Figure \ref{educ_app} to the right side of the plot are three web elements for user interaction. The first element, found below the description \enquote{PDF or CDF?}, yields the ability to switch between displaying probability density function (default) and the cumulative distribution function (Appendix: Figure \ref{educ_app_cdf}). The second element gives the option to select a different colour palette. Its default value is \enquote{default}, which uses the built-in colour palette provided in ggplot2 \citep{ggplot2}. The colour palette which was selected in Figure \ref{educ_app} is \enquote{viridis}, which is a colourblind-friendly palette spanning over a high range of different colours \citep{viridis}. \par
-The third web element on the right side of the plot output, a red button with the description \enquote{Obtain Code!}, adds reproducibility to the plot. When clicked, a modal window pops up with R commands that, if executed in the main R console with the users current working environment, directly recreate the graph in the \enquote{Plot} tab.
+Also noticeable in Figure \ref{educ_app} to the right side of the plot are three web elements for user interaction. The first element, found below the description \enquote{PDF or CDF?}, provides the ability to switch between displaying probability density function (default) and the cumulative distribution function (Appendix: Figure \ref{educ_app_cdf}). The second element gives the option to select a different colour palette. Its default value is \enquote{default}, which uses the built-in colour palette provided in ggplot2 \citep{ggplot2}. The colour palette which was selected in Figure \ref{educ_app} is \enquote{viridis}, which is a colourblind-friendly palette spanning over a high range of different colours \citep{viridis}. \par
+The third web element on the right side of the plot output, a red button with the description \enquote{Obtain Code!}, adds user reproducibility to the plot. When clicked, a modal window pops up with R commands that, if executed in the main R console with the users current working environment, directly recreate the graph in the \enquote{Plot} tab. \par
+Figure \ref{obtain_code} shows the modal window which arises when pressing the \enquote{Obtain Code!} button in the interface of Figure \ref{educ_app}.
+\begin{figure}
+  \begin{centering}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 5cm}]{images/036_obtain_code.png}
+  \caption{Modal window with formatted and highlighted code after pressing the \enquote{Obtain Code!} button}
+  \label{obtain_code}
+  \end{centering}
+\end{figure}
+Below the description \enquote{Obtain your R code!} it is possible to see a text window with a dark background. In it are three syntax-highlighted R commands which can be copied and stored for future recreation. The first R command creates a \li{data.frame} object from the\enquote{Scenarios} tabs user input. The second one uses \li{bamlss.vis::preds()} in combination with the provided models name to compute predicted parameters for the data, which are then re-used in line three to plot the results graphically with \li{bamlss.vis::plot_dist()}. \par
+Furthermore, bamlss.vis checks for specified plot options (type of distribution, colour palette) and includes them as arguments in the last line. The formatting of code relies on the R package \li{formatR} \citep{formatr}. Clicking on the \enquote{Dismiss} button closes the modal window.\par
+
+\subsubsection{Scenario Data tab}
+While the \enquote{Scenario} tab gives users the ability to quickly specify covariate values without having to type in exact values themselves, sometimes it will be important to directly compare specific covariate combinations. Furthermore, one might want to see what values were previously specified in the \enquote{Scenarios} tab. For both reasons the tab \enquote{Scenario Data} was created in bamlss.vis' left segment. \par
+Figure \ref{scenario_data} shows the tabs layout.
+\begin{figure}
+  \begin{centering}
+    \includegraphics[scale = 0.45, trim = {1cm 0cm 1cm 3cm}]{images/037_scenario_data.png}
+  \caption{Scenario data tab.}
+  \label{scenario_data}
+  \end{centering}
+\end{figure}
+As visible, the only element in this tab is a table placed underneath the description \enquote{Edit scenario data here}. This table, created with the R package \li{rhandsontable} \citep{rhandsontable} represents the editable version of all data input from the \enquote{Scenarios} tab. Columns represent the specified covariates, while one row counts as one \enquote{scenario}. In Figure \ref{scenario_data}, it is possible to see that only three columns of the original six are currently visible. This cut-off was built such that overlapping with the plot is prevented. Nevertheless, the user can use the scrolling bar at the bottom to reach other columns. \par
+To edit a categorical value, users can click on a small drop-down button in the cell which is to be edited. The table recognizes categorical variables and will then provide a menu where the desired value is to be selected. With numeric variables, users can select the cell and then input the value they wish to make predictions with. \par
+Unfortunately, this also means that in numeric cases, the user is able to specify a value which is not in the original variables' range. In the case of \li{cnorm_model}, this could mean that one tries to make predictions for incomes in the year \li{2050}, which is not remotely in the scope of the original variable \li{year}. To circumvent the unresponsible usage of model predictions, bamlss.vis will display a warning pop-up message with the \enquote{scenario} where values were specified which are out of the original variables range (Appendix: Figure \ref{warning_popup}).
+
 
 % because so many different model flexibilities we will base the add-in on bamlss
 \section{Conclusion}
@@ -554,6 +579,7 @@ The third web element on the right side of the plot output, a red button with th
 \clearpage
 
 \section*{Appendix}
+% CDF
 \begin{figure}
   \begin{centering}
     \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 5cm}]{images/035_educ_app_cdf.png}
@@ -563,6 +589,14 @@ The third web element on the right side of the plot output, a red button with th
 \end{figure}
 \clearpage
 
+% Warning popup
+\begin{figure}
+  \begin{centering}
+    \includegraphics[scale = 0.45, trim = {1cm 0cm 1cm 3cm}]{images/038_warning_popup.png}
+  \caption{Scenario data tab.}
+  \label{warning_popup}
+  \end{centering}
+\end{figure}
 \bibliography{bibliography}{}
 \bibliographystyle{plainnat}
 
