@@ -18,5 +18,6 @@
 \contentsline {subsubsection}{\numberline {3.3.2}Scenarios tab}{20}{subsubsection.3.3.2}
 \contentsline {subsubsection}{\numberline {3.3.3}Plot tab}{21}{subsubsection.3.3.3}
 \contentsline {subsubsection}{\numberline {3.3.4}Scenario Data tab}{23}{subsubsection.3.3.4}
-\contentsline {section}{\numberline {4}Conclusion}{24}{section.4}
-\contentsline {section}{Bibliography}{26}{section*.16}
+\contentsline {subsubsection}{\numberline {3.3.5}Properties tab}{24}{subsubsection.3.3.5}
+\contentsline {section}{\numberline {4}Conclusion}{26}{section.4}
+\contentsline {section}{Bibliography}{30}{section*.18}

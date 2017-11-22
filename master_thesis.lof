@@ -7,5 +7,7 @@
 \contentsline {figure}{\numberline {7}{\ignorespaces Plot tab output when specifying five different scenarios with different education levels.\relax }}{22}{figure.caption.10}
 \contentsline {figure}{\numberline {8}{\ignorespaces Modal window with formatted and highlighted code after pressing the \enquote {Obtain Code!} button\relax }}{23}{figure.caption.11}
 \contentsline {figure}{\numberline {9}{\ignorespaces Scenario data tab.\relax }}{24}{figure.caption.12}
-\contentsline {figure}{\numberline {10}{\ignorespaces Cumulative Distribution Function plot output for different education levels based on the \lstinline {Wage} dataset\relax }}{25}{figure.caption.14}
-\contentsline {figure}{\numberline {11}{\ignorespaces Scenario data tab.\relax }}{26}{figure.caption.15}
+\contentsline {figure}{\numberline {10}{\ignorespaces Influence of \lstinline {age} on the first two moments of the predicted distributions for \lstinline {cnorm_model}\relax }}{25}{figure.caption.13}
+\contentsline {figure}{\numberline {11}{\ignorespaces Influence of \lstinline {race} categories on the first two moments of the predicted distributions for \lstinline {cnorm_model}\relax }}{27}{figure.caption.14}
+\contentsline {figure}{\numberline {12}{\ignorespaces Cumulative Distribution Function plot output for different education levels based on the \lstinline {Wage} dataset\relax }}{28}{figure.caption.16}
+\contentsline {figure}{\numberline {13}{\ignorespaces Scenario data tab.\relax }}{29}{figure.caption.17}

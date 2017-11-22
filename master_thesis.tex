@@ -205,7 +205,7 @@ Additionally, the user can obtain the code which created the graphs to potential
 \label{bamlss}
 Bayesian Additive Models for Location, Scale and Shape (bamlss) are a form of Bayesian regression models in which every parameter of a parametric distribution with $K$ parameters is related to a set of additive predictors. The distribution does not have to follow the exponential family, which extends the distributions available for modeling beyond the ones used in Generalized Linear Models (GLM). In similar fashion to Generalized Additive Models~\citep[GAM,][]{hastie1990generalized}, the additive predictors can assume different shapes, including non-linear, fixed, random and spatial effects~\citep{bamlss2017}. \par
 %In the ability to additively model multiple parameters of one distribution, bamlss bear many similarities with Generalized Additive Models for location, scale and shape~\citep[GAMLSS,][]{gamlss2001}. Disparities lie in the estimation of model parameters, where bamlss utilize Markov Chain Monte Carlo (MCMC) simulations which provide credible intervals in situations where asymptotic maximum likelihood confidence intervals often fail, as well as bamlss' ability to model multivariate parametric distributions~\citep{bamlss2017}. \par
-To give a sufficient depiction of this model class, this section will start with explaining Additive Models and then gradually generalize the broader frameworks to finally arrive at bamlss. Furthermore, a brief overview of the different estimation techniques for the covered model frameworks will be given.\par
+To give a sufficient depiction of this model class, this section will start with explaining Additive Models and then gradually generalize the broader frameworks to finally arrive at bamlss. Furthermore, a brief overview of the different estimation techniques for the covered model frameworks will be given. \par
 
 \subsection{Additive Models}
 \label{AM}
@@ -566,10 +566,32 @@ Figure \ref{scenario_data} shows the tabs layout.
   \end{centering}
 \end{figure}
 As visible, the only element in this tab is a table placed underneath the description \enquote{Edit scenario data here}. This table, created with the R package \li{rhandsontable} \citep{rhandsontable} represents the editable version of all data input from the \enquote{Scenarios} tab. Columns represent the specified covariates, while one row counts as one \enquote{scenario}. In Figure \ref{scenario_data}, it is possible to see that only three columns of the original six are currently visible. This cut-off was built such that overlapping with the plot is prevented. Nevertheless, the user can use the scrolling bar at the bottom to reach other columns. \par
-To edit a categorical value, users can click on a small drop-down button in the cell which is to be edited. The table recognizes categorical variables and will then provide a menu where the desired value is to be selected. With numeric variables, users can select the cell and then input the value they wish to make predictions with. \par
-Unfortunately, this also means that in numeric cases, the user is able to specify a value which is not in the original variables' range. In the case of \li{cnorm_model}, this could mean that one tries to make predictions for incomes in the year \li{2050}, which is not remotely in the scope of the original variable \li{year}. To circumvent the unresponsible usage of model predictions, bamlss.vis will display a warning pop-up message with the \enquote{scenario} where values were specified which are out of the original variables range (Appendix: Figure \ref{warning_popup}).
+To edit a categorical value, users can click on a small drop-down button in the cell which is to be edited. The table recognizes categorical variables and will then provide a menu where the desired value is to be selected. With numeric variables, users can select the cell and then input the value they wish to make predictions with. Values in logical variables can be specified by checking or unchecking a box in the cell.\par
+Unfortunately, this also means that in numeric cases, the user is able to specify a value which is not in the original variables' range. In the case of \li{cnorm_model}, this could mean that one tries to make predictions for incomes in the year \li{2050}, which is far beyond $max(year) = 2009$. To circumvent the unresponsible usage of model predictions, bamlss.vis will display a warning pop-up message with the \enquote{scenario} where values were specified which are out of the original variables range (Appendix: Figure \ref{warning_popup}) message.
 
-
+\subsubsection{Properties tab}
+Previous chapters have described that the \enquote{Plot} tab visualizes the predicted distributions for each covariate combination specified in the \enquote{Properties} tab. However, while differences in distributions for each combination were visible (e.g. in Figure \ref{educ_app}), it is not possible to directly infer influences of each covariate on the distributional moments. \par
+To provide this functionality, the tab \enquote{Properties} was implemented in bamlss.vis, located in the right segment. When opened, the \enquote{Properties} tab reveals two sub-tabs: \enquote{Influence graph} and \enquote{Table}. As visible in Figure \ref{influence_graph}, the \enquote{Influence graph} tab consists of a graph on the left side next to a small bar with additional options.
+\begin{figure}
+  \begin{centering}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 5cm}]{images/039_influence_graph.png}
+  \caption{Influence of \li{age} on the first two moments of the predicted distributions for \li{cnorm_model}}
+  \label{influence_graph}
+  \end{centering}
+\end{figure}
+The graph displays the changes in the first two moments over the whole range of a covariate that was chosen on the right side. This is repeated for each \enquote{scenario} specified on bamlss.vis' left segment. As visible in Figure \ref{influence_graph}, the plot is divided into a \li{Expected_Value} and a \li{Variance} segment. In this case, variable \li{age} was chosen and therefore represents the x-axis from the variables minimum to maximum value. The y-axis depicts values for each of the first two distributional moments. Each line displays the level which the predicted moments would assume for \li{age}'s possible values, depending on the chosen covariate combination in the \enquote{Scenarios} tab. \par
+In Figure \ref{influence_graph}, five different scenarios which represent varying \li{education} levels were already specified. So in summary, this plot measures the influence of \li{age} on each of the first two moments of the modeled income distribution for healthy 42-year-old white males, depending on the \li{education} level. \par
+For the influence of \li{age} on the first moment, it is possible to observe on all five lines that up until around 40 years \li{age} has a positive effect on the expected income, then takes a small downturn which is recovered around age 60, after which a rising age decreases the expected income. This influence structure is similar for all education levels because the effect of \li{age} on both parameters of the censored normal distribution was specified as a simple smooth spline with no \li{education} interaction. \par
+For effects on the variance, a similar influence structure is observed, although the ups- and downs get more extreme as education level rises. This can be explained by the original model specification, where not the variance $\sigma^2$ but just the standard deviation $\sigma$ is modeled in relation to explanatory covariates. Thus, its effects have to be squared because the variance of a censored normal distributed variable is dependent on $\sigma^2$.\par
+The effects of \li{age} on distributional moments can be visualised in lines because the underlying variable is measured in integers. However, bamlss.vis can also display differences in both moments depending on a categorical covariate. Figure \ref{influence_graph_qualitative} illustrates the influence graph when \li{race}, a qualitative covariate, is selected.
+\begin{figure}
+  \begin{centering}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 5cm}]{images/0310_influence_graph_qualitative.png}
+  \caption{Influence of \li{race} categories on the first two moments of the predicted distributions for \li{cnorm_model}}
+  \label{influence_graph_qualitative}
+  \end{centering}
+\end{figure}
+In Figure \ref{influence_graph_qualitative}, the x-axis again depicts the selected variable, \li{race}, with its possible outcomes \li{1.White} to \li{4. Other}. Every outcome displays five bars, one for each covariate combination specified in the \enquote{Scenarios} tab. % So in essence this displays influence of race depending on education. we can see that the effect of education is greather than the race one...
 % because so many different model flexibilities we will base the add-in on bamlss
 \section{Conclusion}
 % Outlook: More distributions with gamlss.dist package?
@@ -597,6 +619,9 @@ Unfortunately, this also means that in numeric cases, the user is able to specif
   \label{warning_popup}
   \end{centering}
 \end{figure}
+
+\clearpage
+
 \bibliography{bibliography}{}
 \bibliographystyle{plainnat}
 
