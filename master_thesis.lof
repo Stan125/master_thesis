@@ -8,6 +8,8 @@
 \contentsline {figure}{\numberline {8}{\ignorespaces Modal window with formatted and highlighted code after pressing the \enquote {Obtain Code!} button\relax }}{23}{figure.caption.11}
 \contentsline {figure}{\numberline {9}{\ignorespaces Scenario data tab.\relax }}{24}{figure.caption.12}
 \contentsline {figure}{\numberline {10}{\ignorespaces Influence of \lstinline {age} on the first two moments of the predicted distributions for \lstinline {cnorm_model}\relax }}{25}{figure.caption.13}
-\contentsline {figure}{\numberline {11}{\ignorespaces Influence of \lstinline {race} categories on the first two moments of the predicted distributions for \lstinline {cnorm_model}\relax }}{27}{figure.caption.14}
-\contentsline {figure}{\numberline {12}{\ignorespaces Cumulative Distribution Function plot output for different education levels based on the \lstinline {Wage} dataset\relax }}{28}{figure.caption.16}
-\contentsline {figure}{\numberline {13}{\ignorespaces Scenario data tab.\relax }}{29}{figure.caption.17}
+\contentsline {figure}{\numberline {11}{\ignorespaces Influence of \lstinline {race} categories on the first two moments of the predicted distributions for \lstinline {cnorm_model}.\relax }}{26}{figure.caption.14}
+\contentsline {figure}{\numberline {12}{\ignorespaces Expected Value and Variance for predicted distributions based on specified covariate combinations.\relax }}{28}{figure.caption.15}
+\contentsline {figure}{\numberline {13}{\ignorespaces Cumulative Distribution Function plot output for different education levels based on the \lstinline {Wage} dataset\relax }}{30}{figure.caption.17}
+\contentsline {figure}{\numberline {14}{\ignorespaces Warning message when specifying covariate combinations which are out of range\relax }}{30}{figure.caption.18}
+\contentsline {figure}{\numberline {15}{\ignorespaces Modal window to display code for reproducing the influence plot\relax }}{31}{figure.caption.19}

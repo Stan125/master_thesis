@@ -19,5 +19,7 @@
 \contentsline {subsubsection}{\numberline {3.3.3}Plot tab}{21}{subsubsection.3.3.3}
 \contentsline {subsubsection}{\numberline {3.3.4}Scenario Data tab}{23}{subsubsection.3.3.4}
 \contentsline {subsubsection}{\numberline {3.3.5}Properties tab}{24}{subsubsection.3.3.5}
-\contentsline {section}{\numberline {4}Conclusion}{26}{section.4}
-\contentsline {section}{Bibliography}{30}{section*.18}
+\contentsline {subsection}{\numberline {3.4}Further abilities}{27}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Discrete Responses}{28}{subsubsection.3.4.1}
+\contentsline {section}{\numberline {4}Conclusion}{29}{section.4}
+\contentsline {section}{Bibliography}{32}{section*.20}
