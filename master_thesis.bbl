@@ -1,4 +1,4 @@
-\begin{thebibliography}{31}
+\begin{thebibliography}{32}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -160,6 +160,14 @@ R.A. Rigby and D.M. Stasinopoulos.
 {RStudio, Inc.}
 \newblock Shiny, 2017.
 \newblock URL \url{https://shiny.rstudio.com}.
+
+\bibitem[Sievert et~al.(2017)Sievert, Parmer, Hocking, Chamberlain, Ram,
+  Corvellec, and Despouy]{plotly}
+C~Sievert, C~Parmer, T~Hocking, S~Chamberlain, K~Ram, M~Corvellec, and
+  P~Despouy.
+\newblock \emph{plotly: Create Interactive Web Graphics via 'plotly.js'}, 2017.
+\newblock URL \url{https://CRAN.R-project.org/package=plotly}.
+\newblock R package version 4.7.1.
 
 \bibitem[Stasinopoulos et~al.(2007)Stasinopoulos, Rigby, et~al.]{gamlss2007}
 D~Mikis Stasinopoulos, Robert~A Rigby, et~al.

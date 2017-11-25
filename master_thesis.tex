@@ -38,6 +38,7 @@
 \usepackage{csquotes}
 \usepackage{footnote}
 \usepackage{amsmath}
+\usepackage{amsfonts}
 
 %%% Listings options
 \lstdefinelanguage{Renhanced}[]{R}{
@@ -165,7 +166,7 @@ Dr. Nadja \textsc{Klein} \\
 %	LOGO SECTION
 %----------------------------------------------------------------------------------------
 
-\includegraphics[scale = 0.7]{images/09_logo.jpg}\\[1cm]
+\includegraphics[scale = 0.7]{images/00_logo.jpg}\\[1cm]
 
 %----------------------------------------------------------------------------------------
 
@@ -424,7 +425,7 @@ This problem can be well illustrated using the censored normal distribution. Ass
 where $f(y)$ and $F(y)$ are the probability density functions (pdf) and the cumulative distribution function cdf() of normally distributed variable $y$, respectively. It is visible in the above equation that the censored normal distribution is both discrete and continuous. While $y^*$ shares the density with $y$ above the cut-off point, the full remaining density in the censored normal distribution is assigned to the cut-off point $a$. Figure \ref{cnorm_plot} shows a sample left-censored normal distribution $y^*$ created from $y \sim N(0, 1)$ with $a = 0$ \citep{greene2012}. \par
 \begin{figure}
   \begin{centering}
-    \includegraphics{images/06_cnorm_plot.pdf}
+    \includegraphics{images/030_cnorm_plot.pdf}
   \caption{Probability Density Function of a left-censored normal distribution with the expected value drawn as a blue line.}
   \label{cnorm_plot}
   \end{centering}
@@ -463,7 +464,7 @@ While automatic testing of bamlss.vis' main functions relies on artifical data f
 Naturally, the variable of interest and response variable will be the male workers wage. While doing first analyses, it is clear that the wage is highly dependent on the given variables. Figure \ref{wage_density} shows kernel density estimates (Gaussian) for the wage distribution depending on education level. \par
 \begin{figure}
   \begin{centering}
-    \includegraphics[scale = 0.8]{images/10_wage_plot.pdf}
+    \includegraphics[scale = 0.8]{images/030_wage_plot.pdf}
   \caption{Gaussian kernel density estimates for wages split up by education level.}
   \label{wage_density}
 \end{centering}
@@ -478,7 +479,7 @@ model <- bamlss(
 )
 \end{lstlisting}
 As visible in Code-Chunk \ref{bamlss_fitting}, both $\mu$ and $\sigma$ are modeled such that they relate to explanatory variables additively. Both parameters are connected to parametric effects \texttt{race}, \texttt{year}, \texttt{education} and \texttt{health}. The influence of \texttt{age} is specified with a thin-plate smooth spline.
-% THis chapter does not guarantee that the chosen model is the best one for the data, but is just for visualisation purposes
+% This chapter does not guarantee that the chosen model is the best one for the data, but is just for visualisation purposes
 
 \subsection{Application Structure \& Guide}
 \label{appstructure}
@@ -571,6 +572,7 @@ To edit a categorical value, users can click on a small drop-down button in the 
 Unfortunately, this also means that in numeric cases, the user is able to specify a value which is not in the original variables' range. In the case of \li{cnorm_model}, this could mean that one tries to make predictions for incomes in the year \li{2050}, which is far beyond $max(year) = 2009$. To circumvent the unresponsible usage of model predictions, bamlss.vis will display a warning pop-up message with the \enquote{scenario} where values were specified which are out of the original variables range (Appendix: Figure \ref{warning_popup}) message.
 
 \subsubsection{Properties tab}
+\label{properties_tab}
 Previous chapters have described that the \enquote{Plot} tab visualizes the predicted distributions for each covariate combination specified in the \enquote{Properties} tab. However, while differences in distributions for each combination were visible (e.g. in Figure \ref{educ_app}), it is not possible to directly infer influences of each covariate on the distributional moments. \par
 To provide this functionality, the tab \enquote{Properties} was implemented in bamlss.vis, located in the right segment. When opened, the \enquote{Properties} tab reveals two sub-tabs: \enquote{Influence graph} and \enquote{Table}. As visible in Figure \ref{influence_graph}, the \enquote{Influence graph} tab consists of a graph on the left side next to a small bar with additional options.
 \begin{figure}
@@ -605,11 +607,36 @@ The other sub-tab of \enquote{Properties} called \enquote{Table} is useful if th
 The only element in this tab is a table which shows two columns, \li{Expected_Value} and \li{Variance} with computed values for the first two moments. Every row depicts one covariate combination specified in the \enquote{Scenario} tab. \par
 
 \subsection{Further abilities}
-The previous sub-chapters of Section \ref{appstructure} gave an overview of the functionality that bamlss.vis provides with a direct application on a bamlss computed from the \li{Wage} dataset. However, the abilities of bamlss.vis go beyond the censored normal distribution and are applicable to almost all distributional families that the \li{bamlss} package provides, which includes discrete and bivariate distributions. This chapter will demonstrate how bamlss.vis handles those non-continuous response distributions. \par
+The previous sub-chapters of Section \ref{appstructure} gave an overview of the functionality that bamlss.vis provides for continuous response distributions with a direct application on a bamlss computed from the \li{Wage} dataset. However, the abilities of bamlss.vis go beyond the censored normal distribution and are applicable to almost all distributional families that the \li{bamlss} package provides, which includes discrete and bivariate distributions. This chapter will demonstrate how bamlss.vis handles those non-continuous response distributions. \par
 Because most distributions included in \li{bamlss} are not suitable for usage with the \li{Wage} dataset, this section will rely on simulated data generated by \li{bamlss.vis::model_fam_data()}. To sustain a correlation structure between covariates such that they can be exploited for useful modeling purposes, \li{model_fam_data()} simulates a three-dimensional uniform distribution with a sample space of $x_i \in [0, 1],\: i = 1, 2, 3$. Then, inverse transform sampling with $x_1$ is used to obtain sample data for all supported \li{bamlss} distribution families. $x_2$ and $x_3$ are transformed to standard normally distributed variables. Covariates $x_1$ and $x_2$ are then used as explanatory variables for modeling the transformed response variable $x_1$. \par
 
 \subsubsection{Discrete Responses}
-When a model with discrete observations is specified in the \enquote{Overview} tab, it is automatically recognized by bamlss.vis using the function \li{is.discrete()}. The overall structure of the application does not change, but the graphs are displayed differently. 
+When a model with discrete observations is specified in the \enquote{Overview} tab, it is automatically recognized by bamlss.vis using the function \li{is.discrete()}. In comparison to the continuous case, the application structure of bamlss.vis does not change. Figure \ref{poisson_pmf} shows the \enquote{Plot} tab of bamlss.vis for a bamlss modeling a Poisson-distributed response where three distinct covariate combinations were already specified in the \enquote{Scenarios} tab.
+\begin{figure}
+  \begin{centering}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/0313_poisson_pmf.png}
+  \caption{Plot tab with predicted probability mass functions for Poisson distributions with three specified covariate combinations in the \enquote{Scenarios} tab}
+  \label{poisson_pmf}
+  \end{centering}
+\end{figure}
+In Figure \ref{poisson_pmf}, the three predicted probability mass functions for the different Poisson distributions are visible. As the Poisson distribution is a discrete family, probabilities $f(y)$ are displayed in bars on the y-axis. The x-axis represents possible outcomes of the Poisson distribution. For every outcome, three bars for three different covariate combinations specified in the \enquote{Scenarios} are displayed. For example, prediction \li{P2} has the lowest expected probability $P(y = 0)$ compared to the other two combinations. \par
+In theory, the Poisson distribution can attain all values $\{y \in \mathbb{Z} \: | \: y \geq 0\}$ up to $\infty$. To appropriately visualise different expected Poisson distribution, the x axis of the graph is limited to $0, \ldots, x_{lim}$ where $x_{lim} = (max(\lambda_1, \ldots, \lambda_K) \cdot 2) + 3$ for predicted parameters $\lambda_i$ from covariate combinations $1, \ldots, K$. Furthermore, bamlss.vis also has the ability to display cumulative distribution functions for discrete response distributions. To toggle this plot, the same list selector element as with continuous response distributions to the graphs right side is used. The cumulative distribution function is then displayed as a step-wise graph (Appendix: Figure \ref{poisson_cdf}). Moreover, specifying other colour palettes and obtaining plot reproduction code by pressing the red button is also possible. \par
+While the Poisson distribution has discrete observations, its first two moments $E(y) = Var(y) = \lambda$ assume values on a continuous scale. Therefore, the appearance of the \enquote{Properties} tab with \enquote{Influence graph} and \enquote{Table} subtabs are identical to the continuous case described in Section \ref{properties_tab}. \par
+
+\subsubsection{Multivariate Responses}
+In contrast to the \li{gamlss} R package without extensions, \li{bamlss} also supports multivariate response distributions. From the range of multivariate distributions, only the multivariate normal distribution is currently implemented in \li{bamlss} and therefore supported by bamlss.vis. Nevertheless, because of its existing 3D graphical framework, bamlss.vis can easily be extended for new multivariate distributions. \par
+For graphical reasons, bamlss.vis can only display bivariate distributions. Figure \ref{mvnorm_pdf} shows the \enquote{Plot} and \enquote{Scenarios} tab with a specified scenario from the left tab.
+\begin{figure}
+  \begin{centering}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/0315_mvnorm_pdf.png}
+  \caption{Predicted distribution for a multivariate normal distributed response based on the covariate specification of the \enquote{Scenarios} tab.}
+  \label{mvnorm_pdf}
+  \end{centering}
+\end{figure}
+As visible in Figure \ref{mvnorm_pdf}, a bivariate normal distribution is displayed. Multivariate response predictions in bamlss.vis are always only dependent on the last specified covariate combination, without any prediction comparisons. Furthermore, multivariate predictions are displayed using the R package \li{plotly} \citep{plotly}, which adds a layer of interactivity to the graph. Using a graph generated with \li{plotly}, the user can hold and drag the distribution to view the shape from all perspectives. Moreover, hovering over the distribution surface yields current $x$, $y$ and $z$ values. \par
+Located to the right side of the plot are web elements mostly known from previous Sections. Bamlss.vis supports the display of multivariate cumulative distribution functions, which can be selected in the first element titled \enquote{PDF or CDF?}. An example is given by Figure \ref{mvnorm_cdf} in the Appendix. Placed below the first element and the description \enquote{3D Plot type} is another selector box for specifying the type of 3D Plot. In addition to \enquote{perspective}, the options \enquote{contour} and \enquote{image} can be selected. Examples for both options can be found in Appendix Figures \ref{mvnorm_cdf_contour} and \ref{mvnorm_cdf_image} for a contour and image plot, respectively. \par
+
+% it should say somewhere how limits of continuous plots are made
 % because so many different model flexibilities we will base the add-in on bamlss
 \section{Conclusion}
 % Outlook: More distributions with gamlss.dist package?
@@ -618,12 +645,19 @@ When a model with discrete observations is specified in the \enquote{Overview} t
 
 \clearpage
 
-\section*{Appendix}
-% CDF
+\appendix
+\renewcommand\thefigure{\thesection.\arabic{figure}} % different numering for appendix
+\captionsetup{list=no} % ignore figures here for list of figures
+
+\section{Appendix}
+\setcounter{figure}{0}
+
+
+% Wage CDF
 \begin{figure}[ht]
   \begin{centering}
-    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 5cm}]{images/035_educ_app_cdf.png}
-  \caption{Cumulative Distribution Function plot output for different education levels based on the \li{Wage} dataset}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/035_educ_app_cdf.png}
+  \caption{Cumulative Distribution Function plot output for different education levels based on the \li{Wage} dataset.}
   \label{educ_app_cdf}
   \end{centering}
 \end{figure}
@@ -632,7 +666,7 @@ When a model with discrete observations is specified in the \enquote{Overview} t
 \begin{figure}[ht]
   \begin{centering}
     \includegraphics[scale = 0.45, trim = {0cm 0cm 0cm 0cm}]{images/038_warning_popup.png}
-  \caption{Warning message when specifying covariate combinations which are out of range}
+  \caption{Warning message when specifying covariate combinations which are out of range.}
   \label{warning_popup}
   \end{centering}
 \end{figure}
@@ -641,8 +675,44 @@ When a model with discrete observations is specified in the \enquote{Overview} t
 \begin{figure}[ht]
   \begin{centering}
     \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 5cm}]{images/0311_obtain_influence_code.png}
-  \caption{Modal window to display code for reproducing the influence plot}
+  \caption{Modal window to display code for reproducing the influence plot.}
   \label{obtain_influence_code}
+  \end{centering}
+\end{figure}
+
+% Poisson CDF
+\begin{figure}[ht]
+  \begin{centering}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 5cm}]{images/0314_poisson_cdf.png}
+  \caption{Predicted Cumulative Distribution Function for three Poisson distributions based on user-input covariate values.}
+  \label{poisson_cdf}
+  \end{centering}
+\end{figure}
+
+% MVnorm cdf
+\begin{figure}[ht]
+  \begin{centering}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/0316_mvnorm_cdf.png}
+  \caption{Predicted distribution for a multivariate normal distributed response based on the covariate specification of the \enquote{Scenarios} tab.}
+  \label{mvnorm_cdf}
+  \end{centering}
+\end{figure}
+
+% MVnorm cdf contour
+\begin{figure}[ht]
+  \begin{centering}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/0317_mvnorm_pdf_contour.png}
+  \caption{Contour plot for the predicted multivariate normal distribution based on user inputs in \enquote{Scenarios} tab.}
+  \label{mvnorm_cdf_contour}
+  \end{centering}
+\end{figure}
+
+% MVnorm cdf image
+\begin{figure}[ht]
+  \begin{centering}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/0318_mvnorm_pdf_image.png}
+  \caption{Image plot for the predicted multivariate normal distribution based on user inputs in \enquote{Scenarios} tab.}
+  \label{mvnorm_cdf_image}
   \end{centering}
 \end{figure}
 

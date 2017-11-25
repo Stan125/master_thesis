@@ -21,5 +21,7 @@
 \contentsline {subsubsection}{\numberline {3.3.5}Properties tab}{24}{subsubsection.3.3.5}
 \contentsline {subsection}{\numberline {3.4}Further abilities}{27}{subsection.3.4}
 \contentsline {subsubsection}{\numberline {3.4.1}Discrete Responses}{28}{subsubsection.3.4.1}
-\contentsline {section}{\numberline {4}Conclusion}{29}{section.4}
-\contentsline {section}{Bibliography}{32}{section*.20}
+\contentsline {subsubsection}{\numberline {3.4.2}Multivariate Responses}{30}{subsubsection.3.4.2}
+\contentsline {section}{\numberline {4}Conclusion}{31}{section.4}
+\contentsline {section}{\numberline {A}Appendix}{32}{appendix.A}
+\contentsline {section}{Bibliography}{36}{section*.25}
