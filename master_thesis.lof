@@ -12,3 +12,4 @@
 \contentsline {figure}{\numberline {12}{\ignorespaces Expected Value and Variance for predicted distributions based on specified covariate combinations.\relax }}{28}{figure.caption.15}
 \contentsline {figure}{\numberline {13}{\ignorespaces Plot tab with predicted probability mass functions for Poisson distributions with three specified covariate combinations in the \enquote {Scenarios} tab\relax }}{29}{figure.caption.16}
 \contentsline {figure}{\numberline {14}{\ignorespaces Predicted distribution for a multivariate normal distributed response based on the covariate specification of the \enquote {Scenarios} tab.\relax }}{30}{figure.caption.17}
+\contentsline {figure}{\numberline {15}{\ignorespaces \enquote {Influence graph} tab for a selected bivariate normal \lstinline {bamlss} with three specified covariate combinations.\relax }}{31}{figure.caption.18}

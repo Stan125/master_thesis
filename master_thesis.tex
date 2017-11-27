@@ -72,6 +72,7 @@
 
 %%% BibTex Style
 \setcitestyle{authoryear, open = { ( }, close = { ) }}
+\def\bibfont{\small} % smaller bibliography
 
 % Equation numbering
 \numberwithin{equation}{section}
@@ -635,6 +636,19 @@ For graphical reasons, bamlss.vis can only display bivariate distributions. Figu
 \end{figure}
 As visible in Figure \ref{mvnorm_pdf}, a bivariate normal distribution is displayed. Multivariate response predictions in bamlss.vis are always only dependent on the last specified covariate combination, without any prediction comparisons. Furthermore, multivariate predictions are displayed using the R package \li{plotly} \citep{plotly}, which adds a layer of interactivity to the graph. Using a graph generated with \li{plotly}, the user can hold and drag the distribution to view the shape from all perspectives. Moreover, hovering over the distribution surface yields current $x$, $y$ and $z$ values. \par
 Located to the right side of the plot are web elements mostly known from previous Sections. Bamlss.vis supports the display of multivariate cumulative distribution functions, which can be selected in the first element titled \enquote{PDF or CDF?}. An example is given by Figure \ref{mvnorm_cdf} in the Appendix. Placed below the first element and the description \enquote{3D Plot type} is another selector box for specifying the type of 3D Plot. In addition to \enquote{perspective}, the options \enquote{contour} and \enquote{image} can be selected. Examples for both options can be found in Appendix Figures \ref{mvnorm_cdf_contour} and \ref{mvnorm_cdf_image} for a contour and image plot, respectively. \par
+Because the bivariate normal distribution consists of two univariate normal distributions with covariance $\rho \sigma_1 \sigma_2$, its first two moments are $\boldsymbol{\mu} = \bigl( \begin{smallmatrix} \mu_1 \\ \mu_2 \end{smallmatrix} \bigr)$ and $\boldsymbol{\Sigma} = \bigl( \begin{smallmatrix} \sigma^2_1 & \rho \sigma_1 \sigma_2 \\ \rho \sigma_1 \sigma_2 & \sigma^2_2 \end{smallmatrix} \bigr)$. In total, this amounts to five parameters for which covariate influences can be graphically displayed. Figure \ref{mvnorm_moments} shows the \enquote{Influence graph} sub-tab for a specified multivariate normal \li{bamlss}.
+\begin{figure}
+  \begin{centering}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/0319_mvnorm_moments.png}
+  \caption{\enquote{Influence graph} tab for a selected bivariate normal \li{bamlss} with three specified covariate combinations.}
+  \label{mvnorm_moments}
+  \end{centering}
+\end{figure}
+As visible, the displayed graph is divided into five subgraphs, instead of two in the univariate case. Similar to the influence plot for univariate response distributions, the relationship between the moments and \li{x2} (explanatory variable selected in this case) is plotted for every previously specified covariate combination. Furthermore, the user can select different colour palettes and obtain R code for plot reproduction. \par
+The \enquote{Table} sub-tab of the \enquote{Properties} tab again differs for bi-variate normal distributions. Here, the displayed table for distributional moments depending on covariate combinations specified in the \enquote{Scenarios} tab is expanded to the five moments of the bivariate normal distribution. For an example layout, Figure \ref{mvnorm_moments_table} in the Appendix is provided. \par
+
+\subsubsection{Multinomial response}
+% blabla Multinomial Family will be normal /no cdf but in properties tab it is awesome!
 
 % it should say somewhere how limits of continuous plots are made
 % because so many different model flexibilities we will base the add-in on bamlss
@@ -713,6 +727,15 @@ Located to the right side of the plot are web elements mostly known from previou
     \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/0318_mvnorm_pdf_image.png}
   \caption{Image plot for the predicted multivariate normal distribution based on user inputs in \enquote{Scenarios} tab.}
   \label{mvnorm_cdf_image}
+  \end{centering}
+\end{figure}
+
+% MVnorm moments table
+\begin{figure}[ht]
+  \begin{centering}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/0320_mvnorm_moments_table.png}
+  \caption{Table view for expected moments of the bivariate normal distribution based on three specified covariate combinations in the \enquote{Scenarios} tab.}
+  \label{mvnorm_moments_table}
   \end{centering}
 \end{figure}
 
