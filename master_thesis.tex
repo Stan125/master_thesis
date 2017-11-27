@@ -645,11 +645,33 @@ Because the bivariate normal distribution consists of two univariate normal dist
   \end{centering}
 \end{figure}
 As visible, the displayed graph is divided into five subgraphs, instead of two in the univariate case. Similar to the influence plot for univariate response distributions, the relationship between the moments and \li{x2} (explanatory variable selected in this case) is plotted for every previously specified covariate combination. Furthermore, the user can select different colour palettes and obtain R code for plot reproduction. \par
-The \enquote{Table} sub-tab of the \enquote{Properties} tab again differs for bi-variate normal distributions. Here, the displayed table for distributional moments depending on covariate combinations specified in the \enquote{Scenarios} tab is expanded to the five moments of the bivariate normal distribution. For an example layout, Figure \ref{mvnorm_moments_table} in the Appendix is provided. \par
+The \enquote{Table} sub-tab of the \enquote{Properties} tab again differs for bi-variate normal distributions. Here, the displayed table for distributional moments depending on covariate combinations specified in the \enquote{Scenarios} tab is expanded to the five moments of the bivariate normal distribution. For an example, Figure \ref{mvnorm_moments_table} in the Appendix is provided. \par
 
 \subsubsection{Multinomial response}
-% blabla Multinomial Family will be normal /no cdf but in properties tab it is awesome!
+For modeling unordered categorical response variables, \li{bamlss} supports the multinomial distribution family, a generalization of the binomial distribution. Loading a \li{bamlss} with a multinomial response is possible in bamlss.vis, although the graphical appearance of predicted distributions and the influence plot differs from usual discrete cases. \par
+Figure \ref{multinom_pdf} shows the \enquote{Plot} tab with three specified covariate combinations after selecting a sample \li{bamlss} with multinomial response in the \enquote{Overview} tab.
+\begin{figure}
+  \begin{centering}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/0321_multinom_pdf.png}
+  \caption{Predicted multinomial response in the \enquote{Plot tab} based on three specified covariate combinations}
+  \label{multinom_pdf}
+  \end{centering}
+\end{figure}
+The modeled sample response variable can have four different outcomes \li{one}, \li{two}, \li{three} and \li{four} which are visible on the x-axis. The predicted probabilities for each of those outcomes are displayed on the y-axis. This is realized graphically in bars for each of the specified covariate combinations, which are three in the present case. Interpreting \ref{multinom_pdf}, one can see that with each higher covariate combination (\li{P1} to \li{P3}), the probability to fall into category \li{two} increases, while the probabilities for all other categories decrease. \par
+Moreover, tweaking the plot with the web elements in the right sidebar is possible, similar to bamlss.vis' behaviour for discrete or continuous univariate responses. The option for displaying the cumulative distribution function is inoperative, due to the lack of a reasonable graphical representation.\par
+Using own covariate combinations and then visualising the probability differences for each class as in Figure \ref{multinom_pdf} can already be used to obtain influence tendencies of covariates on the distributional moments, because for a multinomial distribution $y$ with $K$ classes and $n=1$ draws $E(y) = \boldsymbol{\pi} = (\mu_1, \ldots, \mu_K)'$ holds, which means the first moment is already graphically displayed. However, the variation of $\boldsymbol{\pi}$ over the whole range of an explanatory variable might be of interest. To solve this need, Figure \ref{multinom_influence} is provided.
+\begin{figure}
+  \begin{centering}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/0322_multinom_influence.png}
+  \caption{Influence of variable \li{norm1} on expected first moments of multinomial distribution}
+  \label{multinom_influence}
+  \end{centering}
+\end{figure}
+In Figure \ref{multinom_influence}, the predicted values for $\pi_1, \ldots, \pi_4$ are displayed over the range of the selected variable, \li{norm1}. This is then repeated for every covariate combination which was specified in the \enquote{Scenarios} tab. As visible, the y-axis limits are always 0 and 1, due to $\mu_1 = \ldots = \mu_4 \geq 0$ and $\sum\limits^{4}_{i = 1} \pi_i = 1$ holding true. Furthermore, one can see that an increase of \li{norm1} is associated with an increase in the probability to fall into category \enquote{one} ($\pi_1$) and a decrease for all other categories, across all three covariate combinations. \par
+% Blabla also possible for categorical covariates (Figure soundso)
 
+
+% somewhere with the example models: based on the random data generator function?
 % it should say somewhere how limits of continuous plots are made
 % because so many different model flexibilities we will base the add-in on bamlss
 \section{Conclusion}

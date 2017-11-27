@@ -23,6 +23,6 @@
 \contentsline {subsubsection}{\numberline {3.4.1}Discrete Responses}{28}{subsubsection.3.4.1}
 \contentsline {subsubsection}{\numberline {3.4.2}Multivariate Responses}{30}{subsubsection.3.4.2}
 \contentsline {subsubsection}{\numberline {3.4.3}Multinomial response}{32}{subsubsection.3.4.3}
-\contentsline {section}{\numberline {4}Conclusion}{32}{section.4}
-\contentsline {section}{\numberline {A}Appendix}{33}{appendix.A}
-\contentsline {section}{Bibliography}{37}{section*.27}
+\contentsline {section}{\numberline {4}Conclusion}{34}{section.4}
+\contentsline {section}{\numberline {A}Appendix}{35}{appendix.A}
+\contentsline {section}{Bibliography}{39}{section*.29}

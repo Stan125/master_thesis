@@ -414,6 +414,12 @@ INPUT ./images/0315_mvnorm_pdf.png
 INPUT images/0319_mvnorm_moments.png
 INPUT ./images/0319_mvnorm_moments.png
 INPUT ./images/0319_mvnorm_moments.png
+INPUT images/0321_multinom_pdf.png
+INPUT ./images/0321_multinom_pdf.png
+INPUT ./images/0321_multinom_pdf.png
+INPUT images/0322_multinom_influence.png
+INPUT ./images/0322_multinom_influence.png
+INPUT ./images/0322_multinom_influence.png
 INPUT images/035_educ_app_cdf.png
 INPUT ./images/035_educ_app_cdf.png
 INPUT ./images/035_educ_app_cdf.png
