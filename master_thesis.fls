@@ -206,6 +206,8 @@ INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/url/url.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/hyperref.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
@@ -221,8 +223,6 @@ INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/pd1enc.def
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/pd1enc.def
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/hyperref.cfg
-INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/url/url.sty
-INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/url/url.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/hpdftex.def
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/hpdftex.def
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
@@ -444,6 +444,9 @@ INPUT ./images/0318_mvnorm_pdf_image.png
 INPUT images/0320_mvnorm_moments_table.png
 INPUT ./images/0320_mvnorm_moments_table.png
 INPUT ./images/0320_mvnorm_moments_table.png
+INPUT images/0323_multinom_influence_categorical.png
+INPUT ./images/0323_multinom_influence_categorical.png
+INPUT ./images/0323_multinom_influence_categorical.png
 INPUT master_thesis.bbl
 INPUT master_thesis.bbl
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
@@ -459,6 +462,7 @@ INPUT ./master_thesis.out
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb

@@ -1,17 +1,17 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces Probability Density Function of a left-censored normal distribution with the expected value drawn as a blue line.\relax }}{14}{figure.caption.4}
-\contentsline {figure}{\numberline {2}{\ignorespaces Gaussian kernel density estimates for wages split up by education level.\relax }}{16}{figure.caption.5}
+\contentsline {figure}{\numberline {1}{\ignorespaces Probability Density Function of a left-censored normal distribution with the expected value drawn as a blue line.\relax }}{15}{figure.caption.4}
+\contentsline {figure}{\numberline {2}{\ignorespaces Gaussian kernel density estimates for wages split up by education level.\relax }}{17}{figure.caption.5}
 \contentsline {figure}{\numberline {3}{\ignorespaces Button to start the main application of bamlss.vis in RStudio.\relax }}{18}{figure.caption.6}
-\contentsline {figure}{\numberline {4}{\ignorespaces Layout of bamlss.vis after starting the application.\relax }}{18}{figure.caption.7}
-\contentsline {figure}{\numberline {5}{\ignorespaces Expanded overview tab after model selection.\relax }}{19}{figure.caption.8}
-\contentsline {figure}{\numberline {6}{\ignorespaces Scenarios tab of bamlss.vis.\relax }}{20}{figure.caption.9}
+\contentsline {figure}{\numberline {4}{\ignorespaces Layout of bamlss.vis after starting the application.\relax }}{19}{figure.caption.7}
+\contentsline {figure}{\numberline {5}{\ignorespaces Expanded overview tab after model selection.\relax }}{20}{figure.caption.8}
+\contentsline {figure}{\numberline {6}{\ignorespaces Scenarios tab of bamlss.vis.\relax }}{21}{figure.caption.9}
 \contentsline {figure}{\numberline {7}{\ignorespaces Plot tab output when specifying five different scenarios with different education levels.\relax }}{22}{figure.caption.10}
 \contentsline {figure}{\numberline {8}{\ignorespaces Modal window with formatted and highlighted code after pressing the \enquote {Obtain Code!} button\relax }}{23}{figure.caption.11}
 \contentsline {figure}{\numberline {9}{\ignorespaces Scenario data tab.\relax }}{24}{figure.caption.12}
-\contentsline {figure}{\numberline {10}{\ignorespaces Influence of \lstinline {age} on the first two moments of the predicted distributions for \lstinline {cnorm_model}\relax }}{25}{figure.caption.13}
-\contentsline {figure}{\numberline {11}{\ignorespaces Influence of \lstinline {race} categories on the first two moments of the predicted distributions for \lstinline {cnorm_model}.\relax }}{26}{figure.caption.14}
+\contentsline {figure}{\numberline {10}{\ignorespaces Influence of \lstinline {age} on the first two moments of the predicted distributions for \lstinline {cnorm_model}\relax }}{26}{figure.caption.13}
+\contentsline {figure}{\numberline {11}{\ignorespaces Influence of \lstinline {race} categories on the first two moments of the predicted distributions for \lstinline {cnorm_model}.\relax }}{27}{figure.caption.14}
 \contentsline {figure}{\numberline {12}{\ignorespaces Expected Value and Variance for predicted distributions based on specified covariate combinations.\relax }}{28}{figure.caption.15}
-\contentsline {figure}{\numberline {13}{\ignorespaces Plot tab with predicted probability mass functions for Poisson distributions with three specified covariate combinations in the \enquote {Scenarios} tab\relax }}{29}{figure.caption.16}
-\contentsline {figure}{\numberline {14}{\ignorespaces Predicted distribution for a multivariate normal distributed response based on the covariate specification of the \enquote {Scenarios} tab.\relax }}{30}{figure.caption.17}
-\contentsline {figure}{\numberline {15}{\ignorespaces \enquote {Influence graph} tab for a selected bivariate normal \lstinline {bamlss} with three specified covariate combinations.\relax }}{31}{figure.caption.18}
-\contentsline {figure}{\numberline {16}{\ignorespaces Predicted multinomial response in the \enquote {Plot tab} based on three specified covariate combinations\relax }}{32}{figure.caption.19}
-\contentsline {figure}{\numberline {17}{\ignorespaces Influence of variable \lstinline {norm1} on expected first moments of multinomial distribution\relax }}{33}{figure.caption.20}
+\contentsline {figure}{\numberline {13}{\ignorespaces Plot tab with predicted probability mass functions for Poisson distributions with three specified covariate combinations in the \enquote {Scenarios} tab\relax }}{30}{figure.caption.16}
+\contentsline {figure}{\numberline {14}{\ignorespaces Predicted distribution for a multivariate normal distributed response based on the covariate specification of the \enquote {Scenarios} tab.\relax }}{31}{figure.caption.17}
+\contentsline {figure}{\numberline {15}{\ignorespaces \enquote {Influence graph} tab for a selected bivariate normal \lstinline {bamlss} with three specified covariate combinations.\relax }}{32}{figure.caption.18}
+\contentsline {figure}{\numberline {16}{\ignorespaces Predicted multinomial response in the \enquote {Plot tab} based on three specified covariate combinations\relax }}{33}{figure.caption.19}
+\contentsline {figure}{\numberline {17}{\ignorespaces Influence of variable \lstinline {norm1} on expected first moments of multinomial distribution\relax }}{34}{figure.caption.20}

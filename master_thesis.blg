@@ -4,50 +4,48 @@ The top-level auxiliary file: master_thesis.aux
 The style file: plainnat.bst
 Database file #1: bibliography.bib
 Warning--entry type for "depstat" isn't style-file defined
---line 29 of file bibliography.bib
+--line 32 of file bibliography.bib
 Warning--entry type for "shiny_online" isn't style-file defined
---line 260 of file bibliography.bib
-Warning--empty journal in brezger2006
-Warning--empty institution in klein2013
+--line 264 of file bibliography.bib
 You've used 32 entries,
             2773 wiz_defined-function locations,
-            812 strings with 10346 characters,
-and the built_in function-call counts, 13172 in all, are:
-= -- 1209
-> -- 699
+            811 strings with 10186 characters,
+and the built_in function-call counts, 13236 in all, are:
+= -- 1222
+> -- 700
 < -- 27
 + -- 242
 - -- 210
-* -- 994
-:= -- 2067
-add.period$ -- 120
+* -- 1000
+:= -- 2079
+add.period$ -- 125
 call.type$ -- 32
-change.case$ -- 154
+change.case$ -- 155
 chr.to.int$ -- 32
-cite$ -- 66
+cite$ -- 64
 duplicate$ -- 618
 empty$ -- 1078
 format.name$ -- 260
-if$ -- 2747
+if$ -- 2761
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 22
-newline$ -- 189
+newline$ -- 194
 num.names$ -- 128
-pop$ -- 317
+pop$ -- 316
 preamble$ -- 1
-purify$ -- 133
+purify$ -- 134
 quote$ -- 0
-skip$ -- 494
+skip$ -- 492
 stack$ -- 0
 substring$ -- 358
-swap$ -- 68
+swap$ -- 69
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 327
-warning$ -- 2
+warning$ -- 0
 while$ -- 120
 width$ -- 0
-write$ -- 451
-(There were 4 warnings)
+write$ -- 463
+(There were 2 warnings)
