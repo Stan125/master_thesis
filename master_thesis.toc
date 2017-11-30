@@ -10,19 +10,19 @@
 \contentsline {subsubsection}{\numberline {2.4.1}GAMLSS}{10}{subsubsection.2.4.1}
 \contentsline {subsubsection}{\numberline {2.4.2}BAMLSS}{11}{subsubsection.2.4.2}
 \contentsline {subsection}{\numberline {2.5}Estimation}{12}{subsection.2.5}
-\contentsline {section}{\numberline {3}bamlss.vis}{13}{section.3}
+\contentsline {section}{\numberline {3}bamlss.vis}{14}{section.3}
 \contentsline {subsection}{\numberline {3.1}Motivation}{14}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Case-Study}{16}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.2}Case-Study}{17}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Application Structure \& Guide}{18}{subsection.3.3}
 \contentsline {subsubsection}{\numberline {3.3.1}Overview Tab}{19}{subsubsection.3.3.1}
 \contentsline {subsubsection}{\numberline {3.3.2}Scenarios Tab}{20}{subsubsection.3.3.2}
 \contentsline {subsubsection}{\numberline {3.3.3}Plot Tab}{22}{subsubsection.3.3.3}
-\contentsline {subsubsection}{\numberline {3.3.4}Scenario Data Tab}{24}{subsubsection.3.3.4}
-\contentsline {subsubsection}{\numberline {3.3.5}Properties Tab}{25}{subsubsection.3.3.5}
-\contentsline {subsection}{\numberline {3.4}Additional Functions}{28}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Discrete Responses}{29}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Multivariate Responses}{30}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.3.4}Scenario Data Tab}{25}{subsubsection.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.5}Properties Tab}{26}{subsubsection.3.3.5}
+\contentsline {subsection}{\numberline {3.4}Additional Functions}{29}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Discrete Responses}{30}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Multivariate Responses}{31}{subsubsection.3.4.2}
 \contentsline {subsubsection}{\numberline {3.4.3}Multinomial Responses}{32}{subsubsection.3.4.3}
 \contentsline {section}{\numberline {4}Conclusion}{34}{section.4}
-\contentsline {section}{\numberline {A}Appendix}{35}{appendix.A}
-\contentsline {section}{Bibliography}{40}{section*.30}
+\contentsline {section}{\numberline {A}Appendix}{36}{appendix.A}
+\contentsline {section}{Bibliography}{41}{section*.30}

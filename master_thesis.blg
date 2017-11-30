@@ -7,45 +7,45 @@ Warning--entry type for "depstat" isn't style-file defined
 --line 32 of file bibliography.bib
 Warning--entry type for "shiny_online" isn't style-file defined
 --line 264 of file bibliography.bib
-You've used 32 entries,
+You've used 34 entries,
             2773 wiz_defined-function locations,
-            811 strings with 10186 characters,
-and the built_in function-call counts, 13236 in all, are:
-= -- 1222
-> -- 700
-< -- 27
-+ -- 242
-- -- 210
-* -- 1000
-:= -- 2079
-add.period$ -- 125
-call.type$ -- 32
-change.case$ -- 155
-chr.to.int$ -- 32
-cite$ -- 64
-duplicate$ -- 618
-empty$ -- 1078
-format.name$ -- 260
-if$ -- 2761
+            825 strings with 10599 characters,
+and the built_in function-call counts, 13986 in all, are:
+= -- 1292
+> -- 731
+< -- 29
++ -- 253
+- -- 219
+* -- 1052
+:= -- 2200
+add.period$ -- 134
+call.type$ -- 34
+change.case$ -- 163
+chr.to.int$ -- 34
+cite$ -- 68
+duplicate$ -- 658
+empty$ -- 1147
+format.name$ -- 273
+if$ -- 2922
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 22
-newline$ -- 194
-num.names$ -- 128
-pop$ -- 316
+missing$ -- 25
+newline$ -- 206
+num.names$ -- 136
+pop$ -- 332
 preamble$ -- 1
-purify$ -- 134
+purify$ -- 141
 quote$ -- 0
-skip$ -- 492
+skip$ -- 520
 stack$ -- 0
-substring$ -- 358
-swap$ -- 69
+substring$ -- 374
+swap$ -- 71
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 327
+type$ -- 344
 warning$ -- 0
-while$ -- 120
+while$ -- 127
 width$ -- 0
-write$ -- 463
+write$ -- 493
 (There were 2 warnings)

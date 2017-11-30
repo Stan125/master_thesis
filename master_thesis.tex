@@ -88,6 +88,7 @@
 \newcommand{\li}{\lstinline}
 \newcommand{\estf}{\hat{\boldsymbol{f}}}
 \newcommand{\estbbeta}{\hat{\boldsymbol{\beta}}}
+\newcommand{\bbeta}{\boldsymbol{\beta}}
 
 %%% HEADERS & FOOTERS
 \usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
@@ -211,7 +212,7 @@ Additionally, the user can obtain the code which created the graphs to potential
 \label{bamlss}
 Bayesian Additive Models for Location, Scale and Shape (bamlss) are a form of Bayesian regression models in which every parameter of a parametric distribution with $K$ parameters is related to a set of additive predictors. The distribution does not have to follow the exponential family, which extends the distributions available for modeling beyond the ones used in Generalized Linear Models (GLM). In similar fashion to Generalized Additive Models~\citep[GAM,][]{hastie1990generalized}, the additive predictors can assume different shapes, including non-linear, fixed, random and spatial effects~\citep{bamlss2017}. \par
 %In the ability to additively model multiple parameters of one distribution, bamlss bear many similarities with Generalized Additive Models for location, scale and shape~\citep[GAMLSS,][]{gamlss2001}. Disparities lie in the estimation of model parameters, where bamlss utilize Markov Chain Monte Carlo (MCMC) simulations which provide credible intervals in situations where asymptotic maximum likelihood confidence intervals often fail, as well as bamlss' ability to model multivariate parametric distributions~\citep{bamlss2017}. \par
-To give a sufficient depiction of this model class, this section will start with explaining Additive Models and then gradually generalize the broader frameworks to finally arrive at bamlss. Furthermore, a brief overview of the different estimation techniques for the covered model frameworks will be given. \par
+To give a sufficient depiction of this model class, this section will start with explaining Additive Models and then gradually generalize the broader frameworks to finally arrive at bamlss. Furthermore, a brief overview of the different estimation techniques for the covered model frameworks will be given.  \par
 
 \subsection{Additive Models}
 \label{AM}
@@ -430,10 +431,14 @@ Thus, estimates $\estf_j$, $\estbbeta$ can be obtained by running the following 
   \end{equation*}
   \item Repeat Steps 2-3 until the iteration deviations between estimates $\estf_j$ are sufficiently small.
 \end{enumerate}
-Note that $\mathbf{S}_j$ can be any smoothing function. In the case of penalized smooth splines, % it looks like this blablabla
-
-% AM: backfitting
-% STAR: pen least squares, mixed model rep, fully bayesian inference, boosting as suggested in fahrmeir2013regression, page 561
+Note that $\mathbf{S}_j$ can be any smoothing function. In the case of penalized smooth splines, this could be the penalized least squares estimate $\mathbf{S}_j = (\mathbf{Z}' \mathbf{Z} + \lambda \mathbf{K})^{-1}\mathbf{Z}'$ with smoothing parameter $\lambda$, design matrix $\mathbf{Z}$ and penalty matrix $\mathbf{K}$. The estimated smoothing parameter $\lambda$ can be computed by optimizing a model choice criterion, for example GCV or AIC \citep{fahrmeir2013regression}. \par
+Generalized STAR models, which use a link function to relate structured additive predictors to expected values of exponential family distributions, are estimated based on a maximum-likelihood approach. To obtain coefficient estimates, the penalized log-likelihood criterion
+\begin{equation}
+  \label{penloglik}
+  l_{pen}(\boldsymbol{\gamma}_1, \ldots, \boldsymbol{\gamma}_K, \bbeta) = l(\boldsymbol{\gamma}_1, \ldots, \boldsymbol{\gamma}_K, \bbeta) - \frac{1}{2} \sum\limits_{j = 1}^{K} \lambda_j \boldsymbol{\gamma}_j' \mathbf{K}_j \boldsymbol{\gamma}_j
+\end{equation}
+is maximised in regard to $\boldsymbol{\gamma}_1, \ldots, \boldsymbol{\gamma}_K, \bbeta$. The first part of the criterion, $l(\boldsymbol{\gamma}_1, \ldots, \boldsymbol{\gamma}_K, \bbeta)$ depicts the log-likelihood known from Generalized Linear Models, but with structural additive effects. \par
+The penalized log-likelihood criterion of \eqref{penloglik} can in some cases be directly maximised. For example, an R implementation for Generalized Additive Models, \li{mgcv} \citep{mgcv2011}, uses penalized iteratively reweighted least squares to obtain coefficient estimates. Optimisation of the penalized log-likelihood can also be combined with backfitting, as it is done in the R package \li{gam}, written by \citet*{chambers1992}.
 
 \section{bamlss.vis}
 \label{bamlss.vis}
