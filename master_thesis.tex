@@ -1,6 +1,6 @@
-% !TEX TS-program = pdflatex
+% !TEX program = pdflatex
 % !TEX encoding = UTF-8 Unicode
-%!TeX spellcheck = en-US,en-DE
+% !TeX spellcheck = en-US,en-DE
 
 \documentclass[12pt, usenames]{article} % use larger type; default would be 10pt
 
@@ -410,7 +410,10 @@ with nonlinear parameters $\boldsymbol{\beta}_{jl}$\citep{bamlss2017}.
 % Sunday5Nov: replace the parametric effects everywhere such that it includes an intercept man!
 \subsection{Estimation}
 \label{estimation}
-In this section, different estimation techniques for the regression models introduced in Section \ref{bamlss} will be discussed. Structured Additive Regression Models (STAR) including simple Additive Models (AM) can be estimated using backfitting, an algorithm first coined by \citet*{friedman1981projection}. The intention of backfitting is to compute estimates for the model terms by the iterative smoothing of partial residuals. Originating from the STAR model equation
+In this section, different estimation techniques for the regression models introduced in Section \ref{bamlss} will be discussed.
+
+\subsubsection{STAR and Generalized STAR models}
+Structured Additive Regression Models (STAR) including simple Additive Models (AM) can be estimated using backfitting, an algorithm first coined by \citet*{friedman1981projection}. The intention of backfitting is to compute estimates for the model terms by the iterative smoothing of partial residuals. Originating from the STAR model equation
 \begin{equation*}
   \mathbf{y} = \sum\limits^{K}_{j = 1} \boldsymbol{f}_j + \mathbf{X}\boldsymbol{\beta} + \boldsymbol{\epsilon}
 \end{equation*}
@@ -438,7 +441,17 @@ Generalized STAR models, which use a link function to relate structured additive
   l_{pen}(\boldsymbol{\gamma}_1, \ldots, \boldsymbol{\gamma}_K, \bbeta) = l(\boldsymbol{\gamma}_1, \ldots, \boldsymbol{\gamma}_K, \bbeta) - \frac{1}{2} \sum\limits_{j = 1}^{K} \lambda_j \boldsymbol{\gamma}_j' \mathbf{K}_j \boldsymbol{\gamma}_j
 \end{equation}
 is maximised in regard to $\boldsymbol{\gamma}_1, \ldots, \boldsymbol{\gamma}_K, \bbeta$. The first part of the criterion, $l(\boldsymbol{\gamma}_1, \ldots, \boldsymbol{\gamma}_K, \bbeta)$ depicts the log-likelihood known from Generalized Linear Models, but with structural additive effects. \par
-The penalized log-likelihood criterion of \eqref{penloglik} can in some cases be directly maximised. For example, an R implementation for Generalized Additive Models, \li{mgcv} \citep{mgcv2011}, uses penalized iteratively reweighted least squares to obtain coefficient estimates. Optimisation of the penalized log-likelihood can also be combined with backfitting, as it is done in the R package \li{gam}, written by \citet*{chambers1992}.
+As suggested by \citet{fahrmeir2013regression}, penalized log-likelihood criterion of \eqref{penloglik} can in some cases be directly maximised. For example, an R implementation for Generalized Additive Models (which can be seen as a sub-variant of STAR models), \li{mgcv} \citep{mgcv2011}, uses penalized iteratively reweighted least squares to directly obtain coefficient estimates. Optimisation of the penalized log-likelihood can also be combined with backfitting, as it is done in the R package \li{gam}, written by \citet*{chambers1992}. \par
+
+\subsubsection{GAMLSS}
+Generalized Additive Models for Location, Scale and Shape (gamlss) also rely on the penalized likelihood in \eqref{penloglik} to obtain coefficient estimates. For maximisation, \citet*{gamlss2005} present two algorithms: the \enquote{RS} algorithm, a generalization of the algorithm suggested by \citet*{rigby1996} for fitting mean and dispersion additive models, and \enquote{CG}, which represents a generalization of the algorithm coined by \citet*{cole1992} relying on first and second (cross) derivatives of the likelihood function with regard to the distributional parameters. \par
+RS, abbreviated for Rigby and Stasinopoulos, uses iteratively weighted least squares (IRLS) in combination with a modified backfitting algorithm to arrive at coefficient estimates. To illustrate the algorithm system, it is broken up into inner and outer iterations, with each inner iteration depicting the fitting of one distributional parameter $\boldsymbol{\theta}_l$. Here, a working variable $\mathbf{z}_l$ consististing of all used predictors, the first derivative of the likelihood (score function) and \enquote{iterative weights} $\mathbf{w}_l$, determined with a local scoring algorithm, is calculated. Then, the working variable is fit to the explanatory variables using backfitted weighted least squares and penalized weighted least squares for parametric and nonparametric coefficients, respectively. The inner iteration is repeated until the inner global deviance has converged. This procedure is done for every $\theta_l$, after which one outer iteration is finished. The outer iterations are further repeated, until the outer global deviance has also converged \citep[Chap. 3]{gamlssbook}. \par
+Note that while the RS algorithm uses score functions to update the working variable, the cross derivatives of the log likelihood functions with respect to the distributional parameters $\boldsymbol{\theta}_l$ are not needed. The CG algorithm, however, uses cross derivatives to obtain new weights for the iteratively reweighted least squares estimation. Other contrasts between CG and RS include the iteration system of CG, where new weights $\mathbf{w}_l$ and the working variable $\mathbf{z}_l$ for iteratively reweighted least squares is not updated for fitting of every parameter, but represents the outer iteration. In the inner iterations, distributional parameters are fitted after another relying on given weights depending on the current working variable. Here, backfitting is again used to compute current estimates of regression coefficients. After the inner and outer iterations converged, model estimation is finished \citep[Chap. 3]{gamlssbook}.
+As stated by \citet{gamlssbook}, the RS algorithm is preferred in most cases since it is usually faster and converges more consistently than CG. In cases where the modeled distribution posesses highly correlated parameters, however, RS can be slower and suffer from premature convergence. \par
+
+\subsubsection{BAMLSS}
+
+
 
 \section{bamlss.vis}
 \label{bamlss.vis}

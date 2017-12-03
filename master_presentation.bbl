@@ -1,0 +1,35 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Fahrmeir et~al.(2003)Fahrmeir, Kneib, and Lang]{fahrmeir2003}
+L.~Fahrmeir, T.~Kneib, and S.~Lang.
+\newblock Penalized additive regression for space-time data: a bayesian
+  perspective, 2003.
+\newblock URL
+  \url{http://nbn-resolving.de/urn/resolver.pl?urn=nbn:de:bvb:19-epub-1687-9}.
+
+\bibitem[Friedman and Stuetzle(1981)]{friedman1981projection}
+J.H. Friedman and W.~Stuetzle.
+\newblock Projection pursuit regression.
+\newblock \emph{Journal of the American statistical Association}, 76\penalty0
+  (376):\penalty0 817--823, 1981.
+
+\bibitem[Rigby and Stasinopoulos(2001)]{gamlss2001}
+R.A. Rigby and D.M. Stasinopoulos.
+\newblock The gamlss project: a flexible approach to statistical modelling.
+\newblock In \emph{New trends in statistical modelling: Proceedings of the 16th
+  international workshop on statistical modelling}, volume 337, page 345.
+  University of Southern Denmark, June 2001.
+
+\bibitem[Umlauf et~al.(2017)Umlauf, Klein, and Zeileis]{bamlss2017}
+N.~Umlauf, N.~Klein, and A.~Zeileis.
+\newblock Bamlss: Bayesian additive models for location, scale and shape (and
+  beyond).
+\newblock Working papers, Working Papers in Economics and Statistics, 2017.
+\newblock URL \url{https://EconPapers.repec.org/RePEc:inn:wpaper:2017-05}.
+
+\end{thebibliography}

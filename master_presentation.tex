@@ -1,0 +1,234 @@
+% !TEX program = xelatex
+
+\documentclass[10pt, dvipsnames]{beamer}
+
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+\usepackage{booktabs}
+\usepackage[ngerman]{babel}
+\usepackage[ngerman]{varioref}
+\usepackage[scale=2]{ccicons}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{appendixnumberbeamer}
+\usepackage{listings} %% for R Code
+
+%%% BibTex Style
+\setcitestyle{authoryear, open = { ( }, close = { ) }}
+\def\bibfont{\small} % smaller bibliography
+
+%%% Listings options
+\lstdefinelanguage{Renhanced}[]{R}{
+otherkeywords={!,!=,~,*,\&,\%/\%,\%*\%,\%\%,<-,<<-, ::},
+morekeywords={},
+deletekeywords={hist, runif, plot, data, family , read.table, read, check, text, file, attributes, quote, missing, c, list, any, which, na, deparse, structure, install},
+alsoletter={.\%},%
+alsoother={:_\$}}
+
+\lstset{
+language=Renhanced,                     % the language of the code
+basicstyle=\small\ttfamily, % the size of the fonts that are used for the code
+numbers=left,                   % where to put the line-numbers
+numberstyle=\tiny\color{Blue},  % the style that is used for the line-numbers
+stepnumber=1,                   % the step between two line-numbers. If it is 1, each line will be numbered
+numbersep=10pt,                  % how far the line-numbers are from the code
+backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+frame=false,                   % adds a frame around the code
+rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+tabsize=2,                      % sets default tabsize to 2 spaces
+captionpos=b,                   % sets the caption-position to bottom
+breaklines=true,                % sets automatic line breaking
+breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+keywordstyle=\color{RoyalBlue},      % keyword style
+commentstyle=\color{YellowGreen},   % comment style
+stringstyle=\color{ForestGreen}      % string literal style
+}
+
+\renewcommand{\lstlistingname}{Code-Chunk}
+
+%%% New commands
+\newcommand{\li}{\lstinline}
+
+\addto{\captionsngerman}{%
+\renewcommand*{\contentsname}{Inhalt}
+\renewcommand*{\listfigurename}{Figures}
+\renewcommand*{\listtablename}{Table}
+\renewcommand*{\figurename}{Figure}
+}
+
+\setsansfont[BoldFont={Fira Sans SemiBold}]{Fira Sans Book}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+\title{bamlss.vis}
+\subtitle{An R Package to Interactively Analyze and Visualize Bayesian Additive Models for Location, Scale and Shape (bamlss) Using the Shiny Framework}
+\date{7. December 2017}
+\author{Stanislaus Stadlmann}
+\institute{Georg-August University of Göttingen}
+\titlegraphic{
+\vspace{-0.2cm}~%
+\hspace*{1.25cm}~%
+\includegraphics[height = 1.4cm]{images/00_logo.png}
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Table of contents}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents
+\end{frame}
+
+\section{Introduction}
+\begin{frame}{Introduction}
+  \textbf{Distributional Regression} \\
+  \begin{itemize}
+    \item An emerging field in regression methods
+    \item Each parameter of a response distribution beyond the mean can be modeled using a set of predictors
+    \pause
+    \item Notable frameworks:
+    \begin{enumerate}
+      \item Generalized Additive Models for Location, Scale and Shape, coined by \citet*{gamlss2001}
+      \item Bayesian Additive Models for Location, Scale and Shape, coined by \citet*{bamlss2017}
+    \end{enumerate}
+    \item Differences: Estimation techniques
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Introduction}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.35\textwidth}
+    \metroset{block=fill}
+    \begin{exampleblock}{Response}
+      Let $y \sim D(\theta_1, \ldots, \theta_K)$
+    \end{exampleblock}
+  \end{columns}
+  \textbf{Problem} \\
+  \begin{itemize}
+    \item Often, distribution parameters $h(\eta_l) = \theta_l$ do not directly equate to $E(y)$, $Var(y)$
+    \pause
+    \item Therefore hard to interpret effects on distribution moments because:
+    \begin{enumerate}
+      \item Link function $h_l(\cdot)$ transforms effects
+      \item Transformed effects are for parameters $\theta_l$ which often do not directly equate moments
+    \end{enumerate}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \textbf{Problem} \\
+  \begin{itemize}
+    \item Thus: Package needed which
+    \begin{enumerate}
+      \item Makes it easy to graphically display and compare predicted distributions
+      \item Displays the influence of a covariate on the distributional moments
+    \end{enumerate}
+    \item $\Rightarrow$ \li{bamlss.vis} was born, solving these problems in R with a Shiny App.
+  \end{itemize}
+\end{frame}
+
+\section{Motivating BAMLSS}
+
+\begin{frame}{Additive Models (AM)}
+  \textbf{Overview} \\
+  \begin{itemize}
+    \item Proposed by \citet*{friedman1981projection}
+    \item Dependent variable $y$ is related to non-parametric effects in an additive way
+  \end{itemize}
+  \pause
+  \textbf{Model specification}
+  \begin{equation*}
+    \begin{split}
+      y_i & = f_1(z_{i1}) + f_2(z_{i2}) + \ldots + f_k(z_{ik}) + \epsilon_i \quad \text{(only nonparametric effects)} \\
+      y_i & = \sum\limits_{j = 1}^K f_j(z_{ij}) + \sum\limits_{l = 1}^Q \beta_l x_{il} + \epsilon_i \quad \text{(with parametric effects)}
+    \end{split}
+  \end{equation*}
+  \pause
+  \textbf{Why additive?}
+  \begin{itemize}
+    \item Curse of dimensionality
+    \item Easier to separate covariate effects
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Structured Additive Regression (STAR) Models}
+  \textbf{Motivation} \\
+  \begin{itemize}
+    \item AM allow for non-parametric effects, but sometimes even more flexibility is needed
+    \item STAR \citep{fahrmeir2003} also support structured terms, which include:
+    \pause
+    \begin{enumerate}
+      \item Nonlinear effects of a single variable
+      \item Spatial effects of location index $s$
+      \item Interactions between a continuous covariate and a categorical variable
+      \item Nonlinear interactions between two continuous covariates
+      \item Random Effects with intercept $\nu_0$ and slope $\nu_j$ deviations from main effects
+    \end{enumerate}
+  \end{itemize}
+  \pause
+  \textbf{Model specification}
+  \begin{equation*}
+    y_i = \underbrace{\kappa_i^{add}}_{\text{AM components}} + f_{struc}(\mathbf{v}_{i1}) + \epsilon_i
+  \end{equation*}
+  where $\mathbf{v}_{1}$ can be a one- or multidimensional variable.
+\end{frame}
+
+\begin{frame}{Generalized STAR Models}
+  \textbf{Motivation} \\
+  \begin{itemize}
+    \item AM and STAR assume normalty and directly model $E(y)$
+    \item Generalized STAR models use link function $g(\cdot)$ of Generalized Linear Models
+    \item Adds ability to model $E(y)$ of all exponential families, e.g. binomial or poisson distribution
+  \end{itemize}
+  \textbf{Model specification}
+  \begin{equation*}
+    \begin{split}
+      g(\mu_i) & = \eta_i \\
+      \eta_i & = f_1(z_{i1}) + \ldots + f_K(z_{iK}) + \beta_0 + \beta_1 x_{i1} + \ldots + \beta_Q x_{iQ}
+    \end{split}
+  \end{equation*}
+\end{frame}
+
+\begin{frame}{Structured Additive Distributional Regression}
+  \textbf{Motivation} \\
+  \begin{itemize}
+    \item Often, more than just the location of a distribution is of interest
+    \item Scale/Shape (Variance, Kurtosis) might also be dependent on covariates
+    \item Structured Additive Distributional Regression allows modeling of all distributional parameters $\theta_l$
+  \end{itemize}
+  \textbf{Model specification}\\
+  Let $y \sim D(\theta_1, \ldots, \theta_K)$. Then:
+\begin{equation*}
+  \begin{split}
+  g_l(\boldsymbol{\theta}_l) & = \boldsymbol{\eta}_l \\
+  & = f_{1l}(\mathbf{X} ; \boldsymbol{\beta}_{1l}) + \ldots + f_{Q_{l}l}(\mathbf{X}) ; \boldsymbol{\beta}_{Q_{l}l})
+\end{split}
+\end{equation*}
+where every $\theta_l$ can be modeled with effect types of different subsets of $\mathbf{X}$.
+\end{frame}
+
+\begin{frame}{Bayesian Models for Location, Scale and Shape}
+  overview...
+\end{frame}
+
+\begin{frame}{Thanks!}
+  Thanks for your attention!
+\end{frame}
+
+\appendix
+
+\begin{frame}[allowframebreaks]{References}
+  \bibliography{bibliography}
+  \bibliographystyle{plainnat}
+\end{frame}
+
+\end{document}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{34}
+\begin{thebibliography}{37}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -36,6 +36,16 @@ W.~Chang, W.~Cheng, J.J. Allaire, Yihui X., and J.~McPherson.
 \newblock \emph{shiny: Web Application Framework for R}, 2017.
 \newblock URL \url{https://CRAN.R-project.org/package=shiny}.
 \newblock R package version 1.0.5.
+
+\bibitem[Cole and Green(1992)]{cole1992}
+T.~J. Cole and P.~J. Green.
+\newblock Smoothing reference centile curves: The lms method and penalized
+  likelihood.
+\newblock \emph{Statistics in Medicine}, 11\penalty0 (10):\penalty0 1305--1319,
+  1992.
+\newblock ISSN 1097-0258.
+\newblock \doi{10.1002/sim.4780111005}.
+\newblock URL \url{http://dx.doi.org/10.1002/sim.4780111005}.
 
 \bibitem[Fahrmeir et~al.(2003)Fahrmeir, Kneib, and Lang]{fahrmeir2003}
 L.~Fahrmeir, T.~Kneib, and S.~Lang.
@@ -168,6 +178,14 @@ R.A. Rigby and D.M. Stasinopoulos.
 \newblock \emph{Journal of the Royal Statistical Society: Series C (Applied
   Statistics)}, 54\penalty0 (3):\penalty0 507--554, 2005.
 
+\bibitem[Rigby and Stasinopoulos(1996)]{rigby1996}
+R.A. Rigby and M.D. Stasinopoulos.
+\newblock \emph{Mean and Dispersion Additive Models}, pages 215--230.
+\newblock Physica-Verlag HD, Heidelberg, 1996.
+\newblock ISBN 978-3-642-48425-4.
+\newblock \doi{10.1007/978-3-642-48425-4_16}.
+\newblock URL \url{https://doi.org/10.1007/978-3-642-48425-4_16}.
+
 \bibitem[{RStudio, Inc.}(2017)]{shiny_online}
 {RStudio, Inc.}
 \newblock Shiny, 2017.
@@ -188,6 +206,14 @@ D.M. Stasinopoulos and R.A. Rigby.
   R}.
 \newblock \emph{Journal of Statistical Software}, 23\penalty0 (7):\penalty0
   1--46, 2007.
+
+\bibitem[Stasinopoulos et~al.(2017)Stasinopoulos, Rigby, Heller, Voudouris, and
+  De~Bastiani]{gamlssbook}
+M.D. Stasinopoulos, R.A. Rigby, G.Z. Heller, V.~Voudouris, and F.~De~Bastiani.
+\newblock \emph{Flexible Regression and Smoothing: Using GAMLSS in R}.
+\newblock Chapman \& Hall/CRC The R Series. CRC Press, 2017.
+\newblock ISBN 9781351980371.
+\newblock URL \url{https://books.google.de/books?id=1h-9DgAAQBAJ}.
 
 \bibitem[{The Economist}(2015)]{econblog}
 {The Economist}.
