@@ -1,0 +1,9 @@
+\frametitle{bamlss.vis}
+\textbf{Installation} \\
+    You can install \li{bamlss.vis} today! Run the following code:
+    \begin{lstlisting}
+    if (!require(devtools))
+      install.packages("devtools")
+    devtools::install_github("Stan125/bamlss.vis")
+    \end{lstlisting}
+

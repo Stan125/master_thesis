@@ -11,9 +11,13 @@
 \usepackage[absolute,overlay]{textpos}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage[justification=centering]{caption}
+\usepackage[autostyle]{csquotes}
 \usepackage{natbib}
 \usepackage{appendixnumberbeamer}
 \usepackage{listings} %% for R Code
+
+\setbeamercolor{background canvas}{bg=white}
 
 %%% BibTex Style
 \setcitestyle{authoryear, open = { ( }, close = { ) }}
@@ -100,43 +104,25 @@ stringstyle=\color{ForestGreen}      % string literal style
       \item Generalized Additive Models for Location, Scale and Shape, coined by \citet*{gamlss2001}
       \item Bayesian Additive Models for Location, Scale and Shape, coined by \citet*{bamlss2017}
     \end{enumerate}
-    \item Differences: Estimation techniques
+    \item Differences: Estimation techniques - Likelihood/Bayes
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Introduction}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.35\textwidth}
-    \metroset{block=fill}
-    \begin{exampleblock}{Response}
-      Let $y \sim D(\theta_1, \ldots, \theta_K)$
-    \end{exampleblock}
-  \end{columns}
-  \textbf{Problem} \\
+  \textbf{bamlss.vis} \\
   \begin{itemize}
-    \item Often, distribution parameters $h(\eta_l) = \theta_l$ do not directly equate to $E(y)$, $Var(y)$
-    \pause
-    \item Therefore hard to interpret effects on distribution moments because:
+    \item R package based on the Shiny framework
+    \item Built upon R package \li{bamlss}
+    \item Requires a fitted \li{bamlss} object
+    \item Yields the abilities to
     \begin{enumerate}
-      \item Link function $h_l(\cdot)$ transforms effects
-      \item Transformed effects are for parameters $\theta_l$ which often do not directly equate moments
+      \item visualize predictions for user-chosen covariate combinations
+      \item visualize the influence of a certain covariate on distributional moments
     \end{enumerate}
   \end{itemize}
 \end{frame}
 
-\begin{frame}[t]
-  \textbf{Problem} \\
-  \begin{itemize}
-    \item Thus: Package needed which
-    \begin{enumerate}
-      \item Makes it easy to graphically display and compare predicted distributions
-      \item Displays the influence of a covariate on the distributional moments
-    \end{enumerate}
-    \item $\Rightarrow$ \li{bamlss.vis} was born, solving these problems in R with a Shiny App.
-  \end{itemize}
-\end{frame}
-
-\section{Motivating BAMLSS}
+\section{BAMLSS ancestry}
 
 \begin{frame}{Additive Models (AM)}
   \textbf{Overview} \\
@@ -148,7 +134,7 @@ stringstyle=\color{ForestGreen}      % string literal style
   \textbf{Model specification}
   \begin{equation*}
     \begin{split}
-      y_i & = f_1(z_{i1}) + f_2(z_{i2}) + \ldots + f_k(z_{ik}) + \epsilon_i \quad \text{(only nonparametric effects)} \\
+      y_i & = f_1(z_{i1}) + f_2(z_{i2}) + \ldots + f_K(z_{iK}) + \epsilon_i \quad \text{(only nonparametric effects)} \\
       y_i & = \sum\limits_{j = 1}^K f_j(z_{ij}) + \sum\limits_{l = 1}^Q \beta_l x_{il} + \epsilon_i \quad \text{(with parametric effects)}
     \end{split}
   \end{equation*}
@@ -177,9 +163,9 @@ stringstyle=\color{ForestGreen}      % string literal style
   \pause
   \textbf{Model specification}
   \begin{equation*}
-    y_i = \underbrace{\kappa_i^{add}}_{\text{AM components}} + f_{struc}(\mathbf{v}_{i1}) + \epsilon_i
+    y_i = \underbrace{\kappa_i^{add}}_{\text{AM components}} + \: f_{struc}(\mathbf{z}_{iF}) + \epsilon_i
   \end{equation*}
-  where $\mathbf{v}_{1}$ can be a one- or multidimensional variable.
+  where $\mathbf{z}_{F}$ can be a one- or multidimensional variable.
 \end{frame}
 
 \begin{frame}{Generalized STAR Models}
@@ -189,46 +175,180 @@ stringstyle=\color{ForestGreen}      % string literal style
     \item Generalized STAR models use link function $g(\cdot)$ of Generalized Linear Models
     \item Adds ability to model $E(y)$ of all exponential families, e.g. binomial or poisson distribution
   \end{itemize}
+  \pause
   \textbf{Model specification}
   \begin{equation*}
     \begin{split}
       g(\mu_i) & = \eta_i \\
-      \eta_i & = f_1(z_{i1}) + \ldots + f_K(z_{iK}) + \beta_0 + \beta_1 x_{i1} + \ldots + \beta_Q x_{iQ}
+      \eta_i & = f_1(\mathbf{z}_{i1}) + \ldots + f_J(\mathbf{z}_{iJ})
     \end{split}
   \end{equation*}
+  where $f_j(\cdot)$ can be any structured effect.
 \end{frame}
 
 \begin{frame}{Structured Additive Distributional Regression}
   \textbf{Motivation} \\
   \begin{itemize}
-    \item Often, more than just the location of a distribution is of interest
+    \item Often, more than just the location (Expected Value) of a distribution is of interest
     \item Scale/Shape (Variance, Kurtosis) might also be dependent on covariates
     \item Structured Additive Distributional Regression allows modeling of all distributional parameters $\theta_l$
   \end{itemize}
+  \pause
   \textbf{Model specification}\\
-  Let $y \sim D(\theta_1, \ldots, \theta_K)$. Then:
-\begin{equation*}
-  \begin{split}
-  g_l(\boldsymbol{\theta}_l) & = \boldsymbol{\eta}_l \\
-  & = f_{1l}(\mathbf{X} ; \boldsymbol{\beta}_{1l}) + \ldots + f_{Q_{l}l}(\mathbf{X}) ; \boldsymbol{\beta}_{Q_{l}l})
-\end{split}
-\end{equation*}
-where every $\theta_l$ can be modeled with effect types of different subsets of $\mathbf{X}$.
+  Let $y \sim D(\theta_1, \ldots, \theta_L)$. Then:
+  \begin{equation*}
+    \begin{split}
+      g_{l}(\theta_{il}) & = \eta_{il} \\
+      \eta_{il} & = f_{1l}(\mathbf{z}_{i1l}) + \ldots + f_{J_{l}l}(\mathbf{z}_{iJ_{l}l})
+    \end{split}
+  \end{equation*}
+  where every $\theta_l$ can be modeled with effect types of different subsets of $\mathbf{Z}$.
 \end{frame}
 
 \begin{frame}{Bayesian Models for Location, Scale and Shape}
-  overview...
+  \textbf{Overview} \\
+  \begin{itemize}
+    \item Coined by \citet*{bamlss2017}
+    \item Bayesian variant of Structured Additive Distributional Regression
+    \item \enquote{Full} Bayesian inference with
+    \begin{enumerate}
+      \item Posterior distribution maximisation and
+      \item Markov Chain Monte Carlo Sampling
+    \end{enumerate}
+  \end{itemize}
+  \pause
+  \textbf{Differences/Advantages over GAMLSS} \\
+  \begin{itemize}
+    \item Valid credible intervals in comparison to CI based on asymptotics
+    \item Structured Additive Effects
+    \item Support of Multivariate Distributions
+  \end{itemize}
+  \textbf{but} \\
+  \begin{itemize}
+    \item Slower estimation
+  \end{itemize}
 \end{frame}
 
-\begin{frame}{Thanks!}
-  Thanks for your attention!
+\section{Motivation for bamlss.vis}
+
+\begin{frame}{Motivation for bamlss.vis}
+  \textbf{Problem} \\
+  \begin{itemize}
+    \item Often, distribution parameters $\theta_l$ do not directly equate to $E(y)$, $Var(y)$
+    \pause
+    \item Therefore hard to know influence of covariates on moments because:
+    \begin{enumerate}
+      \item Link function $h_l(\cdot)$ transforms effects
+      \item Transformed effects are for parameters $\theta_l$, which are often not directly moments
+    \end{enumerate}
+  \end{itemize}
 \end{frame}
 
-\appendix
+\begin{frame}{Motivation for bamlss.vis}
+  \textbf{An example} \\
+  Consider the censored normal distribution $y^* \sim CN(\mu = 0, \sigma^2 = 1)$ with cut-off point $a = 0$. \\[0.5cm]
+  \begin{columns}[T, onlytextwidth]
+    \column{0.5\textwidth}
+    \textbf{The Problem} \\
+    \begin{itemize}
+      \item Blue line depicts the expected value
+      \item Parameters $\mu$ and $\sigma^2$ are not the first two moments of the CN distribution!
+    \end{itemize}
+    $\Rightarrow$ Any predicted parameters $\hat{\mu}$ and $\hat{\sigma^2}$ need transformation to $E(y^*) / V(y^*)$
 
-\begin{frame}[allowframebreaks]{References}
-  \bibliography{bibliography}
-  \bibliographystyle{plainnat}
+    \column{0.5\textwidth}
+    \begin{figure}
+      \begin{centering}
+        \includegraphics[scale = 0.65]{images/030_cnorm_plot.pdf}
+        \caption{PDF of CN with expected value as blue line.}
+        \label{cnorm_plot}
+      \end{centering}
+    \end{figure}
+  \end{columns}
 \end{frame}
 
-\end{document}
+\begin{frame}[t]{Motivation for bamlss.vis}
+  \textbf{Solution} \\
+  \begin{itemize}
+    \item Thus: Package needed which
+    \begin{enumerate}
+      \item Makes it easy to graphically display and compare predicted distributions
+      \item Displays the influence of a covariate on the distributional moments
+    \end{enumerate}
+    \item $\Rightarrow$ \li{bamlss.vis} was born, solving these problems in R with a Shiny App.
+  \end{itemize}
+\end{frame}
+
+\section{Case-Study}
+
+\begin{frame}{Case-Study}
+  $\Rightarrow$ Use real data to illustrate \li{bamlss.vis}' capabilities \\[0.5cm]
+  \textbf{The Data}
+  \begin{itemize}
+    \item \li{Wage} dataset, by \citet*{uscensus}
+    \item Depicts yearly income in 1000\$ of males from the US East Coast based on:
+    \begin{enumerate}
+      \item \textbf{age}
+      \item \textbf{year}
+      \item \textbf{race}
+      \item \textbf{education}
+      \item \textbf{health}
+    \end{enumerate}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Case-Study}
+  \textbf{First look}
+  \begin{figure}
+    \begin{centering}
+      \includegraphics[scale = 0.55]{images/030_wage_plot.pdf}
+      \caption{Gaussian kernel density estimates for wages split up by education level.}
+      \label{wage_density}
+    \end{centering}
+  \end{figure}
+  $\Rightarrow$ Model both $\mu$ and $\sigma^2$ depending on education level
+\end{frame}
+
+\begin{frame}[fragile]{Case-Study}
+  \textbf{The model}
+  \begin{lstlisting}[caption = R code for fitting the bamlss based on Wage dataset, label = bamlss_fitting]
+  cnorm_model <- bamlss(
+  list(wage ~ s(age) + race + year + education + health,
+       sigma ~ s(age) + race + year + education + health),
+  data = wage_sub,
+  family = cnorm_bamlss()
+  )
+    \end{lstlisting}
+  \end{frame}
+
+\section{bamlss.vis}
+
+  \begin{frame}{bamlss.vis}
+    \centering
+    Let's start up \li{bamlss.vis}!
+  \end{frame}
+
+  \begin{frame}[fragile]{bamlss.vis}
+    \textbf{Installation} \\
+    You can install \li{bamlss.vis} today! Run the following code:
+    \begin{lstlisting}
+    if (!require(devtools))
+      install.packages("devtools")
+    devtools::install_github("Stan125/bamlss.vis")
+    \end{lstlisting}
+
+  \end{frame}
+
+  \begin{frame}{Thanks!}
+    \centering
+    Thanks for your attention!
+  \end{frame}
+
+  \appendix
+
+  \begin{frame}[allowframebreaks]{References}
+    \bibliography{bibliography}
+    \bibliographystyle{plainnat}
+  \end{frame}
+
+  \end{document}

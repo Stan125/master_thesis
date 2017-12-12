@@ -5,27 +5,27 @@
 \contentsline {subsubsection}{\numberline {2.2.1}Spatial Effects}{4}{subsubsection.2.2.1}
 \contentsline {subsubsection}{\numberline {2.2.2}Interaction Terms}{5}{subsubsection.2.2.2}
 \contentsline {subsubsection}{\numberline {2.2.3}Random Effects}{7}{subsubsection.2.2.3}
-\contentsline {subsection}{\numberline {2.3}Generalized Structured Additive Regression Models}{7}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Structured Additive Distributional Regression}{9}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.3}Generalized Structured Additive Regression Models}{8}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Structured Additive Distributional Regression}{10}{subsection.2.4}
 \contentsline {subsubsection}{\numberline {2.4.1}GAMLSS}{10}{subsubsection.2.4.1}
 \contentsline {subsubsection}{\numberline {2.4.2}BAMLSS}{11}{subsubsection.2.4.2}
-\contentsline {subsection}{\numberline {2.5}Estimation}{12}{subsection.2.5}
-\contentsline {subsubsection}{\numberline {2.5.1}Generalized STAR and STAR models}{13}{subsubsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5}Estimation}{13}{subsection.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}STAR and Generalized STAR models}{13}{subsubsection.2.5.1}
 \contentsline {subsubsection}{\numberline {2.5.2}GAMLSS}{14}{subsubsection.2.5.2}
-\contentsline {subsubsection}{\numberline {2.5.3}BAMLSS}{15}{subsubsection.2.5.3}
-\contentsline {section}{\numberline {3}bamlss.vis}{15}{section.3}
-\contentsline {subsection}{\numberline {3.1}Motivation}{16}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Case-Study}{18}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Application Structure \& Guide}{20}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Overview Tab}{21}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Scenarios Tab}{22}{subsubsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3}Plot Tab}{24}{subsubsection.3.3.3}
-\contentsline {subsubsection}{\numberline {3.3.4}Scenario Data Tab}{26}{subsubsection.3.3.4}
-\contentsline {subsubsection}{\numberline {3.3.5}Properties Tab}{27}{subsubsection.3.3.5}
-\contentsline {subsection}{\numberline {3.4}Additional Functions}{30}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Discrete Responses}{31}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Multivariate Responses}{32}{subsubsection.3.4.2}
-\contentsline {subsubsection}{\numberline {3.4.3}Multinomial Responses}{34}{subsubsection.3.4.3}
-\contentsline {section}{\numberline {4}Conclusion}{36}{section.4}
-\contentsline {section}{\numberline {A}Appendix}{37}{appendix.A}
-\contentsline {section}{Bibliography}{42}{section*.30}
+\contentsline {subsubsection}{\numberline {2.5.3}BAMLSS}{16}{subsubsection.2.5.3}
+\contentsline {section}{\numberline {3}bamlss.vis}{19}{section.3}
+\contentsline {subsection}{\numberline {3.1}Motivation}{19}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Case-Study}{21}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Application Structure \& Guide}{23}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Overview Tab}{25}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Scenarios Tab}{26}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Plot Tab}{27}{subsubsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.4}Scenario Data Tab}{30}{subsubsection.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.5}Properties Tab}{31}{subsubsection.3.3.5}
+\contentsline {subsection}{\numberline {3.4}Additional Functions}{34}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Discrete Responses}{35}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Multivariate Responses}{36}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.3}Multinomial Responses}{37}{subsubsection.3.4.3}
+\contentsline {section}{\numberline {4}Conclusion}{40}{section.4}
+\contentsline {section}{\numberline {A}Appendix}{41}{appendix.A}
+\contentsline {section}{Bibliography}{46}{section*.29}

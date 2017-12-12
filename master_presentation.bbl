@@ -1,4 +1,4 @@
-\begin{thebibliography}{4}
+\begin{thebibliography}{5}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -31,5 +31,11 @@ N.~Umlauf, N.~Klein, and A.~Zeileis.
   beyond).
 \newblock Working papers, Working Papers in Economics and Statistics, 2017.
 \newblock URL \url{https://EconPapers.repec.org/RePEc:inn:wpaper:2017-05}.
+
+\bibitem[{United States Census Bureau}(2011)]{uscensus}
+{United States Census Bureau}.
+\newblock Supplement to current population survey, March 2011.
+\newblock URL \url{http://www.nber.org/cps/cpsmar11.pdf}.
+\newblock [Online; accessed 28-Nov-2017].
 
 \end{thebibliography}
