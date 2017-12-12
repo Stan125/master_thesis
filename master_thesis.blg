@@ -8,45 +8,45 @@ Warning--entry type for "depstat" isn't style-file defined
 Warning--entry type for "shiny_online" isn't style-file defined
 --line 264 of file bibliography.bib
 Warning--can't use both author and editor fields in rigby1996
-You've used 37 entries,
+You've used 36 entries,
             2773 wiz_defined-function locations,
-            855 strings with 11524 characters,
-and the built_in function-call counts, 15642 in all, are:
-= -- 1455
-> -- 821
-< -- 32
-+ -- 283
-- -- 246
-* -- 1189
-:= -- 2456
-add.period$ -- 152
-call.type$ -- 37
-change.case$ -- 179
-chr.to.int$ -- 37
-cite$ -- 75
-duplicate$ -- 729
-empty$ -- 1270
-format.name$ -- 307
-if$ -- 3277
+            849 strings with 11351 characters,
+and the built_in function-call counts, 15336 in all, are:
+= -- 1427
+> -- 811
+< -- 31
++ -- 279
+- -- 243
+* -- 1174
+:= -- 2409
+add.period$ -- 148
+call.type$ -- 36
+change.case$ -- 175
+chr.to.int$ -- 36
+cite$ -- 73
+duplicate$ -- 714
+empty$ -- 1238
+format.name$ -- 303
+if$ -- 3211
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 30
-newline$ -- 229
-num.names$ -- 148
-pop$ -- 363
+newline$ -- 223
+num.names$ -- 144
+pop$ -- 351
 preamble$ -- 1
-purify$ -- 156
+purify$ -- 153
 quote$ -- 0
-skip$ -- 577
+skip$ -- 564
 stack$ -- 0
-substring$ -- 443
-swap$ -- 84
+substring$ -- 441
+swap$ -- 83
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 367
+type$ -- 356
 warning$ -- 1
-while$ -- 141
+while$ -- 138
 width$ -- 0
-write$ -- 549
+write$ -- 535
 (There were 3 warnings)
