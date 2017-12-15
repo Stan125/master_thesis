@@ -23,14 +23,6 @@ A.~Buja, T.~Hastie, and R.~Tibshirani.
 \newblock URL \url{https://www.bls.gov/oes/tables.htm}.
 \newblock [Online; accessed 28-Nov-2017].
 
-\bibitem[Chambers and Hastie(1992)]{chambers1992}
-J.M. Chambers and T.~Hastie.
-\newblock \emph{Statistical Models in S}.
-\newblock Wadsworth \& Brooks/Cole computer science series. Wadsworth \&
-  Brooks/Cole Advanced Books \& Software, 1992.
-\newblock ISBN 9780534167646.
-\newblock URL \url{https://books.google.de/books?id=uyfvAAAAMAAJ}.
-
 \bibitem[Chang et~al.(2017)Chang, Cheng, Allaire, X., and McPherson]{shiny}
 W.~Chang, W.~Cheng, J.J. Allaire, Yihui X., and J.~McPherson.
 \newblock \emph{shiny: Web Application Framework for R}, 2017.
@@ -88,6 +80,12 @@ T.J. Hastie and R.J. Tibshirani.
   Taylor \& Francis, 1990.
 \newblock ISBN 9780412343902.
 \newblock URL \url{https://books.google.de/books?id=qa29r1Ze1coC}.
+
+\bibitem[Hastie(2017)]{gam}
+Trevor Hastie.
+\newblock \emph{gam: Generalized Additive Models}, 2017.
+\newblock URL \url{https://CRAN.R-project.org/package=gam}.
+\newblock R package version 1.14-4.
 
 \bibitem[James et~al.(2017)James, Witten, Hastie, and Tibshirani]{ISLR}
 G.~James, D.~Witten, T.~Hastie, and R.~Tibshirani.

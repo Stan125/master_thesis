@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.22)  12 DEC 2017 19:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.22)  15 DEC 2017 15:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1240,288 +1240,292 @@ Overfull \hbox (11.84pt too wide) in paragraph at lines 393--394
 \OT1/cmr/m/n/12 are linked to struc-tured ad-di-tive pre-dic-tors us-ing mono-tonic and twice-differentiable
  []
 
-[12] [13]
-Overfull \hbox (24.51434pt too wide) in paragraph at lines 449--450
-\OT1/cmr/m/n/12 is max-imised in re-gard to $[][]\OML/cmm/m/it/12 ; [] ; [][]; []$\OT1/cmr/m/n/12 . The first part of the cri-te-rion, $\OML/cmm/m/it/12 l\OT1/cmr/m/n/12 ([][]\OML/cmm/m/it/12 ; [] ; [][]; []\OT1/cmr/m/n/12 )$
+
+Overfull \hbox (7.89095pt too wide) in paragraph at lines 396--398
+\OT1/cmr/m/n/12 fects. The cor-re-spond-ing model ma-tri-ces used for each pa-ram-e-ter are $\OT1/cmr/bx/n/12 X[]\OML/cmm/m/it/12 ; [] ; \OT1/cmr/bx/n/12 X[]$\OT1/cmr/m/n/12 ,
  []
 
-[14] [15] [16] [17] [18] [19] <images/030_cnorm_plot.pdf, id=561, 212.795pt x 212.795pt>
+
+Overfull \hbox (9.69409pt too wide) in paragraph at lines 396--398
+\OT1/cmr/m/n/12 sump-tions about $\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^A\OT1/cmr/m/n/12 )$. It is also pos-si-ble to de-scribe the ef-fects in vec-tor form: 
+ []
+
+[12] [13]
+Overfull \hbox (25.10184pt too wide) in paragraph at lines 449--450
+\OT1/cmr/m/n/12 is max-i-mized in re-gard to $[][]\OML/cmm/m/it/12 ; [] ; [][]; []$\OT1/cmr/m/n/12 . The first part of the cri-te-rion, $\OML/cmm/m/it/12 l\OT1/cmr/m/n/12 ([][]\OML/cmm/m/it/12 ; [] ; [][]; []\OT1/cmr/m/n/12 )$
+ []
+
+[14] [15] [16] [17] [18] [19] <images/030_cnorm_plot.pdf, id=562, 212.795pt x 212.795pt>
 File: images/030_cnorm_plot.pdf Graphic file (type pdf)
  <use images/030_cnorm_plot.pdf>
-Package pdftex.def Info: images/030_cnorm_plot.pdf used on input line 505.
+Package pdftex.def Info: images/030_cnorm_plot.pdf used on input line 506.
 (pdftex.def)             Requested size: 212.79446pt x 212.79446pt.
- [20 <./images/030_cnorm_plot.pdf>] [21] <images/030_wage_plot.pdf, id=589, 454.69875pt x 255.95625pt>
+ [20] [21 <./images/030_cnorm_plot.pdf>] [22] <images/030_wage_plot.pdf, id=600, 454.69875pt x 255.95625pt>
 File: images/030_wage_plot.pdf Graphic file (type pdf)
  <use images/030_wage_plot.pdf>
-Package pdftex.def Info: images/030_wage_plot.pdf used on input line 544.
+Package pdftex.def Info: images/030_wage_plot.pdf used on input line 545.
 (pdftex.def)             Requested size: 363.75949pt x 204.76526pt.
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 550.
- [22] [23 <./images/030_wage_plot.pdf>] <images/030_addinpic.png, id=631, 326.21875pt x 359.3425pt>
-File: images/030_addinpic.png Graphic file (type png)
- <use images/030_addinpic.png>
-Package pdftex.def Info: images/030_addinpic.png used on input line 573.
-(pdftex.def)             Requested size: 107.72339pt x 109.59175pt.
- <images/031_app_start.png, id=634, 2473.24pt x 1656.1875pt>
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 551.
+ [23 <./images/030_wage_plot.pdf>] <images/031_app_start.png, id=630, 2473.24pt x 1656.1875pt>
 File: images/031_app_start.png Graphic file (type png)
  <use images/031_app_start.png>
-Package pdftex.def Info: images/031_app_start.png used on input line 581.
+Package pdftex.def Info: images/031_app_start.png used on input line 575.
 (pdftex.def)             Requested size: 423.50862pt x 280.01758pt.
 
-Overfull \hbox (13.78911pt too wide) in paragraph at lines 581--582
+Overfull \hbox (13.78911pt too wide) in paragraph at lines 575--576
  [][] 
  []
 
-[24 <./images/030_addinpic.png>] <images/032_overview_tab.png, id=646, 351.3125pt x 486.81876pt>
+[24] <images/032_overview_tab.png, id=647, 351.3125pt x 486.81876pt>
 File: images/032_overview_tab.png Graphic file (type png)
  <use images/032_overview_tab.png>
-Package pdftex.def Info: images/032_overview_tab.png used on input line 593.
+Package pdftex.def Info: images/032_overview_tab.png used on input line 587.
 (pdftex.def)             Requested size: 132.48193pt x 180.65555pt.
- [25 <./images/031_app_start.png>] <images/033_scenarios_tab.png, id=653, 2473.24pt x 1672.2475pt>
+ [25 <./images/031_app_start.png>] <images/033_scenarios_tab.png, id=654, 2473.24pt x 1672.2475pt>
 File: images/033_scenarios_tab.png Graphic file (type png)
  <use images/033_scenarios_tab.png>
-Package pdftex.def Info: images/033_scenarios_tab.png used on input line 605.
+Package pdftex.def Info: images/033_scenarios_tab.png used on input line 599.
 (pdftex.def)             Requested size: 423.50862pt x 277.53908pt.
 
-Overfull \hbox (13.78911pt too wide) in paragraph at lines 605--606
+Overfull \hbox (13.78911pt too wide) in paragraph at lines 599--600
  [][] 
  []
 
-
-Overfull \hbox (16.83525pt too wide) in paragraph at lines 611--611
-\OT1/cmr/m/n/12 user clicks on \  Clear Sce-nar-ios". This database, cre-ated with [][][][][][][]
- []
-
-[26 <./images/032_overview_tab.png>] [27 <./images/033_scenarios_tab.png>] <images/034_educ_app.png, id=670, 2481.27pt x 1672.2475pt>
+[26 <./images/032_overview_tab.png>] [27 <./images/033_scenarios_tab.png>] <images/034_educ_app.png, id=671, 2481.27pt x 1672.2475pt>
 File: images/034_educ_app.png Graphic file (type png)
  <use images/034_educ_app.png>
-Package pdftex.def Info: images/034_educ_app.png used on input line 627.
+Package pdftex.def Info: images/034_educ_app.png used on input line 621.
 (pdftex.def)             Requested size: 425.1146pt x 277.53908pt.
 
-Overfull \hbox (15.39508pt too wide) in paragraph at lines 627--628
+Overfull \hbox (15.39508pt too wide) in paragraph at lines 621--622
  [][] 
  []
 
-[28 <./images/034_educ_app.png>] <images/036_obtain_code.png, id=687, 2481.27pt x 1672.2475pt>
+[28 <./images/034_educ_app.png>] <images/036_obtain_code.png, id=689, 2481.27pt x 1672.2475pt>
 File: images/036_obtain_code.png Graphic file (type png)
  <use images/036_obtain_code.png>
-Package pdftex.def Info: images/036_obtain_code.png used on input line 637.
+Package pdftex.def Info: images/036_obtain_code.png used on input line 632.
 (pdftex.def)             Requested size: 425.1146pt x 277.53908pt.
 
-Overfull \hbox (15.39508pt too wide) in paragraph at lines 637--638
+Overfull \hbox (15.39508pt too wide) in paragraph at lines 632--633
  [][] 
  []
 
-[29 <./images/036_obtain_code.png>] <images/037_scenario_data.png, id=699, 360.34625pt x 378.41376pt>
+[29] <images/037_scenario_data.png, id=701, 360.34625pt x 378.41376pt>
 File: images/037_scenario_data.png Graphic file (type png)
  <use images/037_scenario_data.png>
-Package pdftex.def Info: images/037_scenario_data.png used on input line 650.
+Package pdftex.def Info: images/037_scenario_data.png used on input line 645.
 (pdftex.def)             Requested size: 136.54709pt x 131.87375pt.
- [30 <./images/037_scenario_data.png>] <images/039_influence_graph.png, id=713, 2489.3pt x 1662.21pt>
+ [30 <./images/036_obtain_code.png> <./images/037_scenario_data.png>] <images/039_influence_graph.png, id=715, 2489.3pt x 1662.21pt>
 File: images/039_influence_graph.png Graphic file (type png)
  <use images/039_influence_graph.png>
-Package pdftex.def Info: images/039_influence_graph.png used on input line 665.
+Package pdftex.def Info: images/039_influence_graph.png used on input line 660.
 (pdftex.def)             Requested size: 426.72057pt x 275.53162pt.
 
-Overfull \hbox (17.00105pt too wide) in paragraph at lines 665--666
+Overfull \hbox (17.00105pt too wide) in paragraph at lines 660--661
  [][] 
  []
 
 
-Overfull \hbox (1.10115pt too wide) in paragraph at lines 662--670
+Overfull \hbox (1.10115pt too wide) in paragraph at lines 657--665
 []\OT1/cmr/m/n/12 To pro-vide this func-tion-al-ity, the tab \  Prop-er-ties" was im-ple-mented in bamlss.vis,
  []
 
-[31] <images/0310_influence_graph_qualitative.png, id=722, 2489.3pt x 1680.2775pt>
+[31] [32 <./images/039_influence_graph.png>] <images/0310_influence_graph_qualitative.png, id=729, 2489.3pt x 1680.2775pt>
 File: images/0310_influence_graph_qualitative.png Graphic file (type png)
  <use images/0310_influence_graph_qualitative.png>
-Package pdftex.def Info: images/0310_influence_graph_qualitative.png used on input line 677.
+Package pdftex.def Info: images/0310_influence_graph_qualitative.png used on input line 672.
 (pdftex.def)             Requested size: 426.72057pt x 279.14505pt.
 
-Overfull \hbox (17.00105pt too wide) in paragraph at lines 677--678
+Overfull \hbox (17.00105pt too wide) in paragraph at lines 672--673
  [][] 
  []
 
-[32 <./images/039_influence_graph.png>] [33 <./images/0310_influence_graph_qualitative.png>] <images/0312_table_tab.png, id=742, 2527.4425pt x 1622.06pt>
+[33 <./images/0310_influence_graph_qualitative.png>] <images/0312_table_tab.png, id=744, 2527.4425pt x 1622.06pt>
 File: images/0312_table_tab.png Graphic file (type png)
  <use images/0312_table_tab.png>
-Package pdftex.def Info: images/0312_table_tab.png used on input line 687.
+Package pdftex.def Info: images/0312_table_tab.png used on input line 682.
 (pdftex.def)             Requested size: 434.34892pt x 267.50175pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 687--688
+Overfull \hbox (24.62941pt too wide) in paragraph at lines 682--683
  [][] 
  []
 
-[34 <./images/0312_table_tab.png>] <images/0313_poisson_pmf.png, id=752, 2527.4425pt x 1361.085pt>
+[34 <./images/0312_table_tab.png>] <images/0313_poisson_pmf.png, id=753, 2527.4425pt x 1361.085pt>
 File: images/0313_poisson_pmf.png Graphic file (type png)
  <use images/0313_poisson_pmf.png>
-Package pdftex.def Info: images/0313_poisson_pmf.png used on input line 703.
+Package pdftex.def Info: images/0313_poisson_pmf.png used on input line 698.
 (pdftex.def)             Requested size: 434.34892pt x 215.30768pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 703--704
+Overfull \hbox (24.62941pt too wide) in paragraph at lines 698--699
  [][] 
  []
 
-[35] <images/0315_mvnorm_pdf.png, id=762, 2527.4425pt x 1533.73pt>
+[35] <images/0315_mvnorm_pdf.png, id=762, 2473.24pt x 1421.31pt>
 File: images/0315_mvnorm_pdf.png Graphic file (type png)
  <use images/0315_mvnorm_pdf.png>
-Package pdftex.def Info: images/0315_mvnorm_pdf.png used on input line 717.
-(pdftex.def)             Requested size: 434.34892pt x 249.83606pt.
+Package pdftex.def Info: images/0315_mvnorm_pdf.png used on input line 713.
+(pdftex.def)             Requested size: 423.50862pt x 227.35246pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 717--718
+Overfull \hbox (13.78911pt too wide) in paragraph at lines 713--714
  [][] 
  []
 
 [36 <./images/0313_poisson_pmf.png>] <images/0319_mvnorm_moments.png, id=776, 2527.4425pt x 1519.6775pt>
 File: images/0319_mvnorm_moments.png Graphic file (type png)
  <use images/0319_mvnorm_moments.png>
-Package pdftex.def Info: images/0319_mvnorm_moments.png used on input line 727.
+Package pdftex.def Info: images/0319_mvnorm_moments.png used on input line 723.
 (pdftex.def)             Requested size: 434.34892pt x 247.02562pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 727--728
+Overfull \hbox (24.62941pt too wide) in paragraph at lines 723--724
  [][] 
  []
 
 [37 <./images/0315_mvnorm_pdf.png>]
-Overfull \hbox (1.58391pt too wide) in paragraph at lines 736--736
+Overfull \hbox (1.58391pt too wide) in paragraph at lines 732--732
 \OT1/cmr/m/n/12 For mod-el-ing un-ordered cat-e-gor-i-cal re-sponse vari-ables, [][][][] sup-ports the multi-
  []
 
-<images/0321_multinom_pdf.png, id=788, 2527.4425pt x 1318.9275pt>
+[38 <./images/0319_mvnorm_moments.png>] <images/0321_multinom_pdf.png, id=794, 2527.4425pt x 1318.9275pt>
 File: images/0321_multinom_pdf.png Graphic file (type png)
  <use images/0321_multinom_pdf.png>
-Package pdftex.def Info: images/0321_multinom_pdf.png used on input line 740.
+Package pdftex.def Info: images/0321_multinom_pdf.png used on input line 736.
 (pdftex.def)             Requested size: 434.34892pt x 206.87633pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 740--741
+Overfull \hbox (24.62941pt too wide) in paragraph at lines 736--737
  [][] 
  []
 
-[38 <./images/0319_mvnorm_moments.png>] <images/0322_multinom_influence.png, id=798, 2527.4425pt x 1499.6025pt>
+<images/0322_multinom_influence.png, id=798, 2527.4425pt x 1499.6025pt>
 File: images/0322_multinom_influence.png Graphic file (type png)
  <use images/0322_multinom_influence.png>
-Package pdftex.def Info: images/0322_multinom_influence.png used on input line 750.
+Package pdftex.def Info: images/0322_multinom_influence.png used on input line 746.
 (pdftex.def)             Requested size: 434.34892pt x 243.01068pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 750--751
+Overfull \hbox (24.62941pt too wide) in paragraph at lines 746--747
  [][] 
  []
 
-[39 <./images/0321_multinom_pdf.png>] [40 <./images/0322_multinom_influence.png>] <images/035_educ_app_cdf.png, id=814, 2481.27pt x 1672.2475pt>
+[39 <./images/0321_multinom_pdf.png>] [40 <./images/0322_multinom_influence.png>] [41] <images/030_addinpic.png, id=818, 326.21875pt x 359.3425pt>
+File: images/030_addinpic.png Graphic file (type png)
+ <use images/030_addinpic.png>
+Package pdftex.def Info: images/030_addinpic.png used on input line 780.
+(pdftex.def)             Requested size: 107.72339pt x 109.59175pt.
+ <images/035_educ_app_cdf.png, id=819, 2481.27pt x 1672.2475pt>
 File: images/035_educ_app_cdf.png Graphic file (type png)
  <use images/035_educ_app_cdf.png>
-Package pdftex.def Info: images/035_educ_app_cdf.png used on input line 784.
+Package pdftex.def Info: images/035_educ_app_cdf.png used on input line 789.
 (pdftex.def)             Requested size: 425.1146pt x 277.53908pt.
 
-Overfull \hbox (15.39508pt too wide) in paragraph at lines 784--785
+Overfull \hbox (15.39508pt too wide) in paragraph at lines 789--790
  [][] 
  []
 
-<images/038_warning_popup.png, id=815, 251.94125pt x 89.33376pt>
+<images/038_warning_popup.png, id=820, 251.94125pt x 89.33376pt>
 File: images/038_warning_popup.png Graphic file (type png)
  <use images/038_warning_popup.png>
-Package pdftex.def Info: images/038_warning_popup.png used on input line 793.
+Package pdftex.def Info: images/038_warning_popup.png used on input line 798.
 (pdftex.def)             Requested size: 113.37251pt x 40.19981pt.
- <images/0311_obtain_influence_code.png, id=816, 2527.4425pt x 1622.06pt>
+ <images/0311_obtain_influence_code.png, id=821, 2527.4425pt x 1622.06pt>
 File: images/0311_obtain_influence_code.png Graphic file (type png)
  <use images/0311_obtain_influence_code.png>
-Package pdftex.def Info: images/0311_obtain_influence_code.png used on input line 802.
+Package pdftex.def Info: images/0311_obtain_influence_code.png used on input line 807.
 (pdftex.def)             Requested size: 434.34892pt x 273.1922pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 802--803
+Overfull \hbox (24.62941pt too wide) in paragraph at lines 807--808
  [][] 
  []
 
-<images/0314_poisson_cdf.png, id=817, 2527.4425pt x 1361.085pt>
+<images/0314_poisson_cdf.png, id=822, 2527.4425pt x 1361.085pt>
 File: images/0314_poisson_cdf.png Graphic file (type png)
  <use images/0314_poisson_cdf.png>
-Package pdftex.def Info: images/0314_poisson_cdf.png used on input line 811.
+Package pdftex.def Info: images/0314_poisson_cdf.png used on input line 816.
 (pdftex.def)             Requested size: 434.34892pt x 220.99812pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 811--812
+Overfull \hbox (24.62941pt too wide) in paragraph at lines 816--817
  [][] 
  []
 
-<images/0316_mvnorm_cdf.png, id=818, 2527.4425pt x 1533.73pt>
+<images/0316_mvnorm_cdf.png, id=823, 2473.24pt x 1421.31pt>
 File: images/0316_mvnorm_cdf.png Graphic file (type png)
  <use images/0316_mvnorm_cdf.png>
-Package pdftex.def Info: images/0316_mvnorm_cdf.png used on input line 820.
-(pdftex.def)             Requested size: 434.34892pt x 249.83606pt.
+Package pdftex.def Info: images/0316_mvnorm_cdf.png used on input line 825.
+(pdftex.def)             Requested size: 423.50862pt x 227.35246pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 820--821
+Overfull \hbox (13.78911pt too wide) in paragraph at lines 825--826
  [][] 
  []
 
-<images/0317_mvnorm_pdf_contour.png, id=819, 2527.4425pt x 1533.73pt>
+<images/0317_mvnorm_pdf_contour.png, id=824, 2473.24pt x 1421.31pt>
 File: images/0317_mvnorm_pdf_contour.png Graphic file (type png)
  <use images/0317_mvnorm_pdf_contour.png>
-Package pdftex.def Info: images/0317_mvnorm_pdf_contour.png used on input line 829.
-(pdftex.def)             Requested size: 434.34892pt x 249.83606pt.
+Package pdftex.def Info: images/0317_mvnorm_pdf_contour.png used on input line 834.
+(pdftex.def)             Requested size: 423.50862pt x 227.35246pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 829--830
+Overfull \hbox (13.78911pt too wide) in paragraph at lines 834--835
  [][] 
  []
 
-<images/0318_mvnorm_pdf_image.png, id=820, 2527.4425pt x 1533.73pt>
+<images/0318_mvnorm_pdf_image.png, id=825, 2473.24pt x 1421.31pt>
 File: images/0318_mvnorm_pdf_image.png Graphic file (type png)
  <use images/0318_mvnorm_pdf_image.png>
-Package pdftex.def Info: images/0318_mvnorm_pdf_image.png used on input line 838.
-(pdftex.def)             Requested size: 434.34892pt x 249.83606pt.
+Package pdftex.def Info: images/0318_mvnorm_pdf_image.png used on input line 843.
+(pdftex.def)             Requested size: 423.50862pt x 227.35246pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 838--839
+Overfull \hbox (13.78911pt too wide) in paragraph at lines 843--844
  [][] 
  []
 
-<images/0320_mvnorm_moments_table.png, id=821, 2527.4425pt x 1519.6775pt>
+<images/0320_mvnorm_moments_table.png, id=826, 2527.4425pt x 1519.6775pt>
 File: images/0320_mvnorm_moments_table.png Graphic file (type png)
  <use images/0320_mvnorm_moments_table.png>
-Package pdftex.def Info: images/0320_mvnorm_moments_table.png used on input line 847.
+Package pdftex.def Info: images/0320_mvnorm_moments_table.png used on input line 852.
 (pdftex.def)             Requested size: 434.34892pt x 247.02562pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 847--848
+Overfull \hbox (24.62941pt too wide) in paragraph at lines 852--853
  [][] 
  []
 
-<images/0323_multinom_influence_categorical.png, id=822, 2527.4425pt x 1581.91pt>
+<images/0323_multinom_influence_categorical.png, id=827, 2527.4425pt x 1581.91pt>
 File: images/0323_multinom_influence_categorical.png Graphic file (type png)
  <use images/0323_multinom_influence_categorical.png>
-Package pdftex.def Info: images/0323_multinom_influence_categorical.png used on input line 856.
+Package pdftex.def Info: images/0323_multinom_influence_categorical.png used on input line 861.
 (pdftex.def)             Requested size: 434.34892pt x 259.4719pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 856--857
+Overfull \hbox (24.62941pt too wide) in paragraph at lines 861--862
  [][] 
  []
 
-[41
+[42
 
- <./images/035_educ_app_cdf.png> <./images/038_warning_popup.png>] [42 <./images/0311_obtain_influence_code.png> <./images/0314_poisson_cdf.png>] [43 <./images/0316_mvnorm_cdf.png> <./images/0317_mvnorm_pdf_contour.png>] [44 <./images/0318_mvnorm_pdf_image.png> <./images/0320_mvnorm_moments_table.png>] [45 <./images/0323_multinom_influence_categorical.png>] (./master_thesis.bbl [46
+ <./images/030_addinpic.png> <./images/035_educ_app_cdf.png>] [43 <./images/038_warning_popup.png> <./images/0311_obtain_influence_code.png> <./images/0314_poisson_cdf.png>] [44 <./images/0316_mvnorm_cdf.png> <./images/0317_mvnorm_pdf_contour.png>] [45 <./images/0318_mvnorm_pdf_image.png> <./images/0320_mvnorm_moments_table.png>] [46 <./images/0323_multinom_influence_categorical.png>] (./master_thesis.bbl [47
 
-] [47]) [48]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 868.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 868.
+] [48]) [49]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 873.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 873.
  (./master_thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 868.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 868.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 873.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 873.
 Package rerunfilecheck Info: File `master_thesis.out' has not changed.
 (rerunfilecheck)             Checksum: E6AA905E70DACE7B2E600B555AEEC92C;2181.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 868.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 873.
  ) 
 Here is how much of TeX's memory you used:
- 25803 strings out of 492995
- 438094 string characters out of 6132703
- 618595 words of memory out of 5000000
+ 25806 strings out of 492995
+ 438069 string characters out of 6132703
+ 611595 words of memory out of 5000000
  28655 multiletter control sequences out of 15000+600000
  23819 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,19n,54p,3246b,1899s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,19n,54p,3246b,1766s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
-sfonts/symbols/msbm10.pfb>
-Output written on master_thesis.pdf (51 pages, 5068057 bytes).
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on master_thesis.pdf (52 pages, 4946269 bytes).
 PDF statistics:
- 1028 PDF objects out of 1200 (max. 8388607)
- 887 compressed objects within 9 object streams
- 183 named destinations out of 1000 (max. 500000)
+ 1032 PDF objects out of 1200 (max. 8388607)
+ 891 compressed objects within 9 object streams
+ 186 named destinations out of 1000 (max. 500000)
  396 words of extra memory for PDF output out of 10000 (max. 10000000)
 

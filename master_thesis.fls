@@ -378,9 +378,6 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT images/030_wage_plot.pdf
 INPUT ./images/030_wage_plot.pdf
 INPUT ./images/030_wage_plot.pdf
-INPUT images/030_addinpic.png
-INPUT ./images/030_addinpic.png
-INPUT ./images/030_addinpic.png
 INPUT images/031_app_start.png
 INPUT ./images/031_app_start.png
 INPUT ./images/031_app_start.png
@@ -423,6 +420,9 @@ INPUT ./images/0321_multinom_pdf.png
 INPUT images/0322_multinom_influence.png
 INPUT ./images/0322_multinom_influence.png
 INPUT ./images/0322_multinom_influence.png
+INPUT images/030_addinpic.png
+INPUT ./images/030_addinpic.png
+INPUT ./images/030_addinpic.png
 INPUT images/035_educ_app_cdf.png
 INPUT ./images/035_educ_app_cdf.png
 INPUT ./images/035_educ_app_cdf.png
@@ -465,7 +465,6 @@ INPUT master_thesis.aux
 INPUT ./master_thesis.out
 INPUT ./master_thesis.out
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb

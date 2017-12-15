@@ -10,43 +10,43 @@ Warning--entry type for "shiny_online" isn't style-file defined
 Warning--can't use both author and editor fields in rigby1996
 You've used 36 entries,
             2773 wiz_defined-function locations,
-            849 strings with 11351 characters,
-and the built_in function-call counts, 15336 in all, are:
-= -- 1427
-> -- 811
+            847 strings with 11240 characters,
+and the built_in function-call counts, 15230 in all, are:
+= -- 1417
+> -- 800
 < -- 31
-+ -- 279
-- -- 243
-* -- 1174
-:= -- 2409
-add.period$ -- 148
++ -- 276
+- -- 240
+* -- 1164
+:= -- 2391
+add.period$ -- 146
 call.type$ -- 36
-change.case$ -- 175
+change.case$ -- 174
 chr.to.int$ -- 36
 cite$ -- 73
-duplicate$ -- 714
-empty$ -- 1238
-format.name$ -- 303
-if$ -- 3211
+duplicate$ -- 711
+empty$ -- 1231
+format.name$ -- 298
+if$ -- 3184
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 30
-newline$ -- 223
+missing$ -- 28
+newline$ -- 222
 num.names$ -- 144
-pop$ -- 351
+pop$ -- 348
 preamble$ -- 1
-purify$ -- 153
+purify$ -- 152
 quote$ -- 0
-skip$ -- 564
+skip$ -- 562
 stack$ -- 0
 substring$ -- 441
-swap$ -- 83
+swap$ -- 84
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 356
+type$ -- 361
 warning$ -- 1
 while$ -- 138
 width$ -- 0
-write$ -- 535
+write$ -- 532
 (There were 3 warnings)
