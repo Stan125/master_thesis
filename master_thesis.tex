@@ -26,6 +26,7 @@
 \usepackage[all]{xy}
 \usepackage{mathtools}
 \usepackage{url}
+\usepackage{acro}
 \def\UrlBreaks{\do\/\do-} % this is for lineabreaking of bibliography urls
 \usepackage[breaklinks]{hyperref}
 \usepackage{color}
@@ -107,8 +108,6 @@
 \lfoot{}\cfoot{\thepage}\rfoot{}
 
 %%% SECTION TITLE APPEARANCE
-\usepackage{sectsty}
-\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
 % (This matches ConTeXt defaults)
 
 %%% ToC (table of contents) APPEARANCE
@@ -120,7 +119,36 @@
 \usepackage{setspace}
 \onehalfspacing
 
-%%% END Article customizations
+%%% Abbreviations
+\DeclareAcronym{am}{
+  short = AM,
+  long  = Additive Models
+}
+\DeclareAcronym{gamlss}{
+  short = GAMLSS,
+  long  = {Generalized Additive Models for Location, Scale and Shape}
+}
+\DeclareAcronym{bamlss}{
+  short = BAMLSS,
+  long  = {Bayesian Additive Models for Location, Scale and Shape}
+}
+\DeclareAcronym{glm}{
+  short = GLM,
+  long  = {Generalized Linear Models}
+}
+\DeclareAcronym{ols}{short = OLS, long  = {Ordinary Least Squares}}
+\DeclareAcronym{gam}{short = GAM, long  = {Generalized Additive Models}}
+\DeclareAcronym{star}{short = STAR, long  = {Structured Additive Regression}}
+\DeclareAcronym{wls}{short = WLS, long  = {Weighted Least Squares}}
+\DeclareAcronym{irls}{short = IRLS, long  = {Iteratively Reweighted Least Squares}}
+\DeclareAcronym{rs}{short = RS, long  = {Rigby and Stasinopoulos}}
+\DeclareAcronym{cg}{short = CG, long  = {Cole and Green}}
+\DeclareAcronym{mcmc}{short = mcmc, long  = {Markov Chain Monte Carlo}}
+\DeclareAcronym{iid}{short = i.i.d., long  = {independent and identically distributed}}
+\DeclareAcronym{cdf}{short = cdf, long  = {cumulative distribution function}}
+\DeclareAcronym{pdf}{short = pdf, long  = {probability density function}}
+
+%%% END Article customization
 
 %%% The "real" document content comes below...
 
@@ -144,7 +172,7 @@
 
 \HRule \\[0.4cm]
 \begin{spacing}{1.5}
-{ \LARGE \bfseries bamlss.vis: An R Package to Interactively Analyze and Visualize Bayesian Additive Models for Location, Scale and Shape (bamlss) Using the Shiny Framework}\\% Title of your document
+{ \LARGE \bfseries bamlss.vis: An R Package to Interactively Analyze and Visualize Bayesian Additive Models for Location, Scale and Shape (BAMLSS) Using the Shiny Framework}\\% Title of your document
 \end{spacing}
 \HRule \\[1.5cm]
 
@@ -174,7 +202,7 @@ Dr. Nadja \textsc{Klein} \\
 %	DATE SECTION
 %----------------------------------------------------------------------------------------
 
-{\large Submitted on December 21, 2017 \\ by Stanislaus Stadlmann, \\ born in Vienna, Austria}\\[2.5cm]
+{\large Submitted on December 18, 2017 \\ by Stanislaus Stadlmann, \\ born in Vienna, Austria}\\[2.5cm]
 
 
 %----------------------------------------------------------------------------------------
@@ -200,36 +228,40 @@ Dr. Nadja \textsc{Klein} \\
 \listoffigures
 \clearpage
 
+% Acronyms
+\printacronyms
+\clearpage
+
 \pagenumbering{arabic}
 
 \section{Introduction}
 \label{introduction}
-Due to the recent shift from analogue to digital processes in most aspects of modern life, the amount of gathered data has greatly increased. Paired with dramatic improvements in computing power, it gave rise to numerous advancements in statistical sciences. Many computation-heavy models were able to be applied on a broader basis and new methods, such as Neural Nets or Generalized Additive Models could finally be realistically used~\citep{econblog}. With the increase in number of new methods and improvements in data availability, the recent past also saw a significant rise in employed statisticians. In the United States alone, the number of jobs classified as statisticians has increased by more than 120\% in the years from 1997 to 2016~\citep{depstat}. \par
-One of the new emerging fields is distributional regression, where not only the mean, but each parameter of a response distribution can be modeled using a set of predictors~\citep{klein2015}. Notable frameworks called Generalized Additive Models for Location, Scale and Shape (gamlss) and Bayesian Additive Models for Location, Scale and Shape (bamlss) were invented by \citet*{gamlss2001} in the form of a frequentist perspective and \citet*{bamlss2017} using a Bayesian approach, respectively. \par
-Because methods have become increasingly more complex and capable over the years, it is important to make them accessible and understandable to the growing number of statistical users. In the case of distributional regression models, the interpretation of covariate effects on response moments and the expected conditional response distribution is harder than with traditional methods such as Ordinary Least Squares or Generalized Linear Models, since the moments of a distribution often do not directly equate the modeled parameters, but are rather a combination of them with a varying degree of complexity. \par
-This thesis will introduce a framework for the visualization of distributional regression models fitted using the \textbf{bamlss} R package~\citep{bamlss2017} as well as feature an implementation as an R extension titled bamlss.vis. The main goals of this framework are the abilities to:
+Aided by an exponential increase in gathered data and dramatic improvements in computing power, the recent past has seen numerous advancements in statistical sciences. New computational-heavy methods, such as Random Forests or Neural Networks can finally be applied on an affordable scale, while more established models are used by a growing number of statistical users. In the United States of America, for example, the number of jobs classified as statisticians has increased by more than 120\% in the years from 1997 to 2016~\citep{depstat}. \par
+One of the new emerging fields is distributional regression, where not only the mean but each parameter of a response distribution can be modeled using a set of predictors~\citep{klein2015}. Notable frameworks called \ac{gamlss} and \ac{bamlss} were invented by \citet*{gamlss2001} in the form of a frequentist perspective and \citet*{bamlss2017} using a Bayesian approach, respectively. \par
+Since methods have become increasingly more complex and capable over the years, it is important to make them accessible and understandable to the growing number of statistical users. In the case of distributional regression models, the interpretation of covariate effects on response moments and the expected conditional response distribution is harder than with traditional methods such as \ac{ols} or \ac{glm}, since the moments of a distribution often do not directly equate the modeled parameters but are rather a combination of them with a varying degree of complexity. \par
+This thesis will introduce a framework for the visualization of distributional regression models fitted using the \li{bamlss} R package~\citep{bamlss2017} as well as feature an implementation as an R extension titled bamlss.vis. The main goals of this framework are the abilities to:
 \begin{enumerate}
   \item See and compare the expected distribution for chosen sets of covariates
   \item View the direct relationship between moments of the response distribution and a chosen explanatory variable, given a set of covariates.
 \end{enumerate}
-Additionally, the user can obtain the code which created the visualisations described above to potentially reproduce them later. The implementation will be done using the statistical software R~\citep{rsoftware} in the form of a Shiny application~\citep{shiny}. \par
-This thesis will be further structured as follows: Section \ref{bamlss} and its subchapters will give an overview of the models which Bayesian Additive Models for Location, Scale and Shape are related to and built upon. Section \ref{estimation} explains the estimation procedures behind the introduced models. In Section \ref{bamlss.vis}, bamlss.vis is described by first creating a model in a Case-Study (Section \ref{case_study}) with a real dataset. Then, this model is used in Section \ref{appstructure} for a walk-through of bamlss.vis' main abilities. Afterwards, Section \ref{add_functions} expands Section \ref{appstructure} by showcasing additional functions, which cannot be seen using the case-study model. \par
+Additionally, the user can obtain the code which created the visualizations described above to potentially reproduce them later. The implementation will be done using the statistical software R~\citep{rsoftware} in the form of a Shiny application~\citep{shiny}. \par
+This thesis will be further structured as follows: Section \ref{bamlss} and its subchapters will give an overview of the models which Bayesian Additive Models for Location, Scale and Shape are related to and built upon. Section \ref{estimation} explains the estimation procedures behind the introduced models. In Section \ref{bamlss.vis}, bamlss.vis is described by first creating a model in a case-study (Section \ref{case_study}) with a real dataset. Then, this model is used in Section \ref{appstructure} for a walk-through of bamlss.vis' main abilities. Afterwards, Section \ref{add_functions} expands Section \ref{appstructure} by showcasing additional functions, which cannot be seen using the case-study model. \par
 
 \section{Bayesian Additive Models for Location, Scale and Shape}
 \label{bamlss}
-Bayesian Additive Models for Location, Scale and Shape (bamlss) are a form of Bayesian regression models in which every parameter of a parametric distribution with $K$ parameters is related to a set of additive predictors. The distribution does not have to follow the exponential family, which extends the distributions available for modeling beyond the ones used in Generalized Linear Models (GLM). In similar fashion to Generalized Additive Models~\citep[GAM,][]{hastie1990generalized}, the additive predictors can assume different shapes, including non-linear, fixed, random and spatial effects \citep{bamlss2017}. \par
-In the ability to additively model multiple parameters of one distribution, bamlss bear many similarities with Generalized Additive Models for location, scale and shape~\citep[GAMLSS,][]{gamlss2001}. Disparities lie in the estimation of model parameters, where bamlss utilize Markov Chain Monte Carlo (MCMC) simulations which provide credible intervals in situations where asymptotic maximum likelihood confidence intervals often fail, as well as bamlss' ability to model multivariate parametric distributions~\citep{bamlss2017}. \par
-To give a sufficient depiction of the bamlss model class, this section will start with explaining Additive Models and then gradually generalize the broader frameworks to finally arrive at bamlss. Furthermore, a brief overview of the different estimation techniques for the covered model frameworks will be given (Section \ref{estimation}).  \par
+\acl{bamlss} are a form of Bayesian regression models in which every parameter of a parametric distribution with $K$ parameters is related to a set of additive predictors. The distribution does not have to follow the exponential family, which extends the distributions available for modeling beyond the ones used in \acf{glm}. In similar fashion to \acl{gam} \citep[GAM,][]{hastie1990generalized}, the additive predictors can assume different shapes, including non-linear, fixed, random and spatial effects \citep{bamlss2017}. \par
+In the ability to additively model multiple parameters of one distribution, \ac{bamlss} bear many similarities with Generalized Additive Models for Location, Scale and Shape~\citep[GAMLSS,][]{gamlss2001}. Disparities lie in the estimation of model parameters, where \ac{bamlss} utilize \ac{mcmc} simulations which provide credible intervals in situations where asymptotic maximum likelihood confidence intervals often fail, as well as \ac{bamlss}' ability to model multivariate parametric distributions~\citep{bamlss2017}. \par
+To give a sufficient depiction of the \ac{bamlss} model class, this section will start with explaining Additive Models and then gradually generalize the broader frameworks to finally arrive at \ac{bamlss}. Furthermore, a brief overview of the different estimation techniques for the covered model frameworks will be given (Section \ref{estimation}).  \par
 
 \subsection{Additive Models}
 \label{AM}
-Bamlss can be seen as a generalization of Structured Additive Regression, which are in turn a generalization of Additive Models. Additive Models, first proposed by \citet*{friedman1981projection} represent a model type in which a dependent variable $y$ is related to a set of non-parametric predictors in an additive way. Assuming conditional independence of $y_1, \ldots, y_n$ given the explanatory variables $\textbf{z}_1, \ldots, \textbf{z}_K$, we obtain the following model equation:
+\ac{bamlss} can be seen as a generalization of \ac{star} models, which are in turn a generalization of \ac{am}. Additive Models, first proposed by \citet*{friedman1981projection} represent a model type in which a dependent variable $y$ is related to a set of non-parametric predictors in an additive way. Assuming conditional independence of $y_1, \ldots, y_n$ given the explanatory variables $z_1, \ldots, z_K$, we obtain the following model equation:
 \begin{equation}
   \label{addmodel1}
   y_i = f_1(z_{i1}) + f_2(z_{i2}) + \ldots + f_k(z_{iK}) + \epsilon_i
 \end{equation}
-where $f_j(\cdot)$ depicts unspecified non-parametric functions of covariate $z_j$, which can include smoothing splines or local regression approaches. Specifying the predictors additively is more efficient than using multi-dimensional smoothers, since the computational power and size of the dataset needed for fitting would increase exponentially with every new dimension. This makes additive models more flexible compared to standard linear regression, while still being more interpretable than non-additive models~\citep{buja1989linear}. \par
-\citet{fahrmeir2013regression} suggest that an Additive Model can also include parametric components. Given covariates $\textbf{x}_1, \ldots, \textbf{x}_Q$, we can extend \eqref{addmodel1} to a semi-parametric regression model with the following specification:
+where $f_j(\cdot)$ depicts unspecified non-parametric functions of covariate $z_j$, which can include smoothing splines or local regression approaches. Specifying the predictors additively is more efficient than using multi-dimensional smoothers, as the computational power and size of the dataset needed for fitting would increase exponentially with every new dimension. This makes additive models more flexible compared to standard linear regression, while still being more interpretable than non-additive models~\citep{buja1989linear}. \par
+\citet{fahrmeir2013regression} suggest that an Additive Model can also include parametric components. Given covariates $x_1, \ldots, x_Q$ with linear effects on $y$, we can extend \eqref{addmodel1} to a semi-parametric regression model with the following specification:
 \begin{equation}
   \label{addmodel2}
   y_i = \sum\limits_{j = 1}^K f_j(z_{ij}) + \underbrace{\mathbf{x}_{i}' \bbeta}_{\beta_0 + \beta_1 x_{i1} + \ldots + \beta_Q x_{iQ}} + \epsilon_i
@@ -238,23 +270,23 @@ Eq. \eqref{addmodel2} combines non-parametric and parametric components. Because
 \begin{equation*}
   \sum\limits_{i = 1}^n f_1(x_{i1}) = \ldots = \sum\limits_{i = 1}^n f_K(x_{iK}) = 0
 \end{equation*}
-holds. The functions $f_j(\cdot)$ are approximated using basis functions in the following scheme
+holds. The functions $f_j(\cdot)$ are approximated using Basis functions in the following scheme
 \begin{equation*}
-  f_j(z_{ij}) = \sum\limits_{m = 1}^{d_j} \textbf{B}_m(\mathbf{z}_{ij}) \gamma_{jm}
+  f_j(z_{j}) = \sum\limits_{m = 1}^{d_j} \textbf{B}_m(z_{j}) \gamma_{jm}
 \end{equation*}
-where $\textbf{B}_m(\mathbf{z}_{ij})$ represents a basis function evaluated at value $\mathbf{z}_{ij}$ and $\gamma_{jm}$ denotes the regression coefficient for basis function $m$. This allows to write the Additive Model in a matrix form, indifferent of the chosen basis:
+where $\textbf{B}_m(z_{j})$ represents a smooth function base for variable $z_{j}$ and $\gamma_{jm}$ denotes its regression coefficient. This allows to write the Additive Model in a matrix form, indifferent of the chosen basis:
 \begin{equation}
   \label{addmatform}
   \textbf{y} = \sum\limits_{j = 1}^K \mathbf{Z}_j \boldsymbol{\gamma}_j + \mathbf{X} \boldsymbol{\beta} + \boldsymbol{\epsilon}
 \end{equation}
-Here, the design matrices $\mathbf{Z}_1, \ldots, \mathbf{Z}_K$ represent the basis functions assessed at different covariates. $\mathbf{X}$ is constructed in equivalence to the standard linear regression model. Assumptions about the error term of a semi-parametric Additive Model are also similar to the classic linear model, where $\epsilon_i$ are identically and independently (i.i.d) normally distributed with $E(\epsilon_i) = 0$ and $Var(\epsilon_i) = \sigma^2$. These properties are then also valid for the response variable, so that $y_i \overset{i.i.d.}{\sim} N(\hat{y}, \sigma^2_y)$ \citep[chap. 9.1]{fahrmeir2013regression}.
+Here, the design matrices $\mathbf{Z}_1, \ldots, \mathbf{Z}_K$ represent the Basis functions assessed at different covariates. $\mathbf{X}$ is constructed in equivalence to the standard linear regression model. Assumptions about the error term of a semi-parametric Additive Model are also similar to the classic linear model, where $\epsilon_i$ are \ac{iid} normally distributed with $E(\epsilon_i) = 0$ and $Var(\epsilon_i) = \sigma^2$. These properties are then also valid for the response variable, so that $y_i \overset{i.i.d.}{\sim} N(\hat{y}, \sigma^2_y)$ \citep[chap. 9.1]{fahrmeir2013regression}.
 
 \subsection{Structured Additive Regression Models}
 \label{STAR}
-The nonparametric components in additive models open the possibility for more flexible relationships between the dependent variable and single explanatory variables, which standard linear regression methods might not capture correctly. However, sometimes the area of model application requires even more flexibility, e.g. by including spatial covariates, fixed/random effects or interaction terms. These specific types of effects extend the Additive Model to a Structured Additive Regression Model \citep[STAR]{fahrmeir2003}. This chapter will briefly describe its different components. \par
+The non-parametric components in Additive Models open the possibility for more flexible relationships between the dependent variable and single explanatory variables, which standard linear regression methods might not capture correctly. However, sometimes the area of model application requires even more flexibility, for example by including spatial covariates, fixed/random effects or interaction terms. These specific types of effects extend the Additive Model to a Structured Additive Regression Model \citep[STAR]{fahrmeir2003}. This chapter will briefly describe its different components. \par
 
 \subsubsection{Spatial Effects}
-Similarly to Section \ref{AM}, observations $(y_i, \mathbf{z}_i, \mathbf{x}_i)$ are given, where $\mathbf{z}_i$ and $\mathbf{x}_i$ represent vectors of covariate values for the $i$th observation. Additionally, a geographic location index $s$ is known with observations $s_i$, which can be either discrete (e.g. region or country) as well as continuous (e.g. longitude/latitude). Extending the semi-parametric Additive Model as specified in \eqref{addmodel2}, a geospatial effect is now added:
+Similarly to Section \ref{AM}, observations $(y_i, z_{ij}, x_{iq})$ are given, where $x_j$ and $z_j$ depict covariates whose effects are to be modeled using linear and non-parametric predictors, respectively. Additionally, a geographic location index $s$ is known with observations $s_i$, which can be either discrete (e.g. region or country) as well as continuous (e.g. longitude/latitude). Extending the semi-parametric Additive Model as specified in \eqref{addmodel2} a geospatial effect is now added:
 \begin{equation}
   \label{geoaddmodel}
   \begin{split}
@@ -271,10 +303,10 @@ so that it can be incorporated into the geoadditive model in matrix notation in 
   \label{geoaddmatform}
   \textbf{y} = \sum\limits_{j = 1}^K \mathbf{Z}_j \boldsymbol{\gamma}_j + \mathbf{X} \boldsymbol{\beta} + \mathbf{Z}_{geo} \boldsymbol{\gamma}_{geo} + \boldsymbol{\epsilon}
 \end{equation}
-which bears similarities to the basis function approach in \eqref{addmatform} \citep[chap. 9.2]{fahrmeir2013regression}. \par
+which bears similarities to the Basis function approach in \eqref{addmatform} \citep[chap. 9.2]{fahrmeir2013regression}. \par
 
 \subsubsection{Interaction Terms}
-The regression equation \eqref{addmodel2} of Additive Models included main nonparametric and parametric effects, but no interactions between covariates. When incorporating interaction effects, one has to differentiate between an interaction among a continuous and a categorical variable, as well as one where two continuous variables share a common effect \citep[chap. 9.3]{fahrmeir2013regression}. \par
+The regression equation \eqref{addmodel2} of Additive Models included main non-parametric and parametric effects but no interactions between covariates. When incorporating interaction effects, one has to differentiate between an interaction among a continuous and a categorical variable, as well as one where two continuous variables share a common effect \citep[chap. 9.3]{fahrmeir2013regression}. \par
 To illustrate the first case, it is assumed that $z_1$ and $x_1$ are continuous and binary ($x_i \in (0, 1)$) covariates, respectively. Then, the interaction term $f_{z_1|x_1}(z_1) \cdot x_1$ can be included in the Additive Model from \eqref{addmodel2} in the following way:
 \begin{equation*}
   \label{interaddmodel}
@@ -290,14 +322,14 @@ If $x_1 = 0$, the non-linear effects of $z_1$ are now
 This framework can also incorporate spatially covarying terms, where the interaction term $f_{geo|x_1}(s)$ represents an interaction between the location variable $s$ and a categorical variable $x_1$ \citep{fahrmeir2013regression}. \par
 Using a Basis function approach, the vector of interaction effects
 \begin{equation*}
-  \boldsymbol{f}_{int} = (f_{z_1|x_1}(z_{11}) x_{11}, \ldots, f_{z_1|x_1}(z_{n1}) x_{n1})
+  \boldsymbol{f}_{int} = (f_{z_1|x_1}(z_{11}) x_{11}, \ldots, f_{z_1|x_1}(z_{n1}) x_{n1})'
 \end{equation*}
  can be described in matrix notation to extend \eqref{addmatform} in the following way:
 \begin{equation*}
   \textbf{y} = \sum\limits_{j = 1}^K \mathbf{Z}_j \boldsymbol{\gamma}_j + \mathbf{X} \boldsymbol{\beta} + \mathbf{Z}_{int} \boldsymbol{\gamma}_{int} + \boldsymbol{\epsilon}
 \end{equation*}
 Here, the design matrix $\boldsymbol{Z}_{int}$ represents the Basis function values multiplied with $x_1$ observations \citep[chap. 9.3]{fahrmeir2013regression}. \par
-The possibility of interactions between two continuous covariates is also given. In this case, the interaction between $z_1$ and $z_2$ is modeled using a two-dimensional nonparametric function $f_{z_1|z_2}(z_1, z_2)$. Common two-dimensional functions include bi-variate smooth splines and Kriging techniques. When only the two-dimensional functions without main effects ($f_1(z_1)$, $f_2(z_2)$) should be included, the model equation assumes the following form:
+The possibility of interactions between two continuous covariates is also given. In this case, the interaction between $z_1$ and $z_2$ is modeled using a two-dimensional non-parametric function $f_{z_1|z_2}(z_1, z_2)$. Common two-dimensional functions include bi-variate smooth splines and Kriging techniques. When only the two-dimensional functions without main effects ($f_1(z_1)$, $f_2(z_2)$) should be included, the model equation assumes the following form:
 \begin{equation}
   y_i =  f_{z_1|z_2}(z_{i1}, z_{i2}) + f_3(z_{i3}) + \ldots + f_K(z_{iK}) + \xib + \epsilon_i
 \end{equation}
@@ -306,19 +338,19 @@ It is also possible to model the interaction effect of $z_1$ and $z_2$ using the
 \begin{equation}
 y_i =  f_{z_1|z_2}(z_{i1}, z_{i2}) + f_1(z_{i1}) + f_2(z_{i2}) + \sum\limits_{j = 3}^K f_j(z_{ij}) + \sum\limits_{l = 1}^Q \beta_l x_{il} + \epsilon_i
 \end{equation}
-The identifiability problem in this model is now more complex than before. To solve it, \citet[chap. 9.3]{fahrmeir2013regression} state that not only all included functions have to be centered around zero, but also \enquote{all slices of the interaction $f_{z_1|z_2}(z_1, z_2)$, i.e. all one-dimensional smooths with fixed value of $z_1$ or $z_2$}. \par
-Using the basis function approach, the matrix representation of the model can be obtained:
+The identifiability problem in this model is now more complex than before. To solve it, \citet[chap. 9.3]{fahrmeir2013regression} state that not only all included functions have to be centered around zero but also \enquote{all slices of the interaction $f_{z_1|z_2}(z_1, z_2)$, i.e. all one-dimensional smooths with fixed value of $z_1$ or $z_2$}. \par
+Using the non-parametric function approach, the matrix representation of the model can be obtained:
 \begin{equation}
   \textbf{y} = \sum\limits_{j = 1}^K \mathbf{Z}_j \boldsymbol{\gamma}_j + \mathbf{X} \boldsymbol{\beta} + \mathbf{Z}_{z_1|z_2} \boldsymbol{\gamma}_{z_1|z_2} + \boldsymbol{\epsilon}
 \end{equation}
 with interaction term design matrix $\mathbf{Z}_{z_1|z_2}$ \citep[chap. 9.3]{fahrmeir2013regression}. \par
 
 \subsubsection{Random Effects}
-When dealing with longitudinal datasets it is often necessary to model cluster-specific similarities using Random Effects \citep{laird1982random}. Additive Models can also be expanded with Random Effects to arrive at so called Additive Mixed Models. Assuming a longitudinal data structure with subjects $j = 1, ..., n_i$ in clusters $i = 1, ..., m$ and covariates $\textbf{x}_1, \ldots, \textbf{x}_Q$, a parametric random coefficient model possesses the following structure:
+When dealing with longitudinal datasets it is often necessary to model cluster-specific similarities using Random Effects \citep{laird1982random}. Additive Models can also be expanded upon using Random Effects to arrive at so called Additive Mixed Models. Assuming a longitudinal data structure with subjects $j = 1, ..., n_i$ in clusters $i = 1, ..., m$ and covariates $x_1, \ldots, x_Q$, a parametric random coefficient model possesses the following structure:
 \begin{equation*}
   y_{ij} = (\beta_0 + \nu_{0i}) + (\beta_1 + \nu_{1i}) x_{ij1} + \ldots + (\beta_Q + \nu_{Qi}) x_{ijQ} + \epsilon_i
 \end{equation*}
-The \enquote{random} coefficients $\nu_{0i}$ (intercept) and $\nu_{1i}, \ldots, \nu_{Qi}$ (slopes) represent the cluster-specific deviations from the main effects. To obtain Additive Mixed Models, the main effects are then replaced with nonparametric functions:
+The \enquote{random} coefficients $\nu_{0i}$ (intercept) and $\nu_{1i}, \ldots, \nu_{Qi}$ (slopes) represent the cluster-specific deviations from the main effects. To obtain Additive Mixed Models, the main effects are then replaced with non-parametric functions:
 \begin{equation}
   y_{ij} = f_1(x_{ij1}) + \ldots + f_Q(x_{ijQ}) + \nu_{0i} + \nu_{1i} x_{ij1} + \ldots + \nu_{Qi} x_{ijQ} + \epsilon_i
 \end{equation}
@@ -337,9 +369,9 @@ Structured Additive Regression (STAR) models extend simple Additive Models with 
   \item Nonlinear interactions between two continuous covariates
   \item Random Effects with intercept $\nu_0$ and slope $\nu_j$ deviations from main effects
 \end{itemize}
-All of the aforementioned model terms can be included in a STAR interchangeably, including simple linear predictors $\mathbf{x}' \boldsymbol{\beta}$ \citep[chap 9.5]{fahrmeir2013regression}. \par
-STAR models provide very flexible ways of modeling the influence of explanatory variables on a given response variable $y_i$. Note that while the components can be nonparametric, the direct modeling of $y_i$ assumes that the response variable follows a Gaussian distribution. However, when dealing with e.g. binary or categorical responses, this assumption is violated. Then, a type of model specification is needed that directly upholds the dependent variables' support \citep[chap. 2]{olsson2002}. To solve this challenge, STAR models are merged with Generalized Linear Models to Generalized STAR models.\par
-Generalized Linear Models (GLM), first coined by \citet{nelder1972}, introduce a framework where the expectation of response $y$ is related to a linear predictor $\eta = \textbf{x}'\boldsymbol{\beta}$ via a link function $ g(E(y)) = g(\mu) = \eta$ or a response function $h = g^{-1}$ to arrive at the following model specification:
+All of the aforementioned model terms can be included in a STAR interchangeably, including parametric predictors $\mathbf{X} \boldsymbol{\beta}$ \citep[chap 9.5]{fahrmeir2013regression}. \par
+STAR models provide very flexible ways of modeling the influence of explanatory variables on a given response variable $y$. Note that while the components can be non-parametric, the direct modeling of $y$ assumes that the response variable follows a Gaussian distribution. However, when dealing with binary or categorical responses for example, this assumption is violated. In this case, a type of model specification is needed that directly upholds the dependent variables' support \citep[chap. 2]{olsson2002}. To solve this challenge STAR models are merged with Generalized Linear Models to Generalized STAR models.\par
+Generalized Linear Models (GLM), first coined by \citet{nelder1972}, introduce a framework where the expectation of response $y$ is related to a linear predictor $\eta_i = \xib$ via a link function $ g(E(y_i)) = g(\mu_i) = \eta_i$ or a response function $h = g^{-1}$ to arrive at the following model specification:
 \begin{equation}
   \label{GLM}
   \begin{split}
@@ -347,7 +379,7 @@ Generalized Linear Models (GLM), first coined by \citet{nelder1972}, introduce a
     g(\mu_i) &  = \mathbf{x}_i' \boldsymbol{\beta}
   \end{split}
 \end{equation}
-For example, when modeling a binomially distributed response the probability parameter $\pi$, which has a support of $\pi \in [0, 1]$, is related to predictors $\textbf{x}' \boldsymbol{\beta}$. Using a logistic link function, we obtain a Logistic Regression Model:
+For example, when modeling a binomially distributed response the probability parameter $\pi$, which has a support of $\pi \in [0, 1]$, is related to linear predictors $\bx \bbeta$. Using a logistic link function, we obtain a Logistic Regression Model:
 \begin{equation*}
   \begin{split}
     \eta_i & = \mathbf{x}'_i \boldsymbol{\beta} \\
@@ -355,7 +387,7 @@ For example, when modeling a binomially distributed response the probability par
   \end{split}
 \end{equation*}
 Here, the response function ensures the correct support of $\pi$ \citep[chap. 5]{fahrmeir2013regression}. Using a link function, the expectation of $y$ can be the first moment of any discrete or continuous distribution part of the exponential family, such as the Poisson, Binomial and Gamma distribution \citep{gamlss2005}. \par
-Note in \eqref{GLM} that the effects of covariates $\textbf{x}_1, \ldots, \textbf{x}_K$ are modeled parametrically. Generalized Additive Models (GAM), as suggested by \citet{hastie1990generalized}, extend the class of Generalized Linear Models to allow for non-parametric effects. In particular, the linear predictor $\eta_i = \xib$ is interchanged by smooth non-parametric functions $f_j(\cdot)$. Given response variable $y$ and covariates $\mathbf{z}_1, \ldots, \mathbf{z}_K$, the following model specification is obtained:
+Note in \eqref{GLM} that the effects of covariates $x_1, \ldots, x_Q$ are modeled parametrically. Generalized Additive Models, as suggested by \citet{hastie1990generalized}, extend the class of Generalized Linear Models to allow for non-parametric effects. In particular, the linear predictor $\eta_i = \xib$ is interchanged by smooth non-parametric functions $f_j(\cdot)$. Given response variable $y$ and covariates $z_1, \ldots, z_K$, the following model specification is obtained:
 \begin{equation}
   \label{GAM}
   \begin{split}
@@ -363,38 +395,37 @@ Note in \eqref{GLM} that the effects of covariates $\textbf{x}_1, \ldots, \textb
     \mu_i & = E(y_i) = h(\eta_i)
   \end{split}
 \end{equation}
-Now, many different response distributions as well as flexible effects for explanatory variables are supported to create a highly flexible model framework. In \eqref{GAM}, only non-parametric effects are linked to $\eta_i$. However, given response $y$ and covariates $(\mathbf{x}_i, \mathbf{z}_i$), all specific effects of STAR models (spatial effects $f_{geo}(\cdot)$, interactions $f_{int}(\cdot)$, etc.) as well as parametric coefficients can be combined to form a Generalized Structured Additive Regression Model (Generalized STAR):
+Now, many different response distributions as well as flexible effects for explanatory variables are supported to create a highly flexible model framework. In \eqref{GAM} only non-parametric effects are linked to $\eta_i$. However, given response $y$ and covariates $(x_q, z_j$) all specific effects of STAR models (spatial effects $f_{geo}(\cdot)$, interactions $f_{int}(\cdot)$, etc.) as well as parametric coefficients can be combined to form a Generalized Structured Additive Regression Model (Generalized STAR):
 \begin{equation}
   \begin{split}
-    \eta_i & = f_1(z_{i1}) + \ldots + f_K(z_{iK}) + \beta_0 + \beta_1 x_{i1} + \ldots + \beta_Q x_{iQ} \\
+    \eta_i & = f_1(z_{i1}) + \ldots + f_K(z_{iK}) + \xib \\
     \mu_i & = h(\eta_i)
   \end{split}
 \end{equation}
-In semi-parametric Generalized STAR models, $f_j(\cdot)$ can have any of the structural forms described in Chapter \ref{STAR}. Nevertheless, the model assumptions for Generalized Linear Models including the response variable exponental family requirement still hold \citep[chap. 9.5]{fahrmeir2013regression}.
+In semi-parametric Generalized STAR models, $f_j(\cdot)$ can have any of the structural forms described in Chapter \ref{STAR}. Nevertheless, the model assumptions for Generalized Linear Models including the exponential family requirement for the response variable still hold \citep[chap. 9.5]{fahrmeir2013regression}.
 
 \subsection{Structured Additive Distributional Regression}
-Generalized STAR models provide a framework to flexibly estimate the expected value of a previously specified distributional parameter. However, in many cases not only the first moment, but also higher-order moments are of special interest. In modeling income, for example, not only the expected income but also the shape of the overall distribution is important. A common measure for income inequality is the Gini coefficient, which can be calculated using the cumulative distribution function (cdf) requiring estimates for all distributional parameters \citep{lerman1984note}. \par
+Generalized STAR models provide a framework to flexibly estimate the expected value of a previously specified distributional parameter. However, in many cases not only the first moment but also higher-order moments are of special interest. In modeling income, for example, not only the expected income but also the shape of the overall distribution is important. A common measure for income inequality is the Gini coefficient, which can be calculated using the \ac{cdf} requiring estimates for all distributional parameters \citep{lerman1984note}. \par
 
 \subsubsection{GAMLSS}
-First modeling approaches which go beyond the mean of a distribution were suggested by \citet{nelder1987} using parametric functions of explanatory covariates related to the dispersion parameter $\phi$ of an exponential family distribution. Building upon this approach, Generalized Additive Models for Location, Scale and Shape (gamlss) were introduced by \citet{gamlss2001}. Gamlss combine the flexibility of being able to model multiple distributions with parametric or nonparametric explanatory effects and extend them for multiple response distribution parameters such that not only the location, but also the scale and shape of a distribution can be modeled simultaneously. Furthermore, gamlss relax the assumption of the dependent variable having to follow an exponential family distribution, which significantly increases the number of response modeling possibilities. \par
-Assuming a dependent variable from a distribution with parameters $\btheta = (\theta_1, \ldots, \theta_{L})'$ and observations $y_1, \ldots, y_n$, given covariates $\mathbf{z}_1, \ldots, \mathbf{z}_K$ and $\mathbf{x}_1, \ldots, \mathbf{x}_Q$, a gamlss can be described with the following model specification:
+First modeling approaches which go beyond the mean of a distribution were suggested by \citet{nelder1987} using parametric functions of explanatory covariates related to the dispersion parameter $\phi$ of an exponential family distribution. Building upon this approach, \acf{gamlss} were introduced by \citet{gamlss2001}. Gamlss combine the flexibility of being able to model multiple distributions with parametric or non-parametric explanatory effects and extend them for multiple response distribution parameters such that not only the location but also the scale and shape of a distribution can be modeled simultaneously. Furthermore, \ac{gamlss} relax the assumption of the dependent variable having to follow an exponential family distribution, which significantly increases the number of response modeling possibilities. \par
+Assuming a dependent variable from a distribution with parameters $\btheta = (\theta_1, \ldots, \theta_{L})'$ and observations $y_1, \ldots, y_n$, given covariates $\mathbf{z}_1, \ldots, \mathbf{z}_K$ and $\mathbf{x}_1, \ldots, \mathbf{x}_Q$, a \ac{gamlss} can be described with the following model specification:
 \begin{equation}
   \label{gamlss}
   g_l(\btheta_{l}) = \boldeta_{l} = \bx_l \bbeta_l + \sum\limits_{j = 1}^{K_l} \mathbf{Z}_{jl} \bgamma_{jl}
 \end{equation}
-In Equation \eqref{gamlss}, $g_l(\cdot)$ represents a known monotonic link function, which can be different for each parameter. $\bx_l$ depicts the subset of $x$ variables used to model parameter $\theta_l$, while $\mathbf{Z}_{jl} \bgamma_{jl}$ serves as the basis function matrix notation for a non-parametric effect of covariate $z_j$ on parameter $\theta_l$, taken from a subset of the $K$ $z$ variables. The specific subset of covariates $z$ with nonparametric effects on parameter $\theta_l$ has a length of $K_l$ variables \citep{gamlss2007}. \par
-As shown above, gamlss can utilize different combinations of parametric and non-parametric effects to model each distributional parameter. Equation \ref{gamlss} displays a case in which every parameter is modeled using a non-empty subset of variables $x$ and $z$. However, some parameters can also be set to a constant and not be dependent on covariates. For example, when assuming the Gaussian distribution for the dependent variable and connecting $\mu$ to parametric effects $\mathbf{x}_j$ using the identity link function ($g(\mu) = \mu$) and the variance parameter $\sigma^2$ to a constant, we arrive at a linear model specification \citep{gamlss2007}. \par
+In Equation \eqref{gamlss}, $g_l(\cdot)$ represents a known monotonic link function, which can be different for each parameter. $\bx_l$ depicts the subset of variables $\bx = (\mathbf{x}_1, \ldots, \mathbf{x}_Q)'$ used to model parameter $\theta_l$, while $\mathbf{Z}_{jl} \bgamma_{jl}$ serves as the Basis function matrix for a non-parametric effect of covariate $z_j$ on parameter $\theta_l$, taken from a subset of variables $z_1, \ldots, z_K$ variables. The specific subset of covariates $z$ with non-parametric effects on parameter $\theta_l$ has a length of $K_l$ variables \citep{gamlss2007}. \par
+As shown above, \ac{gamlss} can utilize different combinations of parametric and non-parametric effects to model each distributional parameter. Equation \ref{gamlss} displays a case in which every parameter is modeled using a non-empty subset of variables $x$ and $z$. However, some parameters can also be set to a constant and not be dependent on covariates. For example, when assuming the Gaussian distribution for the dependent variable and connecting $\mu$ to parametric effects $x_q$ using the identity link function ($g(\mu) = \mu$) and the variance parameter $\sigma^2$ to a constant, we arrive at a linear model specification \citep{gamlss2007}. \par
 
 \subsubsection{BAMLSS}
-As mentioned in the introduction of this thesis, not always do the modeled parameters directly equate the moments (location, scale and shape) of a distribution, but rather a combination of them. For this reason, approaches to simultaneously model the parameters of a distribution are often referred to as distributional regression, which includes gamlss. However, as seen in \eqref{gamlss}, gamlss in its normal form only incorporate main effect modeling. To further integrate structured additive terms, such as spatial effects, random effects and interaction terms \citep{brezger2006}, distributional regression is extended to Structured Additive Distributional Regression \citep{klein2015}. \par
-In \citeyear{klein2013}, \citeauthor{klein2013} introduced Bayesian Additive Distributional Regression, which is a model type extending gamlss to include structured additive predictors for modeling parameters of a specified distribution. It represents a fully Bayesian approach, in which coefficients are obtained by drawing samples from the approximate posterior effect distribution using Markov Chain Monte Carlo (MCMC) simulations.  \par
-% Since then, there have been many papers published with applications of Bayesian Additive Distributional Regression. papers raussuchen und zitieren
-An implementation of Bayesian Additive Distributional Regression, called Bayesian Additive Models for Location, Scale and Shape (bamlss) was since created by \citet{bamlss2017}. As the authors point out, the name bears resemblance to gamlss, because of many similarities in its modeling approach. However, extensions of bamlss over gamlss are manifold. First, parallel to the proposed framework of \citet{klein2013}, MCMC simulations are utilized for estimation of coefficients. This is done in contrast to gamlss, where predictor coefficient estimates are retrieved via several forms of penalized likelihood maximization. Advantages of using MCMC simulations over likelihood-based approaches include the sample-based inference, which yields more reliable confidence intervals than the intervals of gamlss estimates based on asymptotic properties. Second, bamlss offer more flexibility of specifying covariate effects with the support of structured additive predictors, like spatial effects or two-dimensional splines. Third, bamlss also support multivariate response distributions, which enhances gamlss' univariate response framework. Furthermore, the implementation of bamlss is designed in a way that allows for the usage of external estimation algorithms and software packages like JAGS or BayesX. \par
-The model specification of bamlss is similar to the gamlss class. The parameters $\btheta = (\theta_1, \ldots, \theta_L)'$ of a parametric distribution with observations $\mathbf{y} = (y_1, \ldots, y_n)'$ are linked to structured additive predictors using monotonic and twice-differentiable link functions $g_l(\theta_l)$ \footnote{note that \citet*{bamlss2017} use $h_l(\cdot)$. It was changed to $g_l(\cdot)$ in this thesis for continuity reasons.}. Based on covariates $\mathbf{x}_1, \ldots, \mathbf{x}_Q$, the following model equation can be obtained:
+As mentioned in the introduction of this thesis, the modeled parameters do not always directly equate to the moments (location, scale and shape) of a distribution but rather a combination of them. For this reason, approaches to simultaneously model the parameters of a distribution are often referred to as distributional regression, which includes \ac{gamlss}. However, as seen in \eqref{gamlss}, \ac{gamlss} in its normal form only incorporate main effect modeling. To further integrate structured additive terms, such as spatial effects, random effects and interaction terms \citep{brezger2006}, distributional regression is extended to Structured Additive Distributional Regression \citep{klein2015}. \par
+In \citeyear{klein2013}, \citeauthor{klein2013} introduced Bayesian Additive Distributional Regression, which is a model type extending \ac{gamlss} to include structured additive predictors for modeling parameters of a specified distribution. It represents a fully Bayesian approach, in which coefficients are obtained by drawing samples from the approximate posterior effect distribution using Markov Chain Monte Carlo (MCMC) simulations.  \par
+An implementation of Bayesian Additive Distributional Regression, called \acf{bamlss} was since created by \citet{bamlss2017}. As the authors pointed out, the name bears resemblance to \ac{gamlss}, because of many similarities in its modeling approach. However, extensions of \ac{bamlss} over \ac{gamlss} are manifold. First, parallel to the proposed framework of \citet{klein2013}, MCMC simulations are utilized for estimation of coefficients. This is done in contrast to \ac{gamlss}, where predictor coefficient estimates are retrieved via several forms of penalized likelihood maximization. Advantages of using MCMC simulations over likelihood-based approaches include the sample-based inference, which yields more reliable confidence intervals than the intervals of \ac{gamlss} estimates based on asymptotic properties. Second, \ac{bamlss} offer more flexibility of specifying covariate effects with the support of structured additive predictors, like spatial effects or two-dimensional splines. Third, \ac{bamlss} also support multivariate response distributions, which enhances \ac{gamlss}' univariate response framework. Furthermore, the implementation of \ac{bamlss} is designed in a way that allows for the usage of external estimation algorithms and software packages like JAGS or BayesX. \par
+The model specification of \ac{bamlss} is similar to the \ac{gamlss} class. The parameters $\btheta = (\theta_1, \ldots, \theta_L)'$ of a parametric distribution with observations $\mathbf{y} = (y_1, \ldots, y_n)'$ are linked to structured additive predictors using monotonic and twice-differentiable link functions $g_l(\theta_l)$ \footnote{note that \citet*{bamlss2017} use $h_l(\cdot)$. It was changed to $g_l(\cdot)$ in this thesis for continuity reasons.}. Based on covariates $\mathbf{x}_1, \ldots, \mathbf{x}_Q$, the following model equation can be obtained:
 \begin{equation}
 g_l(\btheta_l) = f_{1l}(\mathbf{X}_{1l} ; \boldsymbol{\beta}_{1l}) + \ldots + f_{Q_{l}l}(\mathbf{X}_{Q_ll} ; \boldsymbol{\beta}_{Q_{l}l})
 \end{equation}
-Here, $f_{jl}(\cdot)$ represent unspecified functions with regression coefficients $\bbeta_{jl}$ that can attain any structured additive predictor forms, including nonparametric effects. The corresponding model matrices used for each parameter are $\bx_{1l}, \ldots, \bx_{1Q_l}$, which are constructed depending on the type of covariate(s) and the prior assumptions about $f_{jl}(\cdot)$. It is also possible to describe the effects in vector form:
+Here, $f_{jl}(\cdot)$ represent unspecified functions with regression coefficients $\bbeta_{jl}$ that can attain any structured additive predictor forms, including non-parametric effects. The corresponding model matrices used for each parameter are $\bx_{1l}, \ldots, \bx_{1Q_l}$, which are constructed depending on the type of covariate(s) and the prior assumptions about $f_{jl}(\cdot)$. It is also possible to describe the effects in vector form:
 \begin{equation*}
   \boldsymbol{f}_{jl} =
   \begin{bmatrix}
@@ -408,13 +439,13 @@ with $\mathbf{X}_{jl}$ ($n \times m_{jl}$) specifying the design matrix for effe
 \begin{equation}
   g_{l}(\boldsymbol{\theta}_{l}) = \boldsymbol{\eta}_l = \boldsymbol{f}_{1k} + \ldots + \boldsymbol{f}_{J_{l}l}
 \end{equation}
-where $\boldsymbol{f}_{jl}$ represents the vector of function evaluations for  the $j$th effect on parameter $\theta_l$. Similar to Chapters \ref{AM} and \ref{STAR}, effects in bamlss can also be derived through a basis function approach, in which case they can be written as $\boldsymbol{f}_{jl} = \mathbf{X}_{jl} \boldsymbol{\beta}_{jl}$ \citep{bamlss2017}. \par
-As mentioned earlier in this chapter, bamlss offer very flexible ways of specifying covariate effects. Breaking through the framework of basis function approaches, bamlss also allow covariate functions $f_{jl}(\cdot)$ which are nonlinear in its parameters $\boldsymbol{\beta}_{jl}$. An example of this is the Gompertz growth curve
+where $\boldsymbol{f}_{jl}$ represents the vector of function evaluations for  the $j$th effect on parameter $\theta_l$. Similar to Chapters \ref{AM} and \ref{STAR}, effects in \ac{bamlss} can also be derived through a Basis function approach, in which case they can be written as $\boldsymbol{f}_{jl} = \mathbf{X}_{jl} \boldsymbol{\beta}_{jl}$ \citep{bamlss2017}. \par
+As mentioned earlier in this chapter, \ac{bamlss} offer very flexible ways of specifying covariate effects. Breaking through the framework of Basis function approaches, \ac{bamlss} also allow covariate functions $f_{jl}(\cdot)$ which are non-linear in its parameters $\boldsymbol{\beta}_{jl}$. An example of this is the Gompertz growth curve
 \begin{equation*}
   \boldsymbol{f}_{jl} = \beta_1 \cdot \text{exp}(-\text{exp}(\beta_2 + \mathbf{X}_{jl} \beta_3))
 \end{equation*}
-with nonlinear parameters $\boldsymbol{\beta}_{jl}$\citep{bamlss2017}.
-% Sunday5Nov: replace the parametric effects everywhere such that it includes an intercept man!
+with non-linear parameters $\boldsymbol{\beta}_{jl}$\citep{bamlss2017}. \par
+
 \subsection{Estimation}
 \label{estimation}
 In this section, estimation techniques for obtaining the coefficients for regression models introduced in Section \ref{bamlss} will be discussed.
@@ -447,33 +478,33 @@ Generalized STAR models, which use a link function to relate structured additive
   \label{penloglik}
   l_{pen}(\boldsymbol{\gamma}_1, \ldots, \boldsymbol{\gamma}_K, \bbeta) = l(\boldsymbol{\gamma}_1, \ldots, \boldsymbol{\gamma}_K, \bbeta) - \frac{1}{2} \sum\limits_{j = 1}^{K} \lambda_j \boldsymbol{\gamma}_j' \mathbf{K}_j \boldsymbol{\gamma}_j
 \end{equation}
-is maximized in regard to $\boldsymbol{\gamma}_1, \ldots, \boldsymbol{\gamma}_K, \bbeta$. The first part of the criterion, $l(\boldsymbol{\gamma}_1, \ldots, \boldsymbol{\gamma}_K, \bbeta)$ depicts the log-likelihood known from Generalized Linear Models, but with structural additive effects. \par
-As suggested by \citet{fahrmeir2013regression}, penalized log-likelihood criterion of \eqref{penloglik} can in some cases be directly maximized. For example, an R implementation for Generalized Additive Models (which can be seen as a sub-variant of STAR models), \li{mgcv} \citep{mgcv2011}, uses penalized iteratively reweighted least squares to directly obtain coefficient estimates. Optimisation of the penalized log-likelihood can also be combined with backfitting, as it is done in the R package \li{gam}, written by \citet*{gam}. \par
+is maximized in regard to $\boldsymbol{\gamma}_1, \ldots, \boldsymbol{\gamma}_K, \bbeta$. The first part of the criterion, $l(\boldsymbol{\gamma}_1, \ldots, \boldsymbol{\gamma}_K, \bbeta)$ depicts the log-likelihood known from Generalized Linear Models but with structural additive effects. \par
+As suggested by \citet{fahrmeir2013regression}, the penalized log-likelihood criterion of \eqref{penloglik} can in some cases be directly maximized. For example, an R implementation for Generalized Additive Models (which can be seen as a sub-variant of STAR models), \li{mgcv} \citep{mgcv2011}, uses penalized iteratively reweighted least squares to directly obtain coefficient estimates. Optimization of the penalized log-likelihood can also be combined with backfitting, as it is done in the R package \li{gam}, written by \citet*{gam}. \par
 
 \subsubsection{GAMLSS}
-Generalized Additive Models for Location, Scale and Shape (gamlss) also rely on the penalized likelihood in \eqref{penloglik} to obtain coefficient estimates. For maximisation, \citet*{gamlss2005} present two algorithms: the \enquote{RS} algorithm, a generalization of the algorithm suggested by \citet*{rigby1996} for fitting mean and dispersion additive models, and \enquote{CG}, which represents a generalization of the algorithm coined by \citet*{cole1992} relying on first and second (cross) derivatives of the likelihood function with regard to the distributional parameters. \par
-RS, abbreviated for Rigby and Stasinopoulos, uses iteratively weighted least squares (IRLS) in combination with a modified backfitting algorithm to arrive at coefficient estimates. To illustrate the algorithm system, it is broken up into inner and outer iterations, with each inner iteration depicting the fitting of one distributional parameter $\theta_l$. Here, a working variable $\mathbf{z}_l$ consististing of all used predictors, the first derivative of the likelihood (score function) and \enquote{iterative weights} $\mathbf{w}_l$, determined with a local scoring algorithm, is calculated. Then, the working variable is fit to the explanatory variables using backfitted weighted least squares and penalized weighted least squares for parametric and nonparametric coefficients, respectively. The inner iteration is repeated until the inner global deviance has converged. This procedure is done for every $\theta_l$, after which one outer iteration is finished. The outer iterations are further repeated, until the outer global deviance has also converged \citep[Chap. 3]{gamlssbook}. \par
-Note that while the RS algorithm uses score functions to update the working variable, the cross derivatives of the log likelihood functions with respect to the distributional parameters $\boldsymbol{\theta}_l$ are not needed. The CG algorithm, however, uses cross derivatives to obtain new weights for the iteratively reweighted least squares estimation. Other contrasts between CG and RS include the iteration system of CG, where new weights $\mathbf{w}_l$ and the working variable $\mathbf{z}_l$ for iteratively reweighted least squares are not updated for fitting of every parameter, but represents the outer iteration. In the inner iterations, distributional parameters are fitted after each other relying on given weights depending on the current working variable. Here, backfitting is again used to compute current estimates of regression coefficients. After the inner and outer iterations have converged, model estimation is finished \citep[Chap. 3]{gamlssbook}.
+\acf{gamlss} also rely on the penalized likelihood in \eqref{penloglik} to obtain coefficient estimates. For maximization, \citet*{gamlss2005} present two algorithms: the \enquote{RS} algorithm, a generalization of the algorithm suggested by \citet*{rigby1996} for fitting mean and dispersion additive models, and \enquote{CG}, which represents a generalization of the algorithm coined by \citet*{cole1992} relying on first and second (cross) derivatives of the likelihood function with regard to the distributional parameters. \par
+RS, abbreviated for \acl{rs}, uses iteratively \ac{irls} in combination with a modified backfitting algorithm to arrive at coefficient estimates. To illustrate the algorithm system, it is broken up into inner and outer iterations, with each inner iteration depicting the fitting of one distributional parameter $\theta_l$. Here, a working variable $\mathbf{z}_l$ consisting of all used predictors, the first derivative of the likelihood (score function) and \enquote{iterative weights} $\mathbf{w}_l$, determined with a local scoring algorithm, is calculated. Then, the working variable is fit to the explanatory variables using backfitted weighted least squares and penalized weighted least squares for parametric and non-parametric coefficients, respectively. The inner iteration is repeated until the inner global deviance has converged. This procedure is done for every $\theta_l$, after which one outer iteration is finished. The outer iterations are further repeated, until the outer global deviance has also converged \citep[Chap. 3]{gamlssbook}. \par
+Note that while the RS algorithm uses score functions to update the working variable, the cross derivatives of the log likelihood functions with respect to the distributional parameters $\boldsymbol{\theta}_l$ are not needed. The \ac{cg} algorithm, however, uses cross derivatives to obtain new weights for the iteratively reweighted least squares estimation. Other contrasts between CG and RS include the iteration system of CG, where new weights $\mathbf{w}_l$ and the working variable $\mathbf{z}_l$ for iteratively reweighted least squares are not updated for fitting of every parameter but represents the outer iteration. In the inner iterations, distributional parameters are fitted after each other relying on given weights depending on the current working variable. Here, backfitting is again used to compute current estimates of regression coefficients. After the inner and outer iterations have converged, model estimation is finished \citep[Chap. 3]{gamlssbook}.
 As stated by \citet{gamlssbook}, the RS algorithm is preferred in most cases since it is usually faster and converges more consistently than CG. In cases where the modeled distribution posesses highly correlated parameters, however, RS can be slower and suffer from premature convergence. \par
 
 \subsubsection{BAMLSS}
-As the name already suggests, the framework for estimating Bayesian Additive Models for Location, Scale and Shape (bamlss) is based upon Bayesian principles. In this case, model coefficient estimates are assumed to follow a prior distribution, rather than be fixed and unknown quantities. Combined with the likelihood function of the data given parameters $\bbeta$ and explanatory variables $\bx$, this yields the posterior density, which is typically logarithmized to form the log-posterior density
+As the name already suggests, the framework for estimating \acf{bamlss} is based upon Bayesian principles. In this case, model coefficient estimates are assumed to follow a prior distribution, rather than be fixed and unknown quantities. Combined with the likelihood function of the data given parameters $\bbeta$ and explanatory variables $\bx$, this yields the posterior density, which is typically logarithmized to form the log-posterior density
 \begin{equation}
   \label{logpost}
   \text{log} \: \pi(\bbeta, \btau | \by, \bx, \balpha) \propto \underbrace{l(\bbeta | \by, \bx)}_{\text{log-likelihood}} + \underbrace{\sum\limits^{L}_{l = 1} \sum\limits^{J_l}_{j = 1}\text{log} \: p_{jl}(\bbeta_{jl} | \btau_{jl}, \balpha_{jl})}_{\text{prior distributions}}
 \end{equation}
-where $\bbeta_{jl}$ depicts regression coefficients for the $j$th predictor on distributional parameter $\theta_l$ and therefore serves as a subset of $\bbeta$, and $\by, \bx$ are response and design matrices of explanatory variables respectively. Vectors $\btau$ and $\balpha$ are both parameters of the prior distributions $p_{jl}(\cdot)$, whereas $\btau$ represents hyper-parameters which can have their own distribution $d_{\btau_{jl}}(\cdot)$, while $\balpha$ is fixed and not varying. Thus, the prior distributions in the bamlss framework can be further dissected into
+where $\bbeta_{jl}$ depict regression coefficients for the $j$th predictor on distributional parameter $\theta_l$ and therefore serves as a subset of $\bbeta$, and $\by, \bx$ are response and design matrices of explanatory variables respectively. Vectors $\btau$ and $\balpha$ are both parameters of the prior distributions $p_{jl}(\cdot)$, whereas $\btau$ represents hyper-parameters which can have their own distribution $d_{\btau_{jl}}(\cdot)$, while $\balpha$ is fixed and not varying. Thus, the prior distributions in the \ac{bamlss} framework can be further dissected into
 \begin{equation}
   \label{prior}
   p_{jk}(\bbeta_{jl} | \btau_{jl}, \balpha_{jl}) \propto d_{\bbeta_{jl}}(\bbeta_{jl} | \btau_{jl}, \balpha_{\bbeta_{jl}}) \cdot d_{\btau_{jl}}(\btau_{jl} | \balpha_{\btau_{jl}})
 \end{equation}
-As the authors of bamlss state, $\btau_{jl}$ are usually variances, which can be used to control the degree of smoothness of $f_{jl}(\cdot)$ or the amount of correlation between observations. For example, when using a normal distribution prior for regression splines, $\btau_{jl}$ represent inverse smoothing parameters $\boldsymbol{\lambda}$ from a penalized likelihood framework \citep{bamlss2017}. \par
-While the prior distributions in \eqref{prior} can be chosen arbitrarily by the user, \citet*{bamlss2017} give some suggestions and default distributions for priors of commonly-used model terms. Linear effects, for example, are typically modeled using very uninformative priors with a high variance. In this case, the hyper-parameters $\btau_{jl}$ represent fixed values. Priors of non-linear effects usually take the form of multivariate normal distributions for $\bbeta_{jl}$ with non-fixed parameter $\btau_{jl}$, which controls the amount of smoothness of $f_{jl}(\cdot)$. Specifying the prior density of $\btau_{jl}$ for non-linear effects is typically done using inverse gamma distributions, or the half-Cauchy distribution which is preferred when it can be assumed that $\btau_{jl}$ reaches values close to zero. Incorporating geographical effects, which might have additional covariate information available at each of the geographical levels, can be done using compound priors, which contain a vector of Gaussian random effects and the nested predictors.\par
-The R implementation of bamlss provides a highly customizable Bayesian estimation framework, which by default revolves around two main functions: \li{bamlss::bfit()} and \li{bamlss::GMCMC()}. The first function, \li{bfit()}, utilizes an optimizing function which seeks to find the mode of the posterior distribution with respect to $\bbeta$ and $\btau$. Then, those values are used as starting numbers for Markov Chain Monte Carlo (MCMC) simulations (function \li{GMCMC()}), which samples from the posterior distribution of the coefficients and allows the calculation of its posterior median or mean. Both functions can be swapped by the user with optimizer and sampler functions that more closely resemble the subjective preference. The reason for this full Bayesian two-step procedure over direct MCMC sampling is the high difficulty of finding good MCMC starting values. Directly starting MCMC using insufficient starting values would often yield a high rejection frequency, a long burn-in phase or divergence of the sampler. This is especially true in cases where highly complex hyper-parameters are used, e.g. bivariate smooth splines \citep{bamlss2017}.\par
-Optimizing the log-posterior density to obtain its mode with respect to the regression coefficients $\bbeta$ and smoothing variances $\btau$ in bamlss is completed using a nested iterative weighted least squares approach in combination with backfitting. In the inner iterations, optimal regression coefficients are obtained by fitting the first effect $f_{1l}(\cdot)$ on the current working variable of parameter $\theta_l$ with weighted least squares, then using the partial residuals from its subtraction with the current predicted working variable to fit all other effects. This is applied to every parameter $\theta_l$ until the inner iteration converges. In the outer iteration, the current working variable $\mathbf{z}_l$ and new weights $\mathbf{W}_{ll}$ are updated and re-used in backfitting until it also converges \citep{bamlss2017}.\par
-While backfitting the estimated effects $f_{jl}$, the variance parameter $\btau_{jl}$ is also optimized at each step. After specifying a certain search interval, the best solution is found based on a one-dimensional search given a certain goodness-of-fit criterion, e.g. BIC or AIC. \citet*{bamlss2017} state that while this does not assure that the found $\btau_{jl}$ are also global minima, it will at least deliver good starting values for a later MCMC sampling \citep{bamlss2017}. \par
-Note that the fitting of $f_{jl}(\cdot)$ inside the backfitting algorithm represents a single Newton-Raphson step since weights $\mathbf{W}_{ll}$ are constructed using only second but no cross derivatives of the likelihood with respect to the transformed parameters $\boldsymbol{\eta}_l$ by default. Therefore, the bamlss log-posterior maximisation framework bears many similarities to the RS algorithm proposed by \citet*{gamlss2005} for estimation of gamlss \citep{bamlss2017}. Furthermore, the nesting procedure of the backfitted iterative weighted least squares algorithm can be changed. For example, the procedure of backfitting effects for every parameter can be repeated until it converges withing the current parameter, before starting the backfitting procedure for the next $\theta_l$. Also, it is possible to limit the number of outer iterations to one, such that the weights and working variable are not further updated \citep{bamlss2017}. \par
-After optimal parameters $\bbeta$ and $\btau$ for maximising the log-posterior are found, they are used as starting values for the MCMC algorithm. Using MCMC simulations to obtain samples from the posterior distribution to approximate its mean is essential since the expectation of the posterior
+As the authors of \ac{bamlss} state, $\btau_{jl}$ are usually variances, which can be used to control the degree of smoothness of $f_{jl}(\cdot)$ or the amount of correlation between observations. For example, when using a normal distribution prior for regression splines, $\btau_{jl}$ represent inverse smoothing parameters $\boldsymbol{\lambda}$ from a penalized likelihood framework \citep{bamlss2017}. \par
+While the prior distributions in \eqref{prior} can be chosen arbitrarily by the user, \citet*{bamlss2017} give some suggestions and default distributions for priors of commonly-used model terms. Linear effects, for example, are typically modeled using very uninformative priors with a high variance. In this case, the hyper-parameters $\btau_{jl}$ represent fixed values. Priors of non-linear effects usually take the form of multivariate normal distributions for $\bbeta_{jl}$ with non-fixed parameter $\btau_{jl}$, which controls the amount of smoothness of $f_{jl}(\cdot)$. Specifying the prior density of $\btau_{jl}$ for non-linear effects is typically done using inverse gamma distributions or the half-Cauchy distribution which is preferred when it can be assumed that $\btau_{jl}$ reaches values close to zero. Incorporating geographical effects, which might have additional covariate information available at each of the geographical levels, can be done using compound priors, which contain a vector of Gaussian random effects and the nested predictors.\par
+The \ac{bamlss} R implementation, \li{bamlss}, provides a highly customizable Bayesian estimation framework, which by default revolves around two main functions: \li{bamlss::bfit()} and \li{bamlss::GMCMC()}. The first function, \li{bfit()}, utilizes an optimizing function which seeks to find the mode of the posterior distribution with respect to $\bbeta$ and $\btau$. Then, those values are used as starting numbers for Markov Chain Monte Carlo (MCMC) simulations (function \li{GMCMC()}), which samples from the posterior distribution of the coefficients and allows the calculation of its posterior median or mean. Both functions can be swapped by the user with optimizer and sampler functions that more closely resemble the subjective preference. The reason for this full Bayesian two-step procedure over direct MCMC sampling is the high difficulty of finding good MCMC starting values. Directly starting MCMC using insufficient starting values would often yield a high rejection frequency, a long burn-in phase or divergence of the sampler. This is especially true in cases where highly complex hyper-parameters are used, for example bivariate smooth splines \citep{bamlss2017}.\par
+Optimizing the log-posterior density to obtain its mode with respect to the regression coefficients $\bbeta$ and smoothing variances $\btau$ in \l{bamlss} is completed using a nested iterative weighted least squares approach in combination with backfitting. In the inner iterations, optimal regression coefficients are obtained by fitting the first effect $f_{1l}(\cdot)$ on the current working variable of parameter $\theta_l$ with weighted least squares, then using the partial residuals from its subtraction with the current predicted working variable to fit all other effects. This is applied to every parameter $\theta_l$ until the inner iteration converges. In the outer iteration, the current working variable $\mathbf{z}_l$ and new weights $\mathbf{W}_{ll}$ are updated and re-used in backfitting until it also converges \citep{bamlss2017}.\par
+While backfitting the estimated effects $f_{jl}$, the variance parameter $\btau_{jl}$ is also optimized at each step. After specifying a certain search interval the best solution is found based on a one-dimensional search given a certain goodness-of-fit criterion, e.g. BIC or AIC. \citet*{bamlss2017} state that while this does not assure that the found $\btau_{jl}$ are also global minima, it will at least deliver good starting values for a later MCMC sampling \citep{bamlss2017}. \par
+Note that the fitting of $f_{jl}(\cdot)$ inside the backfitting algorithm represents a single Newton-Raphson step since weights $\mathbf{W}_{ll}$ are constructed using only second but no cross derivatives of the likelihood with respect to the transformed parameters $\boldsymbol{\eta}_l$ by default. Therefore, the \li{bamlss} log-posterior maximization framework bears many similarities to the RS algorithm proposed by \citet*{gamlss2005} for estimation of \ac{gamlss} \citep{bamlss2017}. Furthermore, the nesting procedure of the backfitted iterative weighted least squares algorithm can be changed. For example, the procedure of backfitting effects for every parameter can be repeated until it converges within the current parameter before starting the backfitting procedure for the next $\theta_l$. Also, it is possible to limit the number of outer iterations to one, such that the weights and working variable are not further updated \citep{bamlss2017}. \par
+After optimal parameters $\bbeta$ and $\btau$ for maximizing the log-posterior are found, they are used as starting values for the MCMC algorithm. Using MCMC simulations to obtain samples from the posterior distribution to approximate its mean is essential since the expectation of the posterior
 \begin{equation*}
   E(\bbeta, \btau | \by, \bx, \balpha) = \int \bigl( \begin{smallmatrix} \bbeta \\ \btau \end{smallmatrix} \bigr) \pi(\bbeta, \btau | \by, \bx, \balpha) \: d \bigl( \begin{smallmatrix} \bbeta \\ \btau \end{smallmatrix} \bigr)
 \end{equation*}
@@ -482,16 +513,17 @@ can rarely be solved analytically. \citet{bamlss2017} give some suggestions of M
   \alpha(\bbeta_{jl}^{*} | \bbeta^{(t)}_{jl}) = \text{min} [\frac{\pi(\bbeta_{jl}^{*} | \cdot)}{\pi(\bbeta_{jl}^{(t)} | \cdot)}, 1]
 \end{equation*}
 where the log-posterior density is evaluated at both the current and proposed value. In common cases, the jumping distribution is denoted by a normal distribution with expectation $\bbeta_{jl}^{(t)}$ and covariance matrix $\Sigma_{jl}$. Nevertheless, in complex model specifications this sampling framework is not efficient and does not lead to i.i.d. behavior of the Markov chain. Therefore, \citet{bamlss2017} suggest to set the covariance matrix to the local curvature information $\Sigma_{jl} = -(\partial^2\pi(\btheta | \by, \bx) / \partial \bbeta_{jl} \bbeta_{jl}')^{-1}$ or its expectation, evaluated at the posterior mode estimates $\hat{\bbeta}_{jl}$.\par
-However, having a fixed covariance matrix during MCMC simulation might still yield undesirable chain behaviour, especially when moving into posterior distribution regions with a low density. As a solution, the authors of bamlss suggest the use of a \enquote{Derivative-based Metropolis-Hastings} sampler, where the jumping distribution is again a normal distribution, but its expectation and covariance matrix are iteratively recalculated using iterative weighted least squares, where at each step a new working variable $\mathbf{z}_l$ and weights $\mathbf{W}_{ll}$ depending on current evaluations of the log-likelihood function $l(\bbeta | \by, \bx)$ are defined. In cases where the smoothing variances $\btau$ are very complex (e.g. in multivariate smooth splines), the bamlss R implementation uses \enquote{Slice} sampling \citep{bamlss2017}. \par
+However, having a fixed covariance matrix during MCMC simulation might still yield undesirable chain behavior, especially when moving into posterior distribution regions with a low density. As a solution, the authors of \ac{bamlss} suggest the use of a \enquote{Derivative-based Metropolis-Hastings} sampler, where the jumping distribution is again a normal distribution but its expectation and covariance matrix are iteratively recalculated using iterative weighted least squares, where at each step a new working variable $\mathbf{z}_l$ and weights $\mathbf{W}_{ll}$ depending on current evaluations of the log-likelihood function $l(\bbeta | \by, \bx)$ are defined \citep{bamlss2017}. \par
+By default, the R implementation of \ac{bamlss} obtains samples using the \enquote{Derivative-based Metropolis-Hastings} algorithm. In cases where the smoothing variances $\btau$ are very complex (e.g. in multivariate smooth splines), \li{bamlss} uses \enquote{Slice} sampling \citep{bamlss2017}.\par
 
 \section{bamlss.vis}
 \label{bamlss.vis}
-The previous Sections \ref{AM} to \ref{estimation} gave a description of Bayesian Additive Models for Location, Scale and Shape (bamlss) and the underlying sub-models on which they are based. This section will introduce a framework to interactively visualize covariate effects and distributional predictions of fitted bamlss models and feature its implementation as an R package. Due to its visual component, the tool will be called bamlss.vis. \par
-In the proceeding sub-chapter \ref{motivation}, the motivation for bamlss.vis will be explained. Afterwards, a small case-study based on wages of male workers will be presented in Section \ref{case_study}. The resulting fitted bamlss object is then used to feature most of bamlss.vis' abilities in Section \ref{appstructure}. In Section \ref{add_functions}, additional bamlss.vis functions which go beyond the model created in the case-study are presented .\par
+The previous Sections \ref{AM} to \ref{estimation} gave a description of \acf{bamlss} and the underlying sub-models on which they are based. This section will introduce a framework to interactively visualize covariate effects and distributional predictions of fitted \li{bamlss} models and feature its implementation as an R package. Due to its visual component, the tool will be called bamlss.vis. \par
+The proceeding sub-chapter \ref{motivation} will explain the motivation for bamlss.vis. Afterwards, a small case-study based on wages of male workers will be presented in Section \ref{case_study}. The resulting fitted \li{bamlss} object is then used to feature most of bamlss.vis' abilities in Section \ref{appstructure}. In Section \ref{add_functions}, additional bamlss.vis functions which go beyond the model created in the case-study are presented.\par
 
 \subsection{Motivation}
 \label{motivation}
-As discussed in previous sections, distributional regression is concerned with modeling the parameters of a known parametric distribution. After estimation of the model, the user obtains coefficients which measure the influence of an explanatory variable on $\eta_l$, representing the transformed parameter $\theta_l$. However, in most cases the user is more interested in the inference on the expected moments of a distribution. Yet, in many cases the moments do not directly match the expected parameters. \par
+As discussed in previous sections, distributional regression is concerned with modeling the parameters of a known parametric distribution. After estimation of the model, the user obtains coefficients which measure the influence of an explanatory variable on $\eta_l$, representing the transformed parameter $\theta_l$. Nonetheless, in most cases the user is more interested in the inference on the expected moments of a distribution. Yet, in many cases the moments do not directly match the expected parameters. \par
 To further illustrate the problem, consider the censored normal distribution $y^*$ constructed from a normally distributed variable, $y \sim N(\mu, \sigma^2)$. Assuming a left-censored $y^*$ with cut-off point $a = 0$, its probability density function can be obtained by:
 \begin{equation*}
   f(y^* = x) =
@@ -500,7 +532,7 @@ To further illustrate the problem, consider the censored normal distribution $y^
     F(y = \frac{-\mu}{\sigma}) & x \leq 0
   \end{cases}
 \end{equation*}
-where $f(y)$ and $F(y)$ are the probability density functions (pdf) and the cumulative distribution function (cdf) of normally distributed variable $y$, respectively. It is visible in the above equation that the censored normal distribution is both discrete and continuous. While $y^*$ shares the density with $y$ above the cut-off point, the full remaining density in the censored normal distribution is assigned to the cut-off point $a$. Figure \ref{cnorm_plot} shows a sample left-censored normal distribution $y^*$ created from $y \sim N(0, 1)$ with $a = 0$ \citep{greene2012}. \par
+where $f(y)$ and $F(y)$ are the \ac{pdf} and the \acf{pdf} of normally distributed variable $y$, respectively. It is visible in the above equation that the censored normal distribution is both discrete and continuous. While $y^*$ shares the density with $y$ above the cut-off point, the full remaining density in the censored normal distribution is assigned to the cut-off point $a$. Figure \ref{cnorm_plot} shows a sample left-censored normal distribution $y^*$ created from $y \sim N(0, 1)$ with $a = 0$ \citep{greene2012}. \par
 \begin{figure}
   \begin{centering}
     \includegraphics{images/030_cnorm_plot.pdf}
@@ -519,9 +551,9 @@ As visible in Figure \ref{cnorm_plot}, the moments of the standard normal distri
     \gamma &= \beta^2 - \beta \cdot (\frac{-\mu}{\sigma})
   \end{split}
 \end{equation}
-where $\phi(\cdot)$ and $\Phi(\cdot)$ are the probability density function (pdf) and cumulative distribution function (cdf) of the standard normal distribution and $\mu$ and $\sigma^2$ are the parameters of $y$, respectively \citep{greene2012}. Equation \eqref{cnorm_moments} shows that both the expected value and the variance of $y^*$ are computed by a combination of the parameters of the original variable $y$, $\mu$ and $\sigma^2$, and are not equal. Thus, an explanatory variable that has a positive effect on $\mu$ has both an impact on $E(y^*)$ and $Var(y^*)$. Therefore, coefficients for measuring covariate influences on those parameters are not directly translatable to the moments of the modeled distribution and might even have critically different estimates. \par
-Furthermore, even in cases where the desired moments directly equate the modeled parameters (e.g. in gaussian or poisson-distributed responses), different link functions for their transformation $g_l(\theta_l)$ and possibly highly complex nonparametric effects of explanatory variables can lead to coefficient estimates that are hard to interpret. In this case, a visual comparison of predicted distributions is needed. \par
-To tackle both of the aforementioned interpreting problems with fitted bamlss models, bamlss.vis possesses two main objectives:
+where $\phi(\cdot)$ and $\Phi(\cdot)$ are the \ac{pdf} and \ac{cdf} of the standard normal distribution and $\mu$ and $\sigma^2$ are the parameters of $y$, respectively \citep{greene2012}. Equation \eqref{cnorm_moments} shows that both the expected value and the variance of $y^*$ are computed by a combination of the parameters of the original variable $y$, $\mu$ and $\sigma^2$and are not equal. Thus, an explanatory variable that has a positive effect on $\mu$ has both an impact on $E(y^*)$ and $Var(y^*)$. Therefore, coefficients for measuring covariate influences on those parameters are not directly translatable to the moments of the modeled distribution and might even have critically different estimates. \par
+Furthermore, even in cases where the desired moments directly equate the modeled parameters (e.g. in Gaussian or Poisson-distributed responses), different link functions for their transformation $g_l(\theta_l)$ and possibly highly complex non-parametric effects of explanatory variables can lead to coefficient estimates that are hard to interpret. In this case, a visual comparison of predicted distributions is needed. \par
+To tackle both of the aforementioned interpreting problems with fitted \li{bamlss} models, bamlss.vis possesses two main objectives:
 \begin{enumerate}
   \item Visually compare the predicted distributions (pdf or cdf) based on interactively selected covariates
   \item View the changes of distribution moments over the whole range of a selected variable, based on chosen explanatory covariates.
@@ -530,16 +562,16 @@ Using bamlss.vis, one can then observe the influence of a covariate on the distr
 
 \subsection{Case-Study}
 \label{case_study}
-Presenting bamlss.vis' abilities is best achieved using a bamlss fitted with a dataset of real observations. The objective for a suitable dataset is that its response variable and explanatory variables are easy to understand for users without a specific scientific background. The chosen dataset, \enquote{Wage} from the ISLR R package \citep{ISLR}, perfectly fulfills these requirements. \enquote{Wage}, collected by the \citet{uscensus}, includes 3000 male individuals living in the Mid-Atlantic region of the United States of America with records of the following variables:
+Presenting bamlss.vis' abilities is best achieved using a \li{bamlss} fitted with a dataset of real observations. The objective for a suitable dataset is that its response variable and explanatory variables are easy to understand for users without a specific scientific background. The chosen dataset, \enquote{Wage} from the ISLR R package \citep{ISLR}, fulfills these requirements. \enquote{Wage}, collected by the \citet{uscensus}, includes 3000 male individuals living in the Mid-Atlantic region of the United States of America with records of the following variables:
 \begin{itemize}
-  \item \textbf{wage}: Workers raw wage (in 1000\$)
+  \item \textbf{wage}: Worker's raw wage (in \$1000)
   \item \textbf{age}: Age of worker
   \item \textbf{year}: Year that wage information was recorded
   \item \textbf{race}: A factor with levels \texttt{1. White, 2. Black, 3. Asian} and \texttt{4. Other}
   \item \textbf{education}: A factor with levels \texttt{1. < HS Grad, 2. HS Grad, 3. Some College, 4. College Grad} and \texttt{5. Advanced Degree}
-  \item \textbf{health}: A factor with levels \texttt{1. <= Good} and \texttt{2. >= Very Good} indicating health level of worker
+  \item \textbf{health}: A factor with levels \texttt{1. <= Good} and \texttt{2. >= Very Good}, indicating the health level of worker
 \end{itemize}
-The variable, whose distribution is of interest and shall be modeled is the male workers wage. While doing first analyses, it is clear that the wage is highly dependent on the given variables. Figure \ref{wage_density} shows kernel density estimates (Gaussian) for the estimated wage distribution depending on education level. \par
+The variable, whose distribution is of interest and shall be modeled is the male worker's wage. While doing first analyses, it is clear that the wage is highly dependent on the given variables. Figure \ref{wage_density} shows kernel density estimates (Gaussian) for the estimated wage distribution depending on education level. \par
 \begin{figure}
   \begin{centering}
     \includegraphics[scale = 0.8]{images/030_wage_plot.pdf}
@@ -547,8 +579,8 @@ The variable, whose distribution is of interest and shall be modeled is the male
   \label{wage_density}
 \end{centering}
 \end{figure}
-As visible in Figure \ref{wage_density}, the kernel density estimates are critically different for each education level. In general, we can observe that a higher education level is linked to a higher expected income, but also to an increased variance. Therefore, both location and shape should be modeled when fitting the bamlss. Because income cannot be smaller than zero but does otherwise not have upper limits, the censored normal distribution with cut-off $a = 0$ is chosen as the response family. After some data preparation, model fitting is completed by running the following R code: \citep{bamlss2017}:
-\begin{lstlisting}[caption = R code for fitting the bamlss based on Wage dataset, label = bamlss_fitting]
+As visible in Figure \ref{wage_density}, the kernel density estimates are critically different for each education level. In general, we can observe that a higher education level is linked to a higher expected income but also to an increased variance. Therefore, both location and shape should be modeled when fitting the \li{bamlss}. As income cannot be smaller than zero but does otherwise not have upper limits, the censored normal distribution with cut-off $a = 0$ is chosen as the response family. After some data preparation, model fitting is completed by running the following R code: \citep{bamlss2017}:
+\begin{lstlisting}[caption = R code for fitting the \li{bamlss} based on Wage dataset, label = bamlss_fitting]
 cnorm_model <- bamlss(
   list(wage ~ s(age) + race + year + education + health,
        sigma ~ s(age) + race + year + education + health),
@@ -557,7 +589,6 @@ cnorm_model <- bamlss(
 )
 \end{lstlisting}
 As visible in Code-Chunk \ref{bamlss_fitting}, both $\mu$ and $\sigma$ are modeled such that they relate to explanatory variables additively. Both parameters are connected to parametric effects \texttt{race}, \texttt{year}, \texttt{education} and \texttt{health}. The influence of \texttt{age} is specified with a thin-plate smooth spline.
-% This chapter does not guarantee that the chosen model is the best one for the data, but is just for visualisation purposes
 
 \subsection{Application Structure \& Guide}
 \label{appstructure}
@@ -569,7 +600,7 @@ devtools::install_github("Stan125/bamlss.vis")
 \end{lstlisting}
 Furthermore, bamlss.vis is strongly based on the Shiny framework \citep{shiny}, which is an R package designed to create interactive visualizations with HTML code and R functions. In the words of the author, Shiny combines \enquote{the computational power of R with the interactivity of the modern web} \citep{shiny_online}. \par
 In its core, a Shiny application is built using R functions and can therefore be called similarly. In the case of bamlss.vis, there are two ways one can start the application. First, the user can run the code \li{bamlss.vis::vis()}. Second, bamlss.vis can also be called using the open source General User Interface RStudio. When opened, one can click on the \enquote{Add-Ins} button and then select \enquote{BAMLSS Model Visualizer} if bamlss.vis is installed (Figure \ref{addinpic} in the Appendix). This will also trigger the command \li{bamlss.vis::vis()}. \par
-After executing the R code, a new browser window with the started application is be opened up. Figure \ref{app_start} shows the layout of the application, which is then displayed in the users browser.
+After executing the R code, a new browser window with the started application is opened up. Figure \ref{app_start} shows the layout of the application, which is then displayed in the user's browser.
 \begin{figure}
   \begin{centering}
     \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 5cm}]{images/031_app_start.png}
@@ -580,8 +611,8 @@ After executing the R code, a new browser window with the started application is
 As visible in Figure \ref{app_start}, the layout of bamlss.vis is divided into two segments, which have their own tabs the user can click on. In each segment, one of those tabs is always displayed. The left segment, with tabs \enquote{Overview}, \enquote{Scenarios} and \enquote{Scenario Data}, is concerned with model-related settings. The right segment, with tabs \enquote{Plot} and \enquote{Properties} is used to display graphs and properties in reaction to user inputs on the left segment. \par
 
 \subsubsection{Overview Tab}
-The purpose of the overview tab is to display descriptive details about fitted bamlss. After bamlss.vis is started up, it only consists of a select list, where the user can select the model on which the further analysis is to be based. Entries in this list are created by an R function which searches the working directory of the current user for any object of the class \li{bamlss}. Figure \ref{app_start} shows only one entry, \li{cnorm_model}, which represents the model fitted with the code provided in Section \ref{case_study}. \par
-After a model is selected, the overview tab expands to show an outline of the fitted bamlss. Specifically, as shown in Figure \ref{overview_tab}, the tab displays two parts, called \enquote{Model Family} and \enquote{Model Equations}. \enquote{Model Family} shows the distributional family of the model, as well as the parameters which can be modeled including their link functions. In the case of \li{cnorm_model}, the family \enquote{cnorm} (for censored normal distribution) with parameters $\mu$ and $\sigma$ and link functions \enquote{identity} and \enquote{log} can be obtained. \enquote{Model Equations} displays the way covariate effects were specified. We can confirm that for \li{cnorm_model}, the effect of age on both $\mu$ and $\sigma$ is specified using a smooth spline.\par
+The purpose of the overview tab is to display descriptive details about fitted \li{bamlss}. After bamlss.vis is started up, it only consists of a drop-down list where the user can select the model on which the further analysis is to be based. Entries in this list are created by an R function which searches the working directory of the current user for any object of the class \li{bamlss}. Figure \ref{app_start} shows only one entry, \li{cnorm_model}, representing the model fitted with the code provided in Section \ref{case_study}. \par
+After a model is selected, the overview tab expands to show an outline of the fitted \li{bamlss}. Specifically, as shown in Figure \ref{overview_tab}, the tab displays two parts, called \enquote{Model Family} and \enquote{Model Equations}. \enquote{Model Family} shows the distributional family of the model, as well as the parameters which can be modeled including their link functions. In the case of \li{cnorm_model}, the family \enquote{cnorm} (for censored normal distribution) with parameters $\mu$ and $\sigma$ and link functions \enquote{identity} and \enquote{log} can be obtained. \enquote{Model Equations} displays the way covariate effects were specified. We can confirm that for \li{cnorm_model}, the effect of age on both $\mu$ and $\sigma$ is specified using a smooth spline.\par
 \begin{figure}
   \begin{centering}
     \includegraphics[scale = 0.45, trim = {1cm 0cm 1cm 3cm}]{images/032_overview_tab.png}
@@ -593,7 +624,7 @@ After a model is selected, the overview tab expands to show an outline of the fi
 \subsubsection{Scenarios Tab}
 \label{scenarios_tab}
 In this tab, the user can interactively specify covariate values for each explanatory variable, thereby creating a \enquote{Scenario}. After these combinations are \enquote{locked in} by clicking a button, the predicted distribution based on the previously selected model is then plotted. This can be repeated with different covariate values to compare the predictions for multiple covariate combinations. \par
-As displayed in Figure \ref{scenarios_tab_plot}, the top of the tab consists of two buttons, \enquote{Create Scenario} and \enquote{Clear Scenarios}. Right below these buttons a box for including the intercept in predictions is portrayed. Further below, web widgets for each explanatory variable are visible. Bamlss.vis executes a check for the type of each explanatory variable and then constructs different web application elements depending on that information. Categorical covariates receive selector boxes (R function \li{shiny::selectInput()}) with the variables' possible categories, while for numeric variables slider modules are created (\li{shiny::numericInput()}), ranging from the variables minimum to maximum value. The default value for numeric covariates is its arithmetic average.\par
+As displayed in Figure \ref{scenarios_tab_plot}, the top of the tab consists of two buttons, \enquote{Create Scenario} and \enquote{Clear Scenarios}. Right below these buttons a box for including the intercept in predictions is portrayed. Further below, web widgets for each explanatory variable are visible. Bamlss.vis executes a check for the type of each explanatory variable and then constructs different web application elements depending on that information. Categorical covariates receive selector boxes (R function \li{shiny::selectInput()}) with the variables' possible categories, while for numeric variables slider modules are created (\li{shiny::numericInput()}), ranging from the variable's minimum to maximum value. The default value for numeric covariates is its arithmetic average.\par
 \begin{figure}
   \begin{centering}
     \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/033_scenarios_tab.png}
@@ -602,7 +633,7 @@ As displayed in Figure \ref{scenarios_tab_plot}, the top of the tab consists of 
   \end{centering}
 \end{figure}
 To add a new scenario, one can select a value for each variable and then click on \enquote{Create Scenario}. Then, covariate combinations can be changed to create a new scenario. This way, predictions will be computed for every specified combination. Deleting all previously specified combinations can be achieved by clicking \enquote{Delete Scenario}. \par
-Beneath the visual components of the \enquote{Scenarios} rests a small database, which stores each covariate combination the user has specified. This database, created with \li{shiny::reactiveValues()} forms the basis for all other tabs which analyse those covariate combinations. It has a \enquote{reactive} nature, such that all tabs depending on it are automatically updated when a database value changes. \par
+Beneath the visual components of the \enquote{Scenarios} rests a small database, which stores each covariate combination the user has specified. This database, created with \li{shiny::reactiveValues()} forms the basis for all other tabs which analyze those covariate combinations. It has a \enquote{reactive} nature, such that all tabs depending on it are automatically updated when a database value changes. \par
 Because critical differences in wage distributions depending on education were already observed in Figure \ref{wage_density} (p. \pageref{wage_density}), it will now be interesting to recreate this plot based on the fitted \li{cnorm_bamlss} by visually comparing the modeled distributions depending on \li{education}, while controlling for other variables. To achieve this, the following covariate values will be specified first:
 \begin{itemize}
   \item \li{race: 1. White}
@@ -614,7 +645,7 @@ Because critical differences in wage distributions depending on education were a
 Then, the \enquote{Create Scenario} Button is pressed. This is done four more times, with each time seeing a rise in education level by one category. Thus, we can now view the according wage distributions for a 42-year-old white male with very good health across all levels of education (Figure \ref{educ_app}). \par
 
 \subsubsection{Plot Tab}
-The \enquote{Plot} tab, which is located in the right segment of bamlss.vis, reacts to user interaction in the Scenarios tab. Every time the \enquote{Create Scenarios} button is pressed, the tab is updated. Specifically, the data which the user inputs in the left tab is passed onto \li{bamlss.vis::preds()} (a customized version of \li{bamlss::predict.bamlss()}, which then computes predictions for the response distribution parameters by taking the arithmetic average of transformed MCMC samples from the posterior distribution. Afterwards, the predicted parameters are inserted into the probability density function for graphically visualizing the predicted distribution. This procedure is repeated for each \enquote{Scenario}. \par
+The \enquote{Plot} tab, which is located in the right-hand segment of bamlss.vis, reacts to user interaction in the Scenarios tab. Every time the \enquote{Create Scenarios} button is pressed, the tab is updated. Specifically, the data which the user inputs in the left tab is passed onto \li{bamlss.vis::preds()} (a customized version of \li{bamlss::predict.bamlss()}, which then computes predictions for the response distribution parameters by taking the arithmetic average of transformed MCMC samples from the posterior distribution. Afterwards, the predicted parameters are inserted into the probability density function for graphically visualizing the predicted distribution. This procedure is repeated for each \enquote{Scenario}. \par
 Figure \ref{educ_app} shows the plot output for five different scenarios based on the \li{Wage} dataset described in Section \ref{scenarios_tab}.
 \begin{figure}
   \begin{centering}
@@ -624,9 +655,9 @@ Figure \ref{educ_app} shows the plot output for five different scenarios based o
   \end{centering}
 \end{figure}
 As visible in the aforementioned figure, the predicted distributions have both a higher expected value and a higher variance as the education level rises, similar to the kernel density estimates in Figure \ref{wage_density}. \par
-Also noticeable in Figure \ref{educ_app} to the right side of the plot are three web elements for user interaction. The first element, found below the description \enquote{PDF or CDF?}, provides the ability to switch between displaying probability density function (pdf, default) and the cumulative distribution function (cdf). Figure \ref{educ_app_cdf} in the Appendix shows Figure \ref{educ_app} after the \enquote{cdf} option was selected. \par
-The second element gives the option to select a different color palette. Its default value is \enquote{default}, which uses the built-in colour palette provided in ggplot2 \citep{ggplot2}. The selected color palette in Figure \ref{educ_app} is \enquote{viridis}, which is a colorblind-friendly palette spanning over a high range of different colors \citep{viridis}. \par
-The third web element on the right side of the plot output, a red button with the description \enquote{Obtain Code!}, adds reproducibility to the plot. When clicked, a modal window pops up with R commands that, if executed in the main R console with the users current working environment, directly recreates the graph currently being displayed. in the \enquote{Plot} tab. Figure \ref{obtain_code} shows the modal window which arises when pressing the \enquote{Obtain Code!} button in the interface of Figure \ref{educ_app}.
+Also noticeable in Figure \ref{educ_app} to the right side of the plot are three web elements for user interaction. The first element, found below the description \enquote{PDF or CDF?}, provides the ability to switch between displaying the \ac{pdf} (default value) or the \ac{cdf}. Figure \ref{educ_app_cdf} in the Appendix shows Figure \ref{educ_app} after the \enquote{cdf} option was selected. \par
+The second element gives the option to select a different color palette. Its default value is \enquote{default}, which uses the built-in color palette provided in ggplot2 \citep{ggplot2}. The selected color palette in Figure \ref{educ_app} is \enquote{viridis}, which is a colorblind-friendly palette spanning over a high range of different colors \citep{viridis}. \par
+The third web element on the right side of the plot output, a red button with the description \enquote{Obtain Code!}, adds reproducibility to the plot. When clicked, a modal window pops up with R commands that, if executed in the main R console with the user's current working environment, directly recreates the graph currently being displayed in the \enquote{Plot} tab. Figure \ref{obtain_code} shows the modal window which arises when pressing the \enquote{Obtain Code!} button in the interface of Figure \ref{educ_app}.
 \begin{figure}
   \begin{centering}
     \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/036_obtain_code.png}
@@ -642,19 +673,19 @@ While the \enquote{Scenario} tab gives the ability to quickly specify covariate 
 Figure \ref{scenario_data} shows the tabs layout.
 \begin{figure}
   \begin{centering}
-    \includegraphics[scale = 0.45, trim = {1cm 0cm 1cm 3cm}]{images/037_scenario_data.png}
+    \includegraphics[scale = 0.45, trim = {1cm 0cm 1cm 1cm}]{images/037_scenario_data.png}
   \caption{Scenario data tab.}
   \label{scenario_data}
   \end{centering}
 \end{figure}
-As visible, the only present web element is a table placed underneath the description \enquote{Edit scenario data here}. This table, created with the R package \li{rhandsontable} \citep{rhandsontable} represents the editable version of all data input from the \enquote{Scenarios} tab. Columns represent the specified covariates, while one row counts as one \enquote{scenario}. In Figure \ref{scenario_data}, it is possible to see that only three columns of the original six are currently visible. This cut-off was integrated to prevent an overlap with the plot. Nevertheless, the user can use the scrolling bar at the bottom to reach other columns. \par
+As is shown, the only present web element is a table placed underneath the description \enquote{Edit scenario data here}. This table, created with the R package \li{rhandsontable} \citep{rhandsontable} represents the editable version of all data input from the \enquote{Scenarios} tab. Columns represent the specified covariates, while one row counts as one \enquote{scenario}. In Figure \ref{scenario_data}, it is possible to see that only three columns of the original six are currently visible. This cut-off was integrated to prevent an overlap with the plot. Nevertheless, the user can use the scrolling bar at the bottom to reach other columns. \par
 To edit an observation from categorical variables, users can click on a small drop-down button in the cell which can be edited. The table recognizes categorical variables and will then provide a menu where the desired value is to be selected. With numeric variables, users can select the cell and then input the value they wish to make predictions with. Values in logical variables can be specified by checking or unchecking a box in the cell.\par
-With the ability to specify own covariate values also comes the ability in numeric cases to type in numbers that are not in the original variables' range. In the case of \li{cnorm_model}, this could mean that one tries to make predictions for incomes in the year \li{2050}, which is far beyond $max(year) = 2009$. To circumvent the unresponsible usage of model predictions, bamlss.vis will display a warning pop-up message with the name of the covariate combination (\li{P#}) where values were specified which are out of the original variables range (Appendix: Figure \ref{warning_popup}). \par
+With the ability to specify own covariate values also comes the ability in numeric cases to type in numbers that are not in the original variable's range. In the case of \li{cnorm_model}, this could mean that one tries to make predictions for incomes in the year \li{2050}, which is far beyond $max(year) = 2009$. To circumvent the unresponsible usage of model predictions, bamlss.vis will display a warning pop-up message with the name of the covariate combination (\li{P#}) where values were specified which are out of the original variable's range (Appendix: Figure \ref{warning_popup}). \par
 
 \subsubsection{Properties Tab}
 \label{properties_tab}
 Previous chapters have described that the \enquote{Plot} tab visualizes the predicted distributions for each covariate combination specified in the \enquote{Properties} tab. However, while differences in distributions for each combination were visible (e.g. in Figure \ref{educ_app}), it is not possible to directly infer influences of each covariate on the distributional moments. \par
-To provide this functionality, the tab \enquote{Properties} was implemented in bamlss.vis, located in the right segment. When opened, the \enquote{Properties} tab reveals two sub-tabs: \enquote{Influence graph} and \enquote{Table}. As visible in Figure \ref{influence_graph}, the \enquote{Influence graph} tab consists of a graph on the left side next to a small bar with additional options.
+To provide this functionality, the tab \enquote{Properties} was implemented in bamlss.vis, located in the right-hand segment. When opened, the \enquote{Properties} tab reveals two sub-tabs: \enquote{Influence graph} and \enquote{Table}. As visible in Figure \ref{influence_graph}, the \enquote{Influence graph} tab consists of a graph on the left side next to a small bar with additional options.
 \begin{figure}
   \begin{centering}
     \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/039_influence_graph.png}
@@ -662,10 +693,10 @@ To provide this functionality, the tab \enquote{Properties} was implemented in b
   \label{influence_graph}
   \end{centering}
 \end{figure}
-The graph displays the changes in the first two moments over the whole range of a covariate that was chosen on the right side. This is repeated for each \enquote{scenario} specified on bamlss.vis' left segment. As visible in Figure \ref{influence_graph}, the plot is divided into a \li{Expected_Value} and a \li{Variance} segment. In this case, variable \li{age} was chosen and therefore represents the x-axis from the variables minimum to maximum value. The y-axis depicts values for each of the first two distributional moments. Each line displays the level which the predicted moments would assume for \li{age}'s possible values, depending on the chosen covariate combination in the \enquote{Scenarios} tab. \par
+The graph displays the changes in the first two moments over the whole range of a covariate that was chosen on the right side. This is repeated for each \enquote{scenario} specified on bamlss.vis' left-hand segment. As seen in Figure \ref{influence_graph}, the plot is divided into a \li{Expected_Value} and a \li{Variance} section. In this case, variable \li{age} was chosen and therefore represents the x-axis from the variables minimum to maximum value. The y-axis depicts values for each of the first two distributional moments. Each line displays the level which the predicted moments would assume for \li{age}'s possible values, depending on the chosen covariate combination in the \enquote{Scenarios} tab. \par
 In Figure \ref{influence_graph}, five different scenarios which represent varying \li{education} levels were already specified. So in summary, this plot measures the influence of \li{age} on each of the first two moments of the modeled income distribution for healthy 42-year-old white males, depending on the \li{education} level. \par
 For the influence of \li{age} on the first moment, it is possible to observe on all five lines that up until around 40 years, \li{age} has a positive effect on the expected income, then takes a small downturn which is recovered around age 60, after which a rising age decreases the expected income. This influence structure is similar for all education levels because the effect of \li{age} on both parameters of the censored normal distribution was specified as a simple smooth spline with no \li{education} interaction. \par
-For effects on the variance, a similar influence structure is observed, although the ups- and downs get more extreme as education level rises. This can be explained by the original model specification, where not the variance $\sigma^2$ but just the standard deviation $\sigma$ is modeled in relation to explanatory covariates. Thus, its effects have to be squared. \par
+For effects on the variance, a similar influence structure is observed, although the ups- and downs become more extreme as education level rises. This can be explained by the original model specification, where the variance $\sigma^2$ is not but only the standard deviation $\sigma$ is modeled in relation to explanatory covariates. Thus, its effects have to be squared. \par
 The effects of \li{age} on distributional moments can be visualized in lines because the underlying variable is measured in integers. However, bamlss.vis can also display differences in both moments depending on a categorical covariate. Figure \ref{influence_graph_qualitative} illustrates the influence graph when \li{race}, a qualitative covariate, is selected.
 \begin{figure}
   \begin{centering}
@@ -674,9 +705,9 @@ The effects of \li{age} on distributional moments can be visualized in lines bec
   \label{influence_graph_qualitative}
   \end{centering}
 \end{figure}
-In Figure \ref{influence_graph_qualitative}, the x-axis again depicts the selected variable, \li{race}, with its possible outcomes \li{1.White} to \li{4. Other}. Every outcome displays five bars, one for each covariate combination specified in the \enquote{Scenarios} tab. Because the five different covariate combinations depict increasing education levels, this plot shows the effects of both \li{education} and \li{race} on the expected income level and its variance. As already observed in Figure \ref{influence_graph}, both the expected income and income variance increase with a higher education level. Furthermore, Figure \ref{influence_graph_qualitative} shows that 42-year old males are expected to earn less if they belong to the \li{2. Black} or \li{3. Asian} category than when they assume the \li{1. White} category. Still, it is visible that the effect of \li{education} leads to more differences in the expected income than \li{race}. \par
+In Figure \ref{influence_graph_qualitative}, the x-axis again depicts the selected variable, \li{race}, with its possible outcomes \li{1.White} to \li{4. Other}. Every outcome displays five bars, one for each covariate combination specified in the \enquote{Scenarios} tab. As the five different covariate combinations depict increasing education levels, this plot shows the effects of both \li{education} and \li{race} on the expected income level and its variance. As already observed in Figure \ref{influence_graph}, both the expected income and income variance increase with a higher education level. Furthermore, Figure \ref{influence_graph_qualitative} shows that 42-year old males are expected to earn less if they belong to the \li{2. Black} or \li{3. Asian} category than when they assume the \li{1. White} category. Still, it is visible that the effect of \li{education} leads to larger differences in the expected income than \li{race}. \par
 Next to the graph in the \enquote{Influence graph} sub-tab three web elements are displayed. The first one, located under the description \enquote{Expl. variable for plotting influence}, yields the ability to select the explanatory variable for which the influence plot shall be created. The second element lets the user choose a color palette, similar to Figure \ref{educ_app}. In Figures \ref{influence_graph} and \ref{influence_graph_qualitative}, the \enquote{viridis} color palette was specified to account for colorblindness compatibility. Located below the palette selector the same red button as in Figure \ref{educ_app} is placed, which opens a modal window to reproduce the influence plot when it is pressed (Appendix: Figure \ref{obtain_influence_code}). \par
-The other sub-tab of \enquote{Properties} called \enquote{Table} is useful if the user solely wants to see the differences in distributional moment values across specified covariate combinations in the \enquote{Scenarios tab}. Figure \ref{table_tab} shows the tabs layout.
+The other sub-tab of \enquote{Properties} called \enquote{Table} is useful if the user solely wants to see the differences in distributional moment values across specified covariate combinations in the \enquote{Scenarios tab}. Figure \ref{table_tab} shows the tab's layout.
 \begin{figure}
   \begin{centering}
     \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/0312_table_tab.png}
@@ -689,10 +720,10 @@ the only present element is a table which shows two columns, \li{Expected_Value}
 \subsection{Additional Functions}
 \label{add_functions}
 Based on \li{cnorm_model}, the previous chapters gave an overview of bamlss.vis' functionalities for continuous and univariate response distributions. However, the abilities of bamlss.vis go beyond the censored normal distribution and are applicable to almost all distributional families that the \li{bamlss} package provides. This chapter will demonstrate how bamlss.vis handles non-continuous or bivariate response distributions. \par
-The fitted bamlss objects which bamlss.vis uses his section rely on simulated data generated by \li{bamlss.vis::model_fam_data()}. To sustain a correlation structure between covariates such that they can be exploited for useful modeling purposes, \li{model_fam_data()} simulates a three-dimensional uniform distribution with a sample space of $x_i \in [0, 1],\: i = 1, 2, 3$. Then, inverse transform sampling with $x_1$ is used to obtain sample data for all supported \li{bamlss} distribution families. $x_2$ and $x_3$ are transformed to standard normally distributed variables. Covariates $x_1$ and $x_2$ are then used as explanatory variables for modeling the transformed response variable $x_1$. \par
+The fitted \li{bamlss} objects which bamlss.vis uses his section rely on simulated data generated by \li{bamlss.vis::model_fam_data()}. To sustain a correlation structure between covariates such that they can be exploited for useful modeling purposes, \li{model_fam_data()} simulates a three-dimensional uniform distribution with a sample space of $x_i \in [0, 1],\: i = 1, 2, 3$. Then, inverse transform sampling with $x_1$ is used to obtain sample data for all supported \li{bamlss} distribution families. $x_2$ and $x_3$ are transformed to standard normally distributed variables. Covariates $x_1$ and $x_2$ are then used as explanatory variables for modeling the transformed response variable $x_1$. \par
 
 \subsubsection{Discrete Responses}
-Models wwith discrete responses are automatically recognised by bamlss.vis using the function \li{is.discrete}. In contrast to the continuous case, the application structure of bamlss.vis does not change, but the distribution graph is transformed into a bar plot. Figure \ref{poisson_pmf} shows the \enquote{Plot} tab of bamlss.vis for a fitted bamlss object modeling a Poisson-distributed response where three distinct covariate combinations were already specified in the \enquote{Scenarios} tab.
+Models with discrete responses are automatically recognized by bamlss.vis using the function \li{is.discrete}. In contrast to the continuous case, the application structure of bamlss.vis does not change but the distribution graph is transformed into a bar plot. Figure \ref{poisson_pmf} shows the \enquote{Plot} tab of bamlss.vis for a fitted \li{bamlss} object modeling a Poisson-distributed response where three distinct covariate combinations were already specified in the \enquote{Scenarios} tab.
 \begin{figure}
   \begin{centering}
     \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/0313_poisson_pmf.png}
@@ -700,10 +731,10 @@ Models wwith discrete responses are automatically recognised by bamlss.vis using
   \label{poisson_pmf}
   \end{centering}
 \end{figure}
-Here, the three predicted probability mass functions for the different Poisson distributions are visible. As the Poisson distribution is a discrete family, probabilities $f(y)$ are displayed in bars on the y-axis. The x-axis represents possible outcomes of the Poisson distribution. For every outcome, three bars for three different covariate combinations specified in the \enquote{Scenarios} are displayed. For example, prediction \li{P2} has the lowest expected probability $P(y = 0)$ compared to the other two combinations. \par
-In theory, the Poisson distribution can assume all values $\{y \in \mathbb{Z} \: | \: y \geq 0\}$ up to $\infty$. To appropriately visualize different expected Poisson distribution, the x axis of the graph is limited to $0, \ldots, x_{lim}$ where $x_{lim} = (\text{max}(\lambda_1, \ldots, \lambda_K) \cdot 2) + 3$ for predicted parameters $\lambda_i$ from covariate combinations $1, \ldots, K$. \par
-Cumulative distribution functions (cdf) for discrete response distributions can also be obtained by using the the same list selector element as with continuous response distributions to the graphs right side. The cdf is then displayed as a step-wise graph (Appendix: Figure \ref{poisson_cdf}). Moreover, specifying other color palettes and obtaining plot reproduction code is still also possible. \par
-While the Poisson distribution has discrete observations, its first two moments $E(y) = Var(y) = \lambda$ assume values on a continuous scale. Therefore, the appearance of the \enquote{Properties} tab with \enquote{Influence graph} and \enquote{Table} subtabs are identical to the continuous case described in Section \ref{properties_tab}. \par
+Here, the three predicted probability mass functions for the different Poisson distributions are visible. As the Poisson distribution is a discrete family, probabilities $f(y)$ are displayed in bars on the y-axis. Possible outcomes of the Poisson distribution are shown on the x-axis. For every outcome, three bars for three different covariate combinations specified in the \enquote{Scenarios} are displayed. For example, prediction \li{P2} has the lowest expected probability $P(y = 0)$ compared to the other two combinations. \par
+In theory, the Poisson distribution can assume all values $\{y \in \mathbb{Z} \: | \: y \geq 0\}$ up to $\infty$. To appropriately visualize different expected Poisson distribution, the x-axis of the graph is limited to $0, \ldots, x_{lim}$ where $x_{lim} = (\text{max}(\lambda_1, \ldots, \lambda_K) \cdot 2) + 3$ for predicted parameters $\lambda_i$ from covariate combinations $1, \ldots, K$. \par
+Cumulative distribution functions for discrete response distributions can also be obtained by using the the same list selector element as with continuous response distributions to the graphs right side. The cdf is then displayed as a step-wise graph (Appendix: Figure \ref{poisson_cdf}). Moreover, specifying other color palettes and obtaining plot reproduction code is still also possible. \par
+While the Poisson distribution has discrete observations, its first two moments $E(y) = Var(y) = \lambda$ assume values on a continuous scale. Therefore, the appearance of the \enquote{Properties} tab with \enquote{Influence graph} and \enquote{Table} sub-tabs are identical to the continuous case described in Section \ref{properties_tab}. \par
 
 \subsubsection{Multivariate Responses}
 In contrast to the \li{gamlss} R package without extensions, \li{bamlss} also supports multivariate response distributions. From the range of multivariate distributions, only the multivariate normal distribution is currently implemented in \li{bamlss} and therefore supported by bamlss.vis. Nevertheless, because of its existing 3D graphical framework, bamlss.vis can easily be extended for new multivariate distributions. \par
@@ -715,9 +746,9 @@ For graphical reasons, bamlss.vis can only display bivariate responses. Figure \
   \label{mvnorm_pdf}
   \end{centering}
 \end{figure}
-As visible in Figure \ref{mvnorm_pdf}, a bivariate normal distribution is displayed. Multivariate response predictions in bamlss.vis are always only dependent on the last specified covariate combination, without any prediction comparisons. Furthermore, multivariate predictions are displayed using the R package \li{plotly} \citep{plotly}, which adds a layer of interactivity to the graph. Using a graph generated with \li{plotly}, the user can hold and drag the distribution to view the shape from all perspectives. Moreover, hovering over the distribution surface yields current $x$, $y$ and $z$ values. \par
-Located to the right side of the plot are web elements mostly known from previous Sections. Bamlss.vis supports the display of multivariate cumulative distribution functions, which can be selected in the first element titled \enquote{PDF or CDF?}. An example is given by Figure \ref{mvnorm_cdf} in the Appendix. Placed below the first element and the description \enquote{3D Plot type} is another selector box for specifying the type of 3D Plot. In addition to \enquote{perspective}, the options \enquote{contour} and \enquote{image} can be selected. Examples for both options can be found in Appendix Figures \ref{mvnorm_cdf_contour} and \ref{mvnorm_cdf_image} for a contour and image plot, respectively. \par
-Because the bivariate normal distribution consists of two univariate normal distributions with covariance $\rho \sigma_1 \sigma_2$, its first two moments are $\boldsymbol{\mu} = \bigl( \begin{smallmatrix} \mu_1 \\ \mu_2 \end{smallmatrix} \bigr)$ and $\boldsymbol{\Sigma} = \bigl( \begin{smallmatrix} \sigma^2_1 & \rho \sigma_1 \sigma_2 \\ \rho \sigma_1 \sigma_2 & \sigma^2_2 \end{smallmatrix} \bigr)$. In total, this amounts to five parameters for which covariate influences can be graphically displayed. Figure \ref{mvnorm_moments} shows the \enquote{Influence graph} sub-tab for a specified multivariate normal \li{bamlss}.
+As visible in Figure \ref{mvnorm_pdf}, a bivariate normal distribution is displayed. Multivariate response predictions in bamlss.vis are always only dependent on the last specified covariate combination without any prediction comparisons. Furthermore, multivariate predictions are displayed using the R package \li{plotly} \citep{plotly}, which adds a layer of interactivity to the graph. Using a graph generated with \li{plotly}, the user can hold and drag the distribution to view the shape from all perspectives. Moreover, hovering over the distribution surface yields current $x$, $y$ and $z$ values. \par
+Located on the right-hand side of the plot are web elements mostly known from previous Sections. Bamlss.vis supports the display of multivariate cumulative distribution functions, which can be selected in the first element titled \enquote{PDF or CDF?}. An example is given by Figure \ref{mvnorm_cdf} in the Appendix. Placed below the first element and the description \enquote{3D Plot type} is another drop-down list for specifying the type of 3D Plot. In addition to \enquote{perspective}, the options \enquote{contour} and \enquote{image} can be selected. Examples for both options can be found in Appendix Figures \ref{mvnorm_cdf_contour} and \ref{mvnorm_cdf_image} for a contour and image plot, respectively. \par
+Given that the bivariate normal distribution consists of two univariate normal distributions with covariance $\rho \sigma_1 \sigma_2$, its first two moments are $\boldsymbol{\mu} = \bigl( \begin{smallmatrix} \mu_1 \\ \mu_2 \end{smallmatrix} \bigr)$ and $\boldsymbol{\Sigma} = \bigl( \begin{smallmatrix} \sigma^2_1 & \rho \sigma_1 \sigma_2 \\ \rho \sigma_1 \sigma_2 & \sigma^2_2 \end{smallmatrix} \bigr)$. In total, this amounts to five parameters for which covariate influences can be graphically displayed. Figure \ref{mvnorm_moments} shows the \enquote{Influence graph} sub-tab for a specified multivariate normal \li{bamlss}.
 \begin{figure}
   \begin{centering}
     \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/0319_mvnorm_moments.png}
@@ -725,7 +756,7 @@ Because the bivariate normal distribution consists of two univariate normal dist
   \label{mvnorm_moments}
   \end{centering}
 \end{figure}
-As visible, the displayed graph is divided into five subgraphs, instead of two in the univariate case. Similar to the influence plot for univariate response distributions, the relationship between the moments and \li{x2} (explanatory variable selected in this case) is plotted for every previously specified covariate combination. Furthermore, the user can select different color palettes and obtain R code for plot reproduction. \par
+As shown, the displayed graph is divided into five subgraphs, instead of two in the univariate case. Similar to the influence plot for univariate response distributions, the relationship between the moments and \li{x2} (explanatory variable selected in this case) is plotted for every previously specified covariate combination. Furthermore, the user can select different color palettes and obtain R code for plot reproduction. \par
 The \enquote{Table} sub-tab of the \enquote{Properties} tab again differs for bi-variate normal distributions. Here, the displayed table for distributional moments depending on covariate combinations specified in the \enquote{Scenarios} tab is expanded to the five moments of the bivariate normal distribution. For an example, Figure \ref{mvnorm_moments_table} in the Appendix is provided. \par
 
 \subsubsection{Multinomial Responses}
@@ -738,7 +769,7 @@ Figure \ref{multinom_pdf} shows the \enquote{Plot} tab with three specified cova
   \label{multinom_pdf}
   \end{centering}
 \end{figure}
-The modeled sample response variable can have four different outcomes \li{one}, \li{two}, \li{three} and \li{four} which are visible on the x-axis. The predicted probabilities for each of those outcomes are displayed on the y-axis. This is realized graphically in bars for each of the specified covariate combinations, which are three in the present case. Interpreting Figure \ref{multinom_pdf}, one can see that with each higher covariate combination (\li{P1} to \li{P3}), the probability to fall into category \li{two} increases, while the probabilities for all other categories decrease. \par
+The modeled sample response variable can have four different outcomes \li{one}, \li{two}, \li{three} and \li{four} which are visible on the x-axis. The predicted probabilities for each of those outcomes are displayed on the y-axis. This is realized graphically in bars for each of the specified covariate combinations, which are three in the present case. Interpreting Figure \ref{multinom_pdf}, one can see that with each higher covariate combination (\li{P1} to \li{P3}), the probability to assume category \li{two} increases, while the probabilities for all other categories decrease. \par
 Moreover, tweaking the plot with the web elements in the right sidebar is possible, similar to bamlss.vis' behavior for discrete or continuous univariate responses. The option for displaying the cumulative distribution function is inoperative, due to the lack of a reasonable graphical representation.\par
 Using own covariate combinations and then visualizing the probability differences for each class as in Figure \ref{multinom_pdf} can already be used to obtain influence tendencies of covariates on the distributional moments, because for a multinomial distribution $y$ with $K$ classes and $n=1$ draws $E(y) = \boldsymbol{\pi} = (\pi_1, \ldots, \pi_K)'$ holds, which means the first moment is already graphically displayed. However, the variation of $\boldsymbol{\pi}$ over the whole range of an explanatory variable might be of interest. To yield this functionality, the \enquote{influence graph} subtab is provided. Figure \ref{multinom_influence} shows the influence plot for a sample multinomial model.
 \begin{figure}
@@ -748,23 +779,15 @@ Using own covariate combinations and then visualizing the probability difference
   \label{multinom_influence}
   \end{centering}
 \end{figure}
-In Figure \ref{multinom_influence}, the predicted values for $\pi_1, \ldots, \pi_4$ are displayed over the range of the selected variable, \li{norm1}. This is then repeated for every covariate combination which was specified in the \enquote{Scenarios} tab. As visible, the y-axis limits are always 0 and 1, due to $\pi_1 = \ldots = \pi_4 \geq 0$ and $\sum\limits^{4}_{i = 1} \pi_i = 1$ holding true. Furthermore, one can see that an increase of \li{norm1} is associated with an increase of the probability to fall into category \enquote{one} ($\pi_1$) and a decrease for all other categories, across all three covariate combinations. \par
+In Figure \ref{multinom_influence}, the predicted values for $\pi_1, \ldots, \pi_4$ are displayed over the range of the selected variable, \li{norm1.} This is then repeated for every covariate combination which was specified in the \enquote{Scenarios} tab. As visible, the y-axis limits are always 0 and 1, due to $\pi_1 = \ldots = \pi_4 \geq 0$ and $\sum\limits^{4}_{i = 1} \pi_i = 1$ holding true. Furthermore, one can see that an increase of \li{norm1} is associated with an increase of the probability to fall into category \enquote{one} ($\pi_1$) and a decrease for all other categories, across all three covariate combinations. \par
 Displaying the influence of explanatory covariates on probabilities $\pi_i$ is also possible for categorical variables. For an example, Figure \ref{multinom_influence_categorical} in the Appendix is provided. \par
 
-% somewhere with the example models: based on the random data generator function?
-% it should say somewhere how limits of continuous plots are made
-% because so many different model flexibilities we will base the add-in on bamlss
-% default valu mcmc is derivative based metro
 \section{Conclusion}
-% Outlook: More distributions with gamlss.dist package?
-% User-specific parameter combinations?
-% distributional regression is great because one has to think about the distributional assumption but further work should be done on assessing whether the right distributional assumption was made.
-Die industrielle revoluttion
-das war ne tolle aktion.
-jetzt gibts ganz viele Daten,
-darum vom limo ich euch will abraten.
-Mit dieser tollen app
-kann bamlss jetzt jeder depp!
+This thesis laid out the foundations of Bayesian Additive Models for Location Scale and Shape by first describing its ancestors (AM, STAR, Generalized STAR) and relatives (GAMLSS) and then the \ac{bamlss} model framework itself. It became clear that distributional regression provides a highly flexible modeling framework, from which researchers will presumably increasingly benefit in the future. To make fitted models more accessible for users this thesis introduced the interactive application bamlss.vis based on the \li{bamlss} R package. With this new tool at hand, users will hopefully be encouraged about applying distributional regression models, specifically \ac{bamlss}, and then draw more resilient conclusions. \par
+Using bamlss.vis, the user can visualize predicted response distributions based on interactively chosen covariate combinations. Furthermore, bamlss.vis provides the ability to show the influence of a selected explanatory covariate on the first two moments of any modeled response variable, including continuous, discrete and bivariate distributions. Both of these key functions help the user draw useful inference from fitted \li{bamlss} objects. \par
+Moreover, bamlss.vis is designed to be highly customizable. The user-specified covariate combinations (that represent the core of the analysis) can be individually edited and expanded. The graphical appearance of all plots can be changed to display other color palettes or other distribution types (pdf/cdf). Proceeding the finished analysis, the user can obtain R code to reproduce the displayed plot with all chosen options. \par
+Nevertheless, further work on making distributional regression models more understandable can be done. The idea of visualizing predicted distributions and making influence plots should also be applied to other variations of distributional regression, for example BayesX or GAMLSS, which offer a large variety of supported distributions. Moreover, the implementation of bamlss.vis can be further developed. For example, the user might want to know the influence of an explanatory variable on a self-specified figure which can be constructed from the estimated parameters, like the Gini coefficient or a higher-order distributional moment. This could be implemented by adding a text field which computes the desired figure. \par
+Lastly, the framework of bamlss.vis relies heavily on the quality of the fitted model. Wrongly specified response distributions could, for example, also lead to wrong conclusions about the covariate influence. Further work on the selection of response distributions, model choice and variable selection would therefore be highly beneficial. \par
 \clearpage
 
 \appendix
@@ -775,7 +798,7 @@ kann bamlss jetzt jeder depp!
 \setcounter{figure}{0}
 
 % Button click
-\begin{figure}
+\begin{figure}[ht]
   \begin{centering}
     \includegraphics[scale = 0.4, trim = {1cm 0cm 1cm 3cm}]{images/030_addinpic.png}
   \caption{Button to start the main application of bamlss.vis in RStudio.}
@@ -786,7 +809,7 @@ kann bamlss jetzt jeder depp!
 % Wage CDF
 \begin{figure}[ht]
   \begin{centering}
-    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/035_educ_app_cdf.png}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 2cm}]{images/035_educ_app_cdf.png}
   \caption{Cumulative Distribution Function plot output for different education levels based on the \li{Wage} dataset.}
   \label{educ_app_cdf}
   \end{centering}
@@ -804,7 +827,7 @@ kann bamlss jetzt jeder depp!
 % Obtain code for influence graph
 \begin{figure}[ht]
   \begin{centering}
-    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 5cm}]{images/0311_obtain_influence_code.png}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 2cm}]{images/0311_obtain_influence_code.png}
   \caption{Modal window to display code for reproducing the influence plot.}
   \label{obtain_influence_code}
   \end{centering}
@@ -813,7 +836,7 @@ kann bamlss jetzt jeder depp!
 % Poisson CDF
 \begin{figure}[ht]
   \begin{centering}
-    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 5cm}]{images/0314_poisson_cdf.png}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 2cm}]{images/0314_poisson_cdf.png}
   \caption{Predicted Cumulative Distribution Function for three Poisson distributions based on user-input covariate values.}
   \label{poisson_cdf}
   \end{centering}
@@ -822,7 +845,7 @@ kann bamlss jetzt jeder depp!
 % MVnorm cdf
 \begin{figure}[ht]
   \begin{centering}
-    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/0316_mvnorm_cdf.png}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 2cm}]{images/0316_mvnorm_cdf.png}
   \caption{Predicted distribution for a multivariate normal distributed response based on the covariate specification of the \enquote{Scenarios} tab.}
   \label{mvnorm_cdf}
   \end{centering}
@@ -831,7 +854,7 @@ kann bamlss jetzt jeder depp!
 % MVnorm cdf contour
 \begin{figure}[ht]
   \begin{centering}
-    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/0317_mvnorm_pdf_contour.png}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 2cm}]{images/0317_mvnorm_pdf_contour.png}
   \caption{Contour plot for the predicted multivariate normal distribution based on user inputs in \enquote{Scenarios} tab.}
   \label{mvnorm_cdf_contour}
   \end{centering}
@@ -840,7 +863,7 @@ kann bamlss jetzt jeder depp!
 % MVnorm cdf image
 \begin{figure}[ht]
   \begin{centering}
-    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/0318_mvnorm_pdf_image.png}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 2cm}]{images/0318_mvnorm_pdf_image.png}
   \caption{Image plot for the predicted multivariate normal distribution based on user inputs in \enquote{Scenarios} tab.}
   \label{mvnorm_cdf_image}
   \end{centering}
@@ -849,7 +872,7 @@ kann bamlss jetzt jeder depp!
 % MVnorm moments table
 \begin{figure}[ht]
   \begin{centering}
-    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/0320_mvnorm_moments_table.png}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 2cm}]{images/0320_mvnorm_moments_table.png}
   \caption{Table view for expected moments of the bivariate normal distribution based on three specified covariate combinations in the \enquote{Scenarios} tab.}
   \label{mvnorm_moments_table}
   \end{centering}
@@ -858,7 +881,7 @@ kann bamlss jetzt jeder depp!
 % Multinom discrete influence plot
 \begin{figure}[ht]
   \begin{centering}
-    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 6cm}]{images/0323_multinom_influence_categorical.png}
+    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 2cm}]{images/0323_multinom_influence_categorical.png}
   \caption{Sample influence plot for categorical covariates on expected class probabilities in multinomial response \li{bamlss}}
   \label{multinom_influence_categorical}
   \end{centering}
@@ -870,4 +893,8 @@ kann bamlss jetzt jeder depp!
 \bibliography{bibliography}{}
 \bibliographystyle{plainnat}
 
+\clearpage
+\pagenumbering{gobble}
+Ich versichere, dass ich die Arbeit selbst\"andig und ohne Benutzung anderer als der angegebenen Hilfsmittel angefertigt habe. Alle Stellen, die w\"ortlich oder sinngem\"a\ss{} aus Ver\"offentlichungen oder anderen Quellen entnommen sind, sind als solche kenntlich gemacht. Die schriftliche und elektronische Form der Arbeit stimmen \"uberein. Ich stimme der \"Uberpr\"ufung der Arbeit durch eine Plagiatssoftware zu. \\[7cm]
+\textbf{Stanislaus Stadlmann}, 18. Dezember 2017
 \end{document}

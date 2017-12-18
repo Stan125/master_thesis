@@ -1,4 +1,4 @@
-\begin{thebibliography}{36}
+\begin{thebibliography}{35}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -24,7 +24,7 @@ A.~Buja, T.~Hastie, and R.~Tibshirani.
 \newblock [Online; accessed 28-Nov-2017].
 
 \bibitem[Chang et~al.(2017)Chang, Cheng, Allaire, X., and McPherson]{shiny}
-W.~Chang, W.~Cheng, J.J. Allaire, Yihui X., and J.~McPherson.
+W.~Chang, W.~Cheng, J.~J. Allaire, Yihui X., and J.~McPherson.
 \newblock \emph{shiny: Web Application Framework for R}, 2017.
 \newblock URL \url{https://CRAN.R-project.org/package=shiny}.
 \newblock R package version 1.0.5.
@@ -55,7 +55,7 @@ L.~Fahrmeir, T.~Kneib, S.~Lang, and B.~Marx.
 \newblock URL \url{https://books.google.de/books?id=EQxU9iJtipAC}.
 
 \bibitem[Friedman and Stuetzle(1981)]{friedman1981projection}
-J.H. Friedman and W.~Stuetzle.
+J.~H. Friedman and W.~Stuetzle.
 \newblock Projection pursuit regression.
 \newblock \emph{Journal of the American statistical Association}, 76\penalty0
   (376):\penalty0 817--823, 1981.
@@ -67,25 +67,25 @@ S.~Garnier.
 \newblock R package version 0.4.0.
 
 \bibitem[Greene(2012)]{greene2012}
-W.H. Greene.
+W.~H. Greene.
 \newblock \emph{Econometric Analysis}.
 \newblock Pearson International Edition. Pearson Education, Limited, 2012.
 \newblock ISBN 9780273753568.
 \newblock URL \url{https://books.google.de/books?id=-WFPYgEACAAJ}.
 
+\bibitem[Hastie(2017)]{gam}
+T.~Hastie.
+\newblock \emph{gam: Generalized Additive Models}, 2017.
+\newblock URL \url{https://CRAN.R-project.org/package=gam}.
+\newblock R package version 1.14-4.
+
 \bibitem[Hastie and Tibshirani(1990)]{hastie1990generalized}
-T.J. Hastie and R.J. Tibshirani.
+T.~J. Hastie and R.~J. Tibshirani.
 \newblock \emph{Generalized Additive Models}.
 \newblock Chapman \& Hall/CRC Monographs on Statistics \& Applied Probability.
   Taylor \& Francis, 1990.
 \newblock ISBN 9780412343902.
 \newblock URL \url{https://books.google.de/books?id=qa29r1Ze1coC}.
-
-\bibitem[Hastie(2017)]{gam}
-Trevor Hastie.
-\newblock \emph{gam: Generalized Additive Models}, 2017.
-\newblock URL \url{https://CRAN.R-project.org/package=gam}.
-\newblock R package version 1.14-4.
 
 \bibitem[James et~al.(2017)James, Witten, Hastie, and Tibshirani]{ISLR}
 G.~James, D.~Witten, T.~Hastie, and R.~Tibshirani.
@@ -110,13 +110,13 @@ N.~Klein, T.~Kneib, S.~Lang, and A.~Sohn.
 \newblock \doi{10.1214/15-AOAS823}.
 \newblock URL \url{https://doi.org/10.1214/15-AOAS823}.
 
-\bibitem[Laird et~al.(1982)Laird, M., and Ware]{laird1982random}
-Laird, Nan M., and James~H. Ware.
+\bibitem[Laird and Ware(1982)]{laird1982random}
+N.~M. Laird and J.~H. Ware.
 \newblock Random-effects models for longitudinal data.
 \newblock \emph{Biometrics}, pages 963--974, 1982.
 
 \bibitem[Lerman and Yitzhaki(1984)]{lerman1984note}
-R.I. Lerman and S.~Yitzhaki.
+R.~I. Lerman and S.~Yitzhaki.
 \newblock A note on the calculation and interpretation of the gini index.
 \newblock \emph{Economics Letters}, 15\penalty0 (3-4):\penalty0 363--368, 1984.
 
@@ -126,12 +126,12 @@ G.~Matheron.
 \newblock \emph{Economic geology}, 58\penalty0 (8):\penalty0 1246--1266, 1963.
 
 \bibitem[Nelder and Pregibon(1987)]{nelder1987}
-J.A. Nelder and D.~Pregibon.
+J.~A. Nelder and D.~Pregibon.
 \newblock An extended quasi-likelihood function.
 \newblock \emph{Biometrika}, 74\penalty0 (2):\penalty0 221--232, 1987.
 
 \bibitem[Nelder and Wedderburn(1972)]{nelder1972}
-J.A. Nelder and R.W.M. Wedderburn.
+J.~A. Nelder and R.~W.~M. Wedderburn.
 \newblock Generalized linear models.
 \newblock \emph{Journal of the Royal Statistical Society. Series A (General)},
   135\penalty0 (3):\penalty0 370--384, 1972.
@@ -156,26 +156,26 @@ J.~Owen.
 \newblock R Foundation for Statistical Computing, Vienna, Austria, 2017.
 \newblock URL \url{https://www.R-project.org/}.
 
+\bibitem[Rigby and Stasinopoulos(1996)]{rigby1996}
+R.~A. Rigby and D.~M. Stasinopoulos.
+\newblock \emph{Mean and Dispersion Additive Models}, pages 215--230.
+\newblock Physica-Verlag HD, Heidelberg, 1996.
+\newblock ISBN 978-3-642-48425-4.
+\newblock \doi{10.1007/978-3-642-48425-4_16}.
+\newblock URL \url{https://doi.org/10.1007/978-3-642-48425-4_16}.
+
 \bibitem[Rigby and Stasinopoulos(2001)]{gamlss2001}
-R.A. Rigby and D.M. Stasinopoulos.
+R.~A. Rigby and D.~M. Stasinopoulos.
 \newblock The gamlss project: a flexible approach to statistical modelling.
 \newblock In \emph{New trends in statistical modelling: Proceedings of the 16th
   international workshop on statistical modelling}, volume 337, page 345.
   University of Southern Denmark, June 2001.
 
 \bibitem[Rigby and Stasinopoulos(2005)]{gamlss2005}
-R.A. Rigby and D.M. Stasinopoulos.
+R.~A. Rigby and D.~M. Stasinopoulos.
 \newblock Generalized additive models for location, scale and shape.
 \newblock \emph{Journal of the Royal Statistical Society: Series C (Applied
   Statistics)}, 54\penalty0 (3):\penalty0 507--554, 2005.
-
-\bibitem[Rigby and Stasinopoulos(1996)]{rigby1996}
-R.A. Rigby and M.D. Stasinopoulos.
-\newblock \emph{Mean and Dispersion Additive Models}, pages 215--230.
-\newblock Physica-Verlag HD, Heidelberg, 1996.
-\newblock ISBN 978-3-642-48425-4.
-\newblock \doi{10.1007/978-3-642-48425-4_16}.
-\newblock URL \url{https://doi.org/10.1007/978-3-642-48425-4_16}.
 
 \bibitem[{RStudio, Inc.}(2017)]{shiny_online}
 {RStudio, Inc.}
@@ -192,7 +192,7 @@ C.~Sievert, C.~Parmer, T.~Hocking, S.~Chamberlain, K.~Ram, M.~Corvellec, and
 \newblock R package version 4.7.1.
 
 \bibitem[Stasinopoulos and Rigby(2007)]{gamlss2007}
-D.M. Stasinopoulos and R.A. Rigby.
+D.~M. Stasinopoulos and R.~A. Rigby.
 \newblock {Generalized additive models for location scale and shape (GAMLSS) in
   R}.
 \newblock \emph{Journal of Statistical Software}, 23\penalty0 (7):\penalty0
@@ -200,18 +200,12 @@ D.M. Stasinopoulos and R.A. Rigby.
 
 \bibitem[Stasinopoulos et~al.(2017)Stasinopoulos, Rigby, Heller, Voudouris, and
   De~Bastiani]{gamlssbook}
-M.D. Stasinopoulos, R.A. Rigby, G.Z. Heller, V.~Voudouris, and F.~De~Bastiani.
+M.~D. Stasinopoulos, R.~A. Rigby, G.~Z. Heller, V.~Voudouris, and
+  F.~De~Bastiani.
 \newblock \emph{Flexible Regression and Smoothing: Using GAMLSS in R}.
 \newblock Chapman \& Hall/CRC The R Series. CRC Press, 2017.
 \newblock ISBN 9781351980371.
 \newblock URL \url{https://books.google.de/books?id=1h-9DgAAQBAJ}.
-
-\bibitem[{The Economist}(2015)]{econblog}
-{The Economist}.
-\newblock Rise of the machines, 2015.
-\newblock URL
-  \url{https://www.economist.com/news/briefing/21650526-artificial-intelligence-scares-peopleexcessively-so-rise-machines}.
-\newblock [Online; accessed 28-Nov-2017].
 
 \bibitem[Umlauf et~al.(2017)Umlauf, Klein, and Zeileis]{bamlss2017}
 N.~Umlauf, N.~Klein, and A.~Zeileis.

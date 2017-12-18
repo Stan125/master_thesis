@@ -13,19 +13,19 @@
 \contentsline {subsubsection}{\numberline {2.5.1}STAR and Generalized STAR models}{13}{subsubsection.2.5.1}
 \contentsline {subsubsection}{\numberline {2.5.2}GAMLSS}{15}{subsubsection.2.5.2}
 \contentsline {subsubsection}{\numberline {2.5.3}BAMLSS}{16}{subsubsection.2.5.3}
-\contentsline {section}{\numberline {3}bamlss.vis}{19}{section.3}
+\contentsline {section}{\numberline {3}bamlss.vis}{20}{section.3}
 \contentsline {subsection}{\numberline {3.1}Motivation}{20}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Case-Study}{22}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Application Structure \& Guide}{24}{subsection.3.3}
 \contentsline {subsubsection}{\numberline {3.3.1}Overview Tab}{25}{subsubsection.3.3.1}
 \contentsline {subsubsection}{\numberline {3.3.2}Scenarios Tab}{26}{subsubsection.3.3.2}
 \contentsline {subsubsection}{\numberline {3.3.3}Plot Tab}{28}{subsubsection.3.3.3}
-\contentsline {subsubsection}{\numberline {3.3.4}Scenario Data Tab}{29}{subsubsection.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.4}Scenario Data Tab}{30}{subsubsection.3.3.4}
 \contentsline {subsubsection}{\numberline {3.3.5}Properties Tab}{31}{subsubsection.3.3.5}
-\contentsline {subsection}{\numberline {3.4}Additional Functions}{35}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.4}Additional Functions}{34}{subsection.3.4}
 \contentsline {subsubsection}{\numberline {3.4.1}Discrete Responses}{35}{subsubsection.3.4.1}
 \contentsline {subsubsection}{\numberline {3.4.2}Multivariate Responses}{36}{subsubsection.3.4.2}
-\contentsline {subsubsection}{\numberline {3.4.3}Multinomial Responses}{38}{subsubsection.3.4.3}
-\contentsline {section}{\numberline {4}Conclusion}{40}{section.4}
-\contentsline {section}{\numberline {A}Appendix}{42}{appendix.A}
-\contentsline {section}{Bibliography}{47}{section*.29}
+\contentsline {subsubsection}{\numberline {3.4.3}Multinomial Responses}{39}{subsubsection.3.4.3}
+\contentsline {section}{\numberline {4}Conclusion}{41}{section.4}
+\contentsline {section}{\numberline {A}Appendix}{43}{appendix.A}
+\contentsline {section}{Bibliography}{48}{section*.30}

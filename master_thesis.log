@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.22)  15 DEC 2017 15:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.22)  18 DEC 2017 01:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -781,6 +781,481 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/acro/acro.sty (/usr/local/texlive/2017/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2017/05/13 L3 programming layer (loader) 
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2017/05/13 L3 programming layer (code)
+\c_max_int=\count140
+\l_tmpa_int=\count141
+\l_tmpb_int=\count142
+\g_tmpa_int=\count143
+\g_tmpb_int=\count144
+\g__prg_map_int=\count145
+\c_log_iow=\count146
+\l_iow_line_count_int=\count147
+\l__iow_line_target_int=\count148
+\l__iow_one_indent_int=\count149
+\l__iow_indent_int=\count150
+\c_zero_dim=\dimen282
+\c_max_dim=\dimen283
+\l_tmpa_dim=\dimen284
+\l_tmpb_dim=\dimen285
+\g_tmpa_dim=\dimen286
+\g_tmpb_dim=\dimen287
+\c_zero_skip=\skip56
+\c_max_skip=\skip57
+\l_tmpa_skip=\skip58
+\l_tmpb_skip=\skip59
+\g_tmpa_skip=\skip60
+\g_tmpb_skip=\skip61
+\c_zero_muskip=\muskip12
+\c_max_muskip=\muskip13
+\l_tmpa_muskip=\muskip14
+\l_tmpb_muskip=\muskip15
+\g_tmpa_muskip=\muskip16
+\g_tmpb_muskip=\muskip17
+\l_keys_choice_int=\count151
+\c__fp_leading_shift_int=\count152
+\c__fp_middle_shift_int=\count153
+\c__fp_trailing_shift_int=\count154
+\c__fp_big_leading_shift_int=\count155
+\c__fp_big_middle_shift_int=\count156
+\c__fp_big_trailing_shift_int=\count157
+\c__fp_Bigg_leading_shift_int=\count158
+\c__fp_Bigg_middle_shift_int=\count159
+\c__fp_Bigg_trailing_shift_int=\count160
+\c__fp_rand_size_int=\count161
+\c__fp_rand_four_int=\count162
+\c__fp_rand_eight_int=\count163
+\l__sort_length_int=\count164
+\l__sort_min_int=\count165
+\l__sort_top_int=\count166
+\l__sort_max_int=\count167
+\l__sort_true_max_int=\count168
+\l__sort_block_int=\count169
+\l__sort_begin_int=\count170
+\l__sort_end_int=\count171
+\l__sort_A_int=\count172
+\l__sort_B_int=\count173
+\l__sort_C_int=\count174
+\c_empty_box=\box43
+\l_tmpa_box=\box44
+\l_tmpb_box=\box45
+\g_tmpa_box=\box46
+\g_tmpb_box=\box47
+\l__box_top_dim=\dimen288
+\l__box_bottom_dim=\dimen289
+\l__box_left_dim=\dimen290
+\l__box_right_dim=\dimen291
+\l__box_top_new_dim=\dimen292
+\l__box_bottom_new_dim=\dimen293
+\l__box_left_new_dim=\dimen294
+\l__box_right_new_dim=\dimen295
+\l__box_internal_box=\box48
+\l__coffin_internal_box=\box49
+\l__coffin_internal_dim=\dimen296
+\l__coffin_offset_x_dim=\dimen297
+\l__coffin_offset_y_dim=\dimen298
+\l__coffin_x_dim=\dimen299
+\l__coffin_y_dim=\dimen300
+\l__coffin_x_prime_dim=\dimen301
+\l__coffin_y_prime_dim=\dimen302
+\c_empty_coffin=\box50
+\l__coffin_aligned_coffin=\box51
+\l__coffin_aligned_internal_coffin=\box52
+\l_tmpa_coffin=\box53
+\l_tmpb_coffin=\box54
+\l__coffin_display_coffin=\box55
+\l__coffin_display_coord_coffin=\box56
+\l__coffin_display_pole_coffin=\box57
+\l__coffin_display_offset_dim=\dimen303
+\l__coffin_display_x_dim=\dimen304
+\l__coffin_display_y_dim=\dimen305
+\l__coffin_bounding_shift_dim=\dimen306
+\l__coffin_left_corner_dim=\dimen307
+\l__coffin_right_corner_dim=\dimen308
+\l__coffin_bottom_corner_dim=\dimen309
+\l__coffin_top_corner_dim=\dimen310
+\l__coffin_scaled_total_height_dim=\dimen311
+\l__coffin_scaled_width_dim=\dimen312
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
+File: l3pdfmode.def 2017/03/18 v L3 Experimental driver: PDF mode
+\l__driver_color_stack_int=\count175
+\l__driver_tmp_box=\box58
+)) (/usr/local/texlive/2017/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2017/05/13 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count176
+\g__xparse_grabber_int=\count177
+\l__xparse_m_args_int=\count178
+\l__xparse_mandatory_args_int=\count179
+\l__xparse_v_nesting_int=\count180
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2017/05/13 LaTeX2e option processing using LaTeX3 keys
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
+Package: xtemplate 2017/05/13 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen313
+\l__xtemplate_tmp_int=\count181
+\l__xtemplate_tmp_muskip=\muskip18
+\l__xtemplate_tmp_skip=\skip62
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count182
+)
+Package: acro 2017/01/22 v2.7a Typeset Acronyms
+\l__acro_tmpa_int=\count183
+\l__acro_tmpb_int=\count184
+\l__acro_tmpc_int=\count185
+\l__acro_tmpd_int=\count186
+\l__acro_page_space_skip=\skip63
+\l__acro_short_width_dim=\dimen314
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acfirstupper with sig. 'm' on line 442.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acsetup with sig. 'm' on line 591.
+.................................................
+.................................................
+. xtemplate info: "declare-object-type"
+. 
+. Declaring object type 'acro-first' taking 2 argument(s) on line 831.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareAcroFirstStyle with sig. 'mmm' on line 941.
+.................................................
+.................................................
+. xtemplate info: "declare-object-type"
+. 
+. Declaring object type 'acro-extra' taking 1 argument(s) on line 965.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareAcroExtraStyle with sig. 'mmm' on line 1004.
+.................................................
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/zref-abspage.sty
+Package: zref-abspage 2016/05/21 v2.26 Module abspage for zref (HO)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/zref-base.sty
+Package: zref-base 2016/05/21 v2.26 Module base for zref (HO)
+ (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+ (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+ (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+Package zref Info: New property list: main on input line 759.
+Package zref Info: New property: default on input line 760.
+Package zref Info: New property: page on input line 761.
+) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+)
+\c@abspage=\count187
+Package zref Info: New property: abspage on input line 62.
+)
+.................................................
+. xtemplate info: "declare-object-type"
+. 
+. Declaring object type 'acro-page-number' taking 1 argument(s) on line 1200.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareAcroPageStyle with sig. 'mmm' on line 1249.
+.................................................
+.................................................
+. xtemplate info: "declare-object-type"
+. 
+. Declaring object type 'acro-title' taking 1 argument(s) on line 1275.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareAcroListHeading with sig. 'mm' on line 1317.
+.................................................
+.................................................
+. xtemplate info: "declare-object-type"
+. 
+. Declaring object type 'acro-list' taking 2 argument(s) on line 1321.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareAcroListStyle with sig. 'mmm' on line 1765.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \ProvideAcroEnding with sig. 'mmm' on line 2260.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \AcroRegisterTrailing with sig. 'mm' on line 2983.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acdot with sig. '' on line 3055.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acspace with sig. '' on line 3056.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acifused with sig. 'm' on line 3089.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acresetall with sig. '' on line 3103.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acuseall with sig. '' on line 3106.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acreset with sig. '>{\SplitList {,}}m' on line 3109.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acuse with sig. '>{\SplitList {,}}m' on line 3112.
+.................................................
+\g__acro_barrier_int=\count188
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acbarrier with sig. '' on line 3139.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acswitchoff with sig. '' on line 3240.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acswitchon with sig. '' on line 3243.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareAcronym with sig. 'mm' on line 3825.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \printacronyms with sig. 'O{}' on line 3872.
+.................................................
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/translations/translations.sty
+Package: translations 2017/05/16 v1.6 internationalization of LaTeX2e packages (CN)
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2017/04/13 v3.23 KOMA-Script package (loading files)
+
+Package scrlfile, 2017/04/13 v3.23 KOMA-Script package (loading files)
+                  Copyright (C) Markus Kohm
+
+))
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareAcroTranslation with sig. 'mm' on line 3910.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \ac with sig. 'sO{}m' on line 4111.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \iac with sig. 'sO{}m' on line 4117.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \Iac with sig. 'sO{}m' on line 4124.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \Ac with sig. 'sO{}m' on line 4130.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acp with sig. 'sO{}m' on line 4136.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \Acp with sig. 'sO{}m' on line 4143.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acsingle with sig. 'sO{}m' on line 4149.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \Acsingle with sig. 'sO{}m' on line 4156.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acs with sig. 'sO{}m' on line 4160.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \iacs with sig. 'sO{}m' on line 4166.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \Iacs with sig. 'sO{}m' on line 4173.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acsp with sig. 'sO{}m' on line 4179.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aca with sig. 'sO{}m' on line 4183.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \Aca with sig. 'sO{}m' on line 4189.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \iaca with sig. 'sO{}m' on line 4195.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \Iaca with sig. 'sO{}m' on line 4202.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acap with sig. 'sO{}m' on line 4208.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acl with sig. 'sO{}m' on line 4212.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \iacl with sig. 'sO{}m' on line 4218.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \Iacl with sig. 'sO{}m' on line 4225.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \Acl with sig. 'sO{}m' on line 4231.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aclp with sig. 'sO{}m' on line 4237.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \Aclp with sig. 'sO{}m' on line 4244.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acf with sig. 'sO{}m' on line 4248.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \iacf with sig. 'sO{}m' on line 4254.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \Iacf with sig. 'sO{}m' on line 4261.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \Acf with sig. 'sO{}m' on line 4267.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acfp with sig. 'sO{}m' on line 4273.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \Acfp with sig. 'sO{}m' on line 4280.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acflike with sig. 'smm' on line 4284.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \iacflike with sig. 'smm' on line 4290.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \Iacflike with sig. 'smm' on line 4297.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \acfplike with sig. 'smm' on line 4303.
+.................................................
+\g__file_internal_ior=\read4
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2017/03/14 v6.85a Hypertext links for LaTeX
  (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
@@ -790,23 +1265,14 @@ Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
 Package hobsub Info: Skipping package `ltxcmds' (already loaded).
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
 Package hobsub Info: Skipping package `ifvtex' (already loaded).
 Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
 Package hobsub Info: Skipping package `ifpdf' (already loaded).
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
+Package hobsub Info: Skipping package `etexcmds' (already loaded).
+Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
+Package hobsub Info: Skipping package `kvdefinekeys' (already loaded).
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
 Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
 Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO)
 Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
@@ -817,24 +1283,21 @@ Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
 Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
 Package: xcolor-patch 2016/05/16 xcolor patch
 Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
-Package atveryend Info: \enddocument detected (standard20110627).
-Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package hobsub Info: Skipping package `atbegshi' (already loaded).
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/auxhook.sty
-Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
-\@linkdim=\dimen282
-\Hy@linkcounter=\count140
-\Hy@pagecounter=\count141
+\@linkdim=\dimen315
+\Hy@linkcounter=\count189
+\Hy@pagecounter=\count190
  (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2017/03/14 v6.85a Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count142
+\Hy@SavedSpaceFactor=\count191
  (/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
@@ -846,12 +1309,12 @@ Package hyperref Info: Plain pages OFF on input line 4513.
 Package hyperref Info: Backreferencing OFF on input line 4518.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4751.
-\c@Hy@tempcnt=\count143
+\c@Hy@tempcnt=\count192
 LaTeX Info: Redefining \url on input line 5104.
-\XeTeXLinkMargin=\dimen283
-\Fld@menulength=\count144
-\Field@Width=\dimen284
-\Fld@charsize=\dimen285
+\XeTeXLinkMargin=\dimen316
+\Fld@menulength=\count193
+\Field@Width=\dimen317
+\Fld@charsize=\dimen318
 Package hyperref Info: Hyper figures OFF on input line 6358.
 Package hyperref Info: Link nesting OFF on input line 6363.
 Package hyperref Info: Hyper index ON on input line 6366.
@@ -861,107 +1324,104 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6383.
 Package hyperref Info: PDF/A mode OFF on input line 6388.
 LaTeX Info: Redefining \ref on input line 6428.
 LaTeX Info: Redefining \pageref on input line 6432.
-\Hy@abspage=\count145
-\c@Item=\count146
-\c@Hfootnote=\count147
+\Hy@abspage=\count194
+\c@Item=\count195
+\c@Hfootnote=\count196
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2017/03/14 v6.85a Hyperref driver for pdfTeX
-\Fld@listcount=\count148
-\c@bookmark@seq@number=\count149
+\HyAnn@Count=\count197
+\Fld@listcount=\count198
+\c@bookmark@seq@number=\count199
  (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 282.
 )
-\Hy@SectionHShift=\skip56
+\Hy@SectionHShift=\skip64
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count150
+\c@float@type=\count266
 \float@exts=\toks46
-\float@box=\box43
+\float@box=\box59
 \@float@everytoks=\toks47
-\@floatcapt=\box44
+\@floatcapt=\box60
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
  (/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen286
-\captionmargin@=\dimen287
-\captionwidth=\dimen288
-\caption@tempdima=\dimen289
-\caption@indent=\dimen290
-\caption@parindent=\dimen291
-\caption@hangindent=\dimen292
+\captionmargin=\dimen319
+\captionmargin@=\dimen320
+\captionwidth=\dimen321
+\caption@tempdima=\dimen322
+\caption@indent=\dimen323
+\caption@parindent=\dimen324
+\caption@hangindent=\dimen325
 )
-\c@ContinuedFloat=\count151
+\c@ContinuedFloat=\count267
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
-\c@subfigure=\count152
-\c@subtable=\count153
+\c@subfigure=\count268
+\c@subtable=\count269
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/eurosym/eurosym.sty
 Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
-\@eurobox=\box45
+\@eurobox=\box61
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count154
-\lst@gtempboxa=\box46
+\lst@mode=\count270
+\lst@gtempboxa=\box62
 \lst@token=\toks48
-\lst@length=\count155
-\lst@currlwidth=\dimen293
-\lst@column=\count156
-\lst@pos=\count157
-\lst@lostspace=\dimen294
-\lst@width=\dimen295
-\lst@newlines=\count158
-\lst@lineno=\count159
-\lst@maxwidth=\dimen296
+\lst@length=\count271
+\lst@currlwidth=\dimen326
+\lst@column=\count272
+\lst@pos=\count273
+\lst@lostspace=\dimen327
+\lst@width=\dimen328
+\lst@newlines=\count274
+\lst@lineno=\count275
+\lst@maxwidth=\dimen329
  (/usr/local/texlive/2017/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count160
-\lst@skipnumbers=\count161
-\lst@framebox=\box47
+\c@lstnumber=\count276
+\lst@skipnumbers=\count277
+\lst@framebox=\box63
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
  (/usr/local/texlive/2017/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip57
-\bibsep=\skip58
+\bibhang=\skip65
+\bibsep=\skip66
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count162
+\c@NAT@ctr=\count278
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2017/03/11 v5.2b context-sensitive quotations (JAW)
- (/usr/local/texlive/2017/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count163
-)
-\csq@reset=\count164
-\csq@gtype=\count165
-\csq@glevel=\count166
-\csq@qlevel=\count167
-\csq@maxlvl=\count168
-\csq@tshold=\count169
+\csq@reset=\count279
+\csq@gtype=\count280
+\csq@glevel=\count281
+\csq@qlevel=\count282
+\csq@maxlvl=\count283
+\csq@tshold=\count284
 \csq@ltx@everypar=\toks49
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.def
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2017/03/11 v5.2b csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.cfg
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.cfg
 File: csquotes.cfg 
 )) (/usr/local/texlive/2017/texmf-dist/tex/latex/mdwtools/footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box48
-\fn@width=\dimen297
+\fn@notes=\box64
+\fn@width=\dimen330
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
@@ -976,17 +1436,15 @@ File: lstlang2.sty 2015/06/04 1.6 listings language file
 File: lstlang3.sty 2015/06/04 1.6 listings language file
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2016/09/06 3.8 Extensive control of page headers and footers
-\fancy@headwidth=\skip59
-\f@ncyO@elh=\skip60
-\f@ncyO@erh=\skip61
-\f@ncyO@olh=\skip62
-\f@ncyO@orh=\skip63
-\f@ncyO@elf=\skip64
-\f@ncyO@erf=\skip65
-\f@ncyO@olf=\skip66
-\f@ncyO@orf=\skip67
-) (/usr/local/texlive/2017/texmf-dist/tex/latex/sectsty/sectsty.sty
-Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading styles
+\fancy@headwidth=\skip67
+\f@ncyO@elh=\skip68
+\f@ncyO@erh=\skip69
+\f@ncyO@olh=\skip70
+\f@ncyO@orh=\skip71
+\f@ncyO@elf=\skip72
+\f@ncyO@erf=\skip73
+\f@ncyO@olf=\skip74
+\f@ncyO@orf=\skip75
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
 Package tocbibind Info: The document has section divisions on input line 50.
@@ -997,40 +1455,41 @@ Package tocbibind Note: Using section or other style headings.
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2013/05/02 v2.3f parameterised ToC, etc., typesetting
 Package tocloft Info: The document has section divisions on input line 44.
-\cftparskip=\skip68
-\cftbeforetoctitleskip=\skip69
-\cftaftertoctitleskip=\skip70
-\cftbeforepartskip=\skip71
-\cftpartnumwidth=\skip72
-\cftpartindent=\skip73
-\cftbeforesecskip=\skip74
-\cftsecindent=\skip75
-\cftsecnumwidth=\skip76
-\cftbeforesubsecskip=\skip77
-\cftsubsecindent=\skip78
-\cftsubsecnumwidth=\skip79
-\cftbeforesubsubsecskip=\skip80
-\cftsubsubsecindent=\skip81
-\cftsubsubsecnumwidth=\skip82
-\cftbeforeparaskip=\skip83
-\cftparaindent=\skip84
-\cftparanumwidth=\skip85
-\cftbeforesubparaskip=\skip86
-\cftsubparaindent=\skip87
-\cftsubparanumwidth=\skip88
-\cftbeforeloftitleskip=\skip89
-\cftafterloftitleskip=\skip90
-\cftbeforefigskip=\skip91
-\cftfigindent=\skip92
-\cftfignumwidth=\skip93
-\c@lofdepth=\count170
-\c@lotdepth=\count171
-\cftbeforelottitleskip=\skip94
-\cftafterlottitleskip=\skip95
-\cftbeforetabskip=\skip96
-\cfttabindent=\skip97
-\cfttabnumwidth=\skip98
+\cftparskip=\skip76
+\cftbeforetoctitleskip=\skip77
+\cftaftertoctitleskip=\skip78
+\cftbeforepartskip=\skip79
+\cftpartnumwidth=\skip80
+\cftpartindent=\skip81
+\cftbeforesecskip=\skip82
+\cftsecindent=\skip83
+\cftsecnumwidth=\skip84
+\cftbeforesubsecskip=\skip85
+\cftsubsecindent=\skip86
+\cftsubsecnumwidth=\skip87
+\cftbeforesubsubsecskip=\skip88
+\cftsubsubsecindent=\skip89
+\cftsubsubsecnumwidth=\skip90
+\cftbeforeparaskip=\skip91
+\cftparaindent=\skip92
+\cftparanumwidth=\skip93
+\cftbeforesubparaskip=\skip94
+\cftsubparaindent=\skip95
+\cftsubparanumwidth=\skip96
+\cftbeforeloftitleskip=\skip97
+\cftafterloftitleskip=\skip98
+\cftbeforefigskip=\skip99
+\cftfigindent=\skip100
+\cftfignumwidth=\skip101
+\c@lofdepth=\count285
+\c@lotdepth=\count286
+\cftbeforelottitleskip=\skip102
+\cftafterlottitleskip=\skip103
+\cftbeforetabskip=\skip104
+\cfttabindent=\skip105
+\cfttabnumwidth=\skip106
 )
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 155.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
 
@@ -1041,20 +1500,20 @@ LaTeX Warning: Unused global option(s):
 (./master_thesis.aux)
 \openout1 = `master_thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 127.
-LaTeX Font Info:    ... okay on input line 127.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 155.
+LaTeX Font Info:    ... okay on input line 155.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1092,16 +1551,16 @@ LaTeX Font Info:    ... okay on input line 127.
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count172
-\scratchdimen=\dimen298
-\scratchbox=\box49
-\nofMPsegments=\count173
-\nofMParguments=\count174
+\scratchcounter=\count287
+\scratchdimen=\dimen331
+\scratchbox=\box65
+\nofMPsegments=\count288
+\nofMParguments=\count289
 \everyMPshowfont=\toks50
-\MPscratchCnt=\count175
-\MPscratchDim=\dimen299
-\MPnumerator=\count176
-\makeMPintoPDFobject=\count177
+\MPscratchCnt=\count290
+\MPscratchDim=\dimen332
+\MPnumerator=\count291
+\makeMPintoPDFobject=\count292
 \everyMPtoPDFconversion=\toks51
 ) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1115,27 +1574,31 @@ Package grfext Info: Graphics extension search list:
  (/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 127.
+LaTeX Font Info:    Try loading font information for U+msa on input line 155.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 127.
+LaTeX Font Info:    Try loading font information for U+msb on input line 155.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Package xypdf Info: Line width: 0.47998pt on input line 127.
-\AtBeginShipoutBox=\box50
-Package hyperref Info: Link coloring OFF on input line 127.
+Package xypdf Info: Line width: 0.47998pt on input line 155.
+\AtBeginShipoutBox=\box66
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
+File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
+)
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 155.
+Package hyperref Info: Link coloring OFF on input line 155.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count178
+\c@section@level=\count293
 )
-LaTeX Info: Redefining \ref on input line 127.
-LaTeX Info: Redefining \pageref on input line 127.
-LaTeX Info: Redefining \nameref on input line 127.
+LaTeX Info: Redefining \ref on input line 155.
+LaTeX Info: Redefining \pageref on input line 155.
+LaTeX Info: Redefining \nameref on input line 155.
  (./master_thesis.out) (./master_thesis.out)
 \@outlinefile=\write5
 \openout5 = `master_thesis.out'.
@@ -1143,7 +1606,7 @@ LaTeX Info: Redefining \nameref on input line 127.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count179
+\c@lstlisting=\count294
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1179,7 +1642,7 @@ Package caption Info: End \AtBeginDocument code.
  <images/00_logo.jpg, id=131, 456.7464pt x 88.28986pt>
 File: images/00_logo.jpg Graphic file (type jpg)
  <use images/00_logo.jpg>
-Package pdftex.def Info: images/00_logo.jpg used on input line 184.
+Package pdftex.def Info: images/00_logo.jpg used on input line 212.
 (pdftex.def)             Requested size: 319.72029pt x 61.80244pt.
  [1
 
@@ -1197,335 +1660,352 @@ Package pdftex.def Info: images/00_logo.jpg used on input line 184.
 
  [2
 
+] [3
+
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.215 ...f a Shiny application~\citep{shiny}. \par
+l.247 ...f a Shiny application~\citep{shiny}. \par
                                                    [1
 
 ]
-Overfull \hbox (14.81377pt too wide) in paragraph at lines 218--218
-[]\OT1/cmss/m/n/17.28 Bayesian Ad-di-tive Mod-els for Lo-ca-tion, Scale and Shape 
+Overfull \hbox (8.49553pt too wide) in paragraph at lines 253--253
+[]\OT1/cmr/m/n/12 In the abil-ity to ad-di-tively model mul-ti-ple pa-ram-e-ters of one dis-tri-bu-tion, []BAMLSS
  []
 
 [2] [3] [4] [5] [6] [7]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 334.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
+Overfull \hbox (19.7918pt too wide) in paragraph at lines 363--363
+[]\OT1/cmr/bx/n/14.4 Generalized Struc-tured Ad-di-tive Re-gres-sion Mod-els 
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 366.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 334.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 366.
 
-Overfull \hbox (0.79182pt too wide) in paragraph at lines 340--340
-\OT1/cmr/m/n/12 ably, in-clud-ing sim-ple lin-ear pre-dic-tors $\OT1/cmr/bx/n/12 x[][]$ \OT1/cmr/m/n/12 ([]Fahrmeir et al.[], []2013[], chap 9.5). 
- []
-
-
-Overfull \hbox (2.77625pt too wide) in paragraph at lines 342--343
+Overfull \hbox (2.77625pt too wide) in paragraph at lines 374--375
 []\OT1/cmr/m/n/12 Generalized Lin-ear Mod-els (GLM), first coined by []Nelder and Wed-der-burn[] ([]1972[]),
  []
 
 [8] [9]
-Overfull \hbox (15.4388pt too wide) in paragraph at lines 380--381
+Overfull \hbox (15.4388pt too wide) in paragraph at lines 412--413
 []\OT1/cmr/m/n/12 Assuming a de-pen-dent vari-able from a dis-tri-bu-tion with pa-ram-e-ters $[] = (\OML/cmm/m/it/12 ^^R[]; [] ; ^^R[]\OT1/cmr/m/n/12 )[]$
  []
 
+
+Overfull \hbox (5.4449pt too wide) in paragraph at lines 412--413
+\OT1/cmr/m/n/12 and ob-ser-va-tions $\OML/cmm/m/it/12 y[]; [] ; y[]$\OT1/cmr/m/n/12 , given co-vari-ates $\OT1/cmr/bx/n/12 z[]\OML/cmm/m/it/12 ; [] ; \OT1/cmr/bx/n/12 z[]$ \OT1/cmr/m/n/12 and $\OT1/cmr/bx/n/12 x[]\OML/cmm/m/it/12 ; [] ; \OT1/cmr/bx/n/12 x[]$\OT1/cmr/m/n/12 , a []GAMLSS
+ []
+
 [10] [11]
-Overfull \hbox (9.34415pt too wide) in paragraph at lines 392--392
-[]\OT1/cmr/m/n/12 An im-ple-men-ta-tion of Bayesian Ad-di-tive Dis-tri-bu-tional Re-gres-sion, called Bayesian
+Overfull \hbox (9.34415pt too wide) in paragraph at lines 423--423
+[]\OT1/cmr/m/n/12 An im-ple-men-ta-tion of Bayesian Ad-di-tive Dis-tri-bu-tional Re-gres-sion, called []Bayesian
  []
 
 
-Overfull \hbox (11.84pt too wide) in paragraph at lines 393--394
-\OT1/cmr/m/n/12 are linked to struc-tured ad-di-tive pre-dic-tors us-ing mono-tonic and twice-differentiable
- []
-
-
-Overfull \hbox (7.89095pt too wide) in paragraph at lines 396--398
+Overfull \hbox (7.89095pt too wide) in paragraph at lines 427--429
 \OT1/cmr/m/n/12 fects. The cor-re-spond-ing model ma-tri-ces used for each pa-ram-e-ter are $\OT1/cmr/bx/n/12 X[]\OML/cmm/m/it/12 ; [] ; \OT1/cmr/bx/n/12 X[]$\OT1/cmr/m/n/12 ,
  []
 
 
-Overfull \hbox (9.69409pt too wide) in paragraph at lines 396--398
+Overfull \hbox (9.69409pt too wide) in paragraph at lines 427--429
 \OT1/cmr/m/n/12 sump-tions about $\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^A\OT1/cmr/m/n/12 )$. It is also pos-si-ble to de-scribe the ef-fects in vec-tor form: 
  []
 
 [12] [13]
-Overfull \hbox (25.10184pt too wide) in paragraph at lines 449--450
+Overfull \hbox (25.10184pt too wide) in paragraph at lines 480--481
 \OT1/cmr/m/n/12 is max-i-mized in re-gard to $[][]\OML/cmm/m/it/12 ; [] ; [][]; []$\OT1/cmr/m/n/12 . The first part of the cri-te-rion, $\OML/cmm/m/it/12 l\OT1/cmr/m/n/12 ([][]\OML/cmm/m/it/12 ; [] ; [][]; []\OT1/cmr/m/n/12 )$
  []
 
-[14] [15] [16] [17] [18] [19] <images/030_cnorm_plot.pdf, id=562, 212.795pt x 212.795pt>
+[14]
+Overfull \hbox (14.0177pt too wide) in paragraph at lines 486--486
+[]\OT1/cmr/m/n/12 RS, ab-bre-vi-ated for []Rigby and Stasinopou-los, uses it-er-a-tively []It-er-a-tively Reweighted
+ []
+
+[15] [16]
+Overfull \hbox (3.23264pt too wide) in paragraph at lines 503--503
+[]\OT1/cmr/m/n/12 The []BAMLSS R im-ple-men-ta-tion, [][][][], pro-vides a highly cus-tomiz-able Bayesian
+ []
+
+[17] [18]
+Overfull \hbox (17.59703pt too wide) in paragraph at lines 517--517
+[]\OT1/cmr/m/n/12 By de-fault, the R im-ple-men-ta-tion of []BAMLSS ob-tains sam-ples us-ing the \  Derivative-
+ []
+
+[19] <images/030_cnorm_plot.pdf, id=565, 212.795pt x 212.795pt>
 File: images/030_cnorm_plot.pdf Graphic file (type pdf)
  <use images/030_cnorm_plot.pdf>
-Package pdftex.def Info: images/030_cnorm_plot.pdf used on input line 506.
+Package pdftex.def Info: images/030_cnorm_plot.pdf used on input line 538.
 (pdftex.def)             Requested size: 212.79446pt x 212.79446pt.
- [20] [21 <./images/030_cnorm_plot.pdf>] [22] <images/030_wage_plot.pdf, id=600, 454.69875pt x 255.95625pt>
+ [20] [21 <./images/030_cnorm_plot.pdf>] [22] <images/030_wage_plot.pdf, id=603, 454.69875pt x 255.95625pt>
 File: images/030_wage_plot.pdf Graphic file (type pdf)
  <use images/030_wage_plot.pdf>
-Package pdftex.def Info: images/030_wage_plot.pdf used on input line 545.
+Package pdftex.def Info: images/030_wage_plot.pdf used on input line 577.
 (pdftex.def)             Requested size: 363.75949pt x 204.76526pt.
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 551.
- [23 <./images/030_wage_plot.pdf>] <images/031_app_start.png, id=630, 2473.24pt x 1656.1875pt>
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 583.
+ [23 <./images/030_wage_plot.pdf>] <images/031_app_start.png, id=632, 2473.24pt x 1656.1875pt>
 File: images/031_app_start.png Graphic file (type png)
  <use images/031_app_start.png>
-Package pdftex.def Info: images/031_app_start.png used on input line 575.
+Package pdftex.def Info: images/031_app_start.png used on input line 606.
 (pdftex.def)             Requested size: 423.50862pt x 280.01758pt.
 
-Overfull \hbox (13.78911pt too wide) in paragraph at lines 575--576
+Overfull \hbox (13.78911pt too wide) in paragraph at lines 606--607
  [][] 
  []
 
-[24] <images/032_overview_tab.png, id=647, 351.3125pt x 486.81876pt>
+[24] [25 <./images/031_app_start.png>] <images/032_overview_tab.png, id=655, 351.3125pt x 486.81876pt>
 File: images/032_overview_tab.png Graphic file (type png)
  <use images/032_overview_tab.png>
-Package pdftex.def Info: images/032_overview_tab.png used on input line 587.
+Package pdftex.def Info: images/032_overview_tab.png used on input line 618.
 (pdftex.def)             Requested size: 132.48193pt x 180.65555pt.
- [25 <./images/031_app_start.png>] <images/033_scenarios_tab.png, id=654, 2473.24pt x 1672.2475pt>
+ <images/033_scenarios_tab.png, id=657, 2473.24pt x 1672.2475pt>
 File: images/033_scenarios_tab.png Graphic file (type png)
  <use images/033_scenarios_tab.png>
-Package pdftex.def Info: images/033_scenarios_tab.png used on input line 599.
+Package pdftex.def Info: images/033_scenarios_tab.png used on input line 630.
 (pdftex.def)             Requested size: 423.50862pt x 277.53908pt.
 
-Overfull \hbox (13.78911pt too wide) in paragraph at lines 599--600
+Overfull \hbox (13.78911pt too wide) in paragraph at lines 630--631
  [][] 
  []
 
-[26 <./images/032_overview_tab.png>] [27 <./images/033_scenarios_tab.png>] <images/034_educ_app.png, id=671, 2481.27pt x 1672.2475pt>
+[26 <./images/032_overview_tab.png>] [27 <./images/033_scenarios_tab.png>] <images/034_educ_app.png, id=675, 2481.27pt x 1672.2475pt>
 File: images/034_educ_app.png Graphic file (type png)
  <use images/034_educ_app.png>
-Package pdftex.def Info: images/034_educ_app.png used on input line 621.
+Package pdftex.def Info: images/034_educ_app.png used on input line 652.
 (pdftex.def)             Requested size: 425.1146pt x 277.53908pt.
 
-Overfull \hbox (15.39508pt too wide) in paragraph at lines 621--622
+Overfull \hbox (15.39508pt too wide) in paragraph at lines 652--653
  [][] 
  []
 
-[28 <./images/034_educ_app.png>] <images/036_obtain_code.png, id=689, 2481.27pt x 1672.2475pt>
+<images/036_obtain_code.png, id=687, 2481.27pt x 1672.2475pt>
 File: images/036_obtain_code.png Graphic file (type png)
  <use images/036_obtain_code.png>
-Package pdftex.def Info: images/036_obtain_code.png used on input line 632.
+Package pdftex.def Info: images/036_obtain_code.png used on input line 663.
 (pdftex.def)             Requested size: 425.1146pt x 277.53908pt.
 
-Overfull \hbox (15.39508pt too wide) in paragraph at lines 632--633
+Overfull \hbox (15.39508pt too wide) in paragraph at lines 663--664
  [][] 
  []
 
-[29] <images/037_scenario_data.png, id=701, 360.34625pt x 378.41376pt>
+[28] [29 <./images/034_educ_app.png>] <images/037_scenario_data.png, id=704, 360.34625pt x 378.41376pt>
 File: images/037_scenario_data.png Graphic file (type png)
  <use images/037_scenario_data.png>
-Package pdftex.def Info: images/037_scenario_data.png used on input line 645.
-(pdftex.def)             Requested size: 136.54709pt x 131.87375pt.
- [30 <./images/036_obtain_code.png> <./images/037_scenario_data.png>] <images/039_influence_graph.png, id=715, 2489.3pt x 1662.21pt>
+Package pdftex.def Info: images/037_scenario_data.png used on input line 676.
+(pdftex.def)             Requested size: 136.54709pt x 157.48099pt.
+ [30 <./images/036_obtain_code.png>] <images/039_influence_graph.png, id=717, 2489.3pt x 1662.21pt>
 File: images/039_influence_graph.png Graphic file (type png)
  <use images/039_influence_graph.png>
-Package pdftex.def Info: images/039_influence_graph.png used on input line 660.
+Package pdftex.def Info: images/039_influence_graph.png used on input line 691.
 (pdftex.def)             Requested size: 426.72057pt x 275.53162pt.
 
-Overfull \hbox (17.00105pt too wide) in paragraph at lines 660--661
+Overfull \hbox (17.00105pt too wide) in paragraph at lines 691--692
  [][] 
  []
 
 
-Overfull \hbox (1.10115pt too wide) in paragraph at lines 657--665
+Overfull \hbox (1.10115pt too wide) in paragraph at lines 688--696
 []\OT1/cmr/m/n/12 To pro-vide this func-tion-al-ity, the tab \  Prop-er-ties" was im-ple-mented in bamlss.vis,
  []
 
-[31] [32 <./images/039_influence_graph.png>] <images/0310_influence_graph_qualitative.png, id=729, 2489.3pt x 1680.2775pt>
+[31 <./images/037_scenario_data.png>] [32 <./images/039_influence_graph.png>] <images/0310_influence_graph_qualitative.png, id=732, 2489.3pt x 1680.2775pt>
 File: images/0310_influence_graph_qualitative.png Graphic file (type png)
  <use images/0310_influence_graph_qualitative.png>
-Package pdftex.def Info: images/0310_influence_graph_qualitative.png used on input line 672.
+Package pdftex.def Info: images/0310_influence_graph_qualitative.png used on input line 703.
 (pdftex.def)             Requested size: 426.72057pt x 279.14505pt.
 
-Overfull \hbox (17.00105pt too wide) in paragraph at lines 672--673
+Overfull \hbox (17.00105pt too wide) in paragraph at lines 703--704
  [][] 
  []
 
-[33 <./images/0310_influence_graph_qualitative.png>] <images/0312_table_tab.png, id=744, 2527.4425pt x 1622.06pt>
+[33 <./images/0310_influence_graph_qualitative.png>] <images/0312_table_tab.png, id=748, 2527.4425pt x 1622.06pt>
 File: images/0312_table_tab.png Graphic file (type png)
  <use images/0312_table_tab.png>
-Package pdftex.def Info: images/0312_table_tab.png used on input line 682.
+Package pdftex.def Info: images/0312_table_tab.png used on input line 713.
 (pdftex.def)             Requested size: 434.34892pt x 267.50175pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 682--683
+Overfull \hbox (24.62941pt too wide) in paragraph at lines 713--714
  [][] 
  []
 
-[34 <./images/0312_table_tab.png>] <images/0313_poisson_pmf.png, id=753, 2527.4425pt x 1361.085pt>
+[34] <images/0313_poisson_pmf.png, id=755, 2527.4425pt x 1361.085pt>
 File: images/0313_poisson_pmf.png Graphic file (type png)
  <use images/0313_poisson_pmf.png>
-Package pdftex.def Info: images/0313_poisson_pmf.png used on input line 698.
+Package pdftex.def Info: images/0313_poisson_pmf.png used on input line 729.
 (pdftex.def)             Requested size: 434.34892pt x 215.30768pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 698--699
+Overfull \hbox (24.62941pt too wide) in paragraph at lines 729--730
  [][] 
  []
 
-[35] <images/0315_mvnorm_pdf.png, id=762, 2473.24pt x 1421.31pt>
+[35 <./images/0312_table_tab.png>] [36 <./images/0313_poisson_pmf.png>] <images/0315_mvnorm_pdf.png, id=771, 2473.24pt x 1421.31pt>
 File: images/0315_mvnorm_pdf.png Graphic file (type png)
  <use images/0315_mvnorm_pdf.png>
-Package pdftex.def Info: images/0315_mvnorm_pdf.png used on input line 713.
+Package pdftex.def Info: images/0315_mvnorm_pdf.png used on input line 744.
 (pdftex.def)             Requested size: 423.50862pt x 227.35246pt.
 
-Overfull \hbox (13.78911pt too wide) in paragraph at lines 713--714
+Overfull \hbox (13.78911pt too wide) in paragraph at lines 744--745
  [][] 
  []
 
-[36 <./images/0313_poisson_pmf.png>] <images/0319_mvnorm_moments.png, id=776, 2527.4425pt x 1519.6775pt>
+[37 <./images/0315_mvnorm_pdf.png>] <images/0319_mvnorm_moments.png, id=786, 2527.4425pt x 1519.6775pt>
 File: images/0319_mvnorm_moments.png Graphic file (type png)
  <use images/0319_mvnorm_moments.png>
-Package pdftex.def Info: images/0319_mvnorm_moments.png used on input line 723.
+Package pdftex.def Info: images/0319_mvnorm_moments.png used on input line 754.
 (pdftex.def)             Requested size: 434.34892pt x 247.02562pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 723--724
+Overfull \hbox (24.62941pt too wide) in paragraph at lines 754--755
  [][] 
  []
 
-[37 <./images/0315_mvnorm_pdf.png>]
-Overfull \hbox (1.58391pt too wide) in paragraph at lines 732--732
+
+Overfull \hbox (1.58391pt too wide) in paragraph at lines 763--763
 \OT1/cmr/m/n/12 For mod-el-ing un-ordered cat-e-gor-i-cal re-sponse vari-ables, [][][][] sup-ports the multi-
  []
 
-[38 <./images/0319_mvnorm_moments.png>] <images/0321_multinom_pdf.png, id=794, 2527.4425pt x 1318.9275pt>
+[38 <./images/0319_mvnorm_moments.png>] <images/0321_multinom_pdf.png, id=798, 2527.4425pt x 1318.9275pt>
 File: images/0321_multinom_pdf.png Graphic file (type png)
  <use images/0321_multinom_pdf.png>
-Package pdftex.def Info: images/0321_multinom_pdf.png used on input line 736.
+Package pdftex.def Info: images/0321_multinom_pdf.png used on input line 767.
 (pdftex.def)             Requested size: 434.34892pt x 206.87633pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 736--737
+Overfull \hbox (24.62941pt too wide) in paragraph at lines 767--768
  [][] 
  []
 
-<images/0322_multinom_influence.png, id=798, 2527.4425pt x 1499.6025pt>
+<images/0322_multinom_influence.png, id=802, 2527.4425pt x 1499.6025pt>
 File: images/0322_multinom_influence.png Graphic file (type png)
  <use images/0322_multinom_influence.png>
-Package pdftex.def Info: images/0322_multinom_influence.png used on input line 746.
+Package pdftex.def Info: images/0322_multinom_influence.png used on input line 777.
 (pdftex.def)             Requested size: 434.34892pt x 243.01068pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 746--747
+Overfull \hbox (24.62941pt too wide) in paragraph at lines 777--778
  [][] 
  []
 
-[39 <./images/0321_multinom_pdf.png>] [40 <./images/0322_multinom_influence.png>] [41] <images/030_addinpic.png, id=818, 326.21875pt x 359.3425pt>
+[39 <./images/0321_multinom_pdf.png>] [40 <./images/0322_multinom_influence.png>] [41] [42] <images/030_addinpic.png, id=825, 326.21875pt x 359.3425pt>
 File: images/030_addinpic.png Graphic file (type png)
  <use images/030_addinpic.png>
-Package pdftex.def Info: images/030_addinpic.png used on input line 780.
+Package pdftex.def Info: images/030_addinpic.png used on input line 803.
 (pdftex.def)             Requested size: 107.72339pt x 109.59175pt.
- <images/035_educ_app_cdf.png, id=819, 2481.27pt x 1672.2475pt>
+ <images/035_educ_app_cdf.png, id=826, 2481.27pt x 1672.2475pt>
 File: images/035_educ_app_cdf.png Graphic file (type png)
  <use images/035_educ_app_cdf.png>
-Package pdftex.def Info: images/035_educ_app_cdf.png used on input line 789.
-(pdftex.def)             Requested size: 425.1146pt x 277.53908pt.
+Package pdftex.def Info: images/035_educ_app_cdf.png used on input line 812.
+(pdftex.def)             Requested size: 425.1146pt x 300.30087pt.
 
-Overfull \hbox (15.39508pt too wide) in paragraph at lines 789--790
+Overfull \hbox (15.39508pt too wide) in paragraph at lines 812--813
  [][] 
  []
 
-<images/038_warning_popup.png, id=820, 251.94125pt x 89.33376pt>
+<images/038_warning_popup.png, id=827, 251.94125pt x 89.33376pt>
 File: images/038_warning_popup.png Graphic file (type png)
  <use images/038_warning_popup.png>
-Package pdftex.def Info: images/038_warning_popup.png used on input line 798.
+Package pdftex.def Info: images/038_warning_popup.png used on input line 821.
 (pdftex.def)             Requested size: 113.37251pt x 40.19981pt.
- <images/0311_obtain_influence_code.png, id=821, 2527.4425pt x 1622.06pt>
+ <images/0311_obtain_influence_code.png, id=828, 2527.4425pt x 1622.06pt>
 File: images/0311_obtain_influence_code.png Graphic file (type png)
  <use images/0311_obtain_influence_code.png>
-Package pdftex.def Info: images/0311_obtain_influence_code.png used on input line 807.
-(pdftex.def)             Requested size: 434.34892pt x 273.1922pt.
+Package pdftex.def Info: images/0311_obtain_influence_code.png used on input line 830.
+(pdftex.def)             Requested size: 434.34892pt x 290.26355pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 807--808
+Overfull \hbox (24.62941pt too wide) in paragraph at lines 830--831
  [][] 
  []
 
-<images/0314_poisson_cdf.png, id=822, 2527.4425pt x 1361.085pt>
+<images/0314_poisson_cdf.png, id=829, 2527.4425pt x 1361.085pt>
 File: images/0314_poisson_cdf.png Graphic file (type png)
  <use images/0314_poisson_cdf.png>
-Package pdftex.def Info: images/0314_poisson_cdf.png used on input line 816.
-(pdftex.def)             Requested size: 434.34892pt x 220.99812pt.
+Package pdftex.def Info: images/0314_poisson_cdf.png used on input line 839.
+(pdftex.def)             Requested size: 434.34892pt x 238.06947pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 816--817
+Overfull \hbox (24.62941pt too wide) in paragraph at lines 839--840
  [][] 
  []
 
-<images/0316_mvnorm_cdf.png, id=823, 2473.24pt x 1421.31pt>
+<images/0316_mvnorm_cdf.png, id=830, 2473.24pt x 1421.31pt>
 File: images/0316_mvnorm_cdf.png Graphic file (type png)
  <use images/0316_mvnorm_cdf.png>
-Package pdftex.def Info: images/0316_mvnorm_cdf.png used on input line 825.
-(pdftex.def)             Requested size: 423.50862pt x 227.35246pt.
+Package pdftex.def Info: images/0316_mvnorm_cdf.png used on input line 848.
+(pdftex.def)             Requested size: 423.50862pt x 250.11427pt.
 
-Overfull \hbox (13.78911pt too wide) in paragraph at lines 825--826
+Overfull \hbox (13.78911pt too wide) in paragraph at lines 848--849
  [][] 
  []
 
-<images/0317_mvnorm_pdf_contour.png, id=824, 2473.24pt x 1421.31pt>
+<images/0317_mvnorm_pdf_contour.png, id=831, 2473.24pt x 1421.31pt>
 File: images/0317_mvnorm_pdf_contour.png Graphic file (type png)
  <use images/0317_mvnorm_pdf_contour.png>
-Package pdftex.def Info: images/0317_mvnorm_pdf_contour.png used on input line 834.
-(pdftex.def)             Requested size: 423.50862pt x 227.35246pt.
+Package pdftex.def Info: images/0317_mvnorm_pdf_contour.png used on input line 857.
+(pdftex.def)             Requested size: 423.50862pt x 250.11427pt.
 
-Overfull \hbox (13.78911pt too wide) in paragraph at lines 834--835
+Overfull \hbox (13.78911pt too wide) in paragraph at lines 857--858
  [][] 
  []
 
-<images/0318_mvnorm_pdf_image.png, id=825, 2473.24pt x 1421.31pt>
+<images/0318_mvnorm_pdf_image.png, id=832, 2473.24pt x 1421.31pt>
 File: images/0318_mvnorm_pdf_image.png Graphic file (type png)
  <use images/0318_mvnorm_pdf_image.png>
-Package pdftex.def Info: images/0318_mvnorm_pdf_image.png used on input line 843.
-(pdftex.def)             Requested size: 423.50862pt x 227.35246pt.
+Package pdftex.def Info: images/0318_mvnorm_pdf_image.png used on input line 866.
+(pdftex.def)             Requested size: 423.50862pt x 250.11427pt.
 
-Overfull \hbox (13.78911pt too wide) in paragraph at lines 843--844
+Overfull \hbox (13.78911pt too wide) in paragraph at lines 866--867
  [][] 
  []
 
-<images/0320_mvnorm_moments_table.png, id=826, 2527.4425pt x 1519.6775pt>
+<images/0320_mvnorm_moments_table.png, id=833, 2527.4425pt x 1519.6775pt>
 File: images/0320_mvnorm_moments_table.png Graphic file (type png)
  <use images/0320_mvnorm_moments_table.png>
-Package pdftex.def Info: images/0320_mvnorm_moments_table.png used on input line 852.
-(pdftex.def)             Requested size: 434.34892pt x 247.02562pt.
+Package pdftex.def Info: images/0320_mvnorm_moments_table.png used on input line 875.
+(pdftex.def)             Requested size: 434.34892pt x 269.78741pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 852--853
+Overfull \hbox (24.62941pt too wide) in paragraph at lines 875--876
  [][] 
  []
 
-<images/0323_multinom_influence_categorical.png, id=827, 2527.4425pt x 1581.91pt>
+<images/0323_multinom_influence_categorical.png, id=834, 2527.4425pt x 1581.91pt>
 File: images/0323_multinom_influence_categorical.png Graphic file (type png)
  <use images/0323_multinom_influence_categorical.png>
-Package pdftex.def Info: images/0323_multinom_influence_categorical.png used on input line 861.
-(pdftex.def)             Requested size: 434.34892pt x 259.4719pt.
+Package pdftex.def Info: images/0323_multinom_influence_categorical.png used on input line 884.
+(pdftex.def)             Requested size: 434.34892pt x 282.2337pt.
 
-Overfull \hbox (24.62941pt too wide) in paragraph at lines 861--862
+Overfull \hbox (24.62941pt too wide) in paragraph at lines 884--885
  [][] 
  []
 
-[42
+[43
 
- <./images/030_addinpic.png> <./images/035_educ_app_cdf.png>] [43 <./images/038_warning_popup.png> <./images/0311_obtain_influence_code.png> <./images/0314_poisson_cdf.png>] [44 <./images/0316_mvnorm_cdf.png> <./images/0317_mvnorm_pdf_contour.png>] [45 <./images/0318_mvnorm_pdf_image.png> <./images/0320_mvnorm_moments_table.png>] [46 <./images/0323_multinom_influence_categorical.png>] (./master_thesis.bbl [47
+ <./images/030_addinpic.png> <./images/035_educ_app_cdf.png>] [44 <./images/038_warning_popup.png> <./images/0311_obtain_influence_code.png>] [45 <./images/0314_poisson_cdf.png> <./images/0316_mvnorm_cdf.png>] [46 <./images/0317_mvnorm_pdf_contour.png> <./images/0318_mvnorm_pdf_image.png>] [47 <./images/0320_mvnorm_moments_table.png> <./images/0323_multinom_influence_categorical.png>] (./master_thesis.bbl [48
 
-] [48]) [49]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 873.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 873.
+] [49]) [50] [1
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 900.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 900.
  (./master_thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 873.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 873.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 900.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 900.
 Package rerunfilecheck Info: File `master_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: E6AA905E70DACE7B2E600B555AEEC92C;2181.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 873.
+(rerunfilecheck)             Checksum: 15E48F16D580ECDA08799C91C01C4671;2181.
  ) 
 Here is how much of TeX's memory you used:
- 25806 strings out of 492995
- 438069 string characters out of 6132703
- 611595 words of memory out of 5000000
- 28655 multiletter control sequences out of 15000+600000
- 23819 words of font info for 93 fonts, out of 8000000 for 9000
+ 36157 strings out of 492995
+ 671342 string characters out of 6132703
+ 800447 words of memory out of 5000000
+ 38944 multiletter control sequences out of 15000+600000
+ 22017 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,19n,54p,3246b,1766s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,19n,54p,10424b,1763s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master_thesis.pdf (52 pages, 4946269 bytes).
+s/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on master_thesis.pdf (55 pages, 4930224 bytes).
 PDF statistics:
- 1032 PDF objects out of 1200 (max. 8388607)
- 891 compressed objects within 9 object streams
- 186 named destinations out of 1000 (max. 500000)
+ 1037 PDF objects out of 1200 (max. 8388607)
+ 895 compressed objects within 9 object streams
+ 189 named destinations out of 1000 (max. 500000)
  396 words of extra memory for PDF output out of 10000 (max. 10000000)
 
