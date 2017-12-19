@@ -336,7 +336,7 @@ The possibility of interactions between two continuous covariates is also given.
 For reasons of identifiability, $f_{z_1|z_2}(z_1, z_2)$ also needs to be centered around zero. \citet*[chap. 9.3.2]{fahrmeir2013regression} warn that for estimation of models with two-dimensional surfaces a high sample size with combinations of $z_1$ and $z_2$ is required. In cases where this requirement is not fulfilled, a simple main effects model as in \eqref{addmodel2} is preferred. \par
 It is also possible to model the interaction effect of $z_1$ and $z_2$ using the two-dimensional surface $f_{z_1|z_2}(z_1, z_2)$ while still including the main effects. In this scenario, the model is specified as follows:
 \begin{equation}
-y_i =  f_{z_1|z_2}(z_{i1}, z_{i2}) + f_1(z_{i1}) + f_2(z_{i2}) + \sum\limits_{j = 3}^K f_j(z_{ij}) + \sum\limits_{l = 1}^Q \beta_l x_{il} + \epsilon_i
+y_i =  f_{z_1|z_2}(z_{i1}, z_{i2}) + f_1(z_{i1}) + f_2(z_{i2}) + \sum\limits_{j = 3}^K f_j(z_{ij}) + \xib + \epsilon_i
 \end{equation}
 The identifiability problem in this model is now more complex than before. To solve it, \citet[chap. 9.3]{fahrmeir2013regression} state that not only all included functions have to be centered around zero but also \enquote{all slices of the interaction $f_{z_1|z_2}(z_1, z_2)$, i.e. all one-dimensional smooths with fixed value of $z_1$ or $z_2$}. \par
 Using the non-parametric function approach, the matrix representation of the model can be obtained:
@@ -414,7 +414,7 @@ Assuming a dependent variable from a distribution with parameters $\btheta = (\t
   \label{gamlss}
   g_l(\btheta_{l}) = \boldeta_{l} = \bx_l \bbeta_l + \sum\limits_{j = 1}^{K_l} \mathbf{Z}_{jl} \bgamma_{jl}
 \end{equation}
-In Equation \eqref{gamlss}, $g_l(\cdot)$ represents a known monotonic link function, which can be different for each parameter. $\bx_l$ depicts the subset of variables $\bx = (\mathbf{x}_1, \ldots, \mathbf{x}_Q)'$ used to model parameter $\theta_l$, while $\mathbf{Z}_{jl} \bgamma_{jl}$ serves as the Basis function matrix for a non-parametric effect of covariate $z_j$ on parameter $\theta_l$, taken from a subset of variables $z_1, \ldots, z_K$ variables. The specific subset of covariates $z$ with non-parametric effects on parameter $\theta_l$ has a length of $K_l$ variables \citep{gamlss2007}. \par
+In Equation \eqref{gamlss}, $g_l(\cdot)$ represents a known monotonic link function, which can be different for each parameter. $\bx_l$ depicts the subset of all available variables $\bx = (\mathbf{x}_1, \ldots, \mathbf{x}_Q)'$ used to model parameter $\theta_l$, while $\mathbf{Z}_{jl} \bgamma_{jl}$ serves as the Basis function matrix for a non-parametric effect of covariate $z_j$ on parameter $\theta_l$, taken from a subset of variables $z_1, \ldots, z_K$. The specific subset of covariates $z$ with non-parametric effects on parameter $\theta_l$ has a length of $K_l$ variables \citep{gamlss2007}. \par
 As shown above, \ac{gamlss} can utilize different combinations of parametric and non-parametric effects to model each distributional parameter. Equation \ref{gamlss} displays a case in which every parameter is modeled using a non-empty subset of variables $x$ and $z$. However, some parameters can also be set to a constant and not be dependent on covariates. For example, when assuming the Gaussian distribution for the dependent variable and connecting $\mu$ to parametric effects $x_q$ using the identity link function ($g(\mu) = \mu$) and the variance parameter $\sigma^2$ to a constant, we arrive at a linear model specification \citep{gamlss2007}. \par
 
 \subsubsection{BAMLSS}
@@ -783,10 +783,10 @@ In Figure \ref{multinom_influence}, the predicted values for $\pi_1, \ldots, \pi
 Displaying the influence of explanatory covariates on probabilities $\pi_i$ is also possible for categorical variables. For an example, Figure \ref{multinom_influence_categorical} in the Appendix is provided. \par
 
 \section{Conclusion}
-This thesis laid out the foundations of Bayesian Additive Models for Location Scale and Shape by first describing its ancestors (AM, STAR, Generalized STAR) and relatives (GAMLSS) and then the \ac{bamlss} model framework itself. It became clear that distributional regression provides a highly flexible modeling framework, from which researchers will presumably increasingly benefit in the future. To make fitted models more accessible for users this thesis introduced the interactive application bamlss.vis based on the \li{bamlss} R package. With this new tool at hand, users will hopefully be encouraged about applying distributional regression models, specifically \ac{bamlss}, and then draw more resilient conclusions. \par
+This thesis laid out the foundations of Bayesian Additive Models for Location Scale and Shape by first describing its ancestors (AM, STAR, Generalized STAR) and relatives (GAMLSS) and then the \ac{bamlss} model framework itself. It became clear that distributional regression provides a highly flexible modeling framework, from which researchers will presumably increasingly benefit in the future. To make fitted models more accessible for users this thesis introduced the interactive application bamlss.vis based on the \li{bamlss} R package. \par
 Using bamlss.vis, the user can visualize predicted response distributions based on interactively chosen covariate combinations. Furthermore, bamlss.vis provides the ability to show the influence of a selected explanatory covariate on the first two moments of any modeled response variable, including continuous, discrete and bivariate distributions. Both of these key functions help the user draw useful inference from fitted \li{bamlss} objects. \par
-Moreover, bamlss.vis is designed to be highly customizable. The user-specified covariate combinations (that represent the core of the analysis) can be individually edited and expanded. The graphical appearance of all plots can be changed to display other color palettes or other distribution types (pdf/cdf). Proceeding the finished analysis, the user can obtain R code to reproduce the displayed plot with all chosen options. \par
-Nevertheless, further work on making distributional regression models more understandable can be done. The idea of visualizing predicted distributions and making influence plots should also be applied to other variations of distributional regression, for example BayesX or GAMLSS, which offer a large variety of supported distributions. Moreover, the implementation of bamlss.vis can be further developed. For example, the user might want to know the influence of an explanatory variable on a self-specified figure which can be constructed from the estimated parameters, like the Gini coefficient or a higher-order distributional moment. This could be implemented by adding a text field which computes the desired figure. \par
+Moreover, bamlss.vis is designed to be highly customizable. The user-specified covariate combinations (that represent the core of the analysis) can be individually edited and expanded. The graphical appearance of all plots can be changed to display other color palettes or other distribution types (pdf/cdf). Succeeding the finished analysis, the user can obtain R code to reproduce the displayed plot with all chosen options. \par
+With this new tool at hand, users will hopefully be more encouraged about applying distributional regression models, specifically \ac{bamlss}, and then draw more resilient conclusions. Nevertheless, further work on making distributional regression models more understandable can be done. The idea of visualizing predicted distributions and making influence plots should also be applied to other variations of distributional regression, for example BayesX or GAMLSS, which offer a large variety of supported distributions. Moreover, the implementation of bamlss.vis can be further developed. For example, the user might want to know the influence of an explanatory variable on a self-specified figure which can be constructed from the estimated parameters, like the Gini coefficient or a higher-order distributional moment. This could be implemented by adding a text field which computes the desired figure. \par
 Lastly, the framework of bamlss.vis relies heavily on the quality of the fitted model. Wrongly specified response distributions could, for example, also lead to wrong conclusions about the covariate influence. Further work on the selection of response distributions, model choice and variable selection would therefore be highly beneficial. \par
 \clearpage
 
@@ -800,7 +800,7 @@ Lastly, the framework of bamlss.vis relies heavily on the quality of the fitted 
 % Button click
 \begin{figure}[ht]
   \begin{centering}
-    \includegraphics[scale = 0.4, trim = {1cm 0cm 1cm 3cm}]{images/030_addinpic.png}
+    \includegraphics[scale = 0.4, trim = {1cm 0cm 1cm 2cm}]{images/030_addinpic.png}
   \caption{Button to start the main application of bamlss.vis in RStudio.}
   \label{addinpic}
   \end{centering}
@@ -809,7 +809,7 @@ Lastly, the framework of bamlss.vis relies heavily on the quality of the fitted 
 % Wage CDF
 \begin{figure}[ht]
   \begin{centering}
-    \includegraphics[scale = 0.2, trim = {7.5cm 4cm 5cm 2cm}]{images/035_educ_app_cdf.png}
+    \includegraphics[scale = 0.2, trim = {7.5cm 5cm 5cm 2cm}]{images/035_educ_app_cdf.png}
   \caption{Cumulative Distribution Function plot output for different education levels based on the \li{Wage} dataset.}
   \label{educ_app_cdf}
   \end{centering}
